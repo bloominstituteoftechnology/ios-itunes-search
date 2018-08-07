@@ -8,25 +8,42 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
 
-    
-    // MARK: - Properties
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var searchBar: UISearchBar!
     
+    let searchResultsController = SearchResultController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty,
+            let segmentedControlChoice = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex),
+            let resultType = ResultType(rawValue: segmentedControlChoice) else { return }
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (searchResults, error) in
+            self.searchResultsController.searchResults = searchResults ?? []
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return searchResultsController.searchResults.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
+        let searchResult = searchResultsController.searchResults[indexPath.row]
 
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+        
         return cell
     }
 }

@@ -24,7 +24,7 @@
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sis-RH-r9T">
                                     <rect key="frame" x="50" y="8" width="275" height="29"/>
                                     <segments>
-                                        <segment title="First"/>
+                                        <segment title="Apps"/>
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
@@ -47,7 +47,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Qcs-Q1-uLn" detailTextLabel="ySW-WI-WuX" style="IBUITableViewCellStyleSubtitle" id="wQd-iN-8Ld">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="Qcs-Q1-uLn" detailTextLabel="ySW-WI-WuX" style="IBUITableViewCellStyleSubtitle" id="wQd-iN-8Ld">
                                 <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wQd-iN-8Ld" id="oht-MM-epL">
