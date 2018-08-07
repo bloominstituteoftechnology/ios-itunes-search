@@ -26,7 +26,8 @@ class SearchResultController {
         // Adding query item (URLQueryItems) to requestURL using URLComponents
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        urlComponents.queryItems = [searchQueryItem]
+        let resultQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents.queryItems = [searchQueryItem, resultQueryItem]
         
         guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing search URL for \(searchTerm)")

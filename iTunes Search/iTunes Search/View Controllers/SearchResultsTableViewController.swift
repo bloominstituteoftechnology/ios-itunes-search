@@ -19,6 +19,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    
+    @IBAction func typeWasChanged(_ sender: Any) {
+        searchBarSearchButtonClicked(searchBar)
+    }
+    
     // MARK: - View Lifecycles
     
     override func viewDidLoad() {
