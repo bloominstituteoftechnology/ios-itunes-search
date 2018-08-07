@@ -11,14 +11,16 @@ import Foundation
 struct SearchResult: Codable {
     var title: String
     var artist: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "trackName"
+        case artist = "artistName"
+    }
 }
 
 // When the properties you create don't match the properties in the JSON, you can use CodingKeys in an enum to map the keys from the JSON to the properties you want their values to be stored in.
 
-enum CodingKeys: String, CodingKey {
-    case title = "trackName"
-    case artist = "artistName"
-}
+
 
 // The JSON objects that represent each SearchResult (title, artist) are nested in the JSON key "results".
 // If you try to decode the data, it won't work.

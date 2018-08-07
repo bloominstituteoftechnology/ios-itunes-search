@@ -10,7 +10,7 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "htts://itunes.apple.com/search/")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     var searchResults = [SearchResult]()
     
@@ -21,11 +21,11 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, NSError?) -> Void  ) {
+    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void  ) {
         
         // Adding query item (URLQueryItems) to requestURL using URLComponents
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         urlComponents.queryItems = [searchQueryItem]
         
         guard let requestURL = urlComponents.url else {
@@ -41,7 +41,7 @@ class SearchResultController {
             
             if let error = error {
                 NSLog("Error fetching data: \(error)")
-                completion(nil, error as? NSError)
+                completion(nil, error)
                 return
             }
             
@@ -54,12 +54,13 @@ class SearchResultController {
             do {
                 let jsonDecoder = JSONDecoder()
             
-                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                let searchResult = searchResults.results
+                let results = try jsonDecoder.decode(SearchResults.self, from: data)
+                let searchResult = results.results
+                self.searchResults = searchResult
                 completion(searchResult, nil)
             } catch {
                 NSLog("Unable to decode data into search result: \(error)")
-                completion(nil, error as? NSError)
+                completion(nil, error)
                 return
             }
         }.resume()
