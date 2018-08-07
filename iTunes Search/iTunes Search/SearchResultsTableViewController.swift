@@ -60,8 +60,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         guard let category = resultType else { return }
         
-        searchResultsController.performSearch(with: searchTerm, resultType: category) { (searchResults, error) in
-                self.searchResult = searchResults ?? []
+        searchResultsController.performSearch(with: searchTerm, resultType: category, numberOfResults: "10") { (searchResults, error) in
+            self.searchResult = searchResults ?? []
             NSLog("Category: \(category)")
         }
     }

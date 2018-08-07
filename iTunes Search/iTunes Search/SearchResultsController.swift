@@ -16,11 +16,12 @@ class SearchResultsController {
         case get = "GET"
     }
     
-    func performSearch(with searchTerm: String?, resultType: ResultType?, completion: @escaping ([SearchResult]?, Error?) -> Void) {
+    func performSearch(with searchTerm: String?, resultType: ResultType?, numberOfResults: String?, completion: @escaping ([SearchResult]?, Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let resultTypeQueryItem = URLQueryItem(name: "media", value: resultType?.rawValue)
-        urlComponents.queryItems = [searchQueryItem, resultTypeQueryItem]
+        let limitQueryItem = URLQueryItem(name: "limit", value: numberOfResults)
+        urlComponents.queryItems = [searchQueryItem, resultTypeQueryItem, limitQueryItem]
         
         guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing URL for search term: \(String(describing: searchTerm)) and result type: \(String(describing: resultType?.rawValue))")
