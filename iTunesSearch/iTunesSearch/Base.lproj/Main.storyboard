@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--iTunes Search-->
         <scene sceneID="yJS-VY-KhQ">
             <objects>
                 <tableViewController id="evA-9A-9Xl" customClass="SearchTVC" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                             <outlet property="delegate" destination="evA-9A-9Xl" id="2Jq-Pb-oAp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="GxC-F8-Zdw"/>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="GxC-F8-Zdw"/>
                     <connections>
                         <outlet property="searchBar" destination="20f-qf-8ZU" id="Bf5-Y8-BsH"/>
                         <outlet property="searchSelector" destination="Rh9-dB-ywp" id="SbH-Aw-3il"/>
