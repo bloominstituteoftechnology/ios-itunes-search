@@ -20,7 +20,7 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let entityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
@@ -28,7 +28,7 @@ class SearchResultController {
         
         guard let requestURL = urlComponents.url else {
             NSLog("Error occured while constructing URL: \(searchTerm)")
-            completion(nil, NSError())
+            completion(NSError())
             return
         }
         
@@ -38,25 +38,26 @@ class SearchResultController {
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if error != nil {
                 NSLog("Error occured while fetching from iTunes: \(String(describing: error))")
-                completion(nil, error)
+                completion(error)
                 return
             }
             
             guard let data = data else {
                 NSLog("Error occured while fetching from iTunes for data")
-                completion(nil, NSError())
+                completion(NSError())
                 return
             }
             
             do {
                 let decoder = JSONDecoder()
-                let searchResults = try decoder.decode(SearchResults.self, from: data)
-                let searchResult = searchResults.results
-                completion(searchResult, nil)
+                let results = try decoder.decode(SearchResults.self, from: data)
+                let result = results.results
+                self.searchResults = result
+                completion(nil)
                 
             } catch {
                 NSLog("Error occured while fetching from iTunes: \(error)")
-                completion(nil, error)
+                completion(error)
                 return
             }
         }

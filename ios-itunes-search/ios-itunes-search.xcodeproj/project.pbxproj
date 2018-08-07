@@ -63,27 +63,11 @@
 				3D686D7A211A254500FFB7F8 /* Model */,
 				3D686D79211A253D00FFB7F8 /* Model Controllers */,
 				3D686D78211A253B00FFB7F8 /* View Controllers */,
-				3D686D77211A253900FFB7F8 /* Views */,
-				3D686D76211A253600FFB7F8 /* Networking */,
 				3D686D7B211A25A700FFB7F8 /* Resources */,
 				3D686D64211A252600FFB7F8 /* AppDelegate.swift */,
 				3D686D70211A252700FFB7F8 /* Info.plist */,
 			);
 			path = "ios-itunes-search";
-			sourceTree = "<group>";
-		};
-		3D686D76211A253600FFB7F8 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		3D686D77211A253900FFB7F8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		3D686D78211A253B00FFB7F8 /* View Controllers */ = {
