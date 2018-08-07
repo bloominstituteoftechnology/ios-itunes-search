@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1321A2AE211A2B740037C623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321A2AD211A2B740037C623 /* AppDelegate.swift */; };
-		1321A2B0211A2B740037C623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321A2AF211A2B740037C623 /* ViewController.swift */; };
 		1321A2B3211A2B740037C623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1321A2B1211A2B740037C623 /* Main.storyboard */; };
 		1321A2B5211A2B750037C623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1321A2B4211A2B750037C623 /* Assets.xcassets */; };
 		1321A2B8211A2B750037C623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1321A2B6211A2B750037C623 /* LaunchScreen.storyboard */; };
+		1321A2C5211A2D940037C623 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321A2C4211A2D940037C623 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1321A2AA211A2B740037C623 /* ios-itunes-search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-itunes-search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1321A2AD211A2B740037C623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1321A2AF211A2B740037C623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1321A2B2211A2B740037C623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1321A2B4211A2B750037C623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1321A2B7211A2B750037C623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1321A2B9211A2B750037C623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1321A2C4211A2D940037C623 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,38 @@
 		1321A2AC211A2B740037C623 /* ios-itunes-search */ = {
 			isa = PBXGroup;
 			children = (
+				1321A2C1211A2D680037C623 /* Model Controllers */,
+				1321A2C0211A2D610037C623 /* View Controllers */,
+				1321A2BF211A2D5D0037C623 /* Models */,
 				1321A2AD211A2B740037C623 /* AppDelegate.swift */,
-				1321A2AF211A2B740037C623 /* ViewController.swift */,
 				1321A2B1211A2B740037C623 /* Main.storyboard */,
 				1321A2B4211A2B750037C623 /* Assets.xcassets */,
 				1321A2B6211A2B750037C623 /* LaunchScreen.storyboard */,
 				1321A2B9211A2B750037C623 /* Info.plist */,
 			);
 			path = "ios-itunes-search";
+			sourceTree = "<group>";
+		};
+		1321A2BF211A2D5D0037C623 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1321A2C4211A2D940037C623 /* SearchResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1321A2C0211A2D610037C623 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1321A2C1211A2D680037C623 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1321A2B0211A2B740037C623 /* ViewController.swift in Sources */,
+				1321A2C5211A2D940037C623 /* SearchResult.swift in Sources */,
 				1321A2AE211A2B740037C623 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
