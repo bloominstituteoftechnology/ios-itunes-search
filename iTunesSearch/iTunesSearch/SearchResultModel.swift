@@ -20,15 +20,24 @@ struct SearchResult: Codable
 	}
 }
 
+struct SearchResultList: Codable
+{
+	var results:[SearchResult]
+}
+
 enum ResultType: String
 {
 	case software
 	case music
 	case movie
+
+	static let all = [software, music, movie]
 }
 
 class SearchController
 {
+	static let noResults = SearchResult(title: "No results", creator:"")
+	static let loading = SearchResult(title: "Loading", creator:"")
 	static let itunesURL = URL(string:"https://itunes.apple.com/search?")!
 	var results:[SearchResult] = []
 	func search(_ term:String, type:ResultType, completion: @escaping (Error?)->Void)
@@ -54,8 +63,10 @@ class SearchController
 
 			do {
 				let dec = JSONDecoder()
-				print(String(data:data, encoding:.utf8) ?? "No data")
-				//try dec.decode([SearchResult].self, from: data)
+				//print(String(data:data, encoding:.utf8) ?? "No data")
+				let res = try dec.decode(SearchResultList.self, from: data)
+				self.results = res.results
+				completion(nil)
 			} catch {
 				NSLog("Could not decode data")
 				completion(NSError())
