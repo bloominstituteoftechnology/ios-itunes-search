@@ -8,14 +8,16 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        searchBar.delegate = self
+        
         
     }
 
@@ -23,20 +25,46 @@ class SearchResultsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return searchResult.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath)
 
         // Configure the cell...
+        
+        let result = searchResult[indexPath.row]
+        cell.textLabel?.text = result.title
+        cell.detailTextLabel?.text = result.creator
 
         return cell
     }
     
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        var resultType: ResultType?
+        
+        switch categorySegmentedControl.selectedSegmentIndex {
+        case 0:
+            resultType = ResultType.software
+        case 1:
+            resultType = ResultType.musicTrack
+        case 2:
+            resultType = ResultType.movie
+        default:
+            break
+        }
+        
+        
+        guard let category = resultType else { return }
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: category) { (searchResults, error) in
+                self.searchResult = searchResults ?? []
+            NSLog("Category: \(category)")
+        }
+    }
     
     /*
     // MARK: - Navigation
@@ -48,6 +76,13 @@ class SearchResultsTableViewController: UITableViewController {
     }
     */
     
-    let searchResultsController = SearchResultController
+    let searchResultsController = SearchResultsController()
+    var searchResult = [SearchResult]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
 }
