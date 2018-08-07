@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,6 +28,9 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="selectedSegment:" destination="4ac-nh-Qky" eventType="primaryActionTriggered" id="jjG-z5-x9W"/>
+                                    </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1cH-XT-i3H">
                                     <rect key="frame" x="0.0" y="44" width="375" height="56"/>
@@ -75,7 +79,13 @@
                             <outlet property="delegate" destination="4ac-nh-Qky" id="k47-3W-Mrk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="iTunes Search" id="S2x-je-PZV"/>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="S2x-je-PZV">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="eBj-U9-67V">
+                            <connections>
+                                <segue destination="Rlw-QV-tTc" kind="presentation" identifier="ShowSettingsModal" id="uu3-Nw-GcH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="1cH-XT-i3H" id="KbQ-Sf-trH"/>
                         <outlet property="segmentedControl" destination="j7b-4E-FRq" id="DFm-ub-YBt"/>
@@ -84,6 +94,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOU-l0-ImU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="728.79999999999995" y="53.523238380809602"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="ZtU-bX-oRf">
+            <objects>
+                <viewController id="Rlw-QV-tTc" customClass="SettingsViewController" customModule="ios_itunes_search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bt-vq-Ama">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="pR5-gC-cNN">
+                                <rect key="frame" x="16" y="91" width="343" height="155"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit by country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iz4-HA-25e">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter country..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-la-JbB">
+                                        <rect key="frame" x="0.0" y="38.5" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit number of search results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzD-se-zYC">
+                                        <rect key="frame" x="0.0" y="86.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y97-tM-fFo">
+                                        <rect key="frame" x="0.0" y="125" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVW-3P-2sv">
+                                <rect key="frame" x="16" y="294" width="343" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateSettings:" destination="Rlw-QV-tTc" eventType="touchUpInside" id="PQv-k8-10d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pR5-gC-cNN" firstAttribute="top" secondItem="OIY-td-8g0" secondAttribute="top" constant="71" id="E60-ne-Vok"/>
+                            <constraint firstItem="OIY-td-8g0" firstAttribute="trailing" secondItem="UVW-3P-2sv" secondAttribute="trailing" constant="16" id="Prm-gg-33b"/>
+                            <constraint firstItem="UVW-3P-2sv" firstAttribute="top" secondItem="pR5-gC-cNN" secondAttribute="bottom" constant="48" id="Sqe-HH-Kz8"/>
+                            <constraint firstItem="UVW-3P-2sv" firstAttribute="leading" secondItem="OIY-td-8g0" secondAttribute="leading" constant="16" id="Ue2-I5-Uln"/>
+                            <constraint firstItem="OIY-td-8g0" firstAttribute="trailing" secondItem="pR5-gC-cNN" secondAttribute="trailing" constant="16" id="ct6-IE-KaT"/>
+                            <constraint firstItem="pR5-gC-cNN" firstAttribute="leading" secondItem="OIY-td-8g0" secondAttribute="leading" constant="16" id="lbU-7J-RQp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OIY-td-8g0"/>
+                    </view>
+                    <connections>
+                        <outlet property="countryTextLabel" destination="jbW-la-JbB" id="8Kq-2l-wSU"/>
+                        <outlet property="searchLimitTextLabel" destination="y97-tM-fFo" id="cYO-AD-qgB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dk-5I-5i1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="54"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1zz-jz-sdZ">

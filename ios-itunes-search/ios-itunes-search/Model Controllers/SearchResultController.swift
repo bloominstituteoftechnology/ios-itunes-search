@@ -24,7 +24,14 @@ class SearchResultController {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let entityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents.queryItems = [searchTermQueryItem, entityQueryItem]
+        
+        if let country = country, let searchResultLimit = searchResultLimit {
+            let countryQueryItem = URLQueryItem(name: "country", value: country)
+            let searchResultLimitQueryItem = URLQueryItem(name: "limit", value: searchResultLimit)
+            urlComponents.queryItems = [searchTermQueryItem, entityQueryItem, countryQueryItem, searchResultLimitQueryItem]
+        } else {
+            urlComponents.queryItems = [searchTermQueryItem, entityQueryItem]
+        }
         
         guard let requestURL = urlComponents.url else {
             NSLog("Error occured while constructing URL: \(searchTerm)")
@@ -65,8 +72,21 @@ class SearchResultController {
         dataTask.resume()
     }
     
+    func updateSettings(country: String?, searchLimit: String?) {
+        if let country = country {
+            self.country = country
+        }
+        if let searchLimit = searchLimit {
+            self.searchResultLimit = searchLimit
+        }
+    }
+    
+    
     // TODO: Create a generic URLBuilder method that takes in baseurl, search querys and returns the request url
     
     var searchResults: [SearchResult] = []
+    
+    var country: String?
+    var searchResultLimit: String?
     
 }

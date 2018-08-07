@@ -17,6 +17,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     // MARK: - Actions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        fetchSearchResults()
+    }
+    
+    @IBAction func selectedSegment(_ sender: Any) {
+        fetchSearchResults()
+    }
+    
+    
+    private func fetchSearchResults() {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
         let resultType = getResultTypes(for: segmentedControl.selectedSegmentIndex)
         
@@ -58,6 +67,13 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         cell.detailTextLabel?.text = searchResult.creator
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowSettingsModal" {
+            guard let settingsVC = segue.destination as? SettingsViewController else { return }
+            settingsVC.searchResultController = self.searchResultController
+        }
     }
     
     // MARK: - Properties

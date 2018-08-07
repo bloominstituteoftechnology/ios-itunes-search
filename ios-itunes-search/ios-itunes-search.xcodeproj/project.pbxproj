@@ -15,6 +15,7 @@
 		3DA641DB211A27B200EF1A01 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA641DA211A27B200EF1A01 /* ResultType.swift */; };
 		3DA641DD211A27EF00EF1A01 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA641DC211A27EF00EF1A01 /* SearchResultController.swift */; };
 		3DA641DF211A338B00EF1A01 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA641DE211A338B00EF1A01 /* SearchResultsTableViewController.swift */; };
+		3DA641E1211A41CB00EF1A01 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA641E0211A41CB00EF1A01 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3DA641DA211A27B200EF1A01 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		3DA641DC211A27EF00EF1A01 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		3DA641DE211A338B00EF1A01 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		3DA641E0211A41CB00EF1A01 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA641DE211A338B00EF1A01 /* SearchResultsTableViewController.swift */,
+				3DA641E0211A41CB00EF1A01 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				3DA641DF211A338B00EF1A01 /* SearchResultsTableViewController.swift in Sources */,
 				3DA641DB211A27B200EF1A01 /* ResultType.swift in Sources */,
 				3D686D65211A252600FFB7F8 /* AppDelegate.swift in Sources */,
+				3DA641E1211A41CB00EF1A01 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
