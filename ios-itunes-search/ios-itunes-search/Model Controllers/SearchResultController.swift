@@ -20,20 +20,25 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
+    
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let entityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        var queries: [(String, String)]
         
         if let country = country, let searchResultLimit = searchResultLimit {
-            let countryQueryItem = URLQueryItem(name: "country", value: country)
-            let searchResultLimitQueryItem = URLQueryItem(name: "limit", value: searchResultLimit)
-            urlComponents.queryItems = [searchTermQueryItem, entityQueryItem, countryQueryItem, searchResultLimitQueryItem]
+            queries = [
+                ("term", searchTerm),
+                ("entity", resultType.rawValue),
+                ("country", country),
+                ("limit", searchResultLimit)
+            ]
         } else {
-            urlComponents.queryItems = [searchTermQueryItem, entityQueryItem]
+            queries = [
+                ("term", searchTerm),
+                ("entity", resultType.rawValue)
+            ]
         }
         
-        guard let requestURL = urlComponents.url else {
+        guard let requestURL = generateURLComponents(baseURL: baseURL, queries: queries) else {
             NSLog("Error occured while constructing URL: \(searchTerm)")
             completion(NSError())
             return
@@ -70,6 +75,18 @@ class SearchResultController {
         }
         
         dataTask.resume()
+    }
+    
+    private func generateURLComponents(baseURL: URL, queries: [(String, String)]) -> URL? {
+        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true) else { return nil }
+        urlComponents.queryItems = queries.map { URLQueryItem(name: $0.0, value: $0.1) }
+        return urlComponents.url
+    }
+    
+    private func generateURLRequest(for url: URL, httpMethod: String ) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod
+        return request
     }
     
     func updateSettings(country: String?, searchLimit: String?) {
