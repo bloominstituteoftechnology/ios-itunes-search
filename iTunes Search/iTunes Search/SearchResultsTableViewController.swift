@@ -44,15 +44,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
-        var resultType: ResultType?
+        var resultType: ResultType!
         
         switch categorySegmentedControl.selectedSegmentIndex {
         case 0:
-            resultType = ResultType.software
+            resultType = .software
         case 1:
-            resultType = ResultType.musicTrack
+            resultType = .musicTrack
         case 2:
-            resultType = ResultType.movie
+            resultType = .movie
         default:
             break
         }
