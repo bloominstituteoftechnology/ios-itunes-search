@@ -12,11 +12,13 @@ struct SearchResult: Codable
 {
 	var title:String
 	var creator:String
+	var currency:String
 
 	enum CodingKeys: String, CodingKey
 	{
 		case title = "trackName"
 		case creator = "artistName"
+		case currency
 	}
 }
 
@@ -36,8 +38,8 @@ enum ResultType: String
 
 class SearchController
 {
-	static let noResults = SearchResult(title: "No results", creator:"")
-	static let loading = SearchResult(title: "Loading", creator:"")
+	static let noResults = SearchResult(title: "No results", creator:"", currency:"")
+	static let loading = SearchResult(title: "Loading...", creator:"", currency:"")
 	static let itunesURL = URL(string:"https://itunes.apple.com/search?")!
 	var results:[SearchResult] = []
 	func search(_ term:String, type:ResultType, completion: @escaping (Error?)->Void)
