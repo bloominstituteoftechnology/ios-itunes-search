@@ -26,7 +26,7 @@ class SearchResultController
     {
         var urlComponents = URLComponents(url: baseMovieURL, resolvingAgainstBaseURL: true)!
         
-        let searchQueryItem = [URLQueryItem(name: "term", value: searchTerm), URLQueryItem(name: "&entity", value: "movie")]
+        let searchQueryItem = [URLQueryItem(name: "term", value: searchTerm), URLQueryItem(name: "entity", value: "movie")]
         urlComponents.queryItems = searchQueryItem
         
         
