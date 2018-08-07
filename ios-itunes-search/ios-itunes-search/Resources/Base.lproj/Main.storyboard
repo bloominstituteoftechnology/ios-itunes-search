@@ -72,6 +72,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6Al-dd-b5X" kind="show" identifier="ShowSearchResultDetail" id="2IV-JI-shW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -158,7 +161,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dk-5I-5i1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522" y="54"/>
+            <point key="canvasLocation" x="1674" y="-375"/>
+        </scene>
+        <!--Search Result Detail View Controller-->
+        <scene sceneID="SnA-hV-hV6">
+            <objects>
+                <viewController id="6Al-dd-b5X" customClass="SearchResultDetailViewController" customModule="ios_itunes_search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HQX-6t-P1P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HAb-gq-qXS">
+                                <rect key="frame" x="16" y="77" width="343" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaT-V8-2Ls">
+                                        <rect key="frame" x="138.5" y="0.0" width="66.5" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdV-OX-1Mk">
+                                        <rect key="frame" x="150.5" y="31.5" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d16-eY-ozp">
+                                <rect key="frame" x="16" y="163" width="343" height="488"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HAb-gq-qXS" firstAttribute="top" secondItem="ciO-uw-gKE" secondAttribute="top" constant="13" id="5Dx-Vl-ehz"/>
+                            <constraint firstItem="d16-eY-ozp" firstAttribute="top" secondItem="HAb-gq-qXS" secondAttribute="bottom" constant="34" id="8x6-mN-9Tm"/>
+                            <constraint firstItem="ciO-uw-gKE" firstAttribute="bottom" secondItem="d16-eY-ozp" secondAttribute="bottom" constant="16" id="Ad2-cK-eKi"/>
+                            <constraint firstItem="ciO-uw-gKE" firstAttribute="trailing" secondItem="HAb-gq-qXS" secondAttribute="trailing" constant="16" id="tkL-Zo-1F7"/>
+                            <constraint firstItem="d16-eY-ozp" firstAttribute="leading" secondItem="ciO-uw-gKE" secondAttribute="leading" constant="16" id="yFu-03-Wf8"/>
+                            <constraint firstItem="ciO-uw-gKE" firstAttribute="trailing" secondItem="d16-eY-ozp" secondAttribute="trailing" constant="16" id="z7K-I6-8m5"/>
+                            <constraint firstItem="HAb-gq-qXS" firstAttribute="leading" secondItem="ciO-uw-gKE" secondAttribute="leading" constant="16" id="zGb-C1-Job"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ciO-uw-gKE"/>
+                    </view>
+                    <connections>
+                        <outlet property="creatorTextLabel" destination="PdV-OX-1Mk" id="6V8-qj-nyl"/>
+                        <outlet property="descriptionTextView" destination="d16-eY-ozp" id="xn1-Yj-eUf"/>
+                        <outlet property="titleTextLabel" destination="jaT-V8-2Ls" id="dUf-my-37N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ybk-IK-bUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672.8" y="301.79910044977515"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1zz-jz-sdZ">

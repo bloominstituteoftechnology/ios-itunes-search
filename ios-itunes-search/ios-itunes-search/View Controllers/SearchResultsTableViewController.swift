@@ -73,6 +73,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         if segue.identifier == "ShowSettingsModal" {
             guard let settingsVC = segue.destination as? SettingsViewController else { return }
             settingsVC.searchResultController = self.searchResultController
+        } else if segue.identifier == "ShowSearchResultDetail" {
+            guard let detailVC = segue.destination as? SearchResultDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            detailVC.searchResult = searchResultController.searchResults[indexPath.row]
         }
     }
     

@@ -16,6 +16,7 @@
 		3DA641DD211A27EF00EF1A01 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA641DC211A27EF00EF1A01 /* SearchResultController.swift */; };
 		3DA641DF211A338B00EF1A01 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA641DE211A338B00EF1A01 /* SearchResultsTableViewController.swift */; };
 		3DA641E1211A41CB00EF1A01 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA641E0211A41CB00EF1A01 /* SettingsViewController.swift */; };
+		3DA641E3211A4B2600EF1A01 /* SearchResultDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA641E2211A4B2600EF1A01 /* SearchResultDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3DA641DC211A27EF00EF1A01 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		3DA641DE211A338B00EF1A01 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		3DA641E0211A41CB00EF1A01 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3DA641E2211A4B2600EF1A01 /* SearchResultDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				3DA641DE211A338B00EF1A01 /* SearchResultsTableViewController.swift */,
 				3DA641E0211A41CB00EF1A01 /* SettingsViewController.swift */,
+				3DA641E2211A4B2600EF1A01 /* SearchResultDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DA641DD211A27EF00EF1A01 /* SearchResultController.swift in Sources */,
+				3DA641E3211A4B2600EF1A01 /* SearchResultDetailViewController.swift in Sources */,
 				3DA641D9211A26B500EF1A01 /* SearchResult.swift in Sources */,
 				3DA641DF211A338B00EF1A01 /* SearchResultsTableViewController.swift in Sources */,
 				3DA641DB211A27B200EF1A01 /* ResultType.swift in Sources */,
