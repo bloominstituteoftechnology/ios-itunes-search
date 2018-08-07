@@ -20,7 +20,33 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         
     }
-
+    @IBAction func segmentedControlChanged(_ sender: Any) {
+        updateSearch()
+    }
+    func updateSearch() {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        var resultType: ResultType!
+        
+        switch categorySegmentedControl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        
+        
+        guard let category = resultType else { return }
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: category, numberOfResults: "10") { (searchResults, error) in
+            self.searchResult = searchResults ?? []
+            NSLog("Category: \(category)")
+        }
+    }
+    
     // MARK: - Table view data source
 
     
@@ -43,27 +69,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
-        var resultType: ResultType!
-        
-        switch categorySegmentedControl.selectedSegmentIndex {
-        case 0:
-            resultType = .software
-        case 1:
-            resultType = .musicTrack
-        case 2:
-            resultType = .movie
-        default:
-            break
-        }
-        
-        
-        guard let category = resultType else { return }
-        
-        searchResultsController.performSearch(with: searchTerm, resultType: category, numberOfResults: "10") { (searchResults, error) in
-            self.searchResult = searchResults ?? []
-            NSLog("Category: \(category)")
-        }
+        updateSearch()
     }
     
     /*

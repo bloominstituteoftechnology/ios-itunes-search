@@ -25,7 +25,9 @@ class SearchResultsController {
         
         guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing URL for search term: \(String(describing: searchTerm)) and result type: \(String(describing: resultType?.rawValue))")
+            
             completion(nil, NSError())
+            
             return
         }
         
