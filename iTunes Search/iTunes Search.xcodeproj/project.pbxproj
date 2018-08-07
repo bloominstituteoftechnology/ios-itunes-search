@@ -14,7 +14,7 @@
 		8F7E861F211A1ED4002EF1BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7E861D211A1ED4002EF1BF /* LaunchScreen.storyboard */; };
 		8F7E8627211A1F06002EF1BF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E8626211A1F06002EF1BF /* SearchResult.swift */; };
 		8F7E8629211A202E002EF1BF /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E8628211A202E002EF1BF /* ResultType.swift */; };
-		8F7E862B211A2092002EF1BF /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E862A211A2092002EF1BF /* SearchResultController.swift */; };
+		8F7E862B211A2092002EF1BF /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E862A211A2092002EF1BF /* SearchResultsController.swift */; };
 		8F7E862D211A2FD0002EF1BF /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E862C211A2FD0002EF1BF /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		8F7E8620211A1ED4002EF1BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F7E8626211A1F06002EF1BF /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		8F7E8628211A202E002EF1BF /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
-		8F7E862A211A2092002EF1BF /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		8F7E862A211A2092002EF1BF /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		8F7E862C211A2FD0002EF1BF /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 				8F7E8620211A1ED4002EF1BF /* Info.plist */,
 				8F7E8626211A1F06002EF1BF /* SearchResult.swift */,
 				8F7E8628211A202E002EF1BF /* ResultType.swift */,
-				8F7E862A211A2092002EF1BF /* SearchResultController.swift */,
+				8F7E862A211A2092002EF1BF /* SearchResultsController.swift */,
 				8F7E862C211A2FD0002EF1BF /* SearchResultsTableViewController.swift */,
 			);
 			path = "iTunes Search";
@@ -152,7 +152,7 @@
 				8F7E862D211A2FD0002EF1BF /* SearchResultsTableViewController.swift in Sources */,
 				8F7E8627211A1F06002EF1BF /* SearchResult.swift in Sources */,
 				8F7E8615211A1ED3002EF1BF /* AppDelegate.swift in Sources */,
-				8F7E862B211A2092002EF1BF /* SearchResultController.swift in Sources */,
+				8F7E862B211A2092002EF1BF /* SearchResultsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,5 +47,7 @@ class SearchResultsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    let searchResultsController = SearchResultController
 
 }

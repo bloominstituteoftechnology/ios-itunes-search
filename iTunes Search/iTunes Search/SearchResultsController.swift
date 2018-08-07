@@ -1,5 +1,5 @@
 //
-//  SearchResultController.swift
+//  SearchResultsController.swift
 //  iTunes Search
 //
 //  Created by Jeremy Taylor on 8/7/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchResultController {
+class SearchResultsController {
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
     
