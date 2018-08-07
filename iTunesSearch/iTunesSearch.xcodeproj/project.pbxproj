@@ -13,6 +13,8 @@
 		DE1AD513211A1FDF00F91E2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1AD511211A1FDF00F91E2E /* LaunchScreen.storyboard */; };
 		DE1AD51B211A22B000F91E2E /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1AD51A211A22B000F91E2E /* SearchResultsTableViewController.swift */; };
 		DE1AD51D211A283200F91E2E /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1AD51C211A283200F91E2E /* ResultType.swift */; };
+		DE1AD51F211A2B1E00F91E2E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1AD51E211A2B1E00F91E2E /* SearchResult.swift */; };
+		DE1AD521211A2C4700F91E2E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1AD520211A2C4700F91E2E /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DE1AD514211A1FDF00F91E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE1AD51A211A22B000F91E2E /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		DE1AD51C211A283200F91E2E /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		DE1AD51E211A2B1E00F91E2E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		DE1AD520211A2C4700F91E2E /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				DE1AD508211A1FDE00F91E2E /* AppDelegate.swift */,
+				DE1AD520211A2C4700F91E2E /* SearchResultController.swift */,
 				DE1AD51C211A283200F91E2E /* ResultType.swift */,
+				DE1AD51E211A2B1E00F91E2E /* SearchResult.swift */,
 				DE1AD51A211A22B000F91E2E /* SearchResultsTableViewController.swift */,
 				DE1AD50C211A1FDE00F91E2E /* Main.storyboard */,
 				DE1AD50F211A1FDF00F91E2E /* Assets.xcassets */,
@@ -140,7 +146,9 @@
 			files = (
 				DE1AD51B211A22B000F91E2E /* SearchResultsTableViewController.swift in Sources */,
 				DE1AD51D211A283200F91E2E /* ResultType.swift in Sources */,
+				DE1AD51F211A2B1E00F91E2E /* SearchResult.swift in Sources */,
 				DE1AD509211A1FDE00F91E2E /* AppDelegate.swift in Sources */,
+				DE1AD521211A2C4700F91E2E /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
