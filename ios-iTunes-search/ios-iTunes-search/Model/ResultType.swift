@@ -1,5 +1,5 @@
 //
-//  ResultsType.swift
+//  ResultType.swift
 //  ios-iTunes-search
 //
 //  Created by Lambda-School-Loaner-11 on 8/7/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ResultsType: String {
+enum ResultType: String {
     case software = "software"
     case musicTrack = "musicTrack"
     case movie = "movie"

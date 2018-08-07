@@ -13,8 +13,8 @@ struct SearchResult: Codable {
     var creator: String
 }
 
-struct SearchResults {
-    let results : [SearchResult]
+struct SearchResults: Codable {
+    let results: [SearchResult]
 }
 
 enum CodingKeys: String, CodingKey {
