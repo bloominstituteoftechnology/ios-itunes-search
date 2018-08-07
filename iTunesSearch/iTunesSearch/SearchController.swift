@@ -1,40 +1,6 @@
-//
-//  SearchResultModel.swift
-//  iTunesSearch
-//
-//  Created by William Bundy on 8/7/18.
-//  Copyright © 2018 William Bundy. All rights reserved.
-//
 
 import Foundation
-
-struct SearchResult: Codable
-{
-	var title:String
-	var creator:String
-	var currency:String
-
-	enum CodingKeys: String, CodingKey
-	{
-		case title = "trackName"
-		case creator = "artistName"
-		case currency
-	}
-}
-
-struct SearchResultList: Codable
-{
-	var results:[SearchResult]
-}
-
-enum ResultType: String
-{
-	case software
-	case music
-	case movie
-
-	static let all = [software, music, movie]
-}
+import UIKit
 
 class SearchController
 {
