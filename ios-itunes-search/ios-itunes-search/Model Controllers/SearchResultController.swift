@@ -25,8 +25,6 @@ class SearchResultController {
             return
         }
         
-        print(requestURL)
-        
         var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"
         

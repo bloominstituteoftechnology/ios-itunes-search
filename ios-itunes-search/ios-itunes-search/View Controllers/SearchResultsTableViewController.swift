@@ -20,6 +20,10 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         searchBar.delegate = self
     }
     
+    @IBAction func segmentControlChanged(_ sender: Any) {
+        searchBarSearchButtonClicked(searchBar)
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty,
             let segmentedControlChoice = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex),
