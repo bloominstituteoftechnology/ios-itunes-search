@@ -13,6 +13,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     let searchResultController = SearchResultController()
+    var resultType: ResultType!
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -23,11 +24,27 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
     {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else {return}
-        //var resultType: ResultType!
-        searchResultController.performSearch(with: searchTerm, resultType: .movie) {  (items, error) in
+        
+        if segmentedControl.selectedSegmentIndex == 0
+        {
+            resultType = .software
+        }
+        else if segmentedControl.selectedSegmentIndex == 1
+        {
+            resultType = .musicTrack
+        }
+        else if segmentedControl.selectedSegmentIndex == 2
+        {
+            resultType = .movie
+        }
+        searchResultController.performSearch(with: searchTerm, resultType: resultType) {  (items, error) in
             self.searchResultController.searchResults = self.searchResultController.searchResults
+            DispatchQueue.main.async{
+               self.tableView.reloadData()
+            }
             
         }
+        //tableView.reloadData()
     }
 
     // MARK: - Table view data source

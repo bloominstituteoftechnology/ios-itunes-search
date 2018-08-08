@@ -6,7 +6,7 @@
 //  Copyright © 2018 Carolyn Lea. All rights reserved.
 //
 
-let baseMovieURL = URL(string: "https://itunes.apple.com/search?")!
+let baseURL = URL(string: "https://itunes.apple.com/search?")!
 
 import Foundation
 
@@ -24,13 +24,26 @@ class SearchResultController
     
     func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void)
     {
-        var urlComponents = URLComponents(url: baseMovieURL, resolvingAgainstBaseURL: true)!
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         
-        let searchQueryItem = [URLQueryItem(name: "term", value: searchTerm), URLQueryItem(name: "entity", value: "movie")]
-        urlComponents.queryItems = searchQueryItem
-        
-        
-        print(searchQueryItem)
+        if resultType == .software
+        {
+            let searchQueryItem = [URLQueryItem(name: "term", value: searchTerm), URLQueryItem(name: "entity", value: "software")]
+            urlComponents.queryItems = searchQueryItem
+            print(searchQueryItem)
+        }
+        else if resultType == .musicTrack
+        {
+            let searchQueryItem = [URLQueryItem(name: "term", value: searchTerm), URLQueryItem(name: "entity", value: "musicTrack")]
+            urlComponents.queryItems = searchQueryItem
+            print(searchQueryItem)
+        }
+        else if resultType == .movie
+        {
+            let searchQueryItem = [URLQueryItem(name: "term", value: searchTerm), URLQueryItem(name: "entity", value: "movie")]
+            urlComponents.queryItems = searchQueryItem
+            print(searchQueryItem)
+        }
         
         guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing search URL for \(searchTerm)")
@@ -62,6 +75,7 @@ class SearchResultController
                 
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 let items = searchResults.results
+                self.searchResults = searchResults.results
                 completion(items, nil)
                 print(items)
             } catch {
