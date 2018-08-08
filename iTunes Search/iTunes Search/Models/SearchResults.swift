@@ -11,10 +11,12 @@ import Foundation
 struct SearchResult: Codable {
     var title: String
     var artist: String
+    var releaseDate: String
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case artist = "artistName"
+        case releaseDate = "releaseDate"
     }
 }
 
