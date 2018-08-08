@@ -18,9 +18,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var countrySegmentedControl: UISegmentedControl!
+    @IBOutlet var limitSegmentedControl: UISegmentedControl!
     
     
-    @IBAction func typeWasChanged(_ sender: Any) {
+    @IBAction func searchParametersWereChanged(_ sender: Any) {
         searchBarSearchButtonClicked(searchBar)
     }
     
@@ -57,6 +59,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         guard let searchTerm = searchBar.text, searchTerm.count > 0 else { return }
         
         var resultType: ResultType!
+        let country: String!
+        let numberOfResults: String!
         
         let index = segmentedControl.selectedSegmentIndex
         
@@ -68,7 +72,27 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             resultType = .movie
         }
         
-        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (searchResults, error) in
+        let countryIndex = countrySegmentedControl.selectedSegmentIndex
+        
+        if countryIndex == 0 {
+            country = "US"
+        } else if countryIndex == 1 {
+            country = "CA"
+        } else {
+            country = "JP"
+        }
+        
+        let limitIndex = limitSegmentedControl.selectedSegmentIndex
+        
+        if limitIndex == 0 {
+            numberOfResults = "10"
+        } else if limitIndex == 1 {
+            numberOfResults = "50"
+        } else {
+            numberOfResults = "100"
+        }
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType, country: country, limit: numberOfResults) { (searchResults, error) in
             if let error = error {
                 NSLog("Error loading search results: \(error)")
             } else {

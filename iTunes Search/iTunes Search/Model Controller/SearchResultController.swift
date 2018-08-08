@@ -21,13 +21,16 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void  ) {
+    func performSearch(with searchTerm: String, resultType: ResultType, country: String, limit: String, completion: @escaping ([SearchResult]?, Error?) -> Void  ) {
         
         // Adding query item (URLQueryItems) to requestURL using URLComponents
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let resultQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents.queryItems = [searchQueryItem, resultQueryItem]
+        let countryQueryItem = URLQueryItem(name: "country", value: country)
+        let limitQueryItem = URLQueryItem(name: "limit", value: limit)
+        
+        urlComponents.queryItems = [searchQueryItem, resultQueryItem, countryQueryItem, limitQueryItem]
         
         guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing search URL for \(searchTerm)")

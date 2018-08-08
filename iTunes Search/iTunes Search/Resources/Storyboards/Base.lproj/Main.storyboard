@@ -18,9 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="H5y-2P-56S">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-jD-3qo">
+                                    <rect key="frame" x="0.0" y="80" width="375" height="56"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4ga-ah-obw">
                                     <rect key="frame" x="8" y="8" width="359" height="29"/>
                                     <segments>
@@ -29,28 +33,54 @@
                                         <segment title="Movies"/>
                                     </segments>
                                     <connections>
-                                        <action selector="typeWasChanged:" destination="ccz-43-Pfr" eventType="valueChanged" id="53a-fi-hTS"/>
+                                        <action selector="searchParametersWereChanged:" destination="ccz-43-Pfr" eventType="valueChanged" id="MPb-jI-ZiH"/>
                                     </connections>
                                 </segmentedControl>
-                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-jD-3qo">
-                                    <rect key="frame" x="0.0" y="44" width="375" height="56"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Yv-bD-QTY">
+                                    <rect key="frame" x="8" y="44" width="359" height="28"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f8L-vb-Ukl">
+                                            <rect key="frame" x="0.0" y="0.0" width="175.5" height="29"/>
+                                            <segments>
+                                                <segment title="US"/>
+                                                <segment title="CA"/>
+                                                <segment title="JP"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="searchParametersWereChanged:" destination="ccz-43-Pfr" eventType="valueChanged" id="Cl6-cR-RoR"/>
+                                            </connections>
+                                        </segmentedControl>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-Am-9FE">
+                                            <rect key="frame" x="183.5" y="0.0" width="175.5" height="29"/>
+                                            <segments>
+                                                <segment title="10"/>
+                                                <segment title="50"/>
+                                                <segment title="100"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="searchParametersWereChanged:" destination="ccz-43-Pfr" eventType="valueChanged" id="jnM-ld-2CK"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="4ga-ah-obw" firstAttribute="leading" secondItem="H5y-2P-56S" secondAttribute="leading" constant="8" id="9s4-QM-fC5"/>
+                                <constraint firstItem="bxG-jD-3qo" firstAttribute="top" secondItem="5Yv-bD-QTY" secondAttribute="bottom" constant="8" id="EDa-df-qbt"/>
                                 <constraint firstAttribute="bottom" secondItem="bxG-jD-3qo" secondAttribute="bottom" constant="8" id="Nyb-xh-0nM"/>
                                 <constraint firstAttribute="trailing" secondItem="bxG-jD-3qo" secondAttribute="trailing" id="Pne-9U-U7R"/>
                                 <constraint firstAttribute="trailing" secondItem="4ga-ah-obw" secondAttribute="trailing" constant="8" id="Wj5-jG-o4e"/>
-                                <constraint firstItem="bxG-jD-3qo" firstAttribute="top" secondItem="4ga-ah-obw" secondAttribute="bottom" constant="8" id="o3K-ea-bxs"/>
+                                <constraint firstItem="5Yv-bD-QTY" firstAttribute="leading" secondItem="H5y-2P-56S" secondAttribute="leading" constant="8" id="oK7-EC-pja"/>
+                                <constraint firstAttribute="trailing" secondItem="5Yv-bD-QTY" secondAttribute="trailing" constant="8" id="rN2-bT-XhU"/>
                                 <constraint firstItem="bxG-jD-3qo" firstAttribute="leading" secondItem="H5y-2P-56S" secondAttribute="leading" id="tKf-68-uNg"/>
+                                <constraint firstItem="5Yv-bD-QTY" firstAttribute="top" secondItem="4ga-ah-obw" secondAttribute="bottom" constant="8" id="tRH-Dx-koL"/>
                                 <constraint firstItem="4ga-ah-obw" firstAttribute="top" secondItem="H5y-2P-56S" secondAttribute="top" constant="8" id="zjF-fu-9CX"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="Hof-Wb-lfP" detailTextLabel="sSV-OB-KdN" style="IBUITableViewCellStyleSubtitle" id="zjb-6i-m0l">
-                                <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zjb-6i-m0l" id="9WU-rA-B3K">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -81,6 +111,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="R7n-eM-NpA"/>
                     <connections>
+                        <outlet property="countrySegmentedControl" destination="f8L-vb-Ukl" id="S6Y-J9-aod"/>
+                        <outlet property="limitSegmentedControl" destination="2Ck-Am-9FE" id="gnP-SK-bxS"/>
                         <outlet property="searchBar" destination="bxG-jD-3qo" id="yN0-ad-RLk"/>
                         <outlet property="segmentedControl" destination="4ga-ah-obw" id="gCj-XV-b9p"/>
                     </connections>
