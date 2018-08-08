@@ -43,6 +43,7 @@
                                     </segments>
                                     <connections>
                                         <action selector="chooseCategory:" destination="GgS-qE-ORF" eventType="valueChanged" id="F89-J6-EbA"/>
+                                        <action selector="reloadSearch:" destination="BSY-92-5Z0" eventType="valueChanged" id="6pl-Od-KKu"/>
                                     </connections>
                                 </segmentedControl>
                             </subviews>

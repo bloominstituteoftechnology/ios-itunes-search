@@ -15,16 +15,20 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     let searchResultController = SearchResultController()
     var resultType: ResultType!
     
-    override func viewWillAppear(_ animated: Bool)
+    override func viewDidLoad()
     {
-        super.viewWillAppear(true)
-        self.tableView.reloadData()
+        super.viewDidLoad()
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
     {
-        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else {return}
-        
+        checkForSelectedIndex()
+        loadSearch()
+    }
+    
+    func checkForSelectedIndex()
+    {
         if segmentedControl.selectedSegmentIndex == 0
         {
             resultType = .software
@@ -37,16 +41,25 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         {
             resultType = .movie
         }
+    }
+    
+    func loadSearch()
+    {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else {return}
         searchResultController.performSearch(with: searchTerm, resultType: resultType) {  (items, error) in
             self.searchResultController.searchResults = self.searchResultController.searchResults
             DispatchQueue.main.async{
-               self.tableView.reloadData()
+                self.tableView.reloadData()
             }
-            
         }
-        //tableView.reloadData()
     }
-
+    
+    @IBAction func reloadSearch(_ sender: Any)
+    {
+        checkForSelectedIndex()
+        loadSearch()
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
