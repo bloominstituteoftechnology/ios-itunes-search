@@ -21,41 +21,50 @@ class SearchResultsController {
         case delete = "DELETE"
     }
     
-    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void?) {
+    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents!.queryItems = [searchQueryItem]
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         
-        guard let requestURL = urlComponents!.url else {
+        let entityQuery = URLQueryItem(name: "entity", value: resultType.rawValue)
+
+        
+        urlComponents.queryItems = [searchQueryItem, entityQuery]
+        
+        guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing URL for \(searchTerm)")
             return
         }
         
+        
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
-        
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             
             if let error = error as NSError? {
                 NSLog("Error fetching data \(error)")
-                completion(self.searchResults, error)
+                completion(NSError())
+                return
             }
-            guard let data = data else { return }
-            NSLog("Error fetching data")
-            completion(nil, NSError())
             
+            guard let data = data else {
+                completion(NSError())
+                NSLog("Error fetching data")
+                return
+            }
+    
             do {
                 let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                let search = searchResults.results
-                completion(search, nil)
+                self.searchResults = searchResults.results
+                
+                completion(nil)
             } catch {
                 NSLog("Unable to decode data")
-                completion(nil, error)
+                completion(NSError())
             }
         }
         dataTask.resume()

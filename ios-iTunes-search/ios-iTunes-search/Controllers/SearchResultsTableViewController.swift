@@ -21,17 +21,26 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
         
-        var resultType: ResultType
+        var resultType: ResultType!
         
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             resultType = .software
         case 1:
             resultType = .musicTrack
-        case 3:
+        case 2:
             resultType = .movie
         default:
             break
+        }
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (error) in
+            if let error = error {
+                NSLog("\(error)")
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
  
