@@ -17,7 +17,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let search = searchBar.text else { return }
+        guard let search = searchBar.text, search.count > 0 else { return }
         var resultType: ResultType!
         let index = segmentControl.selectedSegmentIndex
         

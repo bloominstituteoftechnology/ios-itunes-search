@@ -8,13 +8,13 @@
 
 import Foundation
 
-let baseURL = URL(string: "htts://itunes.apple.com/search/")!
+let baseURL = URL(string: "https://itunes.apple.com/search")!
 
 class SearchResultController {
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchQueryItem  = URLQueryItem(name: "search", value: searchTerm)
+        let searchQueryItem  = URLQueryItem(name: "term", value: searchTerm)
         urlComponents?.queryItems = [searchQueryItem]
         
         guard let requestURL = urlComponents?.url else { NSLog("Request URL is nil.") ; completion() ; return }
