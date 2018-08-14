@@ -18,6 +18,6 @@ enum CodingKeys: String, CodingKey {
     case creator = "artistName"
 }
 
-struct SearchResults {
+struct SearchResults: Codable {
     let results: [SearchResult]
 }
