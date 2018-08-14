@@ -92,4 +92,7 @@ class SearchResultsTableViewController: UITableViewController {
     }
     */
 
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
 }
