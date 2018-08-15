@@ -30,7 +30,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         }
         
         
-        searchResultController.performSearch(searchTerm: search, resultType: resultType) {
+        searchResultController.performSearch(searchTerm: search, resultType: resultType) {_ in 
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
