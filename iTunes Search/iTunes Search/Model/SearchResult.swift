@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Struct for holding individual search results
 struct SearchResult: Codable {
     let title: String
     let creator: String
@@ -18,6 +19,7 @@ struct SearchResult: Codable {
     }
 }
 
+// Struct for holding the top level of the JSON results
 struct SearchResults: Codable {
     let results: [SearchResult]
 }

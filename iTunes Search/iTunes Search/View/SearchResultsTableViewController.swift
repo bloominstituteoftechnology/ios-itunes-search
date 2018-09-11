@@ -13,17 +13,44 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     // MARK: - Properties
     let searchResultController = SearchResultController()
     
+    private var resultType: ResultType {
+        let segment = resultTypeSegmentedControl.selectedSegmentIndex
+        if segment == 0 {
+            return .software
+        } else if segment == 1 {
+            return .musicTrack
+        } else {
+            return .movie
+        }
+    }
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
     
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         searchBar.delegate = self
     }
-
-    // MARK: - Table view data source
-
+    
+    // MARK: - UI Methods
+    @IBAction func changeResultType(_ sender: Any) {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+            if let error = error {
+                NSLog("Error performing search: \(error)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultController.searchResults.count
     }
@@ -43,15 +70,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
-        let segment = resultTypeSegmentedControl.selectedSegmentIndex
-        let resultType: ResultType
-        if segment == 0 {
-            resultType = .software
-        } else if segment == 1 {
-            resultType = .musicTrack
-        } else {
-            resultType = .movie
-        }
         
         searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
             if let error = error {

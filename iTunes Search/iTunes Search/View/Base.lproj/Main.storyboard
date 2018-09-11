@@ -35,6 +35,9 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="changeResultType:" destination="yPp-8Y-bac" eventType="valueChanged" id="5ft-hu-AnE"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
