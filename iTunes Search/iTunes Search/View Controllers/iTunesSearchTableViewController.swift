@@ -24,6 +24,8 @@ class iTunesSearchTableViewController: UITableViewController, UISearchBarDelegat
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
@@ -35,9 +37,11 @@ class iTunesSearchTableViewController: UITableViewController, UISearchBarDelegat
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) { view.endEditing(true) }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        view.endEditing(true)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { view.endEditing(true) }
+    
+    @IBAction func filterResults(_ sender: Any) {
     }
+    
     
     
     @IBOutlet weak var searchBar: UISearchBar!
