@@ -15,6 +15,8 @@
 		7BCB6F57214855A000956CA2 /* iTunes_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F56214855A000956CA2 /* iTunes_SearchTests.swift */; };
 		7BCB6F62214855A000956CA2 /* iTunes_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F61214855A000956CA2 /* iTunes_SearchUITests.swift */; };
 		7BCB6F7021485D4100956CA2 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F6F21485D4100956CA2 /* SearchResult.swift */; };
+		7BCB6F72214861EC00956CA2 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F71214861EC00956CA2 /* ResultType.swift */; };
+		7BCB6F74214862EB00956CA2 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F73214862EB00956CA2 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		7BCB6F61214855A000956CA2 /* iTunes_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunes_SearchUITests.swift; sourceTree = "<group>"; };
 		7BCB6F63214855A000956CA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BCB6F6F21485D4100956CA2 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		7BCB6F71214861EC00956CA2 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		7BCB6F73214862EB00956CA2 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				7BCB6F432148559F00956CA2 /* ViewController.swift */,
 				7BCB6F452148559F00956CA2 /* Main.storyboard */,
 				7BCB6F6F21485D4100956CA2 /* SearchResult.swift */,
+				7BCB6F71214861EC00956CA2 /* ResultType.swift */,
+				7BCB6F73214862EB00956CA2 /* SearchResultController.swift */,
 				7BCB6F48214855A000956CA2 /* Assets.xcassets */,
 				7BCB6F4A214855A000956CA2 /* LaunchScreen.storyboard */,
 				7BCB6F4D214855A000956CA2 /* Info.plist */,
@@ -259,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BCB6F72214861EC00956CA2 /* ResultType.swift in Sources */,
 				7BCB6F442148559F00956CA2 /* ViewController.swift in Sources */,
 				7BCB6F7021485D4100956CA2 /* SearchResult.swift in Sources */,
 				7BCB6F422148559F00956CA2 /* AppDelegate.swift in Sources */,
+				7BCB6F74214862EB00956CA2 /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
