@@ -9,13 +9,16 @@
 import Foundation
 
 // Struct for holding individual search results
-struct SearchResult: Codable {
+struct SearchResult: Codable, Equatable {
     let title: String
     let creator: String
+    let imageURL: String
+    var imageData: Data? = nil
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case creator = "artistName"
+        case imageURL = "artworkUrl60"
     }
 }
 

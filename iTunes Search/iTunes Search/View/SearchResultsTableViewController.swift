@@ -27,7 +27,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
     
-    // MARK: - Lifecycle Functions
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,18 +36,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     // MARK: - UI Methods
     @IBAction func changeResultType(_ sender: Any) {
-        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
-        
-        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
-            if let error = error {
-                NSLog("Error performing search: \(error)")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        performSearch()
     }
     
     // MARK: - Table View Data Source
@@ -62,6 +51,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
+        if let imageData = searchResult.imageData {
+            cell.imageView?.image = UIImage(data: imageData)
+        }
         
         return cell
     }
@@ -69,8 +61,16 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     // MARK: - UI Search Bar Delegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+
+        performSearch()
+    }
+    
+    // MARK: - Private Utility Methods
+    private func performSearch() {
+        // Make sure there is a search term
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
         
+        // If so have the search result controller perform a search
         searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
             if let error = error {
                 NSLog("Error performing search: \(error)")
@@ -79,6 +79,19 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+            }
+            
+            // Have the search result controller load the image on each result
+            for result in self.searchResultController.searchResults {
+                self.searchResultController.loadImage(result, completion: { (error) in
+                    if let error = error {
+                        NSLog("Error loading image: \(error)")
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                })
             }
         }
     }

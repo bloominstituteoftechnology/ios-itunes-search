@@ -14,6 +14,12 @@ class SearchResultController {
     // Holds all of our model objects
     private(set) var searchResults: [SearchResult] = []
     
+    private func addImageData(to searchResult: SearchResult, imageData: Data) {
+        guard let index = searchResults.index(of: searchResult) else { return }
+        
+        searchResults[index].imageData = imageData
+    }
+    
     /// Performs a search call to the iTunes API with the given term and result type.
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         // Reset the results
@@ -76,4 +82,24 @@ class SearchResultController {
             
         }.resume() // **ALWAYS** make sure to resume. Otherwise you get bugs that are hard to track down and you're very confused for long time.
     }
+    
+    /// Loads an image from a remote URL and loads it to the search results' image data property
+    func loadImage(_ searchResult: SearchResult, completion: @escaping (Error?) -> Void) {
+        guard let url = URL(string: searchResult.imageURL) else { return }
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
+            
+            self.addImageData(to: searchResult, imageData: data)
+            completion(nil)
+        }.resume()
+    }
+    
 }
