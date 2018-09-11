@@ -15,6 +15,7 @@
 		A101115E214854E800CA7D74 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101115D214854E800CA7D74 /* SearchResults.swift */; };
 		A101116021486E0800CA7D74 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101115F21486E0800CA7D74 /* ResultType.swift */; };
 		A101116221486E5D00CA7D74 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101116121486E5D00CA7D74 /* SearchResultsController.swift */; };
+		A1011164214877C400CA7D74 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1011163214877C400CA7D74 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A101115D214854E800CA7D74 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		A101115F21486E0800CA7D74 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		A101116121486E5D00CA7D74 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		A1011163214877C400CA7D74 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				A101115D214854E800CA7D74 /* SearchResults.swift */,
 				A101115F21486E0800CA7D74 /* ResultType.swift */,
 				A101116121486E5D00CA7D74 /* SearchResultsController.swift */,
+				A1011163214877C400CA7D74 /* HTTPMethod.swift */,
 				A101114F214852B100CA7D74 /* Main.storyboard */,
 				A1011152214852B200CA7D74 /* Assets.xcassets */,
 				A1011154214852B200CA7D74 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			files = (
 				A101116021486E0800CA7D74 /* ResultType.swift in Sources */,
 				A101114E214852B100CA7D74 /* ViewController.swift in Sources */,
+				A1011164214877C400CA7D74 /* HTTPMethod.swift in Sources */,
 				A101115E214854E800CA7D74 /* SearchResults.swift in Sources */,
 				A101116221486E5D00CA7D74 /* SearchResultsController.swift in Sources */,
 				A101114C214852B100CA7D74 /* AppDelegate.swift in Sources */,
