@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A101114C214852B100CA7D74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101114B214852B100CA7D74 /* AppDelegate.swift */; };
-		A101114E214852B100CA7D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101114D214852B100CA7D74 /* ViewController.swift */; };
 		A1011151214852B100CA7D74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A101114F214852B100CA7D74 /* Main.storyboard */; };
 		A1011153214852B200CA7D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1011152214852B200CA7D74 /* Assets.xcassets */; };
 		A1011156214852B200CA7D74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1011154214852B200CA7D74 /* LaunchScreen.storyboard */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		A1011148214852B100CA7D74 /* ios itunes search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios itunes search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A101114B214852B100CA7D74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A101114D214852B100CA7D74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1011150214852B100CA7D74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1011152214852B200CA7D74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1011155214852B200CA7D74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				A101114B214852B100CA7D74 /* AppDelegate.swift */,
-				A101114D214852B100CA7D74 /* ViewController.swift */,
 				A101115D214854E800CA7D74 /* SearchResults.swift */,
 				A101115F21486E0800CA7D74 /* ResultType.swift */,
 				A101116121486E5D00CA7D74 /* SearchResultsController.swift */,
@@ -151,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A101116021486E0800CA7D74 /* ResultType.swift in Sources */,
-				A101114E214852B100CA7D74 /* ViewController.swift in Sources */,
 				A1011164214877C400CA7D74 /* HTTPMethod.swift in Sources */,
 				A101115E214854E800CA7D74 /* SearchResults.swift in Sources */,
 				A101116221486E5D00CA7D74 /* SearchResultsController.swift in Sources */,

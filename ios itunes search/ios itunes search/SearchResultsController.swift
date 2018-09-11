@@ -37,7 +37,6 @@ class SearchResultsController {
                 completion(error)
                 return
             }
-            //Turn the data into [Person]
             guard let data = data else {
                 NSLog("No data returned from data task")
                 completion(NSError())
@@ -57,10 +56,6 @@ class SearchResultsController {
             }
         }.resume()
     }
-    
-    
-    
-    
     
     let baseURL = URL(string: "https://itunes.apple.com/")!
     var searchResults: [SearchResult] = []
