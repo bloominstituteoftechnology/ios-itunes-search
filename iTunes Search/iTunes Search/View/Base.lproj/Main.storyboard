@@ -6,9 +6,71 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="HcJ-Ek-L4z">
+            <objects>
+                <viewController title="Settings" id="xba-af-LrQ" customClass="SettingsViewController" customModule="iTunes_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DMU-iM-GBh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="atR-9O-Rze">
+                                <rect key="frame" x="24" y="80" width="327" height="135"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3M-3b-vmh">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="1" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="wD6-5X-j9E">
+                                        <rect key="frame" x="-2" y="32.5" width="331" height="31"/>
+                                        <connections>
+                                            <action selector="changeNumber:" destination="xba-af-LrQ" eventType="valueChanged" id="u7w-2C-Hux"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country To Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvn-ad-m2e">
+                                        <rect key="frame" x="0.0" y="74.5" width="327" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tbf-UH-spu">
+                                        <rect key="frame" x="0.0" y="107" width="327" height="29"/>
+                                        <segments>
+                                            <segment title="United States"/>
+                                            <segment title="Great Britain"/>
+                                            <segment title="Japan"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeCountry:" destination="xba-af-LrQ" eventType="valueChanged" id="ipH-uE-md1"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="atR-9O-Rze" firstAttribute="leading" secondItem="DMU-iM-GBh" secondAttribute="leading" constant="24" id="CkL-tO-Ofc"/>
+                            <constraint firstItem="atR-9O-Rze" firstAttribute="top" secondItem="LbB-iE-CKk" secondAttribute="top" constant="16" id="K4d-8I-D9v"/>
+                            <constraint firstAttribute="trailing" secondItem="atR-9O-Rze" secondAttribute="trailing" constant="24" id="nbE-d4-x8n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LbB-iE-CKk"/>
+                    </view>
+                    <connections>
+                        <outlet property="countryCodeSegmentedControl" destination="Tbf-UH-spu" id="Lan-Ga-1zx"/>
+                        <outlet property="numberOfResultsSlider" destination="wD6-5X-j9E" id="kpw-p0-W8P"/>
+                        <outlet property="numberOfResultsToDisplayLabel" destination="b3M-3b-vmh" id="ZgM-9M-zuz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QHl-OU-tDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="365.60000000000002" y="-505.09745127436287"/>
+        </scene>
         <!--iTunes Search-->
         <scene sceneID="roT-ta-kme">
             <objects>
@@ -81,7 +143,13 @@
                             <outlet property="delegate" destination="yPp-8Y-bac" id="IvS-4X-i60"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="iTunes Search" id="DNs-EI-o7g"/>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="DNs-EI-o7g">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="O69-Ip-jw9">
+                            <connections>
+                                <segue destination="xba-af-LrQ" kind="show" id="cbj-vm-o1N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="resultTypeSegmentedControl" destination="HY1-BK-3XE" id="lkx-Sl-Ar5"/>
                         <outlet property="searchBar" destination="Tej-cd-b0h" id="2Ns-Zo-FdC"/>

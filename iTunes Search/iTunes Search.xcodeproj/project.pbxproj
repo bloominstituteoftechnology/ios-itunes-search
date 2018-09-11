@@ -15,6 +15,9 @@
 		34AFA1F92148513B00663939 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFA1F82148513B00663939 /* ResultType.swift */; };
 		34AFA1FB2148519600663939 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFA1FA2148519600663939 /* SearchResultController.swift */; };
 		34AFA1FD2148575B00663939 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFA1FC2148575B00663939 /* SearchResultsTableViewController.swift */; };
+		34AFA2002148650400663939 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFA1FF2148650400663939 /* SettingsViewController.swift */; };
+		34AFA20221486BE000663939 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFA20121486BE000663939 /* CountryCode.swift */; };
+		34AFA20421486DCA00663939 /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFA20321486DCA00663939 /* SettingsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		34AFA1F82148513B00663939 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		34AFA1FA2148519600663939 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		34AFA1FC2148575B00663939 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		34AFA1FF2148650400663939 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		34AFA20121486BE000663939 /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
+		34AFA20321486DCA00663939 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 			children = (
 				34AFA1F52148504000663939 /* SearchResult.swift */,
 				34AFA1F82148513B00663939 /* ResultType.swift */,
+				34AFA20121486BE000663939 /* CountryCode.swift */,
+				34AFA20321486DCA00663939 /* SettingsKeys.swift */,
 				34AFA1FA2148519600663939 /* SearchResultController.swift */,
 			);
 			path = Model;
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				34AFA1E721484DCC00663939 /* Main.storyboard */,
+				34AFA1FF2148650400663939 /* SettingsViewController.swift */,
 				34AFA1FC2148575B00663939 /* SearchResultsTableViewController.swift */,
 			);
 			path = View;
@@ -161,10 +170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				34AFA1FB2148519600663939 /* SearchResultController.swift in Sources */,
+				34AFA20221486BE000663939 /* CountryCode.swift in Sources */,
+				34AFA20421486DCA00663939 /* SettingsKeys.swift in Sources */,
 				34AFA1F62148504000663939 /* SearchResult.swift in Sources */,
 				34AFA1FD2148575B00663939 /* SearchResultsTableViewController.swift in Sources */,
 				34AFA1F92148513B00663939 /* ResultType.swift in Sources */,
 				34AFA1E421484DCC00663939 /* AppDelegate.swift in Sources */,
+				34AFA2002148650400663939 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

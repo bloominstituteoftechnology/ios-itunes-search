@@ -19,15 +19,21 @@ class SearchResultController {
         // Reset the results
         searchResults = []
         
+        // Get the settings
+        let limit = UserDefaults.standard.string(forKey: SettingsKeys.numberOfResultsKey.rawValue) ?? "25"
+        let countryCode = UserDefaults.standard.string(forKey: SettingsKeys.countryCodeKey.rawValue) ?? "US"
+        
         // Make compnents
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         // Make query objects
         let searchTermQuery = URLQueryItem(name: "term", value: searchTerm)
         let resultTypeQuery = URLQueryItem(name: "entity", value: resultType.rawValue)
+        let countQuery = URLQueryItem(name: "limit", value: limit)
+        let countryQuery = URLQueryItem(name: "country", value: countryCode)
         
         // Set the query objects
-        components?.queryItems = [searchTermQuery, resultTypeQuery]
+        components?.queryItems = [searchTermQuery, resultTypeQuery, countQuery, countryQuery]
         
         // Make sure we can make a valid url
         guard let requestURL = components?.url else {
