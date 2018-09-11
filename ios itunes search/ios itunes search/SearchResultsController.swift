@@ -19,7 +19,8 @@ class SearchResultsController {
         let searchUrl = baseURL.appendingPathComponent("search")
         var components = URLComponents(url: searchUrl, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        components?.queryItems = [searchQueryItem]
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        components?.queryItems = [searchQueryItem, resultTypeQueryItem]
         
         guard let requestURL = components?.url else {
             NSLog("requestURL is nil")
