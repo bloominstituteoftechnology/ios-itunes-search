@@ -48,6 +48,7 @@ class SearchResultsController {
             do {
                 let termSearch = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = termSearch.results
+                completion(NSError())
             } catch {
                 NSLog("Unable to decode data: \(error)")
                 completion(NSError())

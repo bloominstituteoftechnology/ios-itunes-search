@@ -16,6 +16,7 @@
 		A101116021486E0800CA7D74 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101115F21486E0800CA7D74 /* ResultType.swift */; };
 		A101116221486E5D00CA7D74 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101116121486E5D00CA7D74 /* SearchResultsController.swift */; };
 		A1011164214877C400CA7D74 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1011163214877C400CA7D74 /* HTTPMethod.swift */; };
+		A101116621487DDB00CA7D74 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101116521487DDB00CA7D74 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A101115F21486E0800CA7D74 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		A101116121486E5D00CA7D74 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		A1011163214877C400CA7D74 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		A101116521487DDB00CA7D74 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A101116121486E5D00CA7D74 /* SearchResultsController.swift */,
 				A1011163214877C400CA7D74 /* HTTPMethod.swift */,
 				A101114F214852B100CA7D74 /* Main.storyboard */,
+				A101116521487DDB00CA7D74 /* SearchResultsTableViewController.swift */,
 				A1011152214852B200CA7D74 /* Assets.xcassets */,
 				A1011154214852B200CA7D74 /* LaunchScreen.storyboard */,
 				A1011157214852B200CA7D74 /* Info.plist */,
@@ -152,6 +155,7 @@
 				A1011164214877C400CA7D74 /* HTTPMethod.swift in Sources */,
 				A101115E214854E800CA7D74 /* SearchResults.swift in Sources */,
 				A101116221486E5D00CA7D74 /* SearchResultsController.swift in Sources */,
+				A101116621487DDB00CA7D74 /* SearchResultsTableViewController.swift in Sources */,
 				A101114C214852B100CA7D74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
