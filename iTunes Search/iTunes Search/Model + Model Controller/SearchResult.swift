@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-protocol Searchable {}
+protocol Searchable { var results: [SearchableResults] { get set }}
+protocol SearchableResults: Codable {}
 
 enum CodingKeys: String, CodingKey {
     case songTitle, movieTitle, appName = "trackName"
@@ -22,11 +23,11 @@ enum CodingKeys: String, CodingKey {
 }
 
 // MARK:- App
-struct AppSearchResults: Codable, Searchable {
-    let results: [App]
+struct AppSearchResults: Codable {
+    var results: [App]
 }
 
-struct App: Codable {
+struct App: Codable, SearchableResults {
     let appName: String
     let developer: String
     let category: String
@@ -36,11 +37,11 @@ struct App: Codable {
 }
 
 // MARK:- Movie
-struct MovieSearchResults: Codable, Searchable {
-    let results: [Movie]
+struct MovieSearchResults: Codable {
+    var results: [Movie]
 }
 
-struct Movie: Codable {
+struct Movie: Codable, SearchableResults {
     let movieTitle: String
     let director: String
     let moviePosterUrl: String
@@ -50,11 +51,11 @@ struct Movie: Codable {
 }
 
 // MARK:- Music
-struct MusicSearchResults: Codable, Searchable {
-    let results: [Music]
+struct MusicSearchResults: Codable {
+    var results: [Music]
 }
 
-struct Music: Codable {
+struct Music: Codable, SearchableResults {
     let songTitle: String
     let artist: String
     let albumArtworkUrl: String
