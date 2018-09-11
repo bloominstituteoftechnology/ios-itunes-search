@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!-- iTunes Search-->
+        <!--Search-->
         <scene sceneID="XCB-0M-bpN">
             <objects>
                 <tableViewController id="NAw-ou-A9q" customClass="iTunesSearchTableViewController" customModule="iTunes_Search" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="NAw-ou-A9q" id="fYi-6D-Hm2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title=" iTunes Search" id="K3t-Hh-Mi8">
+                    <navigationItem key="navigationItem" title="Search" id="K3t-Hh-Mi8">
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="tpy-0y-slD">
                             <connections>
                                 <action selector="filterResults:" destination="NAw-ou-A9q" id="CZW-dd-uVo"/>
