@@ -17,6 +17,7 @@
 		7BCB6F7021485D4100956CA2 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F6F21485D4100956CA2 /* SearchResult.swift */; };
 		7BCB6F72214861EC00956CA2 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F71214861EC00956CA2 /* ResultType.swift */; };
 		7BCB6F74214862EB00956CA2 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F73214862EB00956CA2 /* SearchResultController.swift */; };
+		7BCB6F76214873CA00956CA2 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB6F75214873CA00956CA2 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7BCB6F6F21485D4100956CA2 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		7BCB6F71214861EC00956CA2 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		7BCB6F73214862EB00956CA2 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		7BCB6F75214873CA00956CA2 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				7BCB6F412148559F00956CA2 /* AppDelegate.swift */,
 				7BCB6F432148559F00956CA2 /* ViewController.swift */,
 				7BCB6F452148559F00956CA2 /* Main.storyboard */,
+				7BCB6F75214873CA00956CA2 /* SearchResultsTableViewController.swift */,
 				7BCB6F6F21485D4100956CA2 /* SearchResult.swift */,
 				7BCB6F71214861EC00956CA2 /* ResultType.swift */,
 				7BCB6F73214862EB00956CA2 /* SearchResultController.swift */,
@@ -267,6 +270,7 @@
 			files = (
 				7BCB6F72214861EC00956CA2 /* ResultType.swift in Sources */,
 				7BCB6F442148559F00956CA2 /* ViewController.swift in Sources */,
+				7BCB6F76214873CA00956CA2 /* SearchResultsTableViewController.swift in Sources */,
 				7BCB6F7021485D4100956CA2 /* SearchResult.swift in Sources */,
 				7BCB6F422148559F00956CA2 /* AppDelegate.swift in Sources */,
 				7BCB6F74214862EB00956CA2 /* SearchResultController.swift in Sources */,
