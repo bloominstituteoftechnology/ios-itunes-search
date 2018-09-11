@@ -12,7 +12,7 @@ class SearchResultController {
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
     private(set) var searchResults: [SearchResult] = []
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let searchTermQuery = URLQueryItem(name: "term", value: searchTerm)
@@ -45,7 +45,7 @@ class SearchResultController {
             
             do {
                 let results = try jsonDecoder.decode(SearchResults.self, from: data)
-                searchResults = results.results
+                self.searchResults = results.results
                 completion(nil)
                 
             } catch {
