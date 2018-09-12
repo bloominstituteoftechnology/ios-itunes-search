@@ -19,7 +19,9 @@ class SearchResultController{
         var components = URLComponents(url: searchURL!, resolvingAgainstBaseURL: true)
         
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        components?.queryItems = [searchTermQueryItem]
+        let entityTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        components?.queryItems = [searchTermQueryItem, entityTermQueryItem]
+        
         
         guard let requestURL = components?.url else {
             NSLog("error in generating URL")

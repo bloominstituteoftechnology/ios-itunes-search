@@ -62,18 +62,42 @@
 		D84318A221487104003407F2 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				D84318BD21487F27003407F2 /* HTTPMethod.swift */,
-				D84318B7214873AF003407F2 /* ResultType.swift */,
-				D84318B9214874A7003407F2 /* SearchResultController.swift */,
-				D84318B5214871B1003407F2 /* SearchResult.swift */,
+				D84318C12148C118003407F2 /* Helpers */,
+				D84318C22148C128003407F2 /* Model */,
 				D84318A321487104003407F2 /* AppDelegate.swift */,
 				D84318A721487104003407F2 /* Main.storyboard */,
-				D84318BF21489B5B003407F2 /* SearchResultsTableViewController.swift */,
+				D84318C32148C137003407F2 /* View Controllers */,
 				D84318AA21487105003407F2 /* Assets.xcassets */,
 				D84318AC21487105003407F2 /* LaunchScreen.storyboard */,
 				D84318AF21487105003407F2 /* Info.plist */,
 			);
 			path = iTunesSearch;
+			sourceTree = "<group>";
+		};
+		D84318C12148C118003407F2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D84318BD21487F27003407F2 /* HTTPMethod.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D84318C22148C128003407F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D84318B7214873AF003407F2 /* ResultType.swift */,
+				D84318B9214874A7003407F2 /* SearchResultController.swift */,
+				D84318B5214871B1003407F2 /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D84318C32148C137003407F2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D84318BF21489B5B003407F2 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +323,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AL899TPVP;
 				INFOPLIST_FILE = iTunesSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AL899TPVP;
 				INFOPLIST_FILE = iTunesSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
