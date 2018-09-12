@@ -10,13 +10,15 @@ import Foundation
 
 class SearchResultController {
     
-    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func performSearch(with searchTerm: String, resultType: ResultType, searchCountry: SearchCountry = .USA, completion: @escaping (Error?) -> Void) {
         
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let searchCountryQueryItem = URLQueryItem(name: "country", value: searchCountry.rawValue)
         let mediaTypeQueryItem = URLQueryItem(name: "media", value: resultType.rawValue)
+        let limitTypeQueryItem = URLQueryItem(name: "limit", value: String(10))
         
-        components?.queryItems = [searchTermQueryItem, mediaTypeQueryItem]
+        components?.queryItems = [searchTermQueryItem, searchCountryQueryItem, mediaTypeQueryItem, limitTypeQueryItem]
         
         guard let requestURL = components?.url else {
             NSLog("requestURL is nil")
@@ -41,21 +43,22 @@ class SearchResultController {
             }
             
             let jsonDecoder = JSONDecoder()
-            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
                 switch resultType {
                 case .software:
-                    let search = try jsonDecoder.decode(AppSearchResults.self, from: data)
+                    let search = try jsonDecoder.decode(SearchResults.self, from: data)
                     self.searchResults = search.results
-                case .musicTrack:
-                    let search = try jsonDecoder.decode(MusicSearchResults.self, from: data)
+                    completion(nil)
+                case .music:
+                    let search = try jsonDecoder.decode(SearchResults.self, from: data)
                     self.searchResults = search.results
+                    completion(nil)
                 case .movie:
-                    let search = try jsonDecoder.decode(MovieSearchResults.self, from: data)
+                    let search = try jsonDecoder.decode(SearchResults.self, from: data)
                     self.searchResults = search.results
+                    completion(nil)
                 }
-                
             } catch {
                 NSLog("Unable to decode data: \(error)")
                 completion(error)
@@ -65,6 +68,6 @@ class SearchResultController {
         }.resume()
     }
     
-    var searchResults: [SearchableResults] = []
+    var searchResults: [SearchResult]? = []
     var baseURL = URL(string: "https://itunes.apple.com/search")!
 }

@@ -10,6 +10,14 @@ import Foundation
 
 enum ResultType: String {
     case software
-    case musicTrack
+    case music
     case movie
+}
+
+enum SearchCountry: String {
+    case USA = "us"
+    case Canada = "ca"
+    case Mexico = "mx"
+    case Australia = "au"
+    case Netherlands = "nl"
 }

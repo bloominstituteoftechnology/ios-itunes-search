@@ -11,12 +11,12 @@
 		96B0E9492148522A008A3F01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B0E9472148522A008A3F01 /* Main.storyboard */; };
 		96B0E94B2148522B008A3F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B0E94A2148522B008A3F01 /* Assets.xcassets */; };
 		96B0E94E2148522B008A3F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B0E94C2148522B008A3F01 /* LaunchScreen.storyboard */; };
-		96B0E95621485282008A3F01 /* iTunesSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E95521485282008A3F01 /* iTunesSearchTableViewController.swift */; };
+		96B0E95621485282008A3F01 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E95521485282008A3F01 /* SearchResultsTableViewController.swift */; };
 		96B0E95A21485756008A3F01 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E95921485756008A3F01 /* Helpers.swift */; };
-		96B0E95C21485B41008A3F01 /* SearchResultsTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E95B21485B41008A3F01 /* SearchResultsTableViewCells.swift */; };
+		96B0E95C21485B41008A3F01 /* ResultsTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E95B21485B41008A3F01 /* ResultsTableViewCells.swift */; };
 		96B0E95E21485F5D008A3F01 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E95D21485F5D008A3F01 /* SearchResult.swift */; };
 		96B0E961214864C5008A3F01 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E960214864C5008A3F01 /* SearchResultController.swift */; };
-		96B0E963214868F5008A3F01 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E962214868F5008A3F01 /* ResultType.swift */; };
+		96B0E963214868F5008A3F01 /* ResultType+SearchCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0E962214868F5008A3F01 /* ResultType+SearchCountry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +26,12 @@
 		96B0E94A2148522B008A3F01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96B0E94D2148522B008A3F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96B0E94F2148522B008A3F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96B0E95521485282008A3F01 /* iTunesSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchTableViewController.swift; sourceTree = "<group>"; };
+		96B0E95521485282008A3F01 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		96B0E95921485756008A3F01 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		96B0E95B21485B41008A3F01 /* SearchResultsTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCells.swift; sourceTree = "<group>"; };
+		96B0E95B21485B41008A3F01 /* ResultsTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCells.swift; sourceTree = "<group>"; };
 		96B0E95D21485F5D008A3F01 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		96B0E960214864C5008A3F01 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
-		96B0E962214868F5008A3F01 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		96B0E962214868F5008A3F01 /* ResultType+SearchCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultType+SearchCountry.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 		96B0E95821485294008A3F01 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				96B0E95521485282008A3F01 /* iTunesSearchTableViewController.swift */,
-				96B0E95B21485B41008A3F01 /* SearchResultsTableViewCells.swift */,
+				96B0E95521485282008A3F01 /* SearchResultsTableViewController.swift */,
+				96B0E95B21485B41008A3F01 /* ResultsTableViewCells.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				96B0E95D21485F5D008A3F01 /* SearchResult.swift */,
-				96B0E962214868F5008A3F01 /* ResultType.swift */,
+				96B0E962214868F5008A3F01 /* ResultType+SearchCountry.swift */,
 				96B0E960214864C5008A3F01 /* SearchResultController.swift */,
 			);
 			path = "Model + Model Controller";
@@ -174,12 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B0E963214868F5008A3F01 /* ResultType.swift in Sources */,
+				96B0E963214868F5008A3F01 /* ResultType+SearchCountry.swift in Sources */,
 				96B0E961214864C5008A3F01 /* SearchResultController.swift in Sources */,
 				96B0E9442148522A008A3F01 /* AppDelegate.swift in Sources */,
-				96B0E95621485282008A3F01 /* iTunesSearchTableViewController.swift in Sources */,
+				96B0E95621485282008A3F01 /* SearchResultsTableViewController.swift in Sources */,
 				96B0E95E21485F5D008A3F01 /* SearchResult.swift in Sources */,
-				96B0E95C21485B41008A3F01 /* SearchResultsTableViewCells.swift in Sources */,
+				96B0E95C21485B41008A3F01 /* ResultsTableViewCells.swift in Sources */,
 				96B0E95A21485756008A3F01 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jasonmodisett.iTunes-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,7 +356,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jasonmodisett.iTunes-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
