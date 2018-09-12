@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D84318A421487104003407F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84318A321487104003407F2 /* AppDelegate.swift */; };
-		D84318A621487104003407F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84318A521487104003407F2 /* ViewController.swift */; };
 		D84318A921487104003407F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84318A721487104003407F2 /* Main.storyboard */; };
 		D84318AB21487105003407F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84318AA21487105003407F2 /* Assets.xcassets */; };
 		D84318AE21487105003407F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84318AC21487105003407F2 /* LaunchScreen.storyboard */; };
@@ -16,12 +15,12 @@
 		D84318B8214873AF003407F2 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84318B7214873AF003407F2 /* ResultType.swift */; };
 		D84318BA214874A7003407F2 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84318B9214874A7003407F2 /* SearchResultController.swift */; };
 		D84318BE21487F28003407F2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84318BD21487F27003407F2 /* HTTPMethod.swift */; };
+		D84318C021489B5B003407F2 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84318BF21489B5B003407F2 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D84318A021487104003407F2 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84318A321487104003407F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D84318A521487104003407F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D84318A821487104003407F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D84318AA21487105003407F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D84318AD21487105003407F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		D84318B7214873AF003407F2 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		D84318B9214874A7003407F2 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		D84318BD21487F27003407F2 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		D84318BF21489B5B003407F2 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +67,8 @@
 				D84318B9214874A7003407F2 /* SearchResultController.swift */,
 				D84318B5214871B1003407F2 /* SearchResult.swift */,
 				D84318A321487104003407F2 /* AppDelegate.swift */,
-				D84318A521487104003407F2 /* ViewController.swift */,
 				D84318A721487104003407F2 /* Main.storyboard */,
+				D84318BF21489B5B003407F2 /* SearchResultsTableViewController.swift */,
 				D84318AA21487105003407F2 /* Assets.xcassets */,
 				D84318AC21487105003407F2 /* LaunchScreen.storyboard */,
 				D84318AF21487105003407F2 /* Info.plist */,
@@ -148,8 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84318B8214873AF003407F2 /* ResultType.swift in Sources */,
-				D84318A621487104003407F2 /* ViewController.swift in Sources */,
 				D84318BE21487F28003407F2 /* HTTPMethod.swift in Sources */,
+				D84318C021489B5B003407F2 /* SearchResultsTableViewController.swift in Sources */,
 				D84318B6214871B1003407F2 /* SearchResult.swift in Sources */,
 				D84318A421487104003407F2 /* AppDelegate.swift in Sources */,
 				D84318BA214874A7003407F2 /* SearchResultController.swift in Sources */,
