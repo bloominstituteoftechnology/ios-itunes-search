@@ -21,20 +21,21 @@ class SearchResultController {
     
     // MARK: - Properties
     
-    private let baseURL = URL(string: "https://itunes.apple.com/")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
     
     // MARK: - Fetching data
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         var urlComponent = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let termQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let entityQueryitem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        urlComponent.queryItems = [searchQueryItem]
+        urlComponent.queryItems = [termQueryItem, entityQueryitem]
         
         guard let requestURL = urlComponent.url else {
             NSLog("Search url is invalid: \(urlComponent)")
-            completion(nil, NSError())
+            completion()
             return
         }
         
@@ -44,13 +45,13 @@ class SearchResultController {
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching data: \(error)")
-                completion(nil, error)
+                completion()
                 return
             }
             
             guard let data = data else {
-                NSLog("Error. No data returned: \(NSError())")
-                completion(nil, error)
+                NSLog("Error. No data returned.)")
+                completion()
                 return
             }
             
@@ -58,11 +59,11 @@ class SearchResultController {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                let results = searchResults.results
-                completion(results, nil)
+                self.searchResults = searchResults.results
+                completion()
             } catch {
                 NSLog("Error decoding data: \(error)")
-                completion(nil, error)
+                completion()
             }
         }
         dataTask.resume()

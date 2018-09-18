@@ -24,7 +24,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     // MARK: - Table view data source
@@ -46,43 +45,25 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     // MARK: - Search bar
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         guard let searchTerm = itunesSearchBar.text, !searchTerm.isEmpty else { return }
         
-        if appMusicMovie.selectedSegmentIndex == 0 {
-            
-            resultType = ResultType.software
-            
-            searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { (result, error) in
-                if let error = error {
-                    NSLog("Error getting search results for \(searchTerm): \(error)")
-                }
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        } else if appMusicMovie.selectedSegmentIndex == 1 {
-            
-            resultType = ResultType.musicTrack
-            
-            searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { (result, error) in
-                if let error = error {
-                    NSLog("Error getting search results for \(searchTerm): \(error)")
-                }
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-            
-        } else if appMusicMovie.selectedSegmentIndex == 2 {
-            
-            resultType = ResultType.movie
-            
-            searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { (result, error) in
-                if let error = error {
-                    NSLog("Error getting search results for \(searchTerm): \(error)")
-                }
+        var resultType: ResultType!
+        
+        switch appMusicMovie.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }
