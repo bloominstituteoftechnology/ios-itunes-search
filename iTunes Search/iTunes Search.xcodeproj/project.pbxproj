@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8289C5B421518F120033CE5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5B321518F120033CE5D /* AppDelegate.swift */; };
-		8289C5B621518F120033CE5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5B521518F120033CE5D /* ViewController.swift */; };
 		8289C5B921518F120033CE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8289C5B721518F120033CE5D /* Main.storyboard */; };
 		8289C5BB21518F120033CE5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8289C5BA21518F120033CE5D /* Assets.xcassets */; };
 		8289C5BE21518F120033CE5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8289C5BC21518F120033CE5D /* LaunchScreen.storyboard */; };
 		8289C5C9215191410033CE5D /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5C8215191410033CE5D /* SearchResult.swift */; };
 		8289C5CC215193F80033CE5D /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5CB215193F80033CE5D /* ResultType.swift */; };
 		8289C5CE215194700033CE5D /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5CD215194700033CE5D /* SearchResultController.swift */; };
+		8289C5D32151ADEF0033CE5D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5D22151ADEF0033CE5D /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8289C5B021518F110033CE5D /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8289C5B321518F120033CE5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8289C5B521518F120033CE5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8289C5B821518F120033CE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8289C5BA21518F120033CE5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8289C5BD21518F120033CE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		8289C5C8215191410033CE5D /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		8289C5CB215193F80033CE5D /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		8289C5CD215194700033CE5D /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		8289C5D22151ADEF0033CE5D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 		8289C5C621518F260033CE5D /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8289C5B521518F120033CE5D /* ViewController.swift */,
+				8289C5D22151ADEF0033CE5D /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -185,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8289C5CC215193F80033CE5D /* ResultType.swift in Sources */,
-				8289C5B621518F120033CE5D /* ViewController.swift in Sources */,
+				8289C5D32151ADEF0033CE5D /* SearchResultsTableViewController.swift in Sources */,
 				8289C5C9215191410033CE5D /* SearchResult.swift in Sources */,
 				8289C5B421518F120033CE5D /* AppDelegate.swift in Sources */,
 				8289C5CE215194700033CE5D /* SearchResultController.swift in Sources */,
