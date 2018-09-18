@@ -10,6 +10,8 @@ import Foundation
 
 class SearchResultController {
     
+    // MARK: - Enum
+    
     private enum HTTPMethod: String {
         case get = "GET"
         case put = "PUT"
@@ -17,8 +19,12 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
+    // MARK: - Properties
+    
     private let baseURL = URL(string: "https://itunes.apple.com/")!
-    var searchResults: [SearchResults] = []
+    var searchResults: [SearchResult] = []
+    
+    // MARK: - Fetching data
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
         var urlComponent = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
