@@ -9,15 +9,21 @@
 import Foundation
 
 struct SearchResult:Codable {
-    var title: String
-    var creator: String
-}
+    let title: String?
+    let creator: String?
 
-enum CodingKeys: String, CodingKey {
+
+
+    enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case artist = "artistName"
     }
-    
-struct SearchResults:Codable {
-    var results: [SearchResult]
 }
+
+
+
+
+struct SearchResults:Codable {
+    let results: [SearchResult]
+}
+
