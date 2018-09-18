@@ -15,9 +15,17 @@ private let baseURL = URL(string: "https://itunes.apple.com/search")!
 
 class SearchResultsController {
     
+    private enum HTTPMethod: String {
+        case GET = "GET"
+        case PUT = "PUT"
+        case POST = "POST"
+        case DELETE = "DELETE"
+        
+    }
+    
     var searchResults: [SearchResult] = []
     
-    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, NSError? ) -> Void) {
+    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error? ) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
@@ -30,7 +38,7 @@ class SearchResultsController {
         }
         
         var request = URLRequest(url: requestURL)
-        request.httpMethod = resultType.rawValue
+        request.httpMethod = HTTPMethod.GET.rawValue
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
