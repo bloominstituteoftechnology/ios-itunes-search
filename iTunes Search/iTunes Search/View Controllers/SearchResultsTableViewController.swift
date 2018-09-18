@@ -40,13 +40,13 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return searchResultsController.searchReults.count
+        return searchResultsController.searchResults.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItunesSearchCell", for: indexPath)
 
-        let searchResult = searchResultsController.searchReults[indexPath.row]
+        let searchResult = searchResultsController.searchResults[indexPath.row]
         cell.textLabel?.text = searchResult.title
         cell.textLabel?.text = searchResult.artist
     
@@ -60,16 +60,17 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             !searchTerm.isEmpty else { return }
         
         if searchTypeSegementedControl.selectedSegmentIndex == 0 {
-            let resultType = ResultType.software
+            resultType = ResultType.software
         } else if searchTypeSegementedControl.selectedSegmentIndex == 1 {
-            let resultType = ResultType.musicTrack
+            resultType = ResultType.musicTrack
         } else if searchTypeSegementedControl.selectedSegmentIndex == 2 {
-            let resultType = ResultType.movie
+            resultType = ResultType.movie
         }
         
-        
-        searchResultsController.performSearch(with: searchTerm, resultType: resultType ) { (itunesResults, error) in
-            self.searchResultsController.searchReults = itunesResults ?? []
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (_, _) in
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
         }
     }
 }

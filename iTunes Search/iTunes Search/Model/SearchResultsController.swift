@@ -8,14 +8,14 @@
 
 import Foundation
 
-private let baseURL = URL(string: "https://itunes.apple.com/search?")!
+private let baseURL = URL(string: "https://itunes.apple.com/search")!
 
 //Example URL https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo
 // term= & entity=
 
 class SearchResultsController {
     
-    var searchReults: [SearchResult] = []
+    var searchResults: [SearchResult] = []
     
     func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, NSError? ) -> Void) {
         
@@ -48,9 +48,9 @@ class SearchResultsController {
                 
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                let searchResult = searchResults.results
-                completion(searchResult, nil)
+                let searchResultz = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults = searchResultz.results
+                completion(self.searchResults, nil)
                 
             } catch {
                 
