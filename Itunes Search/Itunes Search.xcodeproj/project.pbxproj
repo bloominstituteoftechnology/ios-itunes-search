@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		EBE35C4721519621003E9887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE35C4621519621003E9887 /* AppDelegate.swift */; };
-		EBE35C4921519621003E9887 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE35C4821519621003E9887 /* ViewController.swift */; };
 		EBE35C4C21519621003E9887 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE35C4A21519621003E9887 /* Main.storyboard */; };
 		EBE35C4E21519624003E9887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE35C4D21519624003E9887 /* Assets.xcassets */; };
 		EBE35C5121519624003E9887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE35C4F21519624003E9887 /* LaunchScreen.storyboard */; };
 		EBE35C5A215196CD003E9887 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE35C59215196CD003E9887 /* SearchResult.swift */; };
 		EBE35C5C2151A323003E9887 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE35C5B2151A323003E9887 /* ResultType.swift */; };
 		EBE35C5F2151A4AA003E9887 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE35C5E2151A4AA003E9887 /* SearchController.swift */; };
+		EBE35C622151EE53003E9887 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE35C612151EE53003E9887 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EBE35C4321519621003E9887 /* Itunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Itunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE35C4621519621003E9887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBE35C4821519621003E9887 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EBE35C4B21519621003E9887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBE35C4D21519624003E9887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBE35C5021519624003E9887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		EBE35C59215196CD003E9887 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		EBE35C5B2151A323003E9887 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		EBE35C5E2151A4AA003E9887 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		EBE35C612151EE53003E9887 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +60,10 @@
 		EBE35C4521519621003E9887 /* Itunes Search */ = {
 			isa = PBXGroup;
 			children = (
+				EBE35C602151EE0E003E9887 /* View Controller */,
 				EBE35C5D2151A429003E9887 /* model controller */,
 				EBE35C58215196A6003E9887 /* model */,
 				EBE35C4621519621003E9887 /* AppDelegate.swift */,
-				EBE35C4821519621003E9887 /* ViewController.swift */,
 				EBE35C4A21519621003E9887 /* Main.storyboard */,
 				EBE35C4D21519624003E9887 /* Assets.xcassets */,
 				EBE35C4F21519624003E9887 /* LaunchScreen.storyboard */,
@@ -87,6 +87,14 @@
 				EBE35C5E2151A4AA003E9887 /* SearchController.swift */,
 			);
 			path = "model controller";
+			sourceTree = "<group>";
+		};
+		EBE35C602151EE0E003E9887 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBE35C612151EE53003E9887 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +170,7 @@
 			files = (
 				EBE35C5C2151A323003E9887 /* ResultType.swift in Sources */,
 				EBE35C5F2151A4AA003E9887 /* SearchController.swift in Sources */,
-				EBE35C4921519621003E9887 /* ViewController.swift in Sources */,
+				EBE35C622151EE53003E9887 /* SearchResultsTableViewController.swift in Sources */,
 				EBE35C5A215196CD003E9887 /* SearchResult.swift in Sources */,
 				EBE35C4721519621003E9887 /* AppDelegate.swift in Sources */,
 			);
