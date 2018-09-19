@@ -19,17 +19,14 @@ class SearchResultController {
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
-        // Reset the values of searchResults
-        searchResults = []
-        
-        // Create component
+        // Create a component
         var urlComponent = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         
         // Create query items
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let entityQueryitem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        // Set the querry items of the component
+        // Set the querry items
         urlComponent.queryItems = [searchQueryItem, entityQueryitem]
         
         // Make sure the url is a valid url
