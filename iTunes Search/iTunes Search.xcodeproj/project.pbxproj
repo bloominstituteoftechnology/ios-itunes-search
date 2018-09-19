@@ -15,6 +15,7 @@
 		8289C5CC215193F80033CE5D /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5CB215193F80033CE5D /* ResultType.swift */; };
 		8289C5CE215194700033CE5D /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5CD215194700033CE5D /* SearchResultController.swift */; };
 		8289C5D32151ADEF0033CE5D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5D22151ADEF0033CE5D /* SearchResultsTableViewController.swift */; };
+		8289C5D52151C77A0033CE5D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C5D42151C77A0033CE5D /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8289C5CB215193F80033CE5D /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		8289C5CD215194700033CE5D /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		8289C5D22151ADEF0033CE5D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		8289C5D42151C77A0033CE5D /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				8289C5C8215191410033CE5D /* SearchResult.swift */,
 				8289C5CB215193F80033CE5D /* ResultType.swift */,
+				8289C5D42151C77A0033CE5D /* HTTPMethod.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				8289C5CC215193F80033CE5D /* ResultType.swift in Sources */,
 				8289C5D32151ADEF0033CE5D /* SearchResultsTableViewController.swift in Sources */,
+				8289C5D52151C77A0033CE5D /* HTTPMethod.swift in Sources */,
 				8289C5C9215191410033CE5D /* SearchResult.swift in Sources */,
 				8289C5B421518F120033CE5D /* AppDelegate.swift in Sources */,
 				8289C5CE215194700033CE5D /* SearchResultController.swift in Sources */,

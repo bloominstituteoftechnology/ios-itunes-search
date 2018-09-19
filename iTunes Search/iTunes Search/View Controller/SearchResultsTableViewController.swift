@@ -24,6 +24,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        itunesSearchBar.delegate = self
     }
 
     // MARK: - Table view data source
@@ -45,11 +46,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     // MARK: - Search bar
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
+        
+        // Make sure there is search term
         guard let searchTerm = itunesSearchBar.text, !searchTerm.isEmpty else { return }
         
-        var resultType: ResultType!
-        
+        // Assign a resulttype to the related segments
         switch appMusicMovie.selectedSegmentIndex {
         case 0:
             resultType = .software
@@ -61,9 +62,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             break
         }
         
-        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+        // Perform the search
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) {(error) in
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                if let error = error{
+                    NSLog("Search error: \(error)")
+                } else {
+                    self.tableView.reloadData()
+                    self.view.endEditing(true)
+                }
             }
         }
     }
