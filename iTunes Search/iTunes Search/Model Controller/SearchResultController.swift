@@ -41,7 +41,6 @@ class SearchResultController {
         }
         
         var request = URLRequest(url: requestURL)
-        print(request)
         request.httpMethod = HTTPMethod.get.rawValue
         // Creat Data Task
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
@@ -63,6 +62,7 @@ class SearchResultController {
                 let search = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = search.results
                 completion(self.searchResults, nil)
+                
             } catch {
                 NSLog("Unable to decode data into result: \(error)")
                 completion(nil, NSError())

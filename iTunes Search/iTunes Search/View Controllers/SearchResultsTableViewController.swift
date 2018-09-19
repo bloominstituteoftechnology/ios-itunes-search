@@ -14,31 +14,20 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var searchBar: UISearchBar!
     
     let searchResutlsController = SearchResultController()
-    var result = [SearchResult]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return result.count
+        return searchResutlsController.searchResults.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath)
 
-       let searchResult = result[indexPath.row]
+       let searchResult = searchResutlsController.searchResults[indexPath.row]
         
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
@@ -54,7 +43,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         case 0:
             resultType = ResultType.software
         case 1:
-            resultType = ResultType.music
+            resultType = ResultType.musicTrack
         case 2:
             resultType = ResultType.movie
         default:
