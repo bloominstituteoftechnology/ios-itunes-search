@@ -46,8 +46,8 @@ class SearchController{
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 let searchResult = try jsonDecoder.decode(SearchResults.self, from: data)
-                let itunes = searchResult.results
-                completion(itunes, nil)
+                self.searchResults = searchResult.results
+                completion(self.searchResults, nil)
             } catch {
                 NSLog("Unable to  decode data into people: \(error)")
                 completion(nil, error)

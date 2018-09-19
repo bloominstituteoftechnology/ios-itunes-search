@@ -8,31 +8,60 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
+    
+    
     // MARK: - Table view data source
-
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResutlController.searchResults.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let search = searchResutlController.searchResults[indexPath.row]
+        cell.textLabel?.text = search.title
+        cell.detailTextLabel?.text = search.creator
         return cell
     }
-    @IBOutlet weak var segmentedCtrl: UISegmentedControl!
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+        var resultType: ResultType!
+        
+        switch segmentedCtrl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        
+        searchResutlController.performSearch(searchTerm: searchTerm, resultType: resultType) { (result, error) in
+        self.searchResutlController.searchResults = result ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+
+        
+    }
+    
+    
+    
+
+    
+    let searchResutlController = SearchController()
+    @IBOutlet weak var segmentedCtrl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
 
