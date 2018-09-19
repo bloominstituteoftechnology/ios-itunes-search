@@ -23,6 +23,9 @@
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rv4-Ho-Ruk">
                                     <rect key="frame" x="0.0" y="44" width="375" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Ua7-ea-Xdb" id="NFY-7k-nhg"/>
+                                    </connections>
                                 </searchBar>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-3z-oYR">
                                     <rect key="frame" x="101" y="8" width="173" height="29"/>
