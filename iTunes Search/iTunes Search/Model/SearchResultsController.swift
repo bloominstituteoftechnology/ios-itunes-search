@@ -29,7 +29,9 @@ class SearchResultsController {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        urlComponents.queryItems = [searchTermQueryItem]
+        let searchEntityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        let searchLimitQueryItem = URLQueryItem(name: "limit", value: "20")
+        urlComponents.queryItems = [searchTermQueryItem, searchEntityQueryItem, searchLimitQueryItem]
         
         guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing search url for \(searchTerm)")

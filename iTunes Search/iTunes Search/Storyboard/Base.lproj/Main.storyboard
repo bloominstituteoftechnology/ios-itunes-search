@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="igM-Ih-HnQ">
-                            <rect key="frame" x="0.0" y="103" width="375" height="113"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="igM-Ih-HnQ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="3fi-SZ-TWw">
@@ -36,6 +36,15 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="rho-Vo-L6H" secondAttribute="trailing" id="17O-lI-s2O"/>
+                                        <constraint firstItem="rho-Vo-L6H" firstAttribute="top" secondItem="3fi-SZ-TWw" secondAttribute="top" id="NzD-dv-NFx"/>
+                                        <constraint firstAttribute="bottom" secondItem="wCG-Ec-p2m" secondAttribute="bottom" id="SFe-yh-jGM"/>
+                                        <constraint firstAttribute="trailing" secondItem="wCG-Ec-p2m" secondAttribute="trailing" id="cSc-zb-U4n"/>
+                                        <constraint firstItem="wCG-Ec-p2m" firstAttribute="leading" secondItem="3fi-SZ-TWw" secondAttribute="leading" id="dcr-63-LxQ"/>
+                                        <constraint firstItem="rho-Vo-L6H" firstAttribute="leading" secondItem="3fi-SZ-TWw" secondAttribute="leading" id="qob-5Z-Rhz"/>
+                                        <constraint firstItem="wCG-Ec-p2m" firstAttribute="top" secondItem="rho-Vo-L6H" secondAttribute="bottom" constant="13" id="zwY-wj-3Vi"/>
+                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +58,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItunesSearchCell" textLabel="9AZ-Id-3Gj" detailTextLabel="SEP-5D-Rg9" rowHeight="75" style="IBUITableViewCellStyleSubtitle" id="7g9-6g-u2c">
-                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="141" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7g9-6g-u2c" id="KKV-fh-q7G">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>

@@ -48,7 +48,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
         let searchResult = searchResultsController.searchResults[indexPath.row]
         cell.textLabel?.text = searchResult.title
-        cell.textLabel?.text = searchResult.artist
+        cell.detailTextLabel?.text = searchResult.artist
     
         return cell
         
