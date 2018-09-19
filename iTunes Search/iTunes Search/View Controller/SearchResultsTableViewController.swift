@@ -47,10 +47,10 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        // Make sure there is search term
+        // Make sure there is a search term
         guard let searchTerm = itunesSearchBar.text, !searchTerm.isEmpty else { return }
         
-        // Assign a resulttype to the related segments
+        // Assign a resultType to the related segments
         switch appMusicMovie.selectedSegmentIndex {
         case 0:
             resultType = .software
@@ -65,11 +65,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         // Perform the search
         searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) {(error) in
             DispatchQueue.main.async {
+                
+                // If there is an error, log it
                 if let error = error{
                     NSLog("Search error: \(error)")
                 } else {
+                    
+                    // If not, then reload tableviews data
                     self.tableView.reloadData()
-                    self.view.endEditing(true)
+                    self.view.endEditing(true) // Stop edit option of the search bar after return clicked
                 }
             }
         }
