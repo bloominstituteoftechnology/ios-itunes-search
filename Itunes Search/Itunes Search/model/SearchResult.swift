@@ -11,10 +11,11 @@ import Foundation
 struct SearchResult: Codable {
     var title: String
     var creator: String
-    
+    var image: String
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case creator = "artistName"
+        case image = "artworkUrl60"
     }
 }
 struct SearchResults: Codable{
