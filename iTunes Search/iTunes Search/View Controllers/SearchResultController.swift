@@ -38,12 +38,39 @@ class SearchResultController {
             completion(nil, NSError())
             return
         }
+        
         //call the url
         var request = URLRequest(url:requestURL)
         
         // get raw value
         request.httpMethod = HTTPMethod.get.rawValue
-  
+        
+        // get the dataTasks
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fecthing data: \(error)")
+                completion(nil, NSError())
+                return
+            }
+            guard let data = data else {
+                NSLog("Error fetching data. No data")
+                completion(nil, NSError())
+                return
+        }
+        // Get the JSON decoder, create the Do.Catch.Try
+            // convert from snakeCase
+        // Retrieve the data and make into the SearchResults
+            
+            do {
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                let newSearch = try jsonDecoder.decode(SearchResults.self, from: data)
+            } catch  {
+                NSLog("Unable to decode data: \(error)")
+                completion(nil,NSError())
+                return
+            }
+        }
+        dataTask.resume()
     }
-    
 }
