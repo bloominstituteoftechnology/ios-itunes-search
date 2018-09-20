@@ -70,6 +70,8 @@ class SearchResultController {
                 // now assign to an array
                 // call the completion
                 let newSearch = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults = newSearch.results
+                completion(nil, NSError())
             } catch  {
                 NSLog("Unable to decode data: \(error)")
                 completion(nil,NSError())
