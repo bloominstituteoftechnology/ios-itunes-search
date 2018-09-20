@@ -19,12 +19,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-
-        // Uncomment the following line to preserve selection between presentations
-         self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -77,7 +71,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         // pass in the searchTerm and resultType
         //
         searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (result, error) in self.searchResultsController.searchResults = result ?? []
-            
+            print(self.searchResultsController.searchResults)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     self.view.endEditing(true)

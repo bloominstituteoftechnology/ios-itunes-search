@@ -22,11 +22,12 @@ class SearchResultController {
     var searchResults: [SearchResult] = []
     
     func performSearch(with searchTerm:String, resultType:ResultType, completion: @escaping ([SearchResult]?, NSError?) -> Void){
+        
         // components
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         
-        // queryitems
-        let searchQueryItem =  URLQueryItem(name: "search", value: searchTerm)
+        // queryitems- Make SURE YOU CHECK THE DOCUMENTATION / JSON FILE !!
+        let searchQueryItem =  URLQueryItem(name: "term", value: searchTerm)
         let entitiyQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
         // call the url into the array
@@ -69,6 +70,7 @@ class SearchResultController {
                 // the data is now in newSearch
                 // now assign to an array
                 // call the completion
+                
                 let newSearch = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = newSearch.results
                 completion(self.searchResults, nil)
