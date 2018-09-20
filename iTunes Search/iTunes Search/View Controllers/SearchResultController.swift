@@ -59,11 +59,16 @@ class SearchResultController {
         }
         // Get the JSON decoder, create the Do.Catch.Try
             // convert from snakeCase
+            
         // Retrieve the data and make into the SearchResults
             
             do {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                // the data is now in newSearch
+                // now assign to an array
+                // call the completion
                 let newSearch = try jsonDecoder.decode(SearchResults.self, from: data)
             } catch  {
                 NSLog("Unable to decode data: \(error)")
@@ -73,4 +78,7 @@ class SearchResultController {
         }
         dataTask.resume()
     }
+
+
 }
+
