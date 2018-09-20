@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Itunes Search-->
+        <!--iTunes Search-->
         <scene sceneID="AzB-8a-lfT">
             <objects>
                 <tableViewController id="WdR-fo-1aj" customClass="SearchResultsTableViewController" customModule="iTunes_Search" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <outlet property="delegate" destination="WdR-fo-1aj" id="M0P-jZ-o3H"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Itunes Search" id="xTh-BH-s0K"/>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="xTh-BH-s0K"/>
                     <connections>
                         <outlet property="searchBar" destination="Bgo-GP-yOz" id="fd0-eQ-N6j"/>
                         <outlet property="segmentedBar" destination="QPH-Iw-Jbh" id="dz6-gV-mFE"/>

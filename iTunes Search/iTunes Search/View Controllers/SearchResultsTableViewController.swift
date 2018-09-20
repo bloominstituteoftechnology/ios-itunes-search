@@ -76,21 +76,16 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         // call the performSearch Method
         // pass in the searchTerm and resultType
         //
-        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { ([SearchResult]?, NSError) in
-            if let error = NSError {
-                NSLog("Error fecthing data: \(error)")
-                return
-            } else {
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (result, error) in self.searchResultsController.searchResults = result ?? []
+            
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     self.view.endEditing(true)
                 }
             }
-        }
         
-        }
     }
 
-    
+}
 
 
