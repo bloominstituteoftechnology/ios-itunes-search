@@ -44,9 +44,6 @@
 		4B40206B217E50B00021EBA9 = {
 			isa = PBXGroup;
 			children = (
-				4B402089217E50D10021EBA9 /* SearchResult.swift */,
-				4B40208B217E61CF0021EBA9 /* ResultType.swift */,
-				4B40208D217E622F0021EBA9 /* SearchResultController.swift */,
 				4B402076217E50B00021EBA9 /* iTunes Search */,
 				4B402075217E50B00021EBA9 /* Products */,
 			);
@@ -63,6 +60,9 @@
 		4B402076217E50B00021EBA9 /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
+				4B402089217E50D10021EBA9 /* SearchResult.swift */,
+				4B40208B217E61CF0021EBA9 /* ResultType.swift */,
+				4B40208D217E622F0021EBA9 /* SearchResultController.swift */,
 				4B402077217E50B00021EBA9 /* AppDelegate.swift */,
 				4B402079217E50B00021EBA9 /* ViewController.swift */,
 				4B40207B217E50B00021EBA9 /* Main.storyboard */,
