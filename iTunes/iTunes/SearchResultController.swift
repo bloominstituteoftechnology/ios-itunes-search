@@ -21,7 +21,7 @@ class SearchResultController {
         guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true) else {
             fatalError("Unable to resolve baseURL to components")}
         
-       
+        
         
         urlComponents.queryItems = [URLQueryItem(name: "term", value: searchTerm), URLQueryItem(name: "media", value: ("music"))]
         
@@ -31,10 +31,12 @@ class SearchResultController {
             return
         }
         
-        let requestURL = URLRequest(url: searchURL)
-//        requestURL.httpMethod = "GET"
-//        URLSession.shared.configuration.httpAdditionalHeaders = [:]
-//        URLSession.shared.configuration.httpAdditionalHeaders?["Accept"] = "text/json"
+        var requestURL = URLRequest(url: searchURL)
+        
+        //        URLSession.shared.configuration.httpAdditionalHeaders = [:]
+        //        URLSession.shared.configuration.httpAdditionalHeaders?["Accept"] = "text/json"
+        requestURL.httpMethod = "GET"
+        requestURL.addValue("Paw/2.3.3 (Macintosh; OS X/10.11.4) GCDHTTPRequest", forHTTPHeaderField: "User-Agent")
         let dataTask = URLSession.shared.dataTask(with: requestURL) {
             data, _, error in
             
@@ -50,14 +52,18 @@ class SearchResultController {
             }
             
             do {
-                let jsonDecoder = PropertyListDecoder()
+                let jsonDecoder = JSONDecoder()
+                // print(data as NSData)
+                
                 let decodedSearchResults = try jsonDecoder.decode(ResultList.self, from: data)
-        
+                print(decodedSearchResults)
                 self.searchResults = decodedSearchResults.results
                 completion(self.searchResults, nil)
+                //                let finalResult = decodedSearchResults.results
+                //                completion(finalResult, nil)
                 
             } catch {
-                completion(nil, "Error with JSON Decoding")
+                completion(nil, "Error with JSON Decoding \(error)")
                 print(String(data: data, encoding: .utf8)!)
                 print(requestURL)
                 
