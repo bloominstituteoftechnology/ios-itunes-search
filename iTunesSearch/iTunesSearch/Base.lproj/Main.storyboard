@@ -21,20 +21,20 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SwY-ER-NqE">
-                                    <rect key="frame" x="0.0" y="-11" width="375" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                             <constraints>
-                                <constraint firstItem="SwY-ER-NqE" firstAttribute="top" secondItem="Dff-Mv-LmZ" secondAttribute="top" constant="-11" id="KgJ-0K-Jqv"/>
+                                <constraint firstItem="SwY-ER-NqE" firstAttribute="top" secondItem="Dff-Mv-LmZ" secondAttribute="top" id="drj-Ah-Z9K"/>
                                 <constraint firstItem="SwY-ER-NqE" firstAttribute="leading" secondItem="Dff-Mv-LmZ" secondAttribute="leading" id="hhM-Fk-Gbh"/>
                                 <constraint firstAttribute="trailing" secondItem="SwY-ER-NqE" secondAttribute="trailing" id="xd5-Re-v8g"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="sDO-rt-1I8" detailTextLabel="nTA-0u-70S" style="IBUITableViewCellStyleSubtitle" id="KxS-l6-C8F">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="sDO-rt-1I8" detailTextLabel="nTA-0u-70S" style="IBUITableViewCellStyleSubtitle" id="KxS-l6-C8F">
                                 <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KxS-l6-C8F" id="rW6-gb-tmj">
@@ -71,7 +71,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Apps"/>
-                                <segment title="Second"/>
+                                <segment title="Music"/>
                                 <segment title="Movies"/>
                             </segments>
                         </segmentedControl>

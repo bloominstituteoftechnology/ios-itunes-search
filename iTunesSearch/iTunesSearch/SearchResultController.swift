@@ -70,7 +70,7 @@ class SearchResultController {
                 // Perform decoding into [Person] stored in PersonSearchResults
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 let people = searchResults.results
-                
+               self.searchResults = people
                 // Send back the results to the completion handler
                 completion(people, nil)
                 
