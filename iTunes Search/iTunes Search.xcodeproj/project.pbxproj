@@ -15,6 +15,7 @@
 		4B40208A217E50D10021EBA9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B402089217E50D10021EBA9 /* SearchResult.swift */; };
 		4B40208C217E61CF0021EBA9 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40208B217E61CF0021EBA9 /* ResultType.swift */; };
 		4B40208E217E622F0021EBA9 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40208D217E622F0021EBA9 /* SearchResultController.swift */; };
+		4B402090217E9A740021EBA9 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40208F217E9A740021EBA9 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4B402089217E50D10021EBA9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		4B40208B217E61CF0021EBA9 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		4B40208D217E622F0021EBA9 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		4B40208F217E9A740021EBA9 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				4B402077217E50B00021EBA9 /* AppDelegate.swift */,
 				4B402079217E50B00021EBA9 /* ViewController.swift */,
 				4B40207B217E50B00021EBA9 /* Main.storyboard */,
+				4B40208F217E9A740021EBA9 /* SearchResultsTableViewController.swift */,
 				4B40207E217E50B20021EBA9 /* Assets.xcassets */,
 				4B402080217E50B20021EBA9 /* LaunchScreen.storyboard */,
 				4B402083217E50B20021EBA9 /* Info.plist */,
@@ -146,6 +149,7 @@
 			files = (
 				4B40208C217E61CF0021EBA9 /* ResultType.swift in Sources */,
 				4B40207A217E50B00021EBA9 /* ViewController.swift in Sources */,
+				4B402090217E9A740021EBA9 /* SearchResultsTableViewController.swift in Sources */,
 				4B40208A217E50D10021EBA9 /* SearchResult.swift in Sources */,
 				4B402078217E50B00021EBA9 /* AppDelegate.swift in Sources */,
 				4B40208E217E622F0021EBA9 /* SearchResultController.swift in Sources */,
