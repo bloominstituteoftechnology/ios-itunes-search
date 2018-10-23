@@ -1,6 +1,6 @@
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
     let searchResultsController = SearchResultController()
 
@@ -11,8 +11,6 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         
     }
-
-    
     
     // MARK: - Table view data source
 
@@ -25,10 +23,18 @@ class SearchResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
 
-        let searchResul
-        cell.textLabel.text = searchResultsController.searchResults.title
-
+        let searchResult = searchResultsController.searchResults[indexPath.row]
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+        
         return cell
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+     
+        
+        
+    }
 }
