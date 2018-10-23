@@ -8,13 +8,15 @@ enum HTTPMethod: String {
 }
 
 class SearchResultController {
+    static let shared = SearchResultController()
+    init() {}
     
     var searchResults: [SearchResult] = []
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
         
         // Establish the base url for our search
-        guard let baseURL = URL(string: "https//itunes.apple.com/search") else {
+        guard let baseURL = URL(string: "https://itunes.apple.com/search") else {
             fatalError("Unable to construct baseURL")
         }
         

@@ -16,6 +16,8 @@
 		4B40208C217E61CF0021EBA9 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40208B217E61CF0021EBA9 /* ResultType.swift */; };
 		4B40208E217E622F0021EBA9 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40208D217E622F0021EBA9 /* SearchResultController.swift */; };
 		4B402090217E9A740021EBA9 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40208F217E9A740021EBA9 /* SearchResultsTableViewController.swift */; };
+		4B402094217EAAB60021EBA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B402092217EAAB60021EBA9 /* LaunchScreen.storyboard */; };
+		4B402095217EAAB60021EBA9 /* LambdaLogoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B402093217EAAB60021EBA9 /* LambdaLogoAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		4B40208B217E61CF0021EBA9 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		4B40208D217E622F0021EBA9 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		4B40208F217E9A740021EBA9 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		4B402092217EAAB60021EBA9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B402093217EAAB60021EBA9 /* LambdaLogoAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LambdaLogoAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +76,18 @@
 				4B40207E217E50B20021EBA9 /* Assets.xcassets */,
 				4B402080217E50B20021EBA9 /* LaunchScreen.storyboard */,
 				4B402083217E50B20021EBA9 /* Info.plist */,
+				4B402091217EAAB60021EBA9 /* DragAndDropLaunchScreen */,
 			);
 			path = "iTunes Search";
+			sourceTree = "<group>";
+		};
+		4B402091217EAAB60021EBA9 /* DragAndDropLaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4B402092217EAAB60021EBA9 /* LaunchScreen.storyboard */,
+				4B402093217EAAB60021EBA9 /* LambdaLogoAssets.xcassets */,
+			);
+			path = DragAndDropLaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +148,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B402095217EAAB60021EBA9 /* LambdaLogoAssets.xcassets in Resources */,
 				4B402082217E50B20021EBA9 /* LaunchScreen.storyboard in Resources */,
+				4B402094217EAAB60021EBA9 /* LaunchScreen.storyboard in Resources */,
 				4B40207F217E50B20021EBA9 /* Assets.xcassets in Resources */,
 				4B40207D217E50B00021EBA9 /* Main.storyboard in Resources */,
 			);
