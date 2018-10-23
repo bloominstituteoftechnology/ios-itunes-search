@@ -9,7 +9,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.delegate = self
     }
     
     // MARK: - Table view data source
@@ -20,6 +20,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
 
     let reuseIdentifier = "cell"
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
 
@@ -34,7 +35,29 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
      
+        var resultType: ResultType!
         
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            resultType = ResultType.software
+        case 1:
+            resultType = ResultType.musicTrack
+        case 2:
+            resultType = ResultType.movie
+        default:
+            return
+        }
         
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (searchResult, error) in
+            
+            if let error = error {
+                NSLog("Error when searching: \(error)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+            self.tableView.reloadData()
+            }
+        }
     }
 }
