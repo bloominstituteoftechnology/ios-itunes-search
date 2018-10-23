@@ -25,11 +25,13 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
 
         let searchResult = searchResultsController.searchResults[indexPath.row]
+        
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
         
         return cell
     }
+    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         

@@ -13,7 +13,7 @@ class SearchResultController {
         }
         
         let searchQueryItem = URLQueryItem(name: "term", value:searchTerm)
-        let mediaQueryItem = URLQueryItem(name: "media", value:resultType.rawValue)
+        let mediaQueryItem = URLQueryItem(name: "entity", value:resultType.rawValue)
         
         urlComponents.queryItems = [searchQueryItem, mediaQueryItem]
         
@@ -25,6 +25,7 @@ class SearchResultController {
         
         var request = URLRequest(url: searchURL)
         request.httpMethod = "GET"
+        
         
         let dataTask = URLSession.shared.dataTask(with: request) {
             
@@ -45,8 +46,8 @@ class SearchResultController {
             do {
                 let jsonDecoder = JSONDecoder()
                 
-                let searchResults = try jsonDecoder.decode(ResultList.self, from: data)
-                self.searchResults = searchResults.results
+                let decodedResults = try jsonDecoder.decode(ResultList.self, from: data)
+                self.searchResults = decodedResults.results
                 
                 completion(self.searchResults, nil)
             } catch {
