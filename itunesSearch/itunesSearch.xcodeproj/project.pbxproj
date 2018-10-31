@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		849E5875218A525F007D4538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E5874218A525F007D4538 /* AppDelegate.swift */; };
-		849E5877218A525F007D4538 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E5876218A525F007D4538 /* ViewController.swift */; };
 		849E587A218A525F007D4538 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849E5878218A525F007D4538 /* Main.storyboard */; };
 		849E587C218A5260007D4538 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849E587B218A5260007D4538 /* Assets.xcassets */; };
 		849E587F218A5260007D4538 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849E587D218A5260007D4538 /* LaunchScreen.storyboard */; };
+		849E5887218A540B007D4538 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E5886218A540B007D4538 /* SearchResults.swift */; };
+		849E5889218A5526007D4538 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E5888218A5526007D4538 /* ResultType.swift */; };
+		849E588B218A5793007D4538 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E588A218A5793007D4538 /* SearchResultsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		849E5871218A525F007D4538 /* itunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849E5874218A525F007D4538 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		849E5876218A525F007D4538 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		849E5879218A525F007D4538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		849E587B218A5260007D4538 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		849E587E218A5260007D4538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		849E5880218A5260007D4538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		849E5886218A540B007D4538 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		849E5888218A5526007D4538 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		849E588A218A5793007D4538 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				849E5874218A525F007D4538 /* AppDelegate.swift */,
-				849E5876218A525F007D4538 /* ViewController.swift */,
 				849E5878218A525F007D4538 /* Main.storyboard */,
+				849E5886218A540B007D4538 /* SearchResults.swift */,
+				849E5888218A5526007D4538 /* ResultType.swift */,
+				849E588A218A5793007D4538 /* SearchResultsController.swift */,
 				849E587B218A5260007D4538 /* Assets.xcassets */,
 				849E587D218A5260007D4538 /* LaunchScreen.storyboard */,
 				849E5880218A5260007D4538 /* Info.plist */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849E5877218A525F007D4538 /* ViewController.swift in Sources */,
+				849E588B218A5793007D4538 /* SearchResultsController.swift in Sources */,
+				849E5887218A540B007D4538 /* SearchResults.swift in Sources */,
+				849E5889218A5526007D4538 /* ResultType.swift in Sources */,
 				849E5875218A525F007D4538 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
