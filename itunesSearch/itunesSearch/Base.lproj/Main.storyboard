@@ -23,13 +23,10 @@
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d4D-AV-H2o">
                                     <rect key="frame" x="0.0" y="8" width="375" height="29"/>
                                     <segments>
-                                        <segment title="First"/>
-                                        <segment title="Second"/>
+                                        <segment title="Apps"/>
+                                        <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
-                                    <connections>
-                                        <action selector="segmentedControls:" destination="GLl-7W-ChE" eventType="valueChanged" id="hS0-be-M6j"/>
-                                    </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="c1w-Jr-Pm1">
                                     <rect key="frame" x="0.0" y="44" width="375" height="56"/>
@@ -79,7 +76,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="edx-5T-kOw"/>
                     <connections>
-                        <outlet property="segmentedControl" destination="c1w-Jr-Pm1" id="9De-hw-MrV"/>
+                        <outlet property="searchBar" destination="c1w-Jr-Pm1" id="SZy-no-s8E"/>
+                        <outlet property="segmentedControl" destination="d4D-AV-H2o" id="3ai-X7-hit"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fD-xZ-AWM" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,7 +1,7 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -9,7 +9,7 @@ class SearchResultsTableViewController: UITableViewController {
       searchBar.delegate = self
     }
 
-    func searchBarButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let search = searchBar.text, search.count > 0 else { return }
         
         var resultType: ResultType!
@@ -28,11 +28,9 @@ class SearchResultsTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        }
     }
-}
-
     
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return SearchResultContoller.shared.searchResults.count
@@ -46,14 +44,10 @@ class SearchResultsTableViewController: UITableViewController {
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
 
-        return cell
-    }
-
-    
+        return cell    }
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    
     
 }
