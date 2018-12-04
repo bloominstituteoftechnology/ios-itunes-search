@@ -3,7 +3,7 @@ import Foundation
 struct SearchResult: Codable {
 
     let title: String
-    let creator: String
+    let artist: String
     
     enum CodingKeys: String, CodingKey {
         typealias RawValue = String
@@ -12,7 +12,7 @@ struct SearchResult: Codable {
         case artist = "artistName"
     }
     
-    struct SearchResults {
+    struct SearchResults: Codable {
         
         let results: [SearchResult]
     }
