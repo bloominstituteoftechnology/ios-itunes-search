@@ -15,7 +15,7 @@ class SearchResultController {
     var searchResults: [SearchResult] = [] //This will be the data source for the table view.
     
     // Add the completion last
-    static func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
+    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
         
         // Establish the base url for our search
         guard let baseURL = URL(string: SearchResultController.baseURL)

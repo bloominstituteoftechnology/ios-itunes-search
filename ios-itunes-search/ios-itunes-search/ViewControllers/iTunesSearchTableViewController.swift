@@ -8,21 +8,17 @@
 
 import UIKit
 
-class iTunesSearchTableViewController: UITableViewController {
+class iTunesSearchTableViewController: UITableViewController, UISearchBarDelegate {
 
     static let reuseIdentifier = "cell"
-    @IBOutlet weak var segmentControl: UIStackView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     let searchResultsController = SearchResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchBar.delegate = self
+        
     }
 
     // MARK: - Search Bar Functionality
@@ -31,6 +27,35 @@ class iTunesSearchTableViewController: UITableViewController {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else {return}
         
         //Model.shared.search(for: searchTerm)
+        var resultType: ResultType!
+        
+        let segmentIndex = segmentControl.selectedSegmentIndex
+        switch segmentIndex {
+            case 0:
+                resultType = .app
+            case 1:
+                resultType = .music
+            case 2:
+                resultType = .movie
+            default:
+                resultType = .app
+        }
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (searchResults, error) in
+            
+            guard error == nil else {
+                if let error = error { // this will always succeed
+                    NSLog("Error searching data: \(error)")
+                    return
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }
     }
     
     // MARK: - Table view data source

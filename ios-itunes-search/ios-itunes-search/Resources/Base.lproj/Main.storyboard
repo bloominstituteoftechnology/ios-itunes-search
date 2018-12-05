@@ -93,12 +93,10 @@
                             <outlet property="delegate" destination="I3w-fh-NCh" id="XUP-Ty-5WI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="iTunes Search" id="Tux-hq-TmG">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Item" id="hsY-tE-c2K"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="Tux-hq-TmG"/>
                     <connections>
                         <outlet property="searchBar" destination="ktd-cr-uvu" id="0eR-ew-XZ2"/>
-                        <outlet property="segmentControl" destination="pkp-dz-l1w" id="gKB-X7-rNT"/>
+                        <outlet property="segmentControl" destination="Eb7-MB-KvD" id="vBI-9D-sJR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuF-Ot-LLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
