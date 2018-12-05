@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" id="pkp-dz-l1w">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" id="pkp-dz-l1w">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Eb7-MB-KvD">
@@ -33,9 +33,9 @@
                                     </segments>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="ktd-cr-uvu">
-                                    <rect key="frame" x="0.0" y="38" width="375" height="30"/>
+                                    <rect key="frame" x="0.0" y="38" width="375" height="61"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="dU4-qO-waC"/>
+                                        <constraint firstAttribute="height" constant="40" id="dU4-qO-waC"/>
                                     </constraints>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
@@ -51,7 +51,7 @@
                         </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="68" id="MiE-qe-Nxa" customClass="TableViewCell" customModule="ios_itunes_search" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="104" width="375" height="68"/>
+                                <rect key="frame" x="0.0" y="123" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MiE-qe-Nxa" id="XEz-yH-qHF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>

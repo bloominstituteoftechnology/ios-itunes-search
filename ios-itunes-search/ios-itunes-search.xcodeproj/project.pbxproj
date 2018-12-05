@@ -13,6 +13,7 @@
 		D12D2F1021B85BFF008698EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12D2F0E21B85BFF008698EC /* LaunchScreen.storyboard */; };
 		D13D353A21B8794F00E46F00 /* iTunesSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D353921B8794F00E46F00 /* iTunesSearchTableViewController.swift */; };
 		D13D353D21B8799F00E46F00 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D353C21B8799F00E46F00 /* TableViewCell.swift */; };
+		D13D353F21B8814E00E46F00 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D353E21B8814E00E46F00 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D12D2F1121B85BFF008698EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13D353921B8794F00E46F00 /* iTunesSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchTableViewController.swift; sourceTree = "<group>"; };
 		D13D353C21B8799F00E46F00 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D13D353E21B8814E00E46F00 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		D13D353521B875C700E46F00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D13D353E21B8814E00E46F00 /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			files = (
 				D13D353D21B8799F00E46F00 /* TableViewCell.swift in Sources */,
 				D12D2F0621B85BFD008698EC /* AppDelegate.swift in Sources */,
+				D13D353F21B8814E00E46F00 /* SearchResult.swift in Sources */,
 				D13D353A21B8794F00E46F00 /* iTunesSearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

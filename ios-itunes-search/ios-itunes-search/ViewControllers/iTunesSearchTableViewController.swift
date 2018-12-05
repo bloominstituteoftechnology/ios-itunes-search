@@ -21,19 +21,33 @@ class iTunesSearchTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // MARK: - Search Bar Functionality
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else {return}
+        
+        //Model.shared.search(for: searchTerm)
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1 // placeholder for Model.shared.numberOfSearchResults() or equivalent
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: iTunesSearchTableViewController.reuseIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: iTunesSearchTableViewController.reuseIdentifier, for: indexPath) as? TableViewCell else {fatalError("Unable to receive and cast cell")}
 
         // Configure the cell...
         
+        // let person = Model.shared.person(at: indexPath.row)
+        
+        
+        // fill out the cell labels
+        cell.titleLabel.text = "Title Placeholder"
+        cell.creatorLabel.text = "Creator Placeholder"
 
         return cell
     }
