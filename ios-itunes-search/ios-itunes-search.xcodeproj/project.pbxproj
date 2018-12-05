@@ -14,6 +14,7 @@
 		D13D353A21B8794F00E46F00 /* iTunesSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D353921B8794F00E46F00 /* iTunesSearchTableViewController.swift */; };
 		D13D353D21B8799F00E46F00 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D353C21B8799F00E46F00 /* TableViewCell.swift */; };
 		D13D353F21B8814E00E46F00 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D353E21B8814E00E46F00 /* SearchResult.swift */; };
+		D13D354121B8842600E46F00 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D354021B8842600E46F00 /* ResultType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D13D353921B8794F00E46F00 /* iTunesSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchTableViewController.swift; sourceTree = "<group>"; };
 		D13D353C21B8799F00E46F00 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D13D353E21B8814E00E46F00 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		D13D354021B8842600E46F00 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D13D353E21B8814E00E46F00 /* SearchResult.swift */,
+				D13D354021B8842600E46F00 /* ResultType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D13D354121B8842600E46F00 /* ResultType.swift in Sources */,
 				D13D353D21B8799F00E46F00 /* TableViewCell.swift in Sources */,
 				D12D2F0621B85BFD008698EC /* AppDelegate.swift in Sources */,
 				D13D353F21B8814E00E46F00 /* SearchResult.swift in Sources */,
