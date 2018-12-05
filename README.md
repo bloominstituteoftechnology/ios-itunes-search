@@ -26,7 +26,10 @@ Please fork and clone this repository. This repository does not have a starter p
 
 #### SearchResult
 
-This application uses the iTunes Search API. Please familiarize yourself with the API's documentation [here](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/). Read the overview, and look at the "Searching" section. There are some search examples that are worth looking at as well.
+This application uses the iTunes Search API. Please:
+- familiarize yourself with the API's documentation [here](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/). 
+- Read the overview, and look at the "Searching" section. 
+- Look over search examples that are worth looking at as well.
 
 We're going to search for either an app, music, or movie. Use [this URL](https://itunes.apple.com/search?term=yelp&entity=software) to see some example JSON. **NOTE:** the URL will download a file to your desktop which contains the JSON. You will need to open the file in a text editor to see the JSON. It's recommended that you then copy and paste the JSON in a JSON formatter. 
 
