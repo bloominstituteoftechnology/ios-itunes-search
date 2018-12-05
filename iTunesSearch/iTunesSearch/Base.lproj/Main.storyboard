@@ -12,7 +12,7 @@
         <!--iTunes Search-->
         <scene sceneID="7VJ-vA-WUa">
             <objects>
-                <tableViewController id="7Ef-sU-UvS" sceneMemberID="viewController">
+                <tableViewController id="7Ef-sU-UvS" customClass="SearchResultsTableViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RQ0-xa-Ezj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,6 +85,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="gdf-1L-33U"/>
+                    <connections>
+                        <outlet property="searchBar" destination="M7W-V2-8BW" id="H5z-hT-YBi"/>
+                        <outlet property="segmentedControl" destination="3gh-SQ-xe7" id="3dD-3k-QCV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cya-Hl-5IU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

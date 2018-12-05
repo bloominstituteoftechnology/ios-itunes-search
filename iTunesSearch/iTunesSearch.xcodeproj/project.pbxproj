@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		484EE7CE21B87AAE000DD56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EE7CD21B87AAE000DD56D /* AppDelegate.swift */; };
-		484EE7D021B87AAE000DD56D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EE7CF21B87AAE000DD56D /* TableViewController.swift */; };
+		484EE7D021B87AAE000DD56D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EE7CF21B87AAE000DD56D /* SearchResultsTableViewController.swift */; };
 		484EE7D321B87AAE000DD56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484EE7D121B87AAE000DD56D /* Main.storyboard */; };
 		484EE7D521B87AB0000DD56D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 484EE7D421B87AB0000DD56D /* Assets.xcassets */; };
 		484EE7D821B87AB0000DD56D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484EE7D621B87AB0000DD56D /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		484EE7CA21B87AAE000DD56D /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		484EE7CD21B87AAE000DD56D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		484EE7CF21B87AAE000DD56D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		484EE7CF21B87AAE000DD56D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		484EE7D221B87AAE000DD56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		484EE7D421B87AB0000DD56D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		484EE7D721B87AB0000DD56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 				484EE7DF21B8806E000DD56D /* SearchResult.swift */,
 				484EE7E121B88454000DD56D /* ResultType.swift */,
 				484EE7E321B8856A000DD56D /* SearchResultController.swift */,
-				484EE7CF21B87AAE000DD56D /* TableViewController.swift */,
+				484EE7CF21B87AAE000DD56D /* SearchResultsTableViewController.swift */,
 				484EE7D121B87AAE000DD56D /* Main.storyboard */,
 				484EE7D421B87AB0000DD56D /* Assets.xcassets */,
 				484EE7D621B87AB0000DD56D /* LaunchScreen.storyboard */,
@@ -145,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				484EE7E221B88454000DD56D /* ResultType.swift in Sources */,
-				484EE7D021B87AAE000DD56D /* TableViewController.swift in Sources */,
+				484EE7D021B87AAE000DD56D /* SearchResultsTableViewController.swift in Sources */,
 				484EE7E021B8806E000DD56D /* SearchResult.swift in Sources */,
 				484EE7CE21B87AAE000DD56D /* AppDelegate.swift in Sources */,
 				484EE7E421B8856A000DD56D /* SearchResultController.swift in Sources */,
