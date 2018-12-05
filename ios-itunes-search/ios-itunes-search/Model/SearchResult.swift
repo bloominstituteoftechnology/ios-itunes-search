@@ -19,6 +19,6 @@ struct SearchResult: Codable{
     
 }
 
-struct SearchResults {
+struct SearchResults: Codable { // should this conform to codable?
     let results: [SearchResult]
 }

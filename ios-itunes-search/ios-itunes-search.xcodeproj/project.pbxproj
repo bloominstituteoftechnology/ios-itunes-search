@@ -15,6 +15,7 @@
 		D13D353D21B8799F00E46F00 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D353C21B8799F00E46F00 /* TableViewCell.swift */; };
 		D13D353F21B8814E00E46F00 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D353E21B8814E00E46F00 /* SearchResult.swift */; };
 		D13D354121B8842600E46F00 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D354021B8842600E46F00 /* ResultType.swift */; };
+		D13D354421B886BA00E46F00 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13D354321B886BA00E46F00 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D13D353C21B8799F00E46F00 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D13D353E21B8814E00E46F00 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		D13D354021B8842600E46F00 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		D13D354321B886BA00E46F00 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				D12D2F0521B85BFD008698EC /* AppDelegate.swift */,
+				D13D354221B8869300E46F00 /* Network Controllers */,
 				D13D353B21B8797800E46F00 /* Other Control */,
 				D13D353621B875DA00E46F00 /* ViewControllers */,
 				D13D353521B875C700E46F00 /* Model */,
@@ -103,6 +106,14 @@
 				D13D353C21B8799F00E46F00 /* TableViewCell.swift */,
 			);
 			path = "Other Control";
+			sourceTree = "<group>";
+		};
+		D13D354221B8869300E46F00 /* Network Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D13D354321B886BA00E46F00 /* SearchResultController.swift */,
+			);
+			path = "Network Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D13D354421B886BA00E46F00 /* SearchResultController.swift in Sources */,
 				D13D354121B8842600E46F00 /* ResultType.swift in Sources */,
 				D13D353D21B8799F00E46F00 /* TableViewCell.swift in Sources */,
 				D12D2F0621B85BFD008698EC /* AppDelegate.swift in Sources */,

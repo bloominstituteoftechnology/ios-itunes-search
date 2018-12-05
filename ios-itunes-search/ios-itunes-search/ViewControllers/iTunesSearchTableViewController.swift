@@ -13,6 +13,7 @@ class iTunesSearchTableViewController: UITableViewController {
     static let reuseIdentifier = "cell"
     @IBOutlet weak var segmentControl: UIStackView!
     @IBOutlet weak var searchBar: UISearchBar!
+    let searchResultsController = SearchResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +36,8 @@ class iTunesSearchTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1 // placeholder for Model.shared.numberOfSearchResults() or equivalent
+        
+        return searchResultsController.searchResults.count
     }
 
 
@@ -49,8 +50,8 @@ class iTunesSearchTableViewController: UITableViewController {
         
         
         // fill out the cell labels
-        cell.titleLabel.text = "Title Placeholder"
-        cell.creatorLabel.text = "Creator Placeholder"
+        cell.titleLabel.text = searchResultsController.searchResults[indexPath.row].title
+        cell.creatorLabel.text = searchResultsController.searchResults[indexPath.row].creator
 
         return cell
     }
