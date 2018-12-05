@@ -9,3 +9,6 @@ struct SearchResult: Codable {
         case artist = "artistName"
     }
 }
+struct SearchResults {
+    let results: [SearchResult]
+}
