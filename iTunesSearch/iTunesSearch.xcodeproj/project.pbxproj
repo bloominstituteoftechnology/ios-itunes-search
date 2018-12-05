@@ -14,6 +14,7 @@
 		484EE7D821B87AB0000DD56D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484EE7D621B87AB0000DD56D /* LaunchScreen.storyboard */; };
 		484EE7E021B8806E000DD56D /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EE7DF21B8806E000DD56D /* SearchResult.swift */; };
 		484EE7E221B88454000DD56D /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EE7E121B88454000DD56D /* ResultType.swift */; };
+		484EE7E421B8856A000DD56D /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EE7E321B8856A000DD56D /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		484EE7D921B87AB0000DD56D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		484EE7DF21B8806E000DD56D /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		484EE7E121B88454000DD56D /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		484EE7E321B8856A000DD56D /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				484EE7CD21B87AAE000DD56D /* AppDelegate.swift */,
 				484EE7DF21B8806E000DD56D /* SearchResult.swift */,
 				484EE7E121B88454000DD56D /* ResultType.swift */,
+				484EE7E321B8856A000DD56D /* SearchResultController.swift */,
 				484EE7CF21B87AAE000DD56D /* TableViewController.swift */,
 				484EE7D121B87AAE000DD56D /* Main.storyboard */,
 				484EE7D421B87AB0000DD56D /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				484EE7D021B87AAE000DD56D /* TableViewController.swift in Sources */,
 				484EE7E021B8806E000DD56D /* SearchResult.swift in Sources */,
 				484EE7CE21B87AAE000DD56D /* AppDelegate.swift in Sources */,
+				484EE7E421B8856A000DD56D /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
