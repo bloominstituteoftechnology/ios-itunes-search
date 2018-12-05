@@ -96,6 +96,10 @@
                     <navigationItem key="navigationItem" title="iTunes Search" id="Tux-hq-TmG">
                         <barButtonItem key="leftBarButtonItem" enabled="NO" title="Item" id="hsY-tE-c2K"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="ktd-cr-uvu" id="0eR-ew-XZ2"/>
+                        <outlet property="segmentControl" destination="pkp-dz-l1w" id="gKB-X7-rNT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuF-Ot-LLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

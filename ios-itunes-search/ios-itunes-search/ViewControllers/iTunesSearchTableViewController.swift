@@ -11,6 +11,9 @@ import UIKit
 class iTunesSearchTableViewController: UITableViewController {
 
     static let reuseIdentifier = "cell"
+    @IBOutlet weak var segmentControl: UIStackView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
