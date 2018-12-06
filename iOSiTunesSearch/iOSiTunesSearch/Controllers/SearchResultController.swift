@@ -1,6 +1,7 @@
 import Foundation
 
 class SearchResultController: Codable {
+    
     static let endpoint = "https://itunes.apple.com/search?"
     var searchResults: [SearchResult] = []
     
@@ -65,7 +66,7 @@ class SearchResultController: Codable {
                 
                 
             } catch {
-                NSLog("Unable to decode data into people: \(error)")
+                NSLog("Unable to decode data: \(error)")
                 completion(nil, error)
             }
         }

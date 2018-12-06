@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB0CF68C21B8A8C20036F562 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CF68B21B8A8C20036F562 /* SearchResultsTableViewController.swift */; };
+		AB0CF68E21B8FEDB0036F562 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CF68D21B8FEDB0036F562 /* SearchResultTableViewCell.swift */; };
 		AB39E5F221B87123001A9498 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB39E5F121B87123001A9498 /* SearchResults.swift */; };
 		AB39E5F521B87472001A9498 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB39E5F421B87472001A9498 /* ResultType.swift */; };
 		AB39E5F721B876AB001A9498 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB39E5F621B876AB001A9498 /* SearchResultController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		AB0CF68B21B8A8C20036F562 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		AB0CF68D21B8FEDB0036F562 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		AB39E5F121B87123001A9498 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		AB39E5F421B87472001A9498 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		AB39E5F621B876AB001A9498 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				AB39E5F621B876AB001A9498 /* SearchResultController.swift */,
 				AB0CF68B21B8A8C20036F562 /* SearchResultsTableViewController.swift */,
+				AB0CF68D21B8FEDB0036F562 /* SearchResultTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				AB39E5F521B87472001A9498 /* ResultType.swift in Sources */,
 				AB39E5F221B87123001A9498 /* SearchResults.swift in Sources */,
+				AB0CF68E21B8FEDB0036F562 /* SearchResultTableViewCell.swift in Sources */,
 				AB0CF68C21B8A8C20036F562 /* SearchResultsTableViewController.swift in Sources */,
 				AB39E5F721B876AB001A9498 /* SearchResultController.swift in Sources */,
 				AB4C3A0721B71CFE001A50BE /* AppDelegate.swift in Sources */,
