@@ -12,9 +12,11 @@ struct SearchResult: Codable {
         case artist = "artistName"
     }
     
-    struct SearchResults: Codable {
-        
-        let results: [SearchResult]
-    }
-    
 }
+
+struct SearchResults: Codable {
+        
+    let results: [SearchResult]
+}
+    
+

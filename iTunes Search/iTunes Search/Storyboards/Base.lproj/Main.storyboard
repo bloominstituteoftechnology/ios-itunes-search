@@ -55,7 +55,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="1nO-7L-q8q" detailTextLabel="ykD-J0-Ml3" imageView="IfL-2U-UdE" rowHeight="63" style="IBUITableViewCellStyleSubtitle" id="TI4-oe-NyY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchItemCell" textLabel="1nO-7L-q8q" detailTextLabel="ykD-J0-Ml3" imageView="IfL-2U-UdE" rowHeight="63" style="IBUITableViewCellStyleSubtitle" id="TI4-oe-NyY">
                                 <rect key="frame" x="0.0" y="132" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TI4-oe-NyY" id="8Of-Hq-PYy">
@@ -77,6 +77,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IfL-2U-UdE">
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
