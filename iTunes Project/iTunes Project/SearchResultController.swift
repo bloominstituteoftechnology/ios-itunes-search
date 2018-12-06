@@ -1,6 +1,6 @@
 import UIKit
 
-class SearchResultController: UITableViewController {
+class SearchResultController{
     let endpoint = "https://itunes.apple.com/search"
     
 
