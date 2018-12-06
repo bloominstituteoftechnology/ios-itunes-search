@@ -2,15 +2,15 @@ import UIKit
 
 class SearchResultController {
     
-   static let endpoint = "https://itunes.apple.com/search?parameter"
+   let searchURL = "https://itunes.apple.com/search"
     
-    let baseURL = URL(string: endpoint)
+    //let baseURL = URL(string: searchURL)
 
     var searchResults: [SearchResult] = []
     
-    static func performSearch(with searchTerm: String, completion: @escaping ([ResultType]?, Error?) -> Void) {
+    func performSearch(with searchTerm: String, completion: @escaping ([ResultType]?, Error?) -> Void) {
         
-        guard let baseURL = URL(string: endpoint)
+        guard let baseURL = URL(string: searchURL)
             else { fatalError("Unable to construct baseURL") }
         
         // Decompose it into its components
@@ -18,7 +18,8 @@ class SearchResultController {
             fatalError("Unable to resolve baseURL to components")
         }
         
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+     
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         
         // Add in the search term, if you have more than one just add it to the array
         urlComponents.queryItems = [searchQueryItem]
@@ -35,37 +36,33 @@ class SearchResultController {
         var request = URLRequest(url: searchURL)
         request.httpMethod = "GET" // "Please fetch information for
         
-        let dataTask = URLSession.shared.dataTask(with: request) {
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             // This closure is sent three parameters:
-            data, _, error in
+           
             
             
             guard error == nil, let data = data else {
                 if let error = error { // this will always succeed
                     NSLog("Error fetching data: \(error)")
-                    completion(nil, error) // we know that error is non-nil
+                    completion(nil, NSError()) // we know that error is non-nil
                 }
                 return
             }
-            do {
-              let jsonDecoder = JSONDecoder()
-                // Perform decoding into [Person] stored in PersonSearchResults
-                let searchRes = try jsonDecoder.decode(SearchResults.self, from: data)
-                
-               var searchResult = searchRes.results
-                // Send back the results to the completion handler
-                completion(nil, error)
-                
-            } catch {
-                NSLog("Unable to decode data into people: \(error)")
-                completion(nil, error)
-                //        return
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
+                    
+                    self.searchResults = searchResults.results
+                    
+                    
+                    completion(nil, error)
+                } catch {
+                    NSLog("error decoding data \(error)")
+                    completion(nil, error)
+                    
+                }
             }
-        }
-        
-        // A data task needs to be run. To start it, you call `resume`.
-        // "Newly-initialized tasks begin in a suspended state, so you need to call this method to start the task."
-        dataTask.resume()
+            dataTask.resume()
         
         }
 }

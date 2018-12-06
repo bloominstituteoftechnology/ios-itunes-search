@@ -18,56 +18,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="zrJ-WX-nOK">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jV1-cJ-kq1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                    <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I07-dW-LTe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
-                                            <segments>
-                                                <segment title="Apps"/>
-                                                <segment title="Music"/>
-                                                <segment title="Movies"/>
-                                            </segments>
-                                        </segmentedControl>
-                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="c2c-Dl-iXA">
-                                            <rect key="frame" x="0.0" y="44" width="375" height="56"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </searchBar>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="I07-dW-LTe" firstAttribute="leading" secondItem="jV1-cJ-kq1" secondAttribute="leading" id="71D-CQ-3Gs"/>
-                                        <constraint firstAttribute="trailing" secondItem="I07-dW-LTe" secondAttribute="trailing" id="pUi-bc-eHK"/>
-                                    </constraints>
-                                </stackView>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I07-dW-LTe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                                    <segments>
+                                        <segment title="Apps"/>
+                                        <segment title="Music"/>
+                                        <segment title="Movies"/>
+                                    </segments>
+                                </segmentedControl>
+                                <searchBar contentMode="redraw" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="c2c-Dl-iXA">
+                                    <rect key="frame" x="0.0" y="28" width="375" height="56"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="jV1-cJ-kq1" firstAttribute="leading" secondItem="zrJ-WX-nOK" secondAttribute="leading" id="7UL-wn-yMR"/>
-                                <constraint firstAttribute="trailing" secondItem="jV1-cJ-kq1" secondAttribute="trailing" id="HHG-FX-EWC"/>
-                                <constraint firstAttribute="bottom" secondItem="jV1-cJ-kq1" secondAttribute="bottom" id="i6w-wW-BLM"/>
-                                <constraint firstItem="jV1-cJ-kq1" firstAttribute="top" secondItem="zrJ-WX-nOK" secondAttribute="top" id="zGf-HT-xB5"/>
+                                <constraint firstItem="I07-dW-LTe" firstAttribute="leading" secondItem="zrJ-WX-nOK" secondAttribute="leading" id="Dwt-wN-DYb"/>
+                                <constraint firstItem="c2c-Dl-iXA" firstAttribute="leading" secondItem="zrJ-WX-nOK" secondAttribute="leading" id="K1t-oO-cqc"/>
+                                <constraint firstAttribute="trailing" secondItem="I07-dW-LTe" secondAttribute="trailing" id="Xqs-ea-n7O"/>
+                                <constraint firstItem="I07-dW-LTe" firstAttribute="top" secondItem="zrJ-WX-nOK" secondAttribute="top" id="byk-d5-1vb"/>
+                                <constraint firstAttribute="trailing" secondItem="c2c-Dl-iXA" secondAttribute="trailing" id="joK-Qn-ysJ"/>
+                                <constraint firstAttribute="bottom" secondItem="c2c-Dl-iXA" secondAttribute="bottom" id="s7I-yz-BN5"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="gg9-xh-KnO" detailTextLabel="XeM-Da-z8F" style="IBUITableViewCellStyleSubtitle" id="8eN-cq-sF4">
-                                <rect key="frame" x="0.0" y="128" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="gg9-xh-KnO" detailTextLabel="XeM-Da-z8F" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="8eN-cq-sF4" customClass="SearchResultTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="112" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8eN-cq-sF4" id="FmQ-Np-O5N">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gg9-xh-KnO">
-                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XeM-Da-z8F">
-                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="16" y="35.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -75,6 +68,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="creator" destination="XeM-Da-z8F" id="Mmu-Qw-VMh"/>
+                                    <outlet property="title" destination="gg9-xh-KnO" id="Ui5-cK-FZq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

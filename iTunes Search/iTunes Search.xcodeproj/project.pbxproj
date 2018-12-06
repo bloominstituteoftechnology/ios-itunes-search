@@ -15,6 +15,7 @@
 		A530E90921B89CB400AB7DBD /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530E90821B89CB300AB7DBD /* ResultType.swift */; };
 		A530E90B21B89D4F00AB7DBD /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530E90A21B89D4F00AB7DBD /* SearchResultController.swift */; };
 		A530E90D21B8FDEF00AB7DBD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530E90C21B8FDEF00AB7DBD /* SearchResultsTableViewController.swift */; };
+		A530E90F21B9069800AB7DBD /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530E90E21B9069800AB7DBD /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A530E90821B89CB300AB7DBD /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		A530E90A21B89D4F00AB7DBD /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		A530E90C21B8FDEF00AB7DBD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		A530E90E21B9069800AB7DBD /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				A530E90821B89CB300AB7DBD /* ResultType.swift */,
 				A530E90A21B89D4F00AB7DBD /* SearchResultController.swift */,
 				A530E90C21B8FDEF00AB7DBD /* SearchResultsTableViewController.swift */,
+				A530E90E21B9069800AB7DBD /* SearchResultTableViewCell.swift */,
 				A530E8F821B87F4100AB7DBD /* Main.storyboard */,
 				A530E8FB21B87F4400AB7DBD /* Assets.xcassets */,
 				A530E8FD21B87F4400AB7DBD /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			files = (
 				A530E90921B89CB400AB7DBD /* ResultType.swift in Sources */,
 				A530E90721B8912200AB7DBD /* SearchResult.swift in Sources */,
+				A530E90F21B9069800AB7DBD /* SearchResultTableViewCell.swift in Sources */,
 				A530E90D21B8FDEF00AB7DBD /* SearchResultsTableViewController.swift in Sources */,
 				A530E8F521B87F4100AB7DBD /* AppDelegate.swift in Sources */,
 				A530E90B21B89D4F00AB7DBD /* SearchResultController.swift in Sources */,

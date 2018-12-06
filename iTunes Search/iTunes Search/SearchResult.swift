@@ -9,10 +9,10 @@ struct SearchResult: Codable {
 enum CodingKeys: String, CodingKey {
     
     case title = "trackName"
-    case creater = "createrName"
+    case creater = "artistName"
     }
 
-struct SearchResults: Decodable {
+struct SearchResults: Codable {
     
     let results: [SearchResult]
 }
