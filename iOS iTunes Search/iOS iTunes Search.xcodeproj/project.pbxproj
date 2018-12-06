@@ -14,6 +14,7 @@
 		8471F10221B8807A008744BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471F10021B8807A008744BD /* LaunchScreen.storyboard */; };
 		8471F10A21B8851E008744BD /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F10921B8851E008744BD /* SearchResult.swift */; };
 		8471F10C21B88F20008744BD /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F10B21B88F20008744BD /* ResultType.swift */; };
+		8471F10E21B88FF3008744BD /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F10D21B88FF3008744BD /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8471F10321B8807A008744BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8471F10921B8851E008744BD /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		8471F10B21B88F20008744BD /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		8471F10D21B88FF3008744BD /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8471F0FB21B88079008744BD /* Main.storyboard */,
 				8471F10921B8851E008744BD /* SearchResult.swift */,
 				8471F10B21B88F20008744BD /* ResultType.swift */,
+				8471F10D21B88FF3008744BD /* SearchResultController.swift */,
 				8471F0FE21B8807A008744BD /* Assets.xcassets */,
 				8471F10021B8807A008744BD /* LaunchScreen.storyboard */,
 				8471F10321B8807A008744BD /* Info.plist */,
@@ -145,6 +148,7 @@
 				8471F0FA21B88079008744BD /* ViewController.swift in Sources */,
 				8471F10A21B8851E008744BD /* SearchResult.swift in Sources */,
 				8471F0F821B88079008744BD /* AppDelegate.swift in Sources */,
+				8471F10E21B88FF3008744BD /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

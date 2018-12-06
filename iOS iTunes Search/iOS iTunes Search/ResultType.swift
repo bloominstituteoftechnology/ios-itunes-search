@@ -2,7 +2,7 @@
 import UIKit
 
 enum ResultType: String {
-    case software
-    case musicTrack
-    case movie
+    case apps = "software"
+    case music = "musicTrack"
+    case movies = "movie"
 }

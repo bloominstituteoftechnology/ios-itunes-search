@@ -7,11 +7,11 @@ struct SearchResult: Codable {
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
-        case artist = "artistName"
+        case creator = "artistName"
     }
 }
 
 // Object that represents JSON at the highest level, that contains the resultCount and results keys
-struct SearchResults {
+struct SearchResults: Codable {
     let results: [SearchResult]
 }
