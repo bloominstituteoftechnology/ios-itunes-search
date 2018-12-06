@@ -82,6 +82,9 @@ class SearchResultController {
                 completion(nil, error)
             }
         }
+        
+        // Run the data task
+        dataTask.resume()
     }
     
 }

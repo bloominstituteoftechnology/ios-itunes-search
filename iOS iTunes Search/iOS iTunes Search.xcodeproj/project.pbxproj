@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8471F0F821B88079008744BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F0F721B88079008744BD /* AppDelegate.swift */; };
-		8471F0FA21B88079008744BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F0F921B88079008744BD /* ViewController.swift */; };
 		8471F0FD21B88079008744BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471F0FB21B88079008744BD /* Main.storyboard */; };
 		8471F0FF21B8807A008744BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8471F0FE21B8807A008744BD /* Assets.xcassets */; };
 		8471F10221B8807A008744BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471F10021B8807A008744BD /* LaunchScreen.storyboard */; };
 		8471F10A21B8851E008744BD /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F10921B8851E008744BD /* SearchResult.swift */; };
 		8471F10C21B88F20008744BD /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F10B21B88F20008744BD /* ResultType.swift */; };
 		8471F10E21B88FF3008744BD /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F10D21B88FF3008744BD /* SearchResultController.swift */; };
+		84C4635A21B8B6FB001D5C54 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4635921B8B6FB001D5C54 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8471F0F421B88079008744BD /* iOS iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8471F0F721B88079008744BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8471F0F921B88079008744BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8471F0FC21B88079008744BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8471F0FE21B8807A008744BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8471F10121B8807A008744BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		8471F10921B8851E008744BD /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		8471F10B21B88F20008744BD /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		8471F10D21B88FF3008744BD /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		84C4635921B8B6FB001D5C54 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +60,12 @@
 		8471F0F621B88079008744BD /* iOS iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
-				8471F0F721B88079008744BD /* AppDelegate.swift */,
-				8471F0F921B88079008744BD /* ViewController.swift */,
 				8471F0FB21B88079008744BD /* Main.storyboard */,
 				8471F10921B8851E008744BD /* SearchResult.swift */,
 				8471F10B21B88F20008744BD /* ResultType.swift */,
 				8471F10D21B88FF3008744BD /* SearchResultController.swift */,
+				84C4635921B8B6FB001D5C54 /* SearchResultsTableViewController.swift */,
+				8471F0F721B88079008744BD /* AppDelegate.swift */,
 				8471F0FE21B8807A008744BD /* Assets.xcassets */,
 				8471F10021B8807A008744BD /* LaunchScreen.storyboard */,
 				8471F10321B8807A008744BD /* Info.plist */,
@@ -145,8 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8471F10C21B88F20008744BD /* ResultType.swift in Sources */,
-				8471F0FA21B88079008744BD /* ViewController.swift in Sources */,
 				8471F10A21B8851E008744BD /* SearchResult.swift in Sources */,
+				84C4635A21B8B6FB001D5C54 /* SearchResultsTableViewController.swift in Sources */,
 				8471F0F821B88079008744BD /* AppDelegate.swift in Sources */,
 				8471F10E21B88FF3008744BD /* SearchResultController.swift in Sources */,
 			);
