@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 struct SearchResult: Codable {
     let title: String //trackName
@@ -6,13 +6,12 @@ struct SearchResult: Codable {
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
-        case artist = "artistName"
-        
+        case creator = "artistName"
     }
     
-    struct SearchResults {
-        let results: [SearchResults]
+    struct SearchResults: Codable {
+        let results: [SearchResult]
     }
-    
-    
 }
+
+

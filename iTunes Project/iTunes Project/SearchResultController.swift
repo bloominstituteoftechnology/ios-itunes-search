@@ -1,13 +1,13 @@
 import UIKit
 
 class SearchResultController: UITableViewController {
-    static let endpoint = "https://itunes.apple.com/"
+    let endpoint = "https://itunes.apple.com/search"
     
 
     
     var searchResults: [SearchResult] = []
     
-   static func performSearch(searchTerm: String, resultType: ResultType, completion: () -> NSError?) {
+    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
     
         guard let baseURL = URL(string: endpoint) else {fatalError("Unable to construct baseURL") }
     
@@ -15,6 +15,40 @@ class SearchResultController: UITableViewController {
             else {
                 fatalError("Unable to resolve baseURL to components")
             }
-    }
+    
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+    
+        urlComponents.queryItems = [searchQueryItem, resultTypeQueryItem]
+    
+        guard let searchURL = urlComponents.url else { return }
+    
+//        guard let searchURL = urlComponents.url else {
+//            NSLog("Error constructing search URL for \(searchTerm)")
+//            completion(nil, NSError())
+//            return
+        var request = URLRequest(url: searchURL)
+        request.httpMethod = "GET"
+    
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
         
+            guard error == nil, let data = data else {
+                if let error = error {
+                    NSLog("Error fetching data: \(error)")
+                    completion(NSError())
+                }
+                return
+            }
+            do {
+                let jsonDecoder = JSONDecoder()
+            
+                let searchResults = try jsonDecoder.decode(SearchResult.SearchResults.self, from: data)
+                self.searchResults = searchResults.results
+            } catch {
+                NSLog("Unable to decode data into people: \(error)")
+                completion(NSError())
+            }
+        }
+        dataTask.resume()
+    }
 }

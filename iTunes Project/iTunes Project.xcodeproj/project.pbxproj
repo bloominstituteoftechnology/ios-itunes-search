@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F3CEF01F21B8789C0095F4A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CEF01E21B8789C0095F4A7 /* AppDelegate.swift */; };
-		F3CEF02121B8789C0095F4A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CEF02021B8789C0095F4A7 /* ViewController.swift */; };
 		F3CEF02421B8789D0095F4A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CEF02221B8789D0095F4A7 /* Main.storyboard */; };
 		F3CEF02621B8789E0095F4A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CEF02521B8789E0095F4A7 /* Assets.xcassets */; };
 		F3CEF02921B8789E0095F4A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CEF02721B8789E0095F4A7 /* LaunchScreen.storyboard */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		F3CEF01B21B8789C0095F4A7 /* iTunes Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3CEF01E21B8789C0095F4A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3CEF02021B8789C0095F4A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F3CEF02321B8789D0095F4A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3CEF02521B8789E0095F4A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3CEF02821B8789E0095F4A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 				F3CEF03421B87BA50095F4A7 /* SearchResultController.swift */,
 				F3CEF03221B87B2D0095F4A7 /* ResultType.swift */,
 				F3CEF03021B878F60095F4A7 /* SearchResult.swift */,
-				F3CEF02021B8789C0095F4A7 /* ViewController.swift */,
 				F3CEF02221B8789D0095F4A7 /* Main.storyboard */,
 				F3CEF02521B8789E0095F4A7 /* Assets.xcassets */,
 				F3CEF02721B8789E0095F4A7 /* LaunchScreen.storyboard */,
@@ -145,7 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3CEF03321B87B2D0095F4A7 /* ResultType.swift in Sources */,
-				F3CEF02121B8789C0095F4A7 /* ViewController.swift in Sources */,
 				F3CEF03121B878F60095F4A7 /* SearchResult.swift in Sources */,
 				F3CEF01F21B8789C0095F4A7 /* AppDelegate.swift in Sources */,
 				F3CEF03521B87BA50095F4A7 /* SearchResultController.swift in Sources */,
