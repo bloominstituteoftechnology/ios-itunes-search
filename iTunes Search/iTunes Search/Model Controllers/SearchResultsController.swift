@@ -2,11 +2,16 @@ import Foundation
 
 // Example URL https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo
 
+//searchURL    https://itunes.apple.com/search?term=Yelp&entity=software
+//searchURL    https://itunes.apple.com/search?term=Beach%20Boys&entity=musicTrack
+
 class SearchResultsController {
     
-    static let endpoint = "https://itunes.apple.com/search?"
+    static let endpoint = "https://itunes.apple.com/search"
     
-    static func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void ) {
+    var searchResults: [SearchResult] = []
+    
+    func performSearch(searchTerm: String, resultType: ResultType, _ searchLimit: String?, completion: @escaping ([SearchResult]?, Error?) -> Void ) {
         
         guard let baseURL = URL(string: SearchResultsController.endpoint) else { fatalError("Unable to construct baseURL") }
         
@@ -14,26 +19,30 @@ class SearchResultsController {
         
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let typeOfQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        let searchLimitQueryItem = URLQueryItem(name: "limit", value: searchLimit)
         
-        urlComponents.queryItems = [searchQueryItem, typeOfQueryItem]
+        urlComponents.queryItems = [searchQueryItem, typeOfQueryItem, searchLimitQueryItem]
         
         guard let searchURL = urlComponents.url else {
             NSLog("Error constructing search URL for \(searchTerm)")
             completion(nil, NSError())
             return
         }
-        print(searchURL)
         
         var request = URLRequest(url: searchURL)
         request.httpMethod = "GET"
         
         let dataTask = URLSession.shared.dataTask(with: request) { data, _, error in
             
-            guard error == nil, let data = data else {
-                if let error = error {
-                    NSLog("Error fetching data: \(error)")
-                    completion(nil, error)
-                }
+            if let error = error {
+                NSLog("Error fetching data: \(error)")
+                completion(nil, NSError())
+                return
+            }
+        
+            guard let data = data else {
+                NSLog("Error fetching data. No data returned")
+                completion(nil, NSError())
                 return
             }
             
@@ -41,16 +50,19 @@ class SearchResultsController {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 let resultFromSearch = try jsonDecoder.decode(SearchResults.self, from: data)
-                let returnedSearchItem = resultFromSearch.results
-                completion(returnedSearchItem, nil)
+                self.searchResults = resultFromSearch.results
+                completion(self.searchResults, nil)
             } catch {
                 NSLog("Unable to decode data into search query \(error)")
-                completion(nil, error)
+                completion(nil, NSError())
+                return
             }
         }
         dataTask.resume()
     }
     
 }
+
+
 
 

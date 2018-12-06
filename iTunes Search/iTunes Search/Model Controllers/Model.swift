@@ -9,31 +9,35 @@
 import Foundation
 
 class Model {
-    static let shared = Model()
-    private init () {}
     
     typealias UpdateHandler = () -> Void
     var updateHandler: UpdateHandler? = nil
     
-    var resultType: ResultType? {
-        didSet {
-            DispatchQueue.main.async {
-                self.updateHandler?()
-            }
-        }
-    }
-    
-    var searchResultsController = SearchResultsController() {
-        didSet {
-            DispatchQueue.main.async {
-                self.updateHandler?()
-            }
-        }
-    }
+//    var resultType: ResultType? {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.updateHandler?()
+//            }
+//        }
+//    }
+//    
+//    var searchResultsController = SearchResultsController() {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.updateHandler?()
+//            }
+//        }
+//    }
     
     let searchResultsTableViewController = SearchResultsTableViewController()
     
-    var searchResults: [SearchResult] = []
+    var searchResults: [SearchResult] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.updateHandler?()
+            }
+        }
+    }
     
     func numberOfResults() -> Int {
         return searchResults.count
@@ -43,24 +47,21 @@ class Model {
         return searchResults[index]
     }
     
-    func searchItunes(with searchTerm: String) {
-        
-        guard let resultType = self.resultType else { return }
-        
-        SearchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { searchResults, error in
-            
-            if let error = error {
-                NSLog("Error fetching search results: \(error)")
-                return
-            }
-            guard let searchResults = searchResults else { return }
-            
-            self.searchResults = searchResults
-        }
+    func searchItunes(for string: String) {
+//        guard let resultType = resultType else { return }
+//        searchResultsController.performSearch(searchTerm: string, resultType: resultType) { searchResults, error in
+//            
+//            if let error = error {
+//                NSLog("Error fetching search results: \(error)")
+//                return
+//            }
+//            guard let searchResults = searchResults else { return }
+//            self.searchResults = searchResults
+//        }
     }
     
     func updateSearchType() {
-    
+        
     }
     
 }

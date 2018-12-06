@@ -23,26 +23,40 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vBl-z0-Ceq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-B7-UD4">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="29"/>
-                                            <segments>
-                                                <segment title="Apps"/>
-                                                <segment title="Music"/>
-                                                <segment title="Movies"/>
-                                            </segments>
-                                        </segmentedControl>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-UI-jkk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-B7-UD4">
+                                                    <rect key="frame" x="0.0" y="6" width="273" height="29"/>
+                                                    <segments>
+                                                        <segment title="Apps"/>
+                                                        <segment title="Music"/>
+                                                        <segment title="Movies"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="segmentControlTapped:" destination="NeY-XC-Wm9" eventType="valueChanged" id="d5Y-7i-JCw"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="bYo-sg-z1z">
+                                                    <rect key="frame" x="281" y="5.5" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="searchLimitStepper:" destination="NeY-XC-Wm9" eventType="valueChanged" id="jfK-Se-pnP"/>
+                                                    </connections>
+                                                </stepper>
+                                            </subviews>
+                                        </stackView>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Jt9-hl-Eqk">
-                                            <rect key="frame" x="0.0" y="36" width="375" height="68"/>
+                                            <rect key="frame" x="0.0" y="48" width="375" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Jt9-hl-Eqk" secondAttribute="trailing" id="2gv-qU-WdX"/>
-                                        <constraint firstItem="g4A-B7-UD4" firstAttribute="leading" secondItem="vBl-z0-Ceq" secondAttribute="leading" constant="16" id="M54-ZG-l0a"/>
+                                        <constraint firstItem="4uu-UI-jkk" firstAttribute="top" secondItem="vBl-z0-Ceq" secondAttribute="top" id="7bW-JK-aZ5"/>
                                         <constraint firstAttribute="bottom" secondItem="Jt9-hl-Eqk" secondAttribute="bottom" id="Zjs-pk-cya"/>
-                                        <constraint firstItem="g4A-B7-UD4" firstAttribute="top" relation="lessThanOrEqual" secondItem="vBl-z0-Ceq" secondAttribute="top" constant="16" id="lpV-Pn-tBM"/>
+                                        <constraint firstItem="4uu-UI-jkk" firstAttribute="leading" secondItem="vBl-z0-Ceq" secondAttribute="leading" id="o7I-Aj-8CO"/>
                                         <constraint firstItem="Jt9-hl-Eqk" firstAttribute="leading" secondItem="vBl-z0-Ceq" secondAttribute="leading" id="oEY-Wg-D9v"/>
-                                        <constraint firstAttribute="trailing" secondItem="g4A-B7-UD4" secondAttribute="trailing" constant="16" id="un1-PY-bwY"/>
+                                        <constraint firstAttribute="trailing" secondItem="4uu-UI-jkk" secondAttribute="trailing" id="vMF-Su-rjf"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
