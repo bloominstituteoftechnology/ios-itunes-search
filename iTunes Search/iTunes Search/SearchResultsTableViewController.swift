@@ -11,10 +11,18 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // searchBar.delegate
        
     }
-
+    
+    func searchBarSearchButtonClicked() {
+        
+        guard let search = searchBar.text, searchBar.text != nil else {return}
+        
+        
+        
+        
+    }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

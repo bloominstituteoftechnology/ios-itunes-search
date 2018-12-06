@@ -1,7 +1,7 @@
 import Foundation
 
 enum ResultType: String {
-    case software
+    case software = "software" // testing rawValue
     case musicTrack
     case movie
 }

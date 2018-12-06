@@ -18,11 +18,11 @@ class SearchResultController {
             fatalError("Unable to resolve baseURL to components")
         }
         
-     
-        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let searchQueryItem = URLQueryItem(name: "entity", value: searchTerm)
+        let resultQueryItem = URLQueryItem(name: "term", value: ResultType.software.rawValue) // ResultType.movie.rawValue, ResultType.musicTrack.rawValue)
         
         // Add in the search term, if you have more than one just add it to the array
-        urlComponents.queryItems = [searchQueryItem]
+        urlComponents.queryItems = [searchQueryItem, resultQueryItem]
         
         // Recompose all those individual components back into a fully
         // realized search URL
