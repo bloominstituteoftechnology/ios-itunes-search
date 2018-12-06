@@ -1,5 +1,6 @@
 import Foundation
-let endpoint = "https://itunes.apple.com/search"
+
+let baseURL = URL(string: "https://itunes.apple.com/search")!
 
 class SearchResultController {
     
@@ -9,50 +10,48 @@ class SearchResultController {
     var searchResults: [SearchResult] = []
     
     //perform search
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?,NSError?) -> Void) {
-        guard let baseURL = URL(string: endpoint)
-            else {
-                fatalError("Unable to construct baseURL")
-        }
-        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-            else {
-                fatalError("Unable to resolve baseURL to components")
-        }
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
+        
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        
         //term is a way to search
         let searchQueryItems = URLQueryItem(name: "term", value: searchTerm)
         //entity searches music, movies, app
         let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents.queryItems = [searchQueryItems, resultTypeQueryItem]
+        urlComponents?.queryItems = [searchQueryItems, resultTypeQueryItem]
         
         
-        guard let searchURL = urlComponents.url else {
+        guard let requestURL = urlComponents?.url else {
             NSLog("Error constructing search URL for \(searchTerm)")
-            completion(nil, NSError())
+            completion(NSError())
             return
         }
-        //create request
-        var request = URLRequest(url: searchURL)
+        var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"
         
         //fetching data
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
-            guard error == nil, let data = data else {
-                if let error = error {
-                    NSLog("Error fetching data: \(error)")
-                }
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("There was a problem getting data from JSON: \(error)")
+                completion(NSError())
+            }
+            
+            guard let data = data else {
+                NSLog("No data found")
+                completion(NSError())
                 return
             }
-            do {
-                let jsonDecoder = JSONDecoder()
-                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults = searchResults.results
             
+            do {
+                let searchResults = try JSONDecoder().decode(SearchResults.self, from: data)
+                self.searchResults = searchResults.results
+                completion(NSError())
+                
             } catch {
-                NSLog("Unable to decode data into people: \(error)")
-                completion(nil, error as NSError)
+                NSLog("Unable to decodeJSON.")
+                completion(NSError())
+                
             }
-        }
-    
-        dataTask.resume()
+        }.resume()
     }
 }

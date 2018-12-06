@@ -36,7 +36,7 @@
                                             <rect key="frame" x="0.0" y="38.5" width="375" height="61.5"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
-                                                <outlet property="delegate" destination="7Ef-sU-UvS" id="uC6-Kj-bnk"/>
+                                                <outlet property="delegate" destination="7Ef-sU-UvS" id="XAa-6C-MjJ"/>
                                             </connections>
                                         </searchBar>
                                     </subviews>
@@ -57,7 +57,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="S9o-Dh-n0C" detailTextLabel="dYu-mH-NeK" style="IBUITableViewCellStyleSubtitle" id="11D-dj-2bB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="S9o-Dh-n0C" detailTextLabel="dYu-mH-NeK" style="IBUITableViewCellStyleSubtitle" id="11D-dj-2bB">
                                 <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="11D-dj-2bB" id="jz5-YR-u70">
