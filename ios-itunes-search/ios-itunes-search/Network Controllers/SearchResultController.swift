@@ -29,10 +29,12 @@ class SearchResultController {
         }
         
         // Create the query item using `search` and the search term
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+
+        let searchQueryItem2 = URLQueryItem(name: "entity", value: resultType.rawValue)
         
         // Add in the search term
-        urlComponents.queryItems = [searchQueryItem]
+        urlComponents.queryItems = [searchQueryItem,searchQueryItem2]
         
         // Recompose all those individual components back into a fully
         // realized search URL
@@ -41,7 +43,7 @@ class SearchResultController {
             completion(nil, NSError())
             return
         }
-        
+
         // Create a GET request
         var request = URLRequest(url: searchURL)
         request.httpMethod = "GET" // basically "READ"
@@ -66,21 +68,16 @@ class SearchResultController {
             // We know now we have no error *and* we have data to work with
             
             // Convert the data to JSON
-            // We need to convert snake_case decoding to camelCase
-            // Oddly there is no kebab-case equivalent
-            // Note issues with naming and show similar thing
-            // For example: https://github.com/erica/AssetCatalog/blob/master/AssetCatalog%2BImageSet.swift#L295
-            // See https://randomuser.me for future
             do {
                 // Declare, customize, use the decoder
                 let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 
-                // Perform decoding into [Person] stored in PersonSearchResults
+                // Perform decoding into [SearchResult] stored in SearchResults
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 let results = searchResults.results
                 
                 // Send back the results to the completion handler
+                self.searchResults = results
                 completion(results, nil)
                 
             } catch {
