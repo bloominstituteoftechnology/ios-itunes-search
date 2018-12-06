@@ -25,9 +25,29 @@ class SearchResultController {
             completion(nil, NSError())
             return
         }
+        //create request
+        var request = URLRequest(url: searchURL)
+        request.httpMethod = "GET"
         
-        
+        //fetching data
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+            guard error == nil, let data = data else {
+                if let error = error {
+                    NSLog("Error fetching data: \(error)")
+                }
+                return
+            }
+            do {
+                let jsonDecoder = JSONDecoder()
+                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults = searchResults.results
+            
+            } catch {
+                NSLog("Unable to decode data into people: \(error)")
+                completion(nil, error as NSError)
+            }
+        }
+    
+        dataTask.resume()
     }
-    
-    
 }
