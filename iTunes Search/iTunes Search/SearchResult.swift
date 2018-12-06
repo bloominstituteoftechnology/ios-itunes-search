@@ -12,7 +12,7 @@ enum CodingKeys: String, CodingKey {
     case creater = "createrName"
     }
 
-struct SearchResults: Codable {
+struct SearchResults: Decodable {
     
     let results: [SearchResult]
 }

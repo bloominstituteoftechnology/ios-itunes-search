@@ -1,15 +1,12 @@
-//
-//  SearchResultsTableViewController.swift
-//  iTunes Search
-//
-//  Created by Sergey Osipyan on 12/5/18.
-//  Copyright © 2018 Sergey Osipyan. All rights reserved.
-//
 
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
 
+    @IBOutlet weak var segmented: UISegmentedControl!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

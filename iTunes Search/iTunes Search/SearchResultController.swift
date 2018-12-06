@@ -33,25 +33,41 @@ class SearchResultController {
         
         // Create a GET request
         var request = URLRequest(url: searchURL)
-        request.httpMethod = "GET" // "Please fetch information for me", simplest REST you can do, equivalent to "read"
+        request.httpMethod = "GET" // "Please fetch information for
         
-        // Asynchronously fetch data
-        // Once the fetch completes, it calls its handler either with data
-        // (if available) _or_ with an error (if one happened)
-        // There's also a URL Response but we're going to ignore it
         let dataTask = URLSession.shared.dataTask(with: request) {
             // This closure is sent three parameters:
             data, _, error in
             
-        guard error == nil, let data = data else {
-            if let error = error { // this will always succeed
-                NSLog("Error fetching data: \(error)")
-                completion(nil, error) // we know that error is non-nil
+            
+            guard error == nil, let data = data else {
+                if let error = error { // this will always succeed
+                    NSLog("Error fetching data: \(error)")
+                    completion(nil, error) // we know that error is non-nil
+                }
+                return
             }
-            return
+            do {
+              let jsonDecoder = JSONDecoder()
+                // Perform decoding into [Person] stored in PersonSearchResults
+                let searchRes = try jsonDecoder.decode(SearchResults.self, from: data)
+                
+               var searchResult = searchRes.results
+                // Send back the results to the completion handler
+                completion(nil, error)
+                
+            } catch {
+                NSLog("Unable to decode data into people: \(error)")
+                completion(nil, error)
+                //        return
+            }
         }
-
+        
+        // A data task needs to be run. To start it, you call `resume`.
+        // "Newly-initialized tasks begin in a suspended state, so you need to call this method to start the task."
+        dataTask.resume()
+        
+        }
 }
 
-}
-}
+
