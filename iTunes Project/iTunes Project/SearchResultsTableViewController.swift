@@ -1,17 +1,51 @@
 import UIKit
 
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
+    
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var searchBar: UISearchBar!
     
+    let reuseIdentifier = "cell"
+    
     let searchResultsController = SearchResultController()
+    
+    override func viewDidLoad() {
+        <#code#>
+    }
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        searchResultsController.performSearch(with: searchTerm, resultType: <#ResultType#>) { searchResults, error in
+            if let error = error {
+                NSLog("error fetching search results: \(error)")
+            }
+        
+        SWAPI.searchForPeople(with: string) { people, error in
+            if let error = error {
+                NSLog("Error fetching people: \(error)")
+                return
+            }
+            self.people = people ?? []
+//        Model.shared.search(for: searchTerm)
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
        return searchResultsController.searchResults.count
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        
+       //how to configure???
+        let searchResult = searchResultsController.searchResults[indexPath.row]
+        
+    
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+        
+        return cell
     }
 }
