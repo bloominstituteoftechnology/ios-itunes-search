@@ -21,8 +21,8 @@ class SearchResultController {
         //term is a way to search
         let searchQueryItems = URLQueryItem(name: "term", value: searchTerm)
         //entity searches music, movies, app
-        let searQuerEntity = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents.queryItems = [searchQueryItems, searQuerEntity]
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents.queryItems = [searchQueryItems, resultTypeQueryItem]
         
         
         guard let searchURL = urlComponents.url else {
