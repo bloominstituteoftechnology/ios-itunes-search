@@ -1,7 +1,9 @@
 import Foundation
 
+// https://itunes.apple.com/search
+
 enum ResultType: String {
-    case software
-    case musicTrack
-    case movie
+    case apps = "software"
+    case songs = "musicTrack"
+    case movies = "movie"
 }

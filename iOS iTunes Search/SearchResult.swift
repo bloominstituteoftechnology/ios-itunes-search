@@ -1,5 +1,8 @@
 import Foundation
 
+// https://itunes.apple.com/search
+
+
 struct SearchResult: Codable {
     let title: String
     let creator: String
