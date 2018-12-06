@@ -9,6 +9,7 @@
 import UIKit
 
 class TableViewCellController: UITableViewCell {
+    
     static let shared = TableViewCellController()
 
     @IBOutlet weak var workLabel: UILabel!

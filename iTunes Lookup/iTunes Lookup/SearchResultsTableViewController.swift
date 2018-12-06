@@ -8,9 +8,34 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchLabel.delegate = self
+    }
     
-    let searchResult = SearchResult.SearchResults.init(results: SearchResultController.shared.searchResults )
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchTerm = searchLabel.text, searchLabel.text != nil else {return}
+            var resultType: ResultType!
+            let index = appsMusicMovies.selectedSegmentIndex
+        switch index {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            return
+        }
+        searchResultController.performSearch(with: searchTerm, result: resultType) {_ in DispatchQueue.main.async {
+            self.tableView.reloadData()
+            }
+        
+        }
+    }
     
     let reuseIdentifier = "cell"
     
@@ -20,16 +45,21 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var appsMusicMovies: UISegmentedControl!
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return SearchResultController.shared.searchResults.count
+        print(searchResultController.searchResults.count)
+        return searchResultController.searchResults.count
     }
     
+    
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
-        TableViewCellController.shared.workLabel.text = searchResult.results[indexPath.row].title
-        TableViewCellController.shared.artistLabel.text = searchResult.results[indexPath.row].creator
+        TableViewCellController.shared.workLabel.text = searchResultController.searchResults[indexPath.row].title
+        
+        TableViewCellController.shared.artistLabel.text = searchResultController.searchResults[indexPath.row].creator
         
         return cell
     }
+    let searchResultController = SearchResultController()
     
 }

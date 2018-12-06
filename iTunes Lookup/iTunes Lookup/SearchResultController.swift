@@ -2,14 +2,11 @@ import Foundation
 
 class SearchResultController {
     
-    static let shared = SearchResultController()
-    private init () {}
-    
     var searchResults: [SearchResult] = []
     
     let endpoint = "https://itunes.apple.com/search"
     
-    func performSearch(with searchTerm: String, result: ResultType, completion: @escaping (NSError?) -> Void) {
+    func performSearch(with searchTerm: String, result: ResultType, completion: @escaping (Error?) -> Void) {
 
         guard let baseURL = URL(string: endpoint)
             else {
@@ -52,7 +49,7 @@ class SearchResultController {
                 self.searchResults = searchResults.results
                 
 
-                completion(nil)
+                completion(error)
                 
             } catch {
                 NSLog("Unable to decode data into people: \(error)")
