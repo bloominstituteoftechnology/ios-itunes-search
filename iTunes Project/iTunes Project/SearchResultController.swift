@@ -23,10 +23,7 @@ class SearchResultController{
     
         guard let searchURL = urlComponents.url else { return }
     
-//        guard let searchURL = urlComponents.url else {
-//            NSLog("Error constructing search URL for \(searchTerm)")
-//            completion(nil, NSError())
-//            return
+
         var request = URLRequest(url: searchURL)
         request.httpMethod = "GET"
     
@@ -44,6 +41,7 @@ class SearchResultController{
             
                 let searchResults = try jsonDecoder.decode(SearchResult.SearchResults.self, from: data)
                 self.searchResults = searchResults.results
+                completion(nil)
             } catch {
                 NSLog("Unable to decode data into people: \(error)")
                 completion(NSError())

@@ -16,54 +16,39 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         var resultType: ResultType!
         
         if segmentedControl.selectedSegmentIndex == 0 {
-            return resultType = ResultType.apps
+            resultType = ResultType.apps
         } else if segmentedControl.selectedSegmentIndex == 1 {
-            return resultType = ResultType.music
+            resultType = ResultType.music
         } else if segmentedControl.selectedSegmentIndex == 2 {
-            return resultType = ResultType.movies
+            resultType = ResultType.movies
         }
-        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (NSError?) in
-            
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (error) in
+            if let error = error {
+                NSLog("Error fetching data: \(error)")
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            print("attempted to search")
         }
     }
     
-//        switch segmentedControl.selectedSegmentIndex{
-//        case 0:
-//            resultType = .software
-//        case 1:
-//            resultType = .musicTrack
-//        case 2:
-//            resultType = .movie
-//        }
-        
-//        searchResultsController.performSearch(with: searchTerm, resultType: <#ResultType#>) { searchResults, error in
-//            if let error = error {
-//                NSLog("error fetching search results: \(error)")
-//            }
-//
-//        SWAPI.searchForPeople(with: string) { people, error in
-//            if let error = error {
-//                NSLog("Error fetching people: \(error)")
-//                return
-//            }
-//            self.people = people ?? []
-//        Model.shared.search(for: searchTerm)
-  
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-       return searchResultsController.searchResults.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("reached number of rows")
         
+        return searchResultsController.searchResults.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
-       //how to configure???
         let searchResult = searchResultsController.searchResults[indexPath.row]
         
-    
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
+        print("reached cell for at")
         
         return cell
     }
