@@ -35,6 +35,9 @@
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="M7W-V2-8BW">
                                             <rect key="frame" x="0.0" y="38.5" width="375" height="61.5"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="7Ef-sU-UvS" id="uC6-Kj-bnk"/>
+                                            </connections>
                                         </searchBar>
                                     </subviews>
                                     <constraints>
