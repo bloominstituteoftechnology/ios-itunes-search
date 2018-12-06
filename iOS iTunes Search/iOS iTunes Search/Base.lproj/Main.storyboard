@@ -24,6 +24,9 @@
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kJS-u5-TWN">
                                     <rect key="frame" x="0.0" y="47" width="375" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="dlt-2z-uvD" id="ucn-6E-D23"/>
+                                    </connections>
                                 </searchBar>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MwD-Wv-KiW">
                                     <rect key="frame" x="8" y="8" width="359" height="29"/>
@@ -45,7 +48,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ADy-XY-xtS" detailTextLabel="IVH-0g-VTy" style="IBUITableViewCellStyleSubtitle" id="IAz-Zw-qFF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="ADy-XY-xtS" detailTextLabel="IVH-0g-VTy" style="IBUITableViewCellStyleSubtitle" id="IAz-Zw-qFF">
                                 <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IAz-Zw-qFF" id="Ejf-2d-8wj">
