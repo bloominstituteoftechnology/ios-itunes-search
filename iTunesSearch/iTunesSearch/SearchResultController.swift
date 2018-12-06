@@ -3,6 +3,9 @@ let endpoint = "https://itunes.apple.com/search"
 
 class SearchResultController {
     
+    static let shared = SearchResultController()
+    private init() {}
+    
     var searchResults: [SearchResult] = []
     
     //perform search
@@ -15,7 +18,9 @@ class SearchResultController {
             else {
                 fatalError("Unable to resolve baseURL to components")
         }
+        //term is a way to search
         let searchQueryItems = URLQueryItem(name: "term", value: searchTerm)
+        //entity searches music, movies, app
         let searQuerEntity = URLQueryItem(name: "entity", value: resultType.rawValue)
         urlComponents.queryItems = [searchQueryItems, searQuerEntity]
         
