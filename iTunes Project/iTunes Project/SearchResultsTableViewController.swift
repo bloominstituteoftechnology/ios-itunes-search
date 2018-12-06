@@ -10,26 +10,45 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     let searchResultsController = SearchResultController()
     
-    override func viewDidLoad() {
-        <#code#>
-    }
-    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
-        searchResultsController.performSearch(with: searchTerm, resultType: <#ResultType#>) { searchResults, error in
-            if let error = error {
-                NSLog("error fetching search results: \(error)")
-            }
+        var resultType: ResultType!
         
-        SWAPI.searchForPeople(with: string) { people, error in
-            if let error = error {
-                NSLog("Error fetching people: \(error)")
-                return
-            }
-            self.people = people ?? []
-//        Model.shared.search(for: searchTerm)
+        if segmentedControl.selectedSegmentIndex == 0 {
+            return resultType = ResultType.apps
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            return resultType = ResultType.music
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            return resultType = ResultType.movies
+        }
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (NSError?) in
+            
+        }
     }
+    
+//        switch segmentedControl.selectedSegmentIndex{
+//        case 0:
+//            resultType = .software
+//        case 1:
+//            resultType = .musicTrack
+//        case 2:
+//            resultType = .movie
+//        }
+        
+//        searchResultsController.performSearch(with: searchTerm, resultType: <#ResultType#>) { searchResults, error in
+//            if let error = error {
+//                NSLog("error fetching search results: \(error)")
+//            }
+//
+//        SWAPI.searchForPeople(with: string) { people, error in
+//            if let error = error {
+//                NSLog("Error fetching people: \(error)")
+//                return
+//            }
+//            self.people = people ?? []
+//        Model.shared.search(for: searchTerm)
+  
     
     override func numberOfSections(in tableView: UITableView) -> Int {
        return searchResultsController.searchResults.count
