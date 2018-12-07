@@ -8,66 +8,45 @@
 
 import Foundation
 class SearchResultController {
-    //let baseURL = URL(string: "https://itunes.apple.com/search?")!
-    static let endpoint = "https://itunes.apple.com/search?"
+    let endpoint = "https://itunes.apple.com/search"
     var searchResults: [SearchResult] = []
     
-    static func performSearch (with searchTerm: String , resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
-    
-        // Establish the base url for our search
-        guard let baseURL = URL(string: endpoint)
-            else { fatalError("Unable to construct baseURL") }
-    
-        // Decompose it into its components
-        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true) else {
-            fatalError("Unable to resolve baseURL to components")
-        }
-    
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
-    
-        urlComponents.queryItems = [searchQueryItem]
-    
-        guard let searchURL = urlComponents.url else {
-            NSLog("Error constructing search URL for \(searchTerm)")
-            completion(nil, NSError())
-            return
-        }
+    func performSearch (with searchTerm: String , resultType: ResultType, completion: @escaping (NSError?) -> Void) {
         
-        // Create a GET request
+        guard let baseURL = URL(string: endpoint) else { fatalError("Unable to construct baseURL") }
+  
+        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+            else { fatalError("Unable to resolve baseURL to components") }
+    
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        
+        urlComponents.queryItems = [searchQueryItem, resultTypeQueryItem]
+    
+        guard let searchURL = urlComponents.url else { return }
+        
         var request = URLRequest(url: searchURL)
         request.httpMethod = "GET"
         
-        
-        let dataTask = URLSession.shared.dataTask(with: request) {
-            // This closure is sent three parameters:
-            data, _, error in
-            
+        let dataTask = URLSession.shared.dataTask(with: request) { data, _, error in
+
             guard error == nil, let data = data else {
                 if let error = error {
                     NSLog("Error fetching data: \(error)")
-                    completion(nil, error)
+                    completion(NSError())
                 }
                 return
             }
-            
             do {
-                // Declare, customize, use the decoder
                 let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                
-                // Perform decoding into [SearchResult] stored in SearchResult
-                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                let inquiry = searchResults.results
-                
-                // Send back the results to the completion handler
-                completion(inquiry, nil)
-                
+                let searchResults = try jsonDecoder.decode(SearchResult.SearchResults.self, from: data)
+                self.searchResults = searchResults.results
+                completion(nil)
             } catch {
                 NSLog("Unable to decode data \(error)")
-                completion(nil, error)
+                completion(NSError())
             }
         }
-
         dataTask.resume()
     }
 }

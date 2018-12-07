@@ -7,47 +7,51 @@
 //
 
 import UIKit
+import Foundation
 
-class SearchResultsTableViewController: UITableViewController {
 
-    let searchResultsController = SearchResultController()
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+    let reuseIdentifier = "cell"
+    let searchResultsController = SearchResultController()
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        var resultType: ResultType!
+        if segmentedControl.selectedSegmentIndex == 0 {
+            resultType = ResultType.apps
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            resultType = ResultType.music
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            resultType = ResultType.movies
+        }
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (error) in
+            if let error = error {
+                NSLog("Error fetching data: \(error)")
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Not sure how I'm suppose to get length of result array.
-        return 0
+        return searchResultsController.searchResults.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let searchResult = searchResultsController.searchResults[indexPath.row]
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+        print("Cell For Row")
         return cell
     }
-    */
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
