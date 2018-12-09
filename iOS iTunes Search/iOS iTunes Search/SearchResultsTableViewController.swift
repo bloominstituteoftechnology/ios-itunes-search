@@ -1,10 +1,3 @@
-//
-//  SearchResultsTableViewController.swift
-//  iOS iTunes Search
-//
-//  Created by Audrey Welch on 12/5/18.
-//  Copyright © 2018 Audrey Welch. All rights reserved.
-//
 
 import UIKit
 
@@ -41,7 +34,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             
         }
         
-        //searchResultsController.performSearch(searchTerm: searchTerm, resultType: ResultType, completion: <#T##([SearchResult]?, Error?) -> Void#>)
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (error) in
+            if let error = error {
+                NSLog("Error fetching data: \(error)")
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            print("Attempted to search")
+        }
     }
 
     // Number of rows

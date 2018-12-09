@@ -9,8 +9,8 @@ class SearchResultController {
     // Data source for the table view
     var searchResults: [SearchResult] = []
     
-    // Completion
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
+    // Completion // Should SearchResult be ResultType ??
+    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
         
         // Establish the base url for our search
         guard let baseURL = URL(string: baseURL)
@@ -32,9 +32,9 @@ class SearchResultController {
         
         // Recompose all those individual components back into a fully realized search URL
         guard let searchURL = urlComponents.url else {
-            NSLog("Error construction search URL for \(searchTerm)")
+            //NSLog("Error construction search URL for \(searchTerm)")
             // completion
-            completion(nil, NSError())
+            //completion(NSError)
             return
         }
         // ^^ search URL created, but haven't done anything with it
@@ -56,7 +56,7 @@ class SearchResultController {
             guard error == nil, let data = data else {
                 if let error = error {
                     NSLog("Error fetching data: \(error)")
-                    completion(nil, error)
+                    completion(NSError())
                 }
                 return
             }
@@ -70,16 +70,16 @@ class SearchResultController {
                 let jsonDecoder = JSONDecoder()
                 
                 // Perform decoding
-                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
+                let searchResults = try jsonDecoder.decode(SearchResult.SearchResults.self, from: data)
                 self.searchResults = searchResults.results
                 
                 // Send back the results to the completion handler
-                completion(self.searchResults, nil)
+                completion(nil)
                
             // if it doesn't work, catch it with an error
             } catch {
                 NSLog("Unable to decode data into search results: \(error)")
-                completion(nil, error)
+                completion(NSError())
             }
         }
         
