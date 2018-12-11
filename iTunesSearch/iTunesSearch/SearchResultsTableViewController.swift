@@ -2,10 +2,6 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
