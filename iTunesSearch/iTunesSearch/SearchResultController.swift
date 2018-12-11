@@ -27,6 +27,29 @@ class SearchResultController {
         request.httpMethod = "GET"
         
         //fetching data
-        let dataTask = URLSession
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog ("There was a problem getting data from JSON: \(error)")
+                completion(NSError())
+            }
+            guard let data = data else {
+                NSLog("No data found")
+                completion(NSError())
+                return
+            }
+            
+            do {
+                let searchResults = try
+                    JSONDecoder().decode(SearchResults.self, from: data)
+                self.searchResults = searchResults.results
+                completion(nil)
+                
+            } catch {
+                NSLog("Unable to decode data: \(error)")
+                completion(NSError())
+                
+            }
+        }
+        dataTask.resume()
     }
 }
