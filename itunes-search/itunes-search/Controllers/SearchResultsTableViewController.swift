@@ -36,7 +36,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             resultType = .software
         case 1:
             resultType = .musicTrack
-        case 3:
+        case 2:
             resultType = .movie
         default:
             resultType = .software
@@ -52,6 +52,32 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             
         }
     }
+    
+    @IBAction func mediaTypeControlDidUpdate(_ sender: Any) {
+        var resultType: ResultType!
+        guard let text = iTunesSearchBar.text else {return}
+        switch mediaTypeControl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            resultType = .software
+        }
+        searchResultsController.performSearch(searchTerm: text, resultType: resultType) { (error) in
+            if let error = error {
+                NSLog("Error performing search: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }
+    }
+    
 
     // MARK: - Table view data source
 
