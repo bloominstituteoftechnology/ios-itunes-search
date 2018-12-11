@@ -22,28 +22,31 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nhv-qo-jIP">
-                                    <rect key="frame" x="10" y="0.0" width="355" height="114"/>
+                                    <rect key="frame" x="10" y="8" width="355" height="106"/>
                                     <subviews>
-                                        <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="luG-2n-UIS">
-                                            <rect key="frame" x="10" y="0.0" width="335" height="78"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </searchBar>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j8k-ZW-fo3">
-                                            <rect key="frame" x="86.5" y="86" width="182" height="29"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j8k-ZW-fo3">
+                                            <rect key="frame" x="91" y="0.0" width="173" height="43"/>
                                             <segments>
-                                                <segment title="First"/>
-                                                <segment title="Second"/>
-                                                <segment title=""/>
+                                                <segment title="Apps"/>
+                                                <segment title="Music"/>
+                                                <segment title="Movies"/>
                                             </segments>
                                         </segmentedControl>
+                                        <searchBar contentMode="redraw" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="luG-2n-UIS">
+                                            <rect key="frame" x="10" y="50" width="335" height="56"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </searchBar>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="luG-2n-UIS" firstAttribute="centerX" secondItem="nhv-qo-jIP" secondAttribute="centerX" id="d7l-QD-NSQ"/>
+                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="nhv-qo-jIP" secondAttribute="trailing" constant="10" id="2lG-qC-m2N"/>
                                 <constraint firstAttribute="bottom" secondItem="nhv-qo-jIP" secondAttribute="bottom" id="MOC-Dp-Ocn"/>
-                                <constraint firstItem="nhv-qo-jIP" firstAttribute="top" secondItem="Qhb-Rn-YuB" secondAttribute="top" id="YXM-y9-AAE"/>
+                                <constraint firstItem="nhv-qo-jIP" firstAttribute="top" secondItem="Qhb-Rn-YuB" secondAttribute="top" constant="8" id="YXM-y9-AAE"/>
                                 <constraint firstItem="nhv-qo-jIP" firstAttribute="leading" secondItem="Qhb-Rn-YuB" secondAttribute="leading" constant="10" id="ZfW-m0-jv4"/>
                             </constraints>
                         </view>
