@@ -4,6 +4,7 @@ class SearchResultController {
     
     let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")!
     
+    static let shared = SearchResultController()
     // datasource for tableView
     var searchResults: [SearchResults] = []
     
