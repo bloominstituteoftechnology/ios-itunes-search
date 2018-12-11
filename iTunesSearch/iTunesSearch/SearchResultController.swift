@@ -46,7 +46,7 @@ class SearchResultController {
                 
             } catch {
                 NSLog("Unable to decode data: \(error)")
-                completion(NSError())
+                completion(nil)
                 
             }
         }
