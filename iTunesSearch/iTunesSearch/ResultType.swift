@@ -1,5 +1,7 @@
 import Foundation
 
-enum ResultType {
-   
+enum ResultType: String {
+    case software
+    case musicTrack
+    case movie
 }
