@@ -24,7 +24,25 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        <#code#>
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else {return}
+        
+        var resultType: ResultType!
+        let index = segmentedControl.selectedSegmentIndex
+        
+        if index == 0 {
+            resultType = .software
+            
+        } else if index == 1 {
+            resultType = . musicTrack
+            
+        } else {
+            resultType = .movie
+        }
+        SearchResultController.shared.performSearch(with: searchTerm, resultType: resultType) { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
