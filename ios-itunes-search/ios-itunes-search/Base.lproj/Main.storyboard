@@ -22,10 +22,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nhv-qo-jIP">
-                                    <rect key="frame" x="10" y="8" width="355" height="106"/>
+                                    <rect key="frame" x="10" y="8" width="355" height="98"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j8k-ZW-fo3">
-                                            <rect key="frame" x="91" y="0.0" width="173" height="43"/>
+                                            <rect key="frame" x="91" y="0.0" width="173" height="35"/>
                                             <segments>
                                                 <segment title="Apps"/>
                                                 <segment title="Music"/>
@@ -33,7 +33,7 @@
                                             </segments>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="luG-2n-UIS">
-                                            <rect key="frame" x="10" y="50" width="335" height="56"/>
+                                            <rect key="frame" x="10" y="42" width="335" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
@@ -45,7 +45,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="nhv-qo-jIP" secondAttribute="trailing" constant="10" id="2lG-qC-m2N"/>
-                                <constraint firstAttribute="bottom" secondItem="nhv-qo-jIP" secondAttribute="bottom" id="MOC-Dp-Ocn"/>
+                                <constraint firstAttribute="bottom" secondItem="nhv-qo-jIP" secondAttribute="bottom" constant="8" id="MOC-Dp-Ocn"/>
                                 <constraint firstItem="nhv-qo-jIP" firstAttribute="top" secondItem="Qhb-Rn-YuB" secondAttribute="top" constant="8" id="YXM-y9-AAE"/>
                                 <constraint firstItem="nhv-qo-jIP" firstAttribute="leading" secondItem="Qhb-Rn-YuB" secondAttribute="leading" constant="10" id="ZfW-m0-jv4"/>
                             </constraints>
@@ -77,11 +77,15 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
+                            <outlet property="categorySelection" destination="j8k-ZW-fo3" id="PWr-Bf-xXi"/>
                             <outlet property="dataSource" destination="lpp-no-azS" id="7om-sw-0QF"/>
                             <outlet property="delegate" destination="lpp-no-azS" id="MoJ-r6-qJk"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="nhk-Nx-nVp"/>
+                    <connections>
+                        <outlet property="categorySelection" destination="j8k-ZW-fo3" id="lWN-gg-oT0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nnj-KQ-GeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

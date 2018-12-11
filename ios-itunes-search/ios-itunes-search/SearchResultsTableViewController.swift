@@ -10,6 +10,9 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
 
+    @IBOutlet weak var categorySelection: UISegmentedControl!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
