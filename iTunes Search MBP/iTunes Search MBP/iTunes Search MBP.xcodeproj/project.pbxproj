@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		A52D8DFF21C05FAF00628318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D8DFE21C05FAF00628318 /* AppDelegate.swift */; };
-		A52D8E0121C05FAF00628318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D8E0021C05FAF00628318 /* ViewController.swift */; };
 		A52D8E0421C05FAF00628318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52D8E0221C05FAF00628318 /* Main.storyboard */; };
 		A52D8E0621C05FB100628318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52D8E0521C05FB100628318 /* Assets.xcassets */; };
 		A52D8E0921C05FB100628318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52D8E0721C05FB100628318 /* LaunchScreen.storyboard */; };
 		A52D8E1121C0628F00628318 /* SearchRrsult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D8E1021C0628F00628318 /* SearchRrsult.swift */; };
 		A52D8E1321C0652000628318 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D8E1221C0652000628318 /* ResultType.swift */; };
 		A52D8E1521C065B200628318 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D8E1421C065B200628318 /* SearchResultController.swift */; };
+		A52D8E1721C0789000628318 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D8E1621C0789000628318 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A52D8DFB21C05FAF00628318 /* iTunes Search MBP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search MBP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52D8DFE21C05FAF00628318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A52D8E0021C05FAF00628318 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A52D8E0321C05FAF00628318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A52D8E0521C05FB100628318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A52D8E0821C05FB100628318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		A52D8E1021C0628F00628318 /* SearchRrsult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRrsult.swift; sourceTree = "<group>"; };
 		A52D8E1221C0652000628318 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		A52D8E1421C065B200628318 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		A52D8E1621C0789000628318 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				A52D8DFE21C05FAF00628318 /* AppDelegate.swift */,
-				A52D8E0021C05FAF00628318 /* ViewController.swift */,
 				A52D8E1021C0628F00628318 /* SearchRrsult.swift */,
 				A52D8E1221C0652000628318 /* ResultType.swift */,
 				A52D8E1421C065B200628318 /* SearchResultController.swift */,
+				A52D8E1621C0789000628318 /* SearchResultsTableViewController.swift */,
 				A52D8E0221C05FAF00628318 /* Main.storyboard */,
 				A52D8E0521C05FB100628318 /* Assets.xcassets */,
 				A52D8E0721C05FB100628318 /* LaunchScreen.storyboard */,
@@ -145,8 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52D8E1321C0652000628318 /* ResultType.swift in Sources */,
-				A52D8E0121C05FAF00628318 /* ViewController.swift in Sources */,
 				A52D8E1121C0628F00628318 /* SearchRrsult.swift in Sources */,
+				A52D8E1721C0789000628318 /* SearchResultsTableViewController.swift in Sources */,
 				A52D8DFF21C05FAF00628318 /* AppDelegate.swift in Sources */,
 				A52D8E1521C065B200628318 /* SearchResultController.swift in Sources */,
 			);
