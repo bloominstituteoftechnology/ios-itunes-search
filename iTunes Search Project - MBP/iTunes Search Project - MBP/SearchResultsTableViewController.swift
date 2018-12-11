@@ -1,51 +1,43 @@
-//
-//  SearchResultsTableViewController.swift
-//  iTunes Search Project - MBP
-//
-//  Created by Audrey Welch on 12/11/18.
-//  Copyright © 2018 Audrey Welch. All rights reserved.
-//
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     
+    let searchResultsController = SearchResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //Set the search bar's delegate to the table view controller
+        searchBarOutlet.delegate = self
     }
 
-    // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    // Number of rows
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
-    /*
+    // Cell contents
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        // Get the cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
+        // Get the search results associated with this row
+        let searchResultObject = searchResultsController.searchResults[indexPath.row]
+        
         // Configure the cell...
+        cell.textLabel?.text = searchResultObject.title
+        cell.detailTextLabel?.text = searchResultObject.creator
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
