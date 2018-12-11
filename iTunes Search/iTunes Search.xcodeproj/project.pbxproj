@@ -13,6 +13,7 @@
 		F81A646C21C05B21005F5125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81A646B21C05B21005F5125 /* Assets.xcassets */; };
 		F81A646F21C05B21005F5125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81A646D21C05B21005F5125 /* LaunchScreen.storyboard */; };
 		F81A647721C06954005F5125 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A647621C06954005F5125 /* SearchResult.swift */; };
+		F81A647921C06DCF005F5125 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A647821C06DCF005F5125 /* ResultType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F81A646E21C05B21005F5125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F81A647021C05B21005F5125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F81A647621C06954005F5125 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		F81A647821C06DCF005F5125 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F81A646D21C05B21005F5125 /* LaunchScreen.storyboard */,
 				F81A647021C05B21005F5125 /* Info.plist */,
 				F81A647621C06954005F5125 /* SearchResult.swift */,
+				F81A647821C06DCF005F5125 /* ResultType.swift */,
 			);
 			path = "iTunes Search";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81A647921C06DCF005F5125 /* ResultType.swift in Sources */,
 				F81A646721C05B1F005F5125 /* ViewController.swift in Sources */,
 				F81A647721C06954005F5125 /* SearchResult.swift in Sources */,
 				F81A646521C05B1F005F5125 /* AppDelegate.swift in Sources */,

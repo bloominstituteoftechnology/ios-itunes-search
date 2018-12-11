@@ -59,7 +59,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
 
 1. Create a new Swift file called "ResultType.swift".
 2. Create an enum called `ResultType`. Set its raw values to be `String`. This will represent the kind of item you want to search for in the API. 
-3. Add the following cases:
+3. Add the following raw values to their respective cases:
     - `software` - (for apps)
     - `musicTrack`
     - `movie`
