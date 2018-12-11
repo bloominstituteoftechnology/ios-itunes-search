@@ -6,41 +6,49 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var segmented: UISegmentedControl!
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    let searchResultsController = SearchResultController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // searchBar.delegate
-       
+        searchBar.delegate = self
     }
+   var searchResultController = SearchResultController()
     
-    func searchBarSearchButtonClicked() {
-        
-        guard let search = searchBar.text, searchBar.text != nil else {return}
-        
-        
-        
-        
-    }
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return SearchResultController().searchResults.count
-    }
-
-   
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.reuseIdentifier, for: indexPath) as? SearchResultTableViewCell else {
-            fatalError("no such cell")
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            //        guard let searchTerm = searchBar.text, !searchTerm.isEmpty
+            //            else {return}
+            
+            guard let searchTerm = searchBar.text, searchTerm.count > 0 else {return}
+            
+            var resultType: ResultType!
+            let index = searchBar.selectedScopeButtonIndex
+            
+            if index == 0 {
+                resultType = .software
+                
+            } else if index == 1 {
+                resultType = .musicTrack
+                
+            } else if index == 2 {
+                resultType = .movie
+            }else { return }
+            searchResultController.performSearch(with: searchTerm, resultType: resultType) { (_) in
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
         
-        let result = SearchResultController().searchResults
-
-        SearchResultTableViewCell().title.text = result[indexPath.row].title
-        SearchResultTableViewCell().creator.text = result[indexPath.row].creator
-
-        return cell
-    }
+        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return searchResultController.searchResults.count
+        }
+        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            
+            let searchResult = searchResultController.searchResults[indexPath.row]
+            cell.textLabel?.text = searchResult.title
+            cell.detailTextLabel?.text = searchResult.creator
+            
+            return cell
+        }
+        
 }

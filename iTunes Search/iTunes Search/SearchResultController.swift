@@ -1,70 +1,43 @@
-import UIKit
-
+import Foundation
 class SearchResultController {
-    
-   let searchURL = "https://itunes.apple.com/search"
-    
-    //let baseURL = URL(string: searchURL)
-
+    let endpoint = "https://itunes.apple.com/search"
     var searchResults: [SearchResult] = []
     
-    func performSearch(with searchTerm: String, completion: @escaping ([ResultType]?, Error?) -> Void) {
+    func performSearch (with searchTerm: String , resultType: ResultType, completion: @escaping (NSError?) -> Void) {
         
-        guard let baseURL = URL(string: searchURL)
-            else { fatalError("Unable to construct baseURL") }
+        guard let baseURL = URL(string: endpoint) else { fatalError("Unable to construct baseURL") }
         
-        // Decompose it into its components
-        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true) else {
-            fatalError("Unable to resolve baseURL to components")
-        }
+        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+            else { fatalError("Unable to resolve baseURL to components") }
         
-        let searchQueryItem = URLQueryItem(name: "entity", value: searchTerm)
-        let resultQueryItem = URLQueryItem(name: "term", value: ResultType.software.rawValue) // ResultType.movie.rawValue, ResultType.musicTrack.rawValue)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        // Add in the search term, if you have more than one just add it to the array
-        urlComponents.queryItems = [searchQueryItem, resultQueryItem]
+        urlComponents.queryItems = [searchQueryItem, resultTypeQueryItem]
         
-        // Recompose all those individual components back into a fully
-        // realized search URL
-        guard let searchURL = urlComponents.url else {
-            NSLog("Error constructing search URL for \(searchTerm)")
-            completion(nil, NSError()) // you could do a fatal error instead
-            return
-        }
+        guard let searchURL = urlComponents.url else { return }
         
-        // Create a GET request
         var request = URLRequest(url: searchURL)
-        request.httpMethod = "GET" // "Please fetch information for
+        request.httpMethod = "GET"
         
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
-            // This closure is sent three parameters:
-           
-            
-            
+        let dataTask = URLSession.shared.dataTask(with: request) { data, _, error in
             guard error == nil, let data = data else {
-                if let error = error { // this will always succeed
+                if let error = error {
                     NSLog("Error fetching data: \(error)")
-                    completion(nil, NSError()) // we know that error is non-nil
+                    completion(NSError())
                 }
                 return
             }
-                do {
-                    let jsonDecoder = JSONDecoder()
-                    let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                    
-                    self.searchResults = searchResults.results
-                    
-                    
-                    completion(nil, error)
-                } catch {
-                    NSLog("error decoding data \(error)")
-                    completion(nil, error)
-                    
-                }
+            do {
+                let jsonDecoder = JSONDecoder()
+                let searchResults = try jsonDecoder.decode(SearchResult.SearchResults.self, from: data)
+                self.searchResults = searchResults.results
+                completion(nil)
+            } catch {
+                NSLog("Unable to decode data \(error)")
+                completion(NSError())
             }
-            dataTask.resume()
-        
         }
+        dataTask.resume()
+    }
 }
-
-
