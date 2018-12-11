@@ -10,7 +10,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        searchBarOutlet.delegate = self
     }
 
     // MARK: - Table view data source
@@ -30,5 +30,25 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         return cell
     }
     
-
+    func searchBarButtonClicked(_ searchBar: UISearchBar) {
+        guard let search = searchBar.text, search.count > 0 else { return }
+        
+        var resultType: ResultType!
+        let index = segmentSelectorOutlet.selectedSegmentIndex
+        
+        if index == 0 {
+            resultType = .software
+        } else if index == 1 {
+            resultType = .musicTrack
+        } else {
+            resultType = .movie
+        }
+        
+        SearchResultController.shared.performSearch(with: search, resultType: resultType) { (_) in
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
