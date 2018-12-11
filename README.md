@@ -28,8 +28,8 @@ Please fork and clone this repository. This repository does not have a starter p
 
 This application uses the iTunes Search API. Please:
 - familiarize yourself with the API's documentation [here](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/). 
-- Read the overview, and 
-- look at the "Searching the iTunes Store" section. 
+- Read the **overview**.
+- Look at the **Searching the iTunes Store** section. 
 - Look over **search examples** that are worth looking at as well.
 
 We're going to search for either an app, music, or movie. Use [this URL](https://itunes.apple.com/search?term=yelp&entity=software) to see some example JSON. **NOTE:** the URL will download a file to your desktop which contains the JSON. You will need to open the file in a text editor to see the JSON. It's recommended that you then copy and paste the JSON in a JSON formatter. 
@@ -39,7 +39,7 @@ We're going to search for either an app, music, or movie. Use [this URL](https:/
     - a `title` string
     - an `creator` string.
 
-**Note:** The JSON returned from the iTunes Search API refers to the developers of an application as the `artistName`, and the title of the search result as the `trackName`. The same goes for the `trackName` for the title of the search result. No matter whether it's music, movies, apps, etc. the JSON uses these same key-value pairs to keep the JSON consistent.
+**Note:** The JSON returned from the iTunes Search API refers to the developers of an application as the `artistName`, and the title of the search result as the `trackName`. No matter whether it's music, movies, apps, etc. the JSON uses these same key-value pairs to keep the JSON consistent.
 
 You may have noticed that the `title` and `creator` properties in this struct don't match any keys in the JSON. As a recap, a class or struct that adopts `Codable` will by default use the names of its properties as the keys it should look for in the JSON that it is trying to decode. However there are instances where the keys in the JSON perhaps aren't what you'd like to call your properties throughout your app. We can implement another part of `Codable` that lets us override this behavior called `CodingKeys`. `CodingKeys` allow us to and map the keys from the JSON to the properties we want their values to be stored in. Still in the `SearchResult` struct, add the following:
 
