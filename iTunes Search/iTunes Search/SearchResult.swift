@@ -15,7 +15,7 @@ struct SearchResult: Codable {
 
 //Customize the results we want
 struct SearchResults: Codable {
-    let results: [SearchResults]
+    let results: [SearchResult]
 }
 
 enum CodingKeys: String, CodingKey {
