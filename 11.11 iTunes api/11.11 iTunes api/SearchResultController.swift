@@ -1,10 +1,13 @@
 import Foundation
 
+//let baseURL = URL(string: "https://itunes.apple.com/search")!
+
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     static let shared = SearchResultController()
+    private init() {}
     // datasource for tableView
     var searchResults: [SearchResults] = []
     

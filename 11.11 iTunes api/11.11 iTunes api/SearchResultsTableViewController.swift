@@ -5,9 +5,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var segmentSelectorOutlet: UISegmentedControl!
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     
-    let searchResultsController: SearchResultController
+    //let searchResultsController: SearchResultController
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBarOutlet.delegate = self
@@ -19,7 +18,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         return SearchResultController.shared.searchResults.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
