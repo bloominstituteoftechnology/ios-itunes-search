@@ -11,8 +11,10 @@ import Foundation
 struct SearchResult: Codable {
     var title: String
     var creator: String
-//    var trackName: String
-//    var artistName: String
+    enum CodingKeys: String, CodingKey {
+        case title = "trackName"
+        case creator = "artistName"
+    }
 }
 
 //Customize the results we want
@@ -20,10 +22,7 @@ struct SearchResults: Codable {
     let results: [SearchResult]
 }
 
-enum CodingKeys: String, CodingKey {
-    case title = "trackName"
-    case creator = "artistName"
-}
+
 
 
 

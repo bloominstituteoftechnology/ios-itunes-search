@@ -46,7 +46,6 @@ class SearchResultController {
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching iTunes data: \(error)")
-                //completion(error)
                 completion(nil)
                 return
             }
@@ -64,9 +63,7 @@ class SearchResultController {
             //Decode the data
             do {
                 let itunesData = try jsonDecoder.decode(SearchResults.self, from: data)
-                print("itunesData = \(itunesData)")
                 self.searchResult = itunesData.results
-                //completion(error)
                 completion(nil)
                 return
             }
