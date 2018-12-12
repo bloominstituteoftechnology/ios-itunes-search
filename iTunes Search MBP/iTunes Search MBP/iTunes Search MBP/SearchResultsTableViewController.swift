@@ -70,12 +70,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+       
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.reuseIdentifier, for: indexPath) as? TableCell else { fatalError("No such cell") }
 
         let searchResult = searchResultsController.searchResults[indexPath.row]
-        
-        cell.textLabel?.text = searchResult.title
-        cell.detailTextLabel?.text = searchResult.crator
+        cell.nameLabel.text = searchResult.title
+        cell.creatorLabel.text = searchResult.crator
+        cell.typeLabel.text = searchResult.type
+//        cell.textLabel?.text = searchResult.title
+//        cell.detailTextLabel?.text = searchResult.crator
         
         // Configure the cell...
 
