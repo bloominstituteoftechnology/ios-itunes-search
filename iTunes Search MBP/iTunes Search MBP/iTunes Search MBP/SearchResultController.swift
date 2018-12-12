@@ -13,8 +13,9 @@ class SearchResultController {
        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let resultTypeQueryItems = URLQueryItem(name: "entity", value: resultType.rawValue)
-        components?.queryItems = [searchQueryItem, resultTypeQueryItems]
+        let resultTypeQueryItem1 = URLQueryItem(name: "entity", value: resultType.rawValue)
+        // let resultTypeQueryItem2 = URLQueryItem(name: "attribute", value: resultType.rawValue)
+        components?.queryItems = [searchQueryItem, resultTypeQueryItem1]
         
         guard let searchURL = components?.url else {
             NSLog("Couldn't make requestURL")

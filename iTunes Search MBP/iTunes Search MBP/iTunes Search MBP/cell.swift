@@ -7,7 +7,7 @@ class TableCell: UITableViewCell {
  
     
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var creatorLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var softwareLabel: UILabel!
 }

@@ -77,6 +77,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         cell.nameLabel.text = searchResult.title
         cell.creatorLabel.text = searchResult.crator
         cell.typeLabel.text = searchResult.type
+        cell.softwareLabel.text = searchResult.collectionName
 //        cell.textLabel?.text = searchResult.title
 //        cell.detailTextLabel?.text = searchResult.crator
         

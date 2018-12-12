@@ -52,30 +52,36 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="126" id="mFy-yP-hKf" customClass="TableCell" customModule="iTunes_Search_MBP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="128" width="375" height="126"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="186" id="mFy-yP-hKf" customClass="TableCell" customModule="iTunes_Search_MBP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="375" height="186"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mFy-yP-hKf" id="76i-VY-Z8d">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="125.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="185.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="46z-eO-CRj">
-                                            <rect key="frame" x="24" y="19" width="327" height="88"/>
+                                            <rect key="frame" x="24" y="19" width="327" height="148"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVQ-5P-ANv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="62.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqf-WY-YcU">
-                                                    <rect key="frame" x="0.0" y="39" width="327" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="70.5" width="327" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bi-2J-wAW">
+                                                    <rect key="frame" x="0.0" y="99" width="327" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cM-Xn-UOz">
-                                                    <rect key="frame" x="0.0" y="67.5" width="327" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="127.5" width="327" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -93,6 +99,7 @@
                                 <connections>
                                     <outlet property="creatorLabel" destination="dqf-WY-YcU" id="0wR-CV-77N"/>
                                     <outlet property="nameLabel" destination="cVQ-5P-ANv" id="H2D-dr-gN8"/>
+                                    <outlet property="softwareLabel" destination="4Bi-2J-wAW" id="KXa-T6-NJS"/>
                                     <outlet property="typeLabel" destination="7cM-Xn-UOz" id="unb-5h-wzG"/>
                                 </connections>
                             </tableViewCell>
