@@ -14,7 +14,7 @@ class SearchResultController {
     var results: [Result] = []
     
     // Functions
-    func perfomrSearch(searchTerm: String, resultType: ResultType, completion:  @escaping (NSError?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion:  @escaping (NSError?) -> Void) {
         guard var urlComponents = URLComponents(url: baseURL!, resolvingAgainstBaseURL: true)
             else { fatalError("Error: Bad URL")}
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)

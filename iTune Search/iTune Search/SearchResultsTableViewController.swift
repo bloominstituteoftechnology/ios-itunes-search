@@ -9,13 +9,36 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
-    // Outlets and Actions
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
     // Variables and Constants
     let reuseIdentifier = "SearchCell"
     let searchResultsController = SearchResultController()
+    
+    // Outlets and Actions
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var segmentedControl: UISegmentedControl! {
+        didSet {
+            guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+            // I can force unwrapped this because I know a resultType will always be selected.
+            var resultType: ResultType!
+            if segmentedControl.selectedSegmentIndex == 0 {
+                resultType = ResultType.apps
+            } else if segmentedControl.selectedSegmentIndex == 1 {
+                resultType = ResultType.music
+            } else if segmentedControl.selectedSegmentIndex == 2 {
+                resultType = ResultType.movies
+            }
+            searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+                if let error = error {
+                    NSLog("Error fetching data: \(error)")
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        
+        }
+    }
+    
     
     // Functions
     override func viewDidLoad() {
@@ -31,7 +54,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+   
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
         // I can force unwrapped this because I know a resultType will always be selected.
@@ -43,7 +66,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         } else if segmentedControl.selectedSegmentIndex == 2 {
             resultType = ResultType.movies
         }
-        searchResultsController.perfomrSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
             if let error = error {
                 NSLog("Error fetching data: \(error)")
             }
@@ -54,9 +77,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
 
     // MARK: - Table view data source
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultsController.results.count
@@ -105,14 +128,14 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        guard let destination = segue.destination as? DetailViewController else { return }
+        destination.result = searchResultsController.results[indexPath.row]
     }
-    */
+
 
 }

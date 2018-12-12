@@ -12,12 +12,14 @@ import Foundation
 struct Result: Codable {
     let title: String
     let creator: String
+    let image: String?
     
     // The coding key enum is used the class/struct properties
     // do not much the JSON keys
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case creator = "artistName"
+        case image = "artworkUrl512"
     }
     
     struct Results: Codable {
