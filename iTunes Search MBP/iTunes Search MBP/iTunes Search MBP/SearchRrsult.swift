@@ -3,7 +3,7 @@ import Foundation
 
 struct SearchResult: Codable {
     
-    let title: String?
+    let title: String
     let crator: String
     
     enum CodingKeys: String, CodingKey {

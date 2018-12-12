@@ -3,23 +3,24 @@ import Foundation
 
 class SearchResultController {
     
-    let endpoint = "https://itunes.apple.com/search"
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
     
-    func performSearch (with searchTerm: String , resultType: ResultType, completion: @escaping (NSError?) -> Void) {
-        
-        guard let baseURL = URL(string: endpoint) else { fatalError("Unable to construct baseURL") }
-        
-        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-            else { fatalError("Unable to resolve baseURL to components") }
+    
+    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
+    
+        // let url = baseURL.appendingPathComponent("")
+       var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        let resultTypeQueryItems = URLQueryItem(name: "entity", value: resultType.rawValue)
+        components?.queryItems = [searchQueryItem, resultTypeQueryItems]
         
-        urlComponents.queryItems = [searchQueryItem, resultTypeQueryItem]
-        
-        guard let searchURL = urlComponents.url else { return }
-        
+        guard let searchURL = components?.url else {
+            NSLog("Couldn't make requestURL")
+            completion(NSError())
+            return
+        }
         var request = URLRequest(url: searchURL)
         request.httpMethod = "GET" // PUT, POST, DELETE
         
@@ -27,6 +28,7 @@ class SearchResultController {
             if let error = error {
                 NSLog("Error fetching data: \(error)")
                 completion(NSError())
+                return
             }
             
             guard let data = data else {
@@ -34,11 +36,10 @@ class SearchResultController {
                 completion(NSError())
                 return
         }
-            
-            //jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+            let jsonDecoder = JSONDecoder()
+           // jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do{
-                let jsonDecoder = JSONDecoder()
                 let result = try jsonDecoder.decode(SearchResult.SearchResults.self, from: data)
                 self.searchResults = result.results
                 completion(nil)
