@@ -1,41 +1,65 @@
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
 
+    let searchResultsController = SearchResultController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchBar.delegate = self
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+  
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
+        let searchResult = searchResultsController.searchResults[indexPath.row]
+        
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.crator
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        
+        guard let search = searchBar.text, search.count > 0 else {return}
+        
+        var resultType: ResultType!
+        let index = searchBar.selectedScopeButtonIndex
+        if index == 0 {
+            resultType = .software
+        } else if index == 1 {
+                resultType = .musicTrack
+        } else {
+                        resultType = .movie
+                    }
+        searchResultsController.performSearch(with: search, resultType: resultType) { (_) in
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+        }
+    }
+    
+            }
+}
+
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,4 +106,4 @@ class SearchResultsTableViewController: UITableViewController {
     }
     */
 
-}
+
