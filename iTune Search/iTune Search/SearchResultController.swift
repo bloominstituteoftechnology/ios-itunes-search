@@ -34,7 +34,7 @@ class SearchResultController {
                 let results = try JSONDecoder().decode(Result.Results.self, from: data)
                 // I don't know how the results are distingushed from each other... lol
                 self.results = results.results
-                completion(NSError())
+                completion(nil)
             } catch {
                 NSLog("Unable to decode data:\n\(error)")
                 completion(NSError())
