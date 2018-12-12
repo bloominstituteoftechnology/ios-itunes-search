@@ -24,11 +24,11 @@ class SearchTableViewCell: UITableViewCell {
     private func updateViews() {
         guard let searchResult = serchResult else { return }
         
-        titleLabel.text = searchResult.title
-        detailLabel.text = searchResult.creator
+//        titleLabel.text = searchResult.title
+//        detailLabel.text = searchResult.creator
         
-//        titleLabel.text = searchResult.trackName
-//        detailLabel.text = searchResult.artistName
+        titleLabel.text = searchResult.trackName
+        detailLabel.text = searchResult.artistName
     }
     
     
