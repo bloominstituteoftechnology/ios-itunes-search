@@ -19,12 +19,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         super.viewDidLoad()
         
         itunesSearchBar.delegate = self
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -69,7 +63,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         default:
             resultType = ResultType.software
         }
-        print("*** The resultType = \(resultType!) ***")
         
         //Get the data
         SearchResultController.shared.performSearch(with: searchTerm, resultType: resultType) { (error) in

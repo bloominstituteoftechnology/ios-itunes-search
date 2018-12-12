@@ -28,8 +28,9 @@ class SearchResultController {
         let queryItemCountry = URLQueryItem(name: "country", value: "US")
        // let queryItemMedia = URLQueryItem(name: "media", value: "")
         let queryItemEntity = URLQueryItem(name: "entity", value: resultType.rawValue)
+        print("\(queryItemEntity)")
        // let queryItemAttribute = URLQueryItem(name: "attribute", value: "")
-        let queryItemLimit = URLQueryItem(name: "limit", value: "10")
+        let queryItemLimit = URLQueryItem(name: "limit", value: "20")
         let queryItemLanguage = URLQueryItem(name: "lang", value: "en_us")
         
         //components?.queryItems = [queryItemSearchTerm, queryItemCountry, queryItemMedia, queryItemEntity, queryItemAttribute, queryItemLimit, queryItemLanguage]
