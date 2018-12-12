@@ -15,9 +15,9 @@ class SearchResultController {
     // MARK: Data source
     var searchResults: [SearchResult] = []
     
-    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ((NSError?)-> Void) {
-        let searchURL = baseURL.appendingPathComponent("search")
-        
-        var components = URLComponents(
-    }
-}
+//    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
+//        let searchURL = baseURL.appendingPathComponent("search")
+//        
+//       (
+//    }
+} //End of class
