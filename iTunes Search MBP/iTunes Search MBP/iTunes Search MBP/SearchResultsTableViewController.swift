@@ -12,7 +12,28 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         super.viewDidLoad()
         searchBar.delegate = self
     }
-
+    @IBAction func segmentedAction(_ sender: Any) {
+        var resultType: ResultType!
+        guard let search = searchBar.text, search.count > 0 else {return}
+        let index = segmented.selectedSegmentIndex
+        if index == 0 {
+            resultType = ResultType.software
+        } else if index == 1 {
+            resultType = .musicTrack
+        } else {
+            resultType = .movie
+        }
+        searchResultsController.performSearch(with: search, resultType: resultType) { (error) in
+            if let error = error {
+                NSLog("Error performing search: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
