@@ -10,7 +10,7 @@ class SearchResultController {
     private(set) var searchResults: [SearchResult] = []
     
     // Search function that calls from the table view controller which takes in a search term and sets self.searchResults to the result of the search
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
         
         // Build up to the API end point we want to hit
         
@@ -21,7 +21,7 @@ class SearchResultController {
         
         // Create query items
         let firstSearchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let secondSearchQueryItem = URLQueryItem(name: "entity", value: searchTerm)
+        let secondSearchQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
         // Add query items to an array that will be added when building the URL
         components?.queryItems = [firstSearchQueryItem, secondSearchQueryItem]
@@ -43,7 +43,7 @@ class SearchResultController {
             // After we get the response, check to see if there is an error
             if let error = error {
                 NSLog("Error fetching data: \(error)")
-                completion(error)
+                completion(NSError())
                 return
             }
             
@@ -57,7 +57,7 @@ class SearchResultController {
             
             // Do-Try-Catch Block to decode the data returned from the data task
             do {
-                let searchResults = try JSONDecoder().decode(TopLevelSearchResults.self, from: data)
+                let searchResults = try JSONDecoder().decode(SearchResult.TopLevelSearchResults.self, from: data)
                 // set the results from our decoded searchResults to our searchResults array
                 self.searchResults = searchResults.results
                 completion(nil)
@@ -68,6 +68,8 @@ class SearchResultController {
                 return
             }
         }
+        
+        .resume()
     }
     
 }

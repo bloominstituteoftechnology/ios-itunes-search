@@ -37,6 +37,36 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
         return cell
     }
+    
+    // Take the search term entered and trigger for the specific result type specified by the segmented control
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        // Unwrap the search bar's text
+        guard let searchTerm = searchBarOutlet.text, !searchTerm.isEmpty else { return }
+        
+        // Create a variable to hold the result type selected from the segmented control
+        var resultType: ResultType!
+        
+        switch segmentedControlOutlet.selectedSegmentIndex {
+        case 0:
+            resultType = ResultType.apps
+        case 1:
+            resultType = ResultType.music
+        default:
+            resultType = ResultType.movies
+        }
+        
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+            
+            // If there are no errors
+            if error == nil {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+    }
 
 
     /*
