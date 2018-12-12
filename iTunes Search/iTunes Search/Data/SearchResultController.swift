@@ -26,14 +26,10 @@ class SearchResultController {
         // Create the necessary iTunes query parameters in the form of URLQueryItem
         let queryItemSearchTerm = URLQueryItem(name: "term", value: searchTerm)
         let queryItemCountry = URLQueryItem(name: "country", value: "US")
-       // let queryItemMedia = URLQueryItem(name: "media", value: "")
         let queryItemEntity = URLQueryItem(name: "entity", value: resultType.rawValue)
-        print("\(queryItemEntity)")
-       // let queryItemAttribute = URLQueryItem(name: "attribute", value: "")
         let queryItemLimit = URLQueryItem(name: "limit", value: "20")
         let queryItemLanguage = URLQueryItem(name: "lang", value: "en_us")
         
-        //components?.queryItems = [queryItemSearchTerm, queryItemCountry, queryItemMedia, queryItemEntity, queryItemAttribute, queryItemLimit, queryItemLanguage]
         components?.queryItems = [queryItemSearchTerm, queryItemCountry, queryItemEntity, queryItemLimit, queryItemLanguage]
         
         //Create the URL
@@ -68,6 +64,7 @@ class SearchResultController {
             //Decode the data
             do {
                 let itunesData = try jsonDecoder.decode(SearchResults.self, from: data)
+                print("itunesData = \(itunesData)")
                 self.searchResult = itunesData.results
                 //completion(error)
                 completion(nil)
