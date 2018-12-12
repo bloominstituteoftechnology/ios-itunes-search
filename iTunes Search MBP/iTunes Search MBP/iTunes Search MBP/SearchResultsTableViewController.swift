@@ -20,8 +20,10 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             resultType = ResultType.software
         } else if index == 1 {
             resultType = .musicTrack
-        } else {
+        } else if index == 2 {
             resultType = .movie
+        } else {
+            resultType = ResultType.ebook
         }
         searchResultsController.performSearch(with: search, resultType: resultType) { (error) in
             if let error = error {
@@ -45,8 +47,10 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             resultType = ResultType.software
         } else if index == 1 {
             resultType = .musicTrack
-        } else {
+        } else if index == 2 {
             resultType = .movie
+        } else {
+            resultType = ResultType.ebook
         }
         searchResultsController.performSearch(with: search, resultType: resultType) { (error) in
             if let error = error {
@@ -72,6 +76,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.crator
+        
         // Configure the cell...
 
         return cell

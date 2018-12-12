@@ -30,6 +30,7 @@
                                                 <segment title="Apps"/>
                                                 <segment title="Music"/>
                                                 <segment title="Movies"/>
+                                                <segment title="eBook"/>
                                             </segments>
                                             <connections>
                                                 <action selector="segmentedAction:" destination="nNE-11-8lt" eventType="valueChanged" id="y6N-rg-qA8"/>

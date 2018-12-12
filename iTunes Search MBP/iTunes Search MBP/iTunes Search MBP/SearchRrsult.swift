@@ -10,7 +10,7 @@ struct SearchResult: Codable {
         
         case title = "trackName"
         case crator = "artistName"
-        
+     
     }
     struct SearchResults: Codable {
       let results: [SearchResult]
