@@ -55,7 +55,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="kNT-RZ-lym" detailTextLabel="Efh-G0-Qyf" style="IBUITableViewCellStyleSubtitle" id="Ijd-cP-rdO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iTunesDataCell" textLabel="kNT-RZ-lym" detailTextLabel="Efh-G0-Qyf" style="IBUITableViewCellStyleSubtitle" id="Ijd-cP-rdO" customClass="SearchTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ijd-cP-rdO" id="cYz-J6-7gf">
@@ -78,6 +78,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailLabel" destination="Efh-G0-Qyf" id="boZ-Or-D9l"/>
+                                    <outlet property="titleLabel" destination="kNT-RZ-lym" id="EfC-6w-1ca"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

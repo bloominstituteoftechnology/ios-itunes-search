@@ -15,6 +15,7 @@
 		376971F121C0784400CB06BC /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376971F021C0784400CB06BC /* ResultType.swift */; };
 		376971F321C078BC00CB06BC /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376971F221C078BC00CB06BC /* SearchResultController.swift */; };
 		376971F521C0B61600CB06BC /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376971F421C0B61600CB06BC /* SearchResultsTableViewController.swift */; };
+		376971F921C0BAA000CB06BC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376971F821C0BAA000CB06BC /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		376971F021C0784400CB06BC /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		376971F221C078BC00CB06BC /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		376971F421C0B61600CB06BC /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		376971F821C0BAA000CB06BC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				376971DC21C0567800CB06BC /* AppDelegate.swift */,
 				376971F421C0B61600CB06BC /* SearchResultsTableViewController.swift */,
+				376971F821C0BAA000CB06BC /* SearchTableViewCell.swift */,
 				376971EE21C0681900CB06BC /* SearchResult.swift */,
 				376971F021C0784400CB06BC /* ResultType.swift */,
 				376971F221C078BC00CB06BC /* SearchResultController.swift */,
@@ -147,6 +150,7 @@
 				376971F321C078BC00CB06BC /* SearchResultController.swift in Sources */,
 				376971EF21C0681900CB06BC /* SearchResult.swift in Sources */,
 				376971F521C0B61600CB06BC /* SearchResultsTableViewController.swift in Sources */,
+				376971F921C0BAA000CB06BC /* SearchTableViewCell.swift in Sources */,
 				376971F121C0784400CB06BC /* ResultType.swift in Sources */,
 				376971DD21C0567800CB06BC /* AppDelegate.swift in Sources */,
 			);
