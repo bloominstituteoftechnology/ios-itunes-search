@@ -58,7 +58,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             resultType = ResultType.software
         case 1:
             resultType = ResultType.musicTrack
-        case 3:
+        case 2:
             resultType = ResultType.movie
         default:
             resultType = ResultType.software
