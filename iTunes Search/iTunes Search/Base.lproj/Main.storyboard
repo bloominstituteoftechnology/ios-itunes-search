@@ -27,8 +27,8 @@
                                             <rect key="frame" x="20" y="0.0" width="303" height="37"/>
                                             <segments>
                                                 <segment title="Apps"/>
-                                                <segment title="Second"/>
                                                 <segment title="Music"/>
+                                                <segment title="Movies"/>
                                             </segments>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="d0Q-di-3rG">

@@ -10,10 +10,13 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/search")!
-    
     // MARK: Data source
-    var searchResults: [SearchResult] = []
+    private(set) var searchResult: [SearchResult] = []
+    
+    static let shared = SearchResultController()
+    private init () {}
+    
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
         
@@ -64,7 +67,7 @@ class SearchResultController {
             //Decode the data
             do {
                 let itunesData = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults = itunesData.results
+                self.searchResult = itunesData.results
                 //completion(error)
                 completion(nil)
                 return
