@@ -14,7 +14,7 @@ class SearchResultController {
     // http://goshdarnclosuresyntax.com/ [For Swift]
     // funcName(parameter: (ParameterTypes) -> ReturnType)
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, NSError?) -> Void) {
         
         // Create your full request url by taking the baseURL, and adding the necessary query parameters (in the form of URLQueryItems.) to it using URLComponents.
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
@@ -26,7 +26,7 @@ class SearchResultController {
         guard let searchRequestURL = urlComponents?.url
             else {
                 NSLog("Couldn't make URL from components.")
-                completion(NSError())
+                completion(nil, NSError())
             return
         }
         
@@ -35,30 +35,36 @@ class SearchResultController {
         request.httpMethod = "GET"
      
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+            // Check for errors. If there is an error, call completion with the error.
             if let error = error {
                 NSLog("Error fetching data: \(error)")
-                completion(error as NSError)
+                completion(nil, NSError())
                 return
             }
             
+            // Check for errors. If there is an error, call completion with the error.
             guard let data = data else {
                 NSLog("No data returned from data task.")
-                completion(NSError())
+                completion(nil, NSError())
                 return
             }
             
-            // Not needed here.
+            // Not needed here; especially since we're using an API provided by Apple.
             // let jsonDecoder = JSONDecoder()
             // jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
+                // If you do get data back, use a do-try-catch block and JSONDecoder to decode SearchResults from the data returned from the data task. Create a constant for this decoded SearchResults object.
+                // Set the value of the searchResults variable in this model controller to the SearchResults' results array.
                 let searchResults = try JSONDecoder().decode(SearchResults.self, from: data)
                 self.searchResults = searchResults.results
-                completion(nil)
+                // Still in the do statement, call completion with nil.
+                completion(self.searchResults, nil)
                 return
             } catch {
                 NSLog("Unable to decode data: \(error)")
-                completion(error as NSError)
+                // In the catch statement, call completion with nil for the array of recipes, and the error thrown in the catch block.
+                completion(nil, NSError())
                 return
             }
         }
