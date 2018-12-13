@@ -60,17 +60,25 @@
 		F81A646321C05B1F005F5125 /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
-				F81A646421C05B1F005F5125 /* AppDelegate.swift */,
+				F81A64D821C300CB005F5125 /* Other */,
 				F81A646821C05B1F005F5125 /* Main.storyboard */,
 				F81A64B021C25795005F5125 /* SearchResultsTableViewController.swift */,
-				F81A646B21C05B21005F5125 /* Assets.xcassets */,
-				F81A646D21C05B21005F5125 /* LaunchScreen.storyboard */,
-				F81A647021C05B21005F5125 /* Info.plist */,
 				F81A647621C06954005F5125 /* SearchResult.swift */,
 				F81A647821C06DCF005F5125 /* ResultType.swift */,
 				F81A647A21C0752F005F5125 /* SearchResultController.swift */,
 			);
 			path = "iTunes Search";
+			sourceTree = "<group>";
+		};
+		F81A64D821C300CB005F5125 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F81A646421C05B1F005F5125 /* AppDelegate.swift */,
+				F81A646B21C05B21005F5125 /* Assets.xcassets */,
+				F81A646D21C05B21005F5125 /* LaunchScreen.storyboard */,
+				F81A647021C05B21005F5125 /* Info.plist */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y6994DAGM;
-				INFOPLIST_FILE = "iTunes Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Search/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y6994DAGM;
-				INFOPLIST_FILE = "iTunes Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Search/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
