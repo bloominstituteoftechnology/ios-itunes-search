@@ -69,7 +69,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
 1. Create a new Swift file called "SearchResultController.swift", and make a class called `SearchResultController`.
 2. Add a `baseURL` constant. This should be the base URL for the iTunes Search API.
 3. Add a `searchResults: [SearchResult] = []` variable. This will be the data source for the table view.
-4. Create a `performSearch` function with a `searchTerm: String`, a `resultType: ResultType` parameter, and a `completion` closure. The completion closure should return an `NSError?`. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of [this page](http://goshdarnclosuresyntax.com). You're obviously free to ask a PM for help as well.
+4. Create a `performSearch` function with `searchTerm: String` and `resultType: ResultType` as parameters, and a `completion` closure. The completion closure should return an `NSError?`. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of [this page](http://goshdarnclosuresyntax.com). You're obviously free to ask a PM for help as well.
 5. Create your full request url by taking the `baseURL`, and adding the necessary query parameters (in the form of `URLQueryItem`s.) to it using `URLComponents`.
 6. This function should use `URLSession`'s `dataTask(with: URL, completion: ...)` method to create a data task. Remember to call `.resume()`.
 7. In the completion closure of the data task:
@@ -79,7 +79,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
     - If you do get data back, use a do-try-catch block and `JSONDecoder` to decode `SearchResults` from the data returned from the data task. Create a constant for this decoded `SearchResults` object.
     - Set the value of the `searchResults` variable in this model controller to the `SearchResults`' `results` array.
     - Still in the `do` statement, call completion with `nil`.
-    - In the `catch` statement, call completion with `nil` for the array of recipes, and the error thrown in the catch block.
+    - In the `catch` statement, call completion with `nil` for the array of search results, and the error thrown in the catch block.
 
 ### Part 2 - Storyboard Layout
 

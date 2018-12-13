@@ -6,5 +6,4 @@ enum ResultType: String {
     case apps = "software"
     case songs = "musicTrack"
     case movies = "movie"
-    
 }
