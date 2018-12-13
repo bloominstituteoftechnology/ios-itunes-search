@@ -4,7 +4,8 @@ class SearchResultController {
     let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
     typealias completetionHandler = (Error?) -> Void
-    
+    static let shared = SearchResultController()
+    init() {}
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping completetionHandler) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
