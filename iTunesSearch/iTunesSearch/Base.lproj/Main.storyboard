@@ -83,6 +83,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunesSearch" id="O7V-Pj-BBc"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ik0-7c-E74" id="7oq-yg-4tp"/>
+                        <outlet property="segmentedControl" destination="yGz-PA-2sY" id="7TM-hf-qQS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45y-Vd-CF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,6 +132,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLv-iy-AS6"/>
                     </view>
+                    <connections>
+                        <outlet property="artworkView" destination="nDY-2A-MIY" id="lyf-vq-Zq4"/>
+                        <outlet property="creatorLabel" destination="UJf-KN-tVr" id="fkx-O5-KuY"/>
+                        <outlet property="titleLabel" destination="2WG-YZ-r92" id="sKh-eQ-Jhb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mej-Od-XCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
