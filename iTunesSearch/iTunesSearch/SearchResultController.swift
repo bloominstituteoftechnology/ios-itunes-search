@@ -3,6 +3,10 @@ import Foundation
 let baseURL = URL(string: "https://itunes.apple.com/search")!
 
 class SearchResultController {
+    //model
+    static let shared = SearchResultController()
+    private init () {}
+    
     //data source for table view
     var searchResults: [SearchResult] = []
     
