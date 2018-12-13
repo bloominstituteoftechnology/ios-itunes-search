@@ -16,8 +16,8 @@ struct SearchResult: Codable {
 }
 
 struct ImageURLs: Codable {
-    let smallImage: String
-    let mediumImage: String
+    let artworkUrl60: String
+    let artworkUrl100: String
 }
 
 struct SearchResults: Codable {

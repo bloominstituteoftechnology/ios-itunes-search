@@ -45,6 +45,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
         
+        guard let url = URL(string: searchResult.smallImage.artworkUrl60),
+            let imageData = try? Data(contentsOf: url) else {return cell}
+        
+        cell.imageView?.image = UIImage(data: imageData)
+        
         return cell
         
     }
