@@ -14,6 +14,7 @@
 		F81A647721C06954005F5125 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A647621C06954005F5125 /* SearchResult.swift */; };
 		F81A647921C06DCF005F5125 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A647821C06DCF005F5125 /* ResultType.swift */; };
 		F81A647B21C0752F005F5125 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A647A21C0752F005F5125 /* SearchResultController.swift */; };
+		F81A64B121C25795005F5125 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A64B021C25795005F5125 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F81A647621C06954005F5125 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		F81A647821C06DCF005F5125 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		F81A647A21C0752F005F5125 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		F81A64B021C25795005F5125 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				F81A646421C05B1F005F5125 /* AppDelegate.swift */,
 				F81A646821C05B1F005F5125 /* Main.storyboard */,
+				F81A64B021C25795005F5125 /* SearchResultsTableViewController.swift */,
 				F81A646B21C05B21005F5125 /* Assets.xcassets */,
 				F81A646D21C05B21005F5125 /* LaunchScreen.storyboard */,
 				F81A647021C05B21005F5125 /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				F81A647921C06DCF005F5125 /* ResultType.swift in Sources */,
 				F81A647721C06954005F5125 /* SearchResult.swift in Sources */,
+				F81A64B121C25795005F5125 /* SearchResultsTableViewController.swift in Sources */,
 				F81A646521C05B1F005F5125 /* AppDelegate.swift in Sources */,
 				F81A647B21C0752F005F5125 /* SearchResultController.swift in Sources */,
 			);
