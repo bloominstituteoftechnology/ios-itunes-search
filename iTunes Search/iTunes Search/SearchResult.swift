@@ -12,6 +12,7 @@ struct SearchResult: Codable {
     }
 }
 
-struct SearchResults {
+struct SearchResults: Codable {
+    // Must conform to Codable to work in the SearchResultController
     let results: [SearchResult]
 }
