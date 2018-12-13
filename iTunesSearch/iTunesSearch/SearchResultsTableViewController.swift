@@ -8,7 +8,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
-        <#code#>
+        super.viewDidLoad()
+       searchBar.delegate = self
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
