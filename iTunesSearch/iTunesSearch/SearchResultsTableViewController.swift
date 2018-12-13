@@ -2,7 +2,7 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
-    let searchResultsController = SearchResultController()
+   // let searchResultsController = SearchResultController()
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -18,7 +18,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         var resultType: ResultType!
         let index = segmentedControl.selectedSegmentIndex
         
-        let index == 0 {
+        if index == 0 {
             resultType = .software
             
         } else if index == 1 {
@@ -27,7 +27,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         } else {
             resultType = .movie
         }
-        SearchResultController.shared.performSearch(with: searchTerm, resultType: resultType) { (_) in
+        SearchResultController.shared.performSearch(searchTerm: searchTerm, resultType: resultType)  { (_) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -35,16 +35,27 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
     //tableview funcs
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return SearchResultController.shared.searchResults.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let searchResult = SearchResultController.shared.searchResults[indexPath.row]
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+        
+        return cell
+        
     }
     
     //segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        guard let destination = segue.destination as? DetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow else {return}
+        
+        let searchResult = SearchResultController.shared.searchResult(at: indexPath)
+        destination.searchResult = searchResult
     }
 }
 

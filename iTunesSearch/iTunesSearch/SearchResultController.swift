@@ -10,6 +10,10 @@ class SearchResultController {
     //data source for table view
     var searchResults: [SearchResult] = []
     
+    func searchResult(at indexPath: IndexPath) -> SearchResult {
+        return searchResults[indexPath.row]
+    }
+    
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (NSError?) -> Void) {
         
         //search

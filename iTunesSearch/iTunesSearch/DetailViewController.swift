@@ -2,6 +2,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var searchResult: SearchResult?
+    
     @IBOutlet weak var artworkView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
