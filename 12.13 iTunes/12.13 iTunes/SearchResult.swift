@@ -1,6 +1,6 @@
 import Foundation
 
-struct SearchResults: Codable {
+struct SearchResult: Codable {
     var title: String
     var creator: String
 
@@ -11,5 +11,5 @@ struct SearchResults: Codable {
 }
 
 struct ResultsList: Codable {
-    let results: [SearchResults]
+    let results: [SearchResult]
 }
