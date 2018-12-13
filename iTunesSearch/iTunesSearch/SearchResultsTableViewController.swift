@@ -2,8 +2,6 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
-   // let searchResultsController = SearchResultController()
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -45,9 +43,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
         
-        guard let url = URL(string: searchResult.smallImage.artworkUrl60),
+        guard let url = URL(string: searchResult.smallImage),
             let imageData = try? Data(contentsOf: url) else {return cell}
-        
+
         cell.imageView?.image = UIImage(data: imageData)
         
         return cell

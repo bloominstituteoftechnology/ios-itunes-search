@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
         titleLabel.text = searchResult.title
         creatorLabel.text = searchResult.creator
         
-        guard let url = URL(string: searchResult.mediumImage.artworkUrl100),
+        guard let url = URL(string: searchResult.mediumImage),
             let imageData = try? Data(contentsOf: url) else {return}
         
         artworkView.image = UIImage(data: imageData)

@@ -3,8 +3,8 @@ import Foundation
 struct SearchResult: Codable {
     let title: String
     let creator: String
-    let smallImage: ImageURLs
-    let mediumImage: ImageURLs
+    let smallImage: String
+    let mediumImage: String
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
@@ -15,10 +15,6 @@ struct SearchResult: Codable {
     }
 }
 
-struct ImageURLs: Codable {
-    let artworkUrl60: String
-    let artworkUrl100: String
-}
 
 struct SearchResults: Codable {
     let results: [SearchResult]
