@@ -34,6 +34,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         // The creator/company/author name should be provided in the details.
         cell.detailTextLabel?.text = searchResult.creator
         
+        guard let url = URL(string: searchResult.artwork),
+            let imageData = try? Data(contentsOf: url) else { return cell }
+        
+        cell.imageView?.image = UIImage(data: imageData)
+        
         return cell
     }
     
