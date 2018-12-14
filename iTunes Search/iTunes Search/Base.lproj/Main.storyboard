@@ -55,31 +55,50 @@
                             </constraints>
                         </view>
                         <prototypes>
+<<<<<<< HEAD
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iTunesDataCell" textLabel="kNT-RZ-lym" detailTextLabel="hmG-WR-efR" style="IBUITableViewCellStyleSubtitle" id="Ijd-cP-rdO" customClass="SearchTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="375" height="44"/>
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iTunesDataCell" textLabel="kNT-RZ-lym" detailTextLabel="Efh-G0-Qyf" rowHeight="68" style="IBUITableViewCellStyleSubtitle" id="Ijd-cP-rdO" customClass="SearchTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="375" height="68"/>
+>>>>>>> 990b387daa577ad5f1c0b29cd5815bbaff4019c0
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ijd-cP-rdO" id="cYz-J6-7gf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kNT-RZ-lym">
-                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="16" y="14" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+<<<<<<< HEAD
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hmG-WR-efR">
                                             <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+=======
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Efh-G0-Qyf">
+                                            <rect key="frame" x="16" y="37.5" width="33" height="14.5"/>
+>>>>>>> 990b387daa577ad5f1c0b29cd5815bbaff4019c0
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdV-jP-r7t">
+                                            <rect key="frame" x="300" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+<<<<<<< HEAD
                                     <outlet property="detailLabel" destination="hmG-WR-efR" id="CuA-aa-4gE"/>
+=======
+                                    <outlet property="artWorkImage" destination="hdV-jP-r7t" id="tRb-zC-2UE"/>
+                                    <outlet property="detailLabel" destination="Efh-G0-Qyf" id="boZ-Or-D9l"/>
+>>>>>>> 990b387daa577ad5f1c0b29cd5815bbaff4019c0
                                     <outlet property="titleLabel" destination="kNT-RZ-lym" id="EfC-6w-1ca"/>
                                 </connections>
                             </tableViewCell>
@@ -91,6 +110,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="pOv-po-Ese"/>
                     <connections>
+                        <outlet property="artworkImage" destination="hdV-jP-r7t" id="LTD-C4-WEZ"/>
                         <outlet property="itunesSearchBar" destination="d0Q-di-3rG" id="9rc-Sj-uWH"/>
                         <outlet property="searchSegmentedControl" destination="M5g-Ej-EOW" id="hse-S3-0X0"/>
                     </connections>
