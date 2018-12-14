@@ -30,6 +30,7 @@ class SearchResultController {
         let queryItemLimit = URLQueryItem(name: "limit", value: "20")
         let queryItemLanguage = URLQueryItem(name: "lang", value: "en_us")
         
+        //components?.queryItems = [queryItemSearchTerm, queryItemCountry, queryItemEntity, queryItemArtWork, queryItemLimit, queryItemLanguage]
         components?.queryItems = [queryItemSearchTerm, queryItemCountry, queryItemEntity, queryItemLimit, queryItemLanguage]
         
         //Create the URL
@@ -75,11 +76,6 @@ class SearchResultController {
         }
         
         dataTask.resume()
-        
-        
-        
-        
-        
-        
-    }
+    }  //End of search
+    
 } //End of class
