@@ -2,7 +2,7 @@
 //  SearchResultsTableViewController.swift
 //  iTunes Search
 //
-//  Created by Sameera Leola on 12/11/18.
+//  Created by Sameera Leola on 12/12/18.
 //  Copyright © 2018 Sameera Leola. All rights reserved.
 //
 
@@ -12,8 +12,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     @IBOutlet weak var searchSegmentedControl: UISegmentedControl!
     @IBOutlet weak var itunesSearchBar: UISearchBar!
-    
-    //let searchResultsController = SearchResultController()
+    @IBOutlet weak var artworkImage: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         let searchResult = SearchResultController.shared.searchResult[indexPath.row]
         
-        cell.serchResult = searchResult
+        cell.searchResult = searchResult
         
         return cell
     }
