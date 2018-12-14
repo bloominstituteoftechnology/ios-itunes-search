@@ -4,6 +4,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var selectorOutlet: UISegmentedControl!
+    @IBAction func selectorAction(_ sender: Any) {
+        updateViews()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,21 +29,20 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let search = searchBar.text, search.count > 0 else { return }
+        updateViews()
+    }
+        
+    func updateViews(){
+        
+        guard let search = searchBarOutlet.text, search.count > 0 else { return }
         
         var resultType: ResultType!
         let index = selectorOutlet.selectedSegmentIndex
         
         if index == 0 {
             resultType = .software
-            
-            
-            
-            
         } else if index == 1 {
             resultType = .musicTrack
-            
-            
             
         } else if index == 2 {
             resultType = .movie
@@ -55,3 +57,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         }
     }
 }
+
+
+
+
