@@ -15,6 +15,19 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         let selectedIndex = categorySelector.selectedSegmentIndex
         
+        runSearch(searchTerm: searchTerm, selectedIndex: selectedIndex)
+    }
+    
+    @IBAction func changeSelectedType(_ sender: UISegmentedControl) {
+        guard let searchTerm = searchField.text, !searchTerm.isEmpty else { return }
+        
+        let selectedIndex = sender.selectedSegmentIndex
+        
+        runSearch(searchTerm: searchTerm, selectedIndex: selectedIndex)
+        
+    }
+    
+    func runSearch(searchTerm: String, selectedIndex: Int) {
         var resultType: ResultType!
         
         switch selectedIndex {
@@ -35,6 +48,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             }
         }
     }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
