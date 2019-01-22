@@ -30,6 +30,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         }
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -56,8 +58,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    
     
 
 }
