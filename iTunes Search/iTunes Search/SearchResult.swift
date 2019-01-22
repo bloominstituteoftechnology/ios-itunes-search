@@ -20,5 +20,4 @@ struct SearchResult: Codable {
 
 struct SearchResults: Codable {
     var results: [SearchResult]
-//    var resultCount: Int
 }

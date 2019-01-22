@@ -10,7 +10,7 @@ import Foundation
 
 class SearchResultController {
     
-    private let baseURL = URL(string: "https://itunes.apple.com/")!
+    private let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     var searchResults: [SearchResult] = []
     
@@ -18,9 +18,11 @@ class SearchResultController {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         
-        urlComponents.queryItems = [searchQueryItem]
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        
+        urlComponents.queryItems = [searchQueryItem, resultTypeQueryItem]
         
         guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing search URL: \(searchTerm)")
