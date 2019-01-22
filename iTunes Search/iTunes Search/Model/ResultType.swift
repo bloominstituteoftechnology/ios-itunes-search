@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ResultType {
+enum ResultType: String {
     case software
     case musicTrack
     case movie
