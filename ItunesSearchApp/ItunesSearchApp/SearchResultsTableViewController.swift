@@ -13,7 +13,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var chooseSegmentedControl: UISegmentedControl!
     
-    
+    let searchResultsController = SearchResultController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,24 +23,54 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        <#code#>
+      updateViews()
+    }
+    
+    private func updateViews(){
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else {return}
+        
+        var resultType: ResultType!
+        let index = chooseSegmentedControl.selectedSegmentIndex
+        
+        if index == 0 {
+            resultType = .software
+        } else if index == 1 {
+            resultType = .musicTrack
+            
+        } else if index == 2 {
+            resultType = .movie
+            
+        }
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) { (error) in
+            if error != nil {
+                NSLog("There is an error retreiving search \(error!.localizedDescription)")
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
 
-        // Configure the cell...
+        let results = searchResultsController.searchResults[indexPath.row]
+        cell.textLabel?.text = results.title
+        cell.detailTextLabel?.text = results.creator
 
         return cell
     }
     
-
+    @IBAction func segmentedControllPressed(_ sender: UISegmentedControl) {
+        updateViews()
+    }
+    
 
 }
