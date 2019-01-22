@@ -14,6 +14,7 @@
 		7735637521F7AF8E00B2D675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7735637321F7AF8E00B2D675 /* LaunchScreen.storyboard */; };
 		7735637D21F7B10000B2D675 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735637C21F7B10000B2D675 /* SearchResult.swift */; };
 		7735637F21F7B47800B2D675 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735637E21F7B47800B2D675 /* ResultType.swift */; };
+		7735638121F7B6A400B2D675 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735638021F7B6A400B2D675 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7735637621F7AF8E00B2D675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7735637C21F7B10000B2D675 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		7735637E21F7B47800B2D675 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		7735638021F7B6A400B2D675 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				7735637621F7AF8E00B2D675 /* Info.plist */,
 				7735637C21F7B10000B2D675 /* SearchResult.swift */,
 				7735637E21F7B47800B2D675 /* ResultType.swift */,
+				7735638021F7B6A400B2D675 /* SearchResultController.swift */,
 			);
 			path = "iTunes Search";
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				7735636D21F7AF8E00B2D675 /* ViewController.swift in Sources */,
 				7735637D21F7B10000B2D675 /* SearchResult.swift in Sources */,
 				7735636B21F7AF8E00B2D675 /* AppDelegate.swift in Sources */,
+				7735638121F7B6A400B2D675 /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
