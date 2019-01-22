@@ -13,6 +13,7 @@
 		7A23C0AC21F7719C00B1ADCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A23C0AB21F7719C00B1ADCC /* Assets.xcassets */; };
 		7A23C0AF21F7719C00B1ADCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A23C0AD21F7719C00B1ADCC /* LaunchScreen.storyboard */; };
 		7A23C0B721F773E700B1ADCC /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A23C0B621F773E700B1ADCC /* SearchResultsTableViewController.swift */; };
+		7A23C0B921F77EF500B1ADCC /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A23C0B821F77EF500B1ADCC /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7A23C0AE21F7719C00B1ADCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A23C0B021F7719C00B1ADCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A23C0B621F773E700B1ADCC /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		7A23C0B821F77EF500B1ADCC /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				7A23C0A421F7719A00B1ADCC /* AppDelegate.swift */,
 				7A23C0A621F7719A00B1ADCC /* ViewController.swift */,
+				7A23C0B821F77EF500B1ADCC /* SearchResult.swift */,
 				7A23C0B621F773E700B1ADCC /* SearchResultsTableViewController.swift */,
 				7A23C0A821F7719A00B1ADCC /* Main.storyboard */,
 				7A23C0AB21F7719C00B1ADCC /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			files = (
 				7A23C0A721F7719A00B1ADCC /* ViewController.swift in Sources */,
 				7A23C0A521F7719A00B1ADCC /* AppDelegate.swift in Sources */,
+				7A23C0B921F77EF500B1ADCC /* SearchResult.swift in Sources */,
 				7A23C0B721F773E700B1ADCC /* SearchResultsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
