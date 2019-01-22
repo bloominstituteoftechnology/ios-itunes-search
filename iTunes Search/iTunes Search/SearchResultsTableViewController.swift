@@ -64,6 +64,5 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
                 self.tableView.reloadData()
             }
         }
-        
     }
 }
