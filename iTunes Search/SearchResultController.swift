@@ -8,8 +8,7 @@
 
 import Foundation
 
-private let baseURL = URL(string: "https://itunes.apple.com/")!
-
+private let baseURL = URL(string: "https://itunes.apple.com/search")!
 
 class SearchResultController {
     
@@ -18,7 +17,7 @@ class SearchResultController {
     func performSearch(with searchTerm: String, andResult resultType: ResultType, completion:  @escaping ([SearchResult]?, Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true )!
         let typeSearchQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         urlComponents.queryItems = [searchQueryItem, typeSearchQueryItem]
         
         guard let requestURL = urlComponents.url else {
