@@ -14,6 +14,7 @@
 		39AF7B7B21F7B910005FFE4A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF7B7A21F7B910005FFE4A /* SearchResult.swift */; };
 		39AF7B7D21F7BB45005FFE4A /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF7B7C21F7BB45005FFE4A /* ResultType.swift */; };
 		39AF7B8321F7BD66005FFE4A /* SeachResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF7B8221F7BD66005FFE4A /* SeachResultController.swift */; };
+		39AF7B8521F7D7B9005FFE4A /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF7B8421F7D7B9005FFE4A /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		39AF7B7A21F7B910005FFE4A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		39AF7B7C21F7BB45005FFE4A /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		39AF7B8221F7BD66005FFE4A /* SeachResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachResultController.swift; sourceTree = "<group>"; };
+		39AF7B8421F7D7B9005FFE4A /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		39AF7B7F21F7BBDC005FFE4A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				39AF7B8421F7D7B9005FFE4A /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				39AF7B7B21F7B910005FFE4A /* SearchResult.swift in Sources */,
 				39AF7B8321F7BD66005FFE4A /* SeachResultController.swift in Sources */,
+				39AF7B8521F7D7B9005FFE4A /* SearchResultsTableViewController.swift in Sources */,
 				39AF7B7D21F7BB45005FFE4A /* ResultType.swift in Sources */,
 				39AF7B6921F79F8E005FFE4A /* AppDelegate.swift in Sources */,
 			);
