@@ -65,8 +65,8 @@
 				82E86E572151D8E50091E567 /* Enums */,
 				8289C5CA215191470033CE5D /* Model */,
 				8289C5CF215194740033CE5D /* Model Controller */,
-				8289C5C721518F2E0033CE5D /* View */,
 				8289C5C621518F260033CE5D /* View Controller */,
+				8289C5C721518F2E0033CE5D /* Storyboards */,
 				8289C5C521518F1C0033CE5D /* Supporting files */,
 			);
 			path = "iTunes Search";
@@ -91,12 +91,12 @@
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
-		8289C5C721518F2E0033CE5D /* View */ = {
+		8289C5C721518F2E0033CE5D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				8289C5B721518F120033CE5D /* Main.storyboard */,
 			);
-			path = View;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		8289C5CA215191470033CE5D /* Model */ = {
