@@ -58,7 +58,6 @@ class SearchResultController {
             }
             
             do {
-                
                 // Create an instance of JSONDecoder and convert its key decoding strategy from snake-case to camel-case
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -68,7 +67,6 @@ class SearchResultController {
                 self.searchResults = searchResults.results
                 completion(nil)
             } catch {
-                
                 // If not, log the error and pass it to the handler
                 NSLog("Error decoding data: \(error)")
                 completion(error)
