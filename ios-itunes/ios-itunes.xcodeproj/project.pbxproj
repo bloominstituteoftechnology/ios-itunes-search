@@ -12,6 +12,9 @@
 		A2111AA921F7B2E500D78092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2111AA721F7B2E500D78092 /* Main.storyboard */; };
 		A2111AAB21F7B2E600D78092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2111AAA21F7B2E600D78092 /* Assets.xcassets */; };
 		A2111AAE21F7B2E600D78092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2111AAC21F7B2E600D78092 /* LaunchScreen.storyboard */; };
+		A2111AB621F7D7CD00D78092 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2111AB521F7D7CD00D78092 /* SearchResult.swift */; };
+		A2111AB821F7DA5200D78092 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2111AB721F7DA5200D78092 /* ResultType.swift */; };
+		A2111ABA21F7DB0600D78092 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2111AB921F7DB0600D78092 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		A2111AAA21F7B2E600D78092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2111AAD21F7B2E600D78092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2111AAF21F7B2E600D78092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2111AB521F7D7CD00D78092 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		A2111AB721F7DA5200D78092 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		A2111AB921F7DB0600D78092 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				A2111AAA21F7B2E600D78092 /* Assets.xcassets */,
 				A2111AAC21F7B2E600D78092 /* LaunchScreen.storyboard */,
 				A2111AAF21F7B2E600D78092 /* Info.plist */,
+				A2111AB521F7D7CD00D78092 /* SearchResult.swift */,
+				A2111AB721F7DA5200D78092 /* ResultType.swift */,
+				A2111AB921F7DB0600D78092 /* SearchResultController.swift */,
 			);
 			path = "ios-itunes";
 			sourceTree = "<group>";
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2111AB821F7DA5200D78092 /* ResultType.swift in Sources */,
 				A2111AA621F7B2E500D78092 /* ViewController.swift in Sources */,
+				A2111AB621F7D7CD00D78092 /* SearchResult.swift in Sources */,
 				A2111AA421F7B2E500D78092 /* AppDelegate.swift in Sources */,
+				A2111ABA21F7DB0600D78092 /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
