@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F87E307521F7F9C60074B360 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E307421F7F9C60074B360 /* SearchResultsTableViewController.swift */; };
 		F8A4BCC221F7C51100CEFF50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4BCC121F7C51100CEFF50 /* AppDelegate.swift */; };
-		F8A4BCC421F7C51100CEFF50 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4BCC321F7C51100CEFF50 /* SearchResultsTableViewController.swift */; };
 		F8A4BCC721F7C51100CEFF50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A4BCC521F7C51100CEFF50 /* Main.storyboard */; };
 		F8A4BCC921F7C51200CEFF50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A4BCC821F7C51200CEFF50 /* Assets.xcassets */; };
 		F8A4BCCC21F7C51200CEFF50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A4BCCA21F7C51200CEFF50 /* LaunchScreen.storyboard */; };
@@ -18,9 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F87E307421F7F9C60074B360 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		F8A4BCBE21F7C51000CEFF50 /* iTunes Search 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A4BCC121F7C51100CEFF50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8A4BCC321F7C51100CEFF50 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		F8A4BCC621F7C51100CEFF50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8A4BCC821F7C51200CEFF50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8A4BCCB21F7C51200CEFF50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 				F8A4BCD321F7C97A00CEFF50 /* SearchResult.swift */,
 				F8A4BCD521F7CD0400CEFF50 /* ResultType.swift */,
 				F8A4BCD821F7CE9500CEFF50 /* SearchResultController.swift */,
-				F8A4BCC321F7C51100CEFF50 /* SearchResultsTableViewController.swift */,
+				F87E307421F7F9C60074B360 /* SearchResultsTableViewController.swift */,
 				F8A4BCC521F7C51100CEFF50 /* Main.storyboard */,
 				F8A4BCD721F7CE5200CEFF50 /* Set and Forget */,
 			);
@@ -153,8 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A4BCD621F7CD0400CEFF50 /* ResultType.swift in Sources */,
-				F8A4BCC421F7C51100CEFF50 /* SearchResultsTableViewController.swift in Sources */,
 				F8A4BCD421F7C97A00CEFF50 /* SearchResult.swift in Sources */,
+				F87E307521F7F9C60074B360 /* SearchResultsTableViewController.swift in Sources */,
 				F8A4BCC221F7C51100CEFF50 /* AppDelegate.swift in Sources */,
 				F8A4BCD921F7CE9500CEFF50 /* SearchResultController.swift in Sources */,
 			);

@@ -28,9 +28,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         let searchResult = searchResultsController.searchResults[indexPath.row]
         
-        // App/Song/Movie name should be in the title.
         cell.textLabel?.text = searchResult.title
-        // The creator/company/author name should be provided in the details.
         cell.detailTextLabel?.text = searchResult.creator
         
         guard let url = URL(string: searchResult.artwork),
