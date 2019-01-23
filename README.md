@@ -75,7 +75,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
     - If you do get data back, use a do-try-catch block and `JSONDecoder` to decode `SearchResults` from the data returned from the data task. Create a constant for this decoded `SearchResults` object.
     - Set the value of the `searchResults` variable in this model controller to the `SearchResults`' `results` array.
     - Still in the `do` statement, call completion with `nil`.
-    - In the `catch` statement, call completion with `error`, the error thrown in the catch block.
+    - In the `catch` statement, call completion with `error`.
 
 ### Part 2 - Storyboard Layout
 
