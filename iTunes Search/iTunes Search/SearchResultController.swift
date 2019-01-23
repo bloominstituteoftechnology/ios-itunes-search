@@ -42,7 +42,7 @@ class SearchResultController {
                 return
             }
             
-            // Check for errors. If there is an error, call completion with the error.
+            // Unwrap the data. If there is no data, call completion, and return NSError() in it.
             guard let data = data else {
                 NSLog("No data returned from data task.")
                 completion(nil, NSError())
