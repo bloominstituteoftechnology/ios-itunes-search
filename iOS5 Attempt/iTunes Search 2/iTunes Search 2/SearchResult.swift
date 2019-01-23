@@ -6,7 +6,7 @@ struct SearchResult: Codable {
     let artwork: String
 
     // Would have been "CodingKeys" otherwise.
-    enum CodingKeys: String, CodingKey {
+    enum ParameterKeyValue: String, CodingKey {
         case title = "trackName"
         case creator = "artistName"
         case artwork = "artworkUrl60"

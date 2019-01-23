@@ -23,17 +23,17 @@ class SearchResultController {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         // URL Query Items
-        let searchQueryItems = URLQueryItem(name: "term", value: searchTerm)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         // This is how we obtain `musicTrack`
         let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
         // Things that were added but not mentioned in the README
         
-        urlComponents?.queryItems = [searchQueryItems, resultTypeQueryItem]
+        urlComponents?.queryItems = [searchQueryItem, resultTypeQueryItem]
         
         guard let searchRequestURL = urlComponents?.url
             else {
-                NSLog("Couldn't make URL from component.")
+                NSLog("Couldn't make URL from components.")
                 completion(nil, NSError())
             return
         }
