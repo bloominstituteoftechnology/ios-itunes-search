@@ -10,14 +10,15 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/search?term=")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
 
     var searchResults: [SearchResult] = [] // This will be datasource for the tableview
 
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents.queryItems = [searchQueryItem]
+        let termQuery = URLQueryItem(name: "term", value: searchTerm)
+//        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        urlComponents.queryItems = [termQuery]
         
         guard let requestURL = urlComponents.url else {
             NSLog("Problem constructing search URL for \(searchTerm)")

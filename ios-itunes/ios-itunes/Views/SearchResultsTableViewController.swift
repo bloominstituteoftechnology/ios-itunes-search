@@ -33,9 +33,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
             DispatchQueue.main.async {
-                if error == nil {
+//                if error == nil {
                     self.tableView.reloadData()
-                }
+//                }
         }
         
     }
@@ -43,7 +43,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        searchBarSearchButtonClicked(searchBar)
+        DispatchQueue.main.async {
+            self.searchBarSearchButtonClicked(self.searchBar)
+        }
     }
 
     // MARK: - Table view data source
