@@ -26,7 +26,11 @@ Please fork and clone this repository. This repository does not have a starter p
 
 #### SearchResult
 
-This application uses the iTunes Search API. Please familiarize yourself with the API's documentation [here](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/). Read the overview, and look at the "Searching" section. There are some search examples that are worth looking at as well.
+This application uses the iTunes Search API. Please:
+- familiarize yourself with the API's documentation [here](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/). 
+- Read the **overview**.
+- Look at the **Searching the iTunes Store** section. 
+- Look over **search examples** that are worth looking at as well.
 
 We're going to search for either an app, music, or movie. Use [this URL](https://itunes.apple.com/search?term=yelp&entity=software) to see some example JSON. **NOTE:** the URL will download a file to your desktop which contains the JSON. You will need to open the file in a text editor to see the JSON. It's recommended that you then copy and paste the JSON in a JSON formatter. 
 
@@ -35,7 +39,7 @@ We're going to search for either an app, music, or movie. Use [this URL](https:/
     - a `title` string
     - an `creator` string.
 
-**Note:** The JSON returned from the iTunes Search API refers to the developers of an application as the `artistName`, and the title of the search result as the `trackName`. The same goes for the `trackName` for the title of the search result. No matter whether it's music, movies, apps, etc. the JSON uses these same key-value pairs to keep the JSON consistent.
+**Note:** The JSON returned from the iTunes Search API refers to the developers of an application as the `artistName`, and the title of the search result as the `trackName`. No matter whether it's music, movies, apps, etc. the JSON uses these same key-value pairs to keep the JSON consistent.
 
 You may have noticed that the `title` and `creator` properties in this struct don't match any keys in the JSON. As a recap, a class or struct that adopts `Codable` will by default use the names of its properties as the keys it should look for in the JSON that it is trying to decode. However there are instances where the keys in the JSON perhaps aren't what you'd like to call your properties throughout your app. We can implement another part of `Codable` that lets us override this behavior called `CodingKeys`. `CodingKeys` allow us to and map the keys from the JSON to the properties we want their values to be stored in. Still in the `SearchResult` struct, add the following:
 
@@ -55,7 +59,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
 
 1. Create a new Swift file called "ResultType.swift".
 2. Create an enum called `ResultType`. Set its raw values to be `String`. This will represent the kind of item you want to search for in the API. 
-3. Add the following cases:
+3. Add the following raw values to their respective cases:
     - `software` - (for apps)
     - `musicTrack`
     - `movie`
@@ -65,7 +69,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
 1. Create a new Swift file called "SearchResultController.swift", and make a class called `SearchResultController`.
 2. Add a `baseURL` constant. This should be the base URL for the iTunes Search API.
 3. Add a `searchResults: [SearchResult] = []` variable. This will be the data source for the table view.
-4. Create a `performSearch` function with a `searchTerm: String`, a `resultType: ResultType` parameter, and a `completion` closure. The completion closure should return an `NSError?`. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of [this page](http://goshdarnclosuresyntax.com). You're obviously free to ask a PM for help as well.
+4. Create a `performSearch` function with `searchTerm: String` and `resultType: ResultType` as parameters, and a `completion` closure. The completion closure should return an `NSError?`. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of [this page](http://goshdarnclosuresyntax.com). You're obviously free to ask a PM for help as well.
 5. Create your full request url by taking the `baseURL`, and adding the necessary query parameters (in the form of `URLQueryItem`s.) to it using `URLComponents`.
 6. This function should use `URLSession`'s `dataTask(with: URL, completion: ...)` method to create a data task. Remember to call `.resume()`.
 7. In the completion closure of the data task:
@@ -75,7 +79,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
     - If you do get data back, use a do-try-catch block and `JSONDecoder` to decode `SearchResults` from the data returned from the data task. Create a constant for this decoded `SearchResults` object.
     - Set the value of the `searchResults` variable in this model controller to the `SearchResults`' `results` array.
     - Still in the `do` statement, call completion with `nil`.
-    - In the `catch` statement, call completion with `nil` for the array of recipes, and the error thrown in the catch block.
+    - In the `catch` statement, call completion with `nil` for the array of search results, and the error thrown in the catch block.
 
 ### Part 2 - Storyboard Layout
 
