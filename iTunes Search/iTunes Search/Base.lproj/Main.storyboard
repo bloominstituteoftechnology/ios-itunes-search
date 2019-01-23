@@ -28,13 +28,13 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="segmentTapped:" destination="ibV-pb-hHx" eventType="valueChanged" id="4lJ-j4-ZgB"/>
+                                    </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MHV-8F-ov8">
                                     <rect key="frame" x="0.0" y="44" width="375" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="ibV-pb-hHx" id="5Mh-7i-GZZ"/>
-                                    </connections>
                                 </searchBar>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

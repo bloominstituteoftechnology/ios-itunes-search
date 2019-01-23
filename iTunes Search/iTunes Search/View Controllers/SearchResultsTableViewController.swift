@@ -12,6 +12,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+    }
+    
+    @IBAction func segmentTapped(_ sender: Any) {
+        searchBarSearchButtonClicked(searchBar)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -39,7 +44,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
                 self.tableView.reloadData()
             }
         }
-        searchBar.text = ""
     }
     
     // MARK: - Table view data source
