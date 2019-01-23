@@ -1,7 +1,7 @@
 import Foundation
 
 enum ResultType: String {
-    case app = "software"
+    case apps = "software"
     case music = "musicTrack"
-    case movie = "movie"
+    case movies = "movie"
 }
