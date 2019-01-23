@@ -45,7 +45,7 @@ enum CodingKeys: String, CodingKey {
 }
 ```
 
-3. This enum has `String` raw values, and it conforms to the `CodingKey` protocol. Now, add a `case` for `title` in the enum. Give it a raw value of `"trackName"`. When the decoder is going through the JSON, it will now look for a key called `trackName`, but instead of trying to put that value in a property called `trackName` (which in this struct doesn't exist, thus making the decoding fail), it knows to put the value in a property called `title` because that is the name of the raw value's case. Make a case for `artist`. Its raw value should be `"artistName"`.
+3. This enum has `String` raw values, and it conforms to the `CodingKey` protocol. Now, add a `case` for `title` in the enum. Give it a raw value of `"trackName"`. When the decoder is going through the JSON, it will now look for a key called `trackName`, but instead of trying to put that value in a property called `trackName` (which in this struct doesn't exist, thus making the decoding fail), it knows to put the value in a property called `title` because that is the name of the raw value's case. Make a case for `creator`. Its raw value should be `"artistName"`.
 
 Take a minute to look at the example json at the URL at the start of part 1. The JSON objects that represent each `SearchResult` are nested in the JSON. If we were to try to use a `JSONDecoder()` and try to decode it into `[SearchResult]` it wouldn't work. We need to create an object that represents the JSON at the highest level (the object with `resultCount` and `results` keys). 
 
@@ -65,7 +65,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
 1. Create a new Swift file called "SearchResultController.swift", and make a class called `SearchResultController`.
 2. Add a `baseURL` constant. This should be the base URL for the iTunes Search API.
 3. Add a `searchResults: [SearchResult] = []` variable. This will be the data source for the table view.
-4. Create a `performSearch` function with a `searchTerm: String`, a `resultType: ResultType` parameter, and a `completion` closure. The completion closure should take in an `Error?` and return `Void `. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of [this page](http://goshdarnclosuresyntax.com). You're obviously free to ask a PM for help as well.
+4. Create a `performSearch` function with a `searchTerm: String`, a `resultType: ResultType` parameter, and a `completion` closure. The completion closure should take an `Error?` argument and should return `Void`. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of [this page](http://goshdarnclosuresyntax.com). You're obviously free to ask a PM for help as well.
 5. Create your full request url by taking the `baseURL`, and adding the necessary query parameters (in the form of `URLQueryItem`s.) to it using `URLComponents`.
 6. This function should use `URLSession`'s `dataTask(with: URL, completion: ...)` method to create a data task. Remember to call `.resume()`.
 7. In the completion closure of the data task:
