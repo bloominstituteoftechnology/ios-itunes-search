@@ -14,6 +14,7 @@
 		1BC954A42200EB17008F0C8E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC954A32200EB17008F0C8E /* SearchResult.swift */; };
 		1BC954A62200ED6D008F0C8E /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC954A52200ED6D008F0C8E /* ResultType.swift */; };
 		1BC954A82200EDD0008F0C8E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC954A72200EDD0008F0C8E /* SearchResultController.swift */; };
+		1BC954AA2200F3A9008F0C8E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC954A92200F3A9008F0C8E /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1BC954A32200EB17008F0C8E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		1BC954A52200ED6D008F0C8E /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		1BC954A72200EDD0008F0C8E /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		1BC954A92200F3A9008F0C8E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				1BC954912200EA17008F0C8E /* AppDelegate.swift */,
 				1BC954952200EA17008F0C8E /* Main.storyboard */,
+				1BC954A92200F3A9008F0C8E /* TableViewController.swift */,
 				1BC954A32200EB17008F0C8E /* SearchResult.swift */,
 				1BC954A52200ED6D008F0C8E /* ResultType.swift */,
 				1BC954A72200EDD0008F0C8E /* SearchResultController.swift */,
@@ -144,6 +147,7 @@
 				1BC954A82200EDD0008F0C8E /* SearchResultController.swift in Sources */,
 				1BC954A42200EB17008F0C8E /* SearchResult.swift in Sources */,
 				1BC954A62200ED6D008F0C8E /* ResultType.swift in Sources */,
+				1BC954AA2200F3A9008F0C8E /* TableViewController.swift in Sources */,
 				1BC954922200EA17008F0C8E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
