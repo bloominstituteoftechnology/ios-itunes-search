@@ -60,17 +60,57 @@
 		1BC954902200EA17008F0C8E /* Itunes Search 2 */ = {
 			isa = PBXGroup;
 			children = (
-				1BC954912200EA17008F0C8E /* AppDelegate.swift */,
-				1BC954952200EA17008F0C8E /* Main.storyboard */,
-				1BC954A92200F3A9008F0C8E /* TableViewController.swift */,
-				1BC954A32200EB17008F0C8E /* SearchResult.swift */,
-				1BC954A52200ED6D008F0C8E /* ResultType.swift */,
-				1BC954A72200EDD0008F0C8E /* SearchResultController.swift */,
+				1BC954AF2200F405008F0C8E /* Views */,
+				1BC954AC2200F3E6008F0C8E /* Model */,
+				1BC954AD2200F3EC008F0C8E /* Helper  */,
+				1BC954AE2200F3F3008F0C8E /* Model Controller */,
 				1BC954982200EA17008F0C8E /* Assets.xcassets */,
+				1BC954912200EA17008F0C8E /* AppDelegate.swift */,
 				1BC9549A2200EA17008F0C8E /* LaunchScreen.storyboard */,
 				1BC9549D2200EA17008F0C8E /* Info.plist */,
 			);
 			path = "Itunes Search 2";
+			sourceTree = "<group>";
+		};
+		1BC954AB2200F3E0008F0C8E /* Table Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BC954A92200F3A9008F0C8E /* TableViewController.swift */,
+			);
+			path = "Table Views";
+			sourceTree = "<group>";
+		};
+		1BC954AC2200F3E6008F0C8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BC954A32200EB17008F0C8E /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BC954AD2200F3EC008F0C8E /* Helper  */ = {
+			isa = PBXGroup;
+			children = (
+				1BC954A52200ED6D008F0C8E /* ResultType.swift */,
+			);
+			path = "Helper ";
+			sourceTree = "<group>";
+		};
+		1BC954AE2200F3F3008F0C8E /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BC954A72200EDD0008F0C8E /* SearchResultController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		1BC954AF2200F405008F0C8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BC954952200EA17008F0C8E /* Main.storyboard */,
+				1BC954AB2200F3E0008F0C8E /* Table Views */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

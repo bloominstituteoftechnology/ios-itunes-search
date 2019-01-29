@@ -10,36 +10,37 @@ import Foundation
 
 class SearchResultController {
     
-    private let baseURL = URL(string: "https://itunes.apple.com/search")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
     
     func performSearch(with searchTerm: String, a resultType: ResultType, Completion: @escaping (Error?)-> Void){
         
         //becuase our search has a queryparameter we must construct our url via components
         
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let urlQueryItem1 = URLQueryItem(name: "term", value: searchTerm)
         let urlQueryItem2 = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents?.queryItems = [urlQueryItem1, urlQueryItem2]
+        urlComponents.queryItems = [urlQueryItem1, urlQueryItem2]
         
-        guard let requestURL = urlComponents?.url else {
+        guard let requestURL = urlComponents.url else {
             NSLog("Error constructing the url. URL does not work")
-            Completion(nil)
+            Completion(NSError()) //gotta call compeltion on this because its inside of a block which is inside of a completion handler.
             return }
         
+        print(requestURL)
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching data from data task: \(error.localizedDescription)")
-                Completion(error)
+                Completion(error) // everytime you are in a block within the performSearch(), you need to call completion
                 return
             }
             
             guard let data = data else {
                 NSLog("Error getting data back. No data.")
-                Completion(NSError())
+                Completion(NSError()) //everytime you are in a block inside the performSearch() you need to call completion
                 return
             }
-            
+            print("data:\(data)")
             //try to decode the data we got back from the network call
             let jd = JSONDecoder()
             
@@ -52,13 +53,13 @@ class SearchResultController {
                 
                 //now that we have access to the array of objects we fetched from the network call, assign them to the data source of truth array
                 self.searchResults = searchResultsArray
-                Completion(nil)
+                Completion(nil) //are we in a block? is the block within the performSearch()? then call completion
             }catch {
                 NSLog("Error fetching data from data task: \(error.localizedDescription)")
-                Completion(error)
+                Completion(error) //another one inside of a block, inside of a completion handler...call completion
                 return
             }
-        }
+        }.resume()
         
     }
 }

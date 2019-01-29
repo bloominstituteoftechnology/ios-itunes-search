@@ -79,6 +79,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="IyZ-w1-d57"/>
+                    <connections>
+                        <outlet property="searchBar" destination="VpK-1p-8kf" id="fms-uD-mPg"/>
+                        <outlet property="segmentControl" destination="pE0-NS-8bH" id="0Uc-Xu-fVY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8W-RA-Emf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
