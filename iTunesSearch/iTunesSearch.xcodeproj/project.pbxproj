@@ -17,6 +17,7 @@
 		4B1357C62200D2C3009F6A12 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357C52200D2C3009F6A12 /* SearchResult.swift */; };
 		4B1357C82200D49B009F6A12 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357C72200D49B009F6A12 /* ResultType.swift */; };
 		4B1357CA2200E454009F6A12 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357C92200E454009F6A12 /* SearchResultController.swift */; };
+		4B1357CD22010BBF009F6A12 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357CC22010BBF009F6A12 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		4B1357C52200D2C3009F6A12 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		4B1357C72200D49B009F6A12 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		4B1357C92200E454009F6A12 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		4B1357CC22010BBF009F6A12 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				4B1357972200D277009F6A12 /* AppDelegate.swift */,
 				4B1357992200D277009F6A12 /* ViewController.swift */,
 				4B13579B2200D277009F6A12 /* Main.storyboard */,
+				4B1357CC22010BBF009F6A12 /* SearchResultsTableViewController.swift */,
 				4B13579E2200D278009F6A12 /* Assets.xcassets */,
 				4B1357A02200D278009F6A12 /* LaunchScreen.storyboard */,
 				4B1357A32200D278009F6A12 /* Info.plist */,
@@ -267,6 +270,7 @@
 			files = (
 				4B13579A2200D277009F6A12 /* ViewController.swift in Sources */,
 				4B1357C82200D49B009F6A12 /* ResultType.swift in Sources */,
+				4B1357CD22010BBF009F6A12 /* SearchResultsTableViewController.swift in Sources */,
 				4B1357C62200D2C3009F6A12 /* SearchResult.swift in Sources */,
 				4B1357982200D277009F6A12 /* AppDelegate.swift in Sources */,
 				4B1357CA2200E454009F6A12 /* SearchResultController.swift in Sources */,
