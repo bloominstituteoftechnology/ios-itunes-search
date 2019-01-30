@@ -17,42 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="tvH-Ue-bP7">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9KC-J6-UWi">
-                                    <rect key="frame" x="0.0" y="4" width="375" height="92"/>
-                                    <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k8j-Uw-dYa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
-                                            <segments>
-                                                <segment title="Apps"/>
-                                                <segment title="Music"/>
-                                                <segment title="Movies"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="changeResultType:" destination="DUc-pw-8rL" eventType="valueChanged" id="6vz-pZ-8Qp"/>
-                                            </connections>
-                                        </segmentedControl>
-                                        <searchBar contentMode="redraw" placeholder="Search here:" translatesAutoresizingMaskIntoConstraints="NO" id="pL5-DH-KGP">
-                                            <rect key="frame" x="0.0" y="36" width="375" height="56"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </searchBar>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="9KC-J6-UWi" secondAttribute="bottom" constant="4" id="0ZL-Ed-Ob7"/>
-                                <constraint firstAttribute="trailing" secondItem="9KC-J6-UWi" secondAttribute="trailing" id="7Qe-6r-WL7"/>
-                                <constraint firstItem="9KC-J6-UWi" firstAttribute="leading" secondItem="tvH-Ue-bP7" secondAttribute="leading" id="FA6-tm-DC6"/>
-                                <constraint firstItem="9KC-J6-UWi" firstAttribute="top" secondItem="tvH-Ue-bP7" secondAttribute="top" constant="4" id="Qhm-PS-G5f"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="CnL-Fb-Kay" detailTextLabel="Hz8-YX-uTw" style="IBUITableViewCellStyleSubtitle" id="IbG-5V-FxX">
-                                <rect key="frame" x="0.0" y="128" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IbG-5V-FxX" id="URP-b3-v9r">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -82,10 +49,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="2Y7-q8-4K5"/>
-                    <connections>
-                        <outlet property="searchBar" destination="pL5-DH-KGP" id="69m-Nw-Ai3"/>
-                        <outlet property="segmentedControl" destination="k8j-Uw-dYa" id="cDJ-G3-Pjx"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhi-WQ-UnV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,6 +64,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QXj-PW-mL5">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="DUc-pw-8rL" kind="relationship" relationship="rootViewController" id="Ngk-Ek-8GF"/>
                     </connections>

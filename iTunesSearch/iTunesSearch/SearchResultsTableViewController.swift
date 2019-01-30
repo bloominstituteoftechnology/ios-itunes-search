@@ -8,69 +8,97 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
+extension SearchResultsTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles! [selectedScope])
+    }
+}
+
+class SearchResultsTableViewController: UITableViewController {
     let searchResultsController = SearchResultController()
-    let searchResult = [SearchResult]()
-    
-    
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var searchBar: UISearchBar!
+    let searchResults = [SearchResult]()
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredSearchResults = [SearchResult]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.delegate = self
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        // Setup the Scope Bar
+        searchController.searchBar.scopeButtonTitles = ["Apps", "Music", "Movies"]
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search iTunes"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
-    @IBAction func changeResultType(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        performSearch()
+       
     }
     
-    // Step-by-step implementation of searchBarSearchButtonClicked
+    // MARK: - Private instance methods
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        performSearch()
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    func performSearch() {
-        // 1
-        guard let search = searchBar.text, search.count > 0 else { return }
-        // 2
-        var resultType: ResultType!
-        let index = segmentedControl.selectedSegmentIndex
-        
-        // 3
-        if index == 0 {
-            resultType = .software
-        } else if index == 1 {
-            resultType = .musicTrack
-        } else {
-            resultType = .movie
-        }
-        
-        // 4
-        searchResultsController.performSearch(searchTerm: search, resultType: resultType) {_ in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredSearchResults = searchResults.filter({( searchResult : SearchResult) -> Bool in
+            let doesCategoryMatch = (scope == "All") || (searchResult.creator == scope)
+            
+            if searchBarIsEmpty() {
+                return doesCategoryMatch
+            } else {
+                return doesCategoryMatch &&
+        searchResult.title.lowercased().contains(searchText.lowercased())
             }
-        }
+        })
+        
+        tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex !=
+    0
+        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
     }
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResultsController.searchResults.count
+        if isFiltering() {
+            return filteredSearchResults.count
+        }
+        
+        return searchResults.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let searchResult = searchResultsController.searchResults[indexPath.row]
-        cell.textLabel?.text = searchResult.title
-        cell.detailTextLabel?.text = searchResult.creator
-        
+        let searchResult: SearchResult
+        if isFiltering() {
+            searchResult = filteredSearchResults[indexPath.row]
+        } else {
+            searchResult = searchResults[indexPath.row]
+        }
+        cell.textLabel!.text = searchResult.title
+        cell.detailTextLabel!.text = searchResult.creator
         return cell
     }
     
