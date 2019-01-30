@@ -20,9 +20,19 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         searchBar.delegate = self
     }
     
+    @IBAction func changeResultType(_ sender: Any) {
+        
+        performSearch()
+    }
+    
     // Step-by-step implementation of searchBarSearchButtonClicked
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        performSearch()
+    }
+    
+    func performSearch() {
         // 1
         guard let search = searchBar.text, search.count > 0 else { return }
         // 2

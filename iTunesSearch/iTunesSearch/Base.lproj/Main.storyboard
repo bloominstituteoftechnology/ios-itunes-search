@@ -31,6 +31,9 @@
                                                 <segment title="Music"/>
                                                 <segment title="Movies"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="changeResultType:" destination="zr3-AK-w95" eventType="valueChanged" id="geU-y6-1Jz"/>
+                                            </connections>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2WZ-yy-RVM">
                                             <rect key="frame" x="0.0" y="36" width="375" height="56"/>
