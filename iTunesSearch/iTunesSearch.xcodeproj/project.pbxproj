@@ -8,16 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4B1357982200D277009F6A12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357972200D277009F6A12 /* AppDelegate.swift */; };
-		4B13579A2200D277009F6A12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357992200D277009F6A12 /* ViewController.swift */; };
-		4B13579D2200D277009F6A12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B13579B2200D277009F6A12 /* Main.storyboard */; };
 		4B13579F2200D278009F6A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B13579E2200D278009F6A12 /* Assets.xcassets */; };
-		4B1357A22200D278009F6A12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1357A02200D278009F6A12 /* LaunchScreen.storyboard */; };
 		4B1357AD2200D279009F6A12 /* iTunesSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357AC2200D279009F6A12 /* iTunesSearchTests.swift */; };
 		4B1357B82200D279009F6A12 /* iTunesSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357B72200D279009F6A12 /* iTunesSearchUITests.swift */; };
 		4B1357C62200D2C3009F6A12 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357C52200D2C3009F6A12 /* SearchResult.swift */; };
 		4B1357C82200D49B009F6A12 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357C72200D49B009F6A12 /* ResultType.swift */; };
 		4B1357CA2200E454009F6A12 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357C92200E454009F6A12 /* SearchResultController.swift */; };
 		4B1357CD22010BBF009F6A12 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1357CC22010BBF009F6A12 /* SearchResultsTableViewController.swift */; };
+		4B1357CF220183D3009F6A12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B1357CE220183D3009F6A12 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +38,7 @@
 /* Begin PBXFileReference section */
 		4B1357942200D276009F6A12 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1357972200D277009F6A12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B1357992200D277009F6A12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4B13579C2200D277009F6A12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B13579E2200D278009F6A12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B1357A12200D278009F6A12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B1357A32200D278009F6A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B1357A82200D279009F6A12 /* iTunesSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1357AC2200D279009F6A12 /* iTunesSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchTests.swift; sourceTree = "<group>"; };
@@ -55,6 +50,7 @@
 		4B1357C72200D49B009F6A12 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		4B1357C92200E454009F6A12 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		4B1357CC22010BBF009F6A12 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		4B1357CE220183D3009F6A12 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +105,9 @@
 				4B1357C72200D49B009F6A12 /* ResultType.swift */,
 				4B1357C92200E454009F6A12 /* SearchResultController.swift */,
 				4B1357972200D277009F6A12 /* AppDelegate.swift */,
-				4B1357992200D277009F6A12 /* ViewController.swift */,
-				4B13579B2200D277009F6A12 /* Main.storyboard */,
 				4B1357CC22010BBF009F6A12 /* SearchResultsTableViewController.swift */,
+				4B1357CE220183D3009F6A12 /* Main.storyboard */,
 				4B13579E2200D278009F6A12 /* Assets.xcassets */,
-				4B1357A02200D278009F6A12 /* LaunchScreen.storyboard */,
 				4B1357A32200D278009F6A12 /* Info.plist */,
 			);
 			path = iTunesSearch;
@@ -241,9 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B1357A22200D278009F6A12 /* LaunchScreen.storyboard in Resources */,
 				4B13579F2200D278009F6A12 /* Assets.xcassets in Resources */,
-				4B13579D2200D277009F6A12 /* Main.storyboard in Resources */,
+				4B1357CF220183D3009F6A12 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B13579A2200D277009F6A12 /* ViewController.swift in Sources */,
 				4B1357C82200D49B009F6A12 /* ResultType.swift in Sources */,
 				4B1357CD22010BBF009F6A12 /* SearchResultsTableViewController.swift in Sources */,
 				4B1357C62200D2C3009F6A12 /* SearchResult.swift in Sources */,
@@ -307,25 +299,6 @@
 			targetProxy = 4B1357B42200D279009F6A12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4B13579B2200D277009F6A12 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B13579C2200D277009F6A12 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4B1357A02200D278009F6A12 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B1357A12200D278009F6A12 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4B1357BA2200D279009F6A12 /* Debug */ = {
