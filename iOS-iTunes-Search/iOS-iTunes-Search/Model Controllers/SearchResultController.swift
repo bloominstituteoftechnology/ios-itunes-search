@@ -19,12 +19,33 @@ class SearchResultController {
         let urlQueryItem1 = URLQueryItem(name: "term", value: searchTerm)
         let urlQueryItem2 = URLQueryItem(name: "entity", value: resultType.rawValue)
         urlComponents.queryItems = [urlQueryItem1, urlQueryItem2]
+     
+        
+        guard let urlRequest = urlComponents.url else {
+            NSLog("Unable to construct search URL for \(searchTerm)")
+            completion(nil)
+            return }
+        
+        URLSession.shared.dataTask(with: urlRequest) { data, _, error) in
+            if let error = error {
+                NSLog(
+
+                
+            }
+        }
+            
+    
         
         
-    }
+        
+        
+        
     
     
     
     
     
+    
+}
+
 }
