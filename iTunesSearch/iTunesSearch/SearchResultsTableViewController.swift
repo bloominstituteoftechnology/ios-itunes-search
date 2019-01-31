@@ -8,31 +8,24 @@
 
 import UIKit
 
-extension SearchResultsTableViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
-    }
-}
-
-extension SearchResultsTableViewController: UISearchBarDelegate {
-    // MARK: - UISearchBar Delegate
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles! [selectedScope])
-    }
-}
-
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
+    
+    // MARK: - Properties
+    
     let searchResultsController = SearchResultController()
-    let searchResults = [SearchResult]()
-    let searchController = UISearchController(searchResultsController: nil)
-    var filteredSearchResults = [SearchResult]()
+    
+    
+    // MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupSearchController()
+    }
+    
+    // MARK: - Setup Search Controller
+    
+    private func setupSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -44,62 +37,64 @@ class SearchResultsTableViewController: UITableViewController {
         definesPresentationContext = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-       
-    }
     
-    // MARK: - Private instance methods
-    
-    func searchBarIsEmpty() -> Bool {
-        // Returns true if the text is empty or nil
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
-    
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredSearchResults = searchResults.filter({( searchResult : SearchResult) -> Bool in
-            let doesCategoryMatch = (scope == "All") || (searchResult.creator == scope)
-            
-            if searchBarIsEmpty() {
-                return doesCategoryMatch
-            } else {
-                return doesCategoryMatch &&
-        searchResult.title.lowercased().contains(searchText.lowercased())
-            }
-        })
-        
-        tableView.reloadData()
-    }
-    
-    func isFiltering() -> Bool {
-        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex !=
-    0
-        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
-    }
-
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isFiltering() {
-            return filteredSearchResults.count
-        }
-        
-        return searchResults.count
+        return searchResultsController.searchResults.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let searchResult: SearchResult
-        if isFiltering() {
-            searchResult = filteredSearchResults[indexPath.row]
-        } else {
-            searchResult = searchResults[indexPath.row]
-        }
-        cell.textLabel!.text = searchResult.title
-        cell.detailTextLabel!.text = searchResult.creator
+        let searchResult = searchResultsController.searchResults[indexPath.row]
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
         return cell
+    }
+    
+    // MARK: - Private perform search helper function
+    
+    private func performSearch(searchBar: UISearchBar) {
+        
+        // Check scopeIndex and assign related value to the resultType
+        var resultType: ResultType!
+        switch searchBar.selectedScopeButtonIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        
+        // Get searchTerm from searchBar's text
+        guard let term = searchBar.text, !term.isEmpty,
+            let result = resultType else { return }
+        
+        // Perform search operation
+        searchResultsController.performSearch(searchTerm: term, resultType: result) { (error) in
+            if let error = error {
+                NSLog("Error performing search: \(error)")
+            }
+            // Reload table view in main queue because URLSession runs in backgroung queue
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        performSearch(searchBar: searchBar)
+    }
+    
+    // MARK: - UISearchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        performSearch(searchBar: searchBar)
     }
     
 }
