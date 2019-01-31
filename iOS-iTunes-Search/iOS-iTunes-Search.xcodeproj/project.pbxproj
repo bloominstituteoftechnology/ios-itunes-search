@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		274308C32203B2CC00AB3006 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274308C22203B2CC00AB3006 /* SearchResult.swift */; };
+		274308C62203B5B000AB3006 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274308C52203B5B000AB3006 /* ResultType.swift */; };
 		27AA18B12201167A00CBBF28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA18B02201167A00CBBF28 /* AppDelegate.swift */; };
 		27AA18B32201167A00CBBF28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA18B22201167A00CBBF28 /* ViewController.swift */; };
 		27AA18B62201167A00CBBF28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA18B42201167A00CBBF28 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		274308C22203B2CC00AB3006 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		274308C52203B5B000AB3006 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		27AA18AD2201167A00CBBF28 /* iOS-iTunes-Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-iTunes-Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AA18B02201167A00CBBF28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27AA18B22201167A00CBBF28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				274308C22203B2CC00AB3006 /* SearchResult.swift */,
+				274308C52203B5B000AB3006 /* ResultType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274308C62203B5B000AB3006 /* ResultType.swift in Sources */,
 				27AA18B32201167A00CBBF28 /* ViewController.swift in Sources */,
 				274308C32203B2CC00AB3006 /* SearchResult.swift in Sources */,
 				27AA18B12201167A00CBBF28 /* AppDelegate.swift in Sources */,
