@@ -14,7 +14,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     let searchResultController = SearchResultController()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +39,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             }
         }
     }
+    
+    @IBAction func typePickerTapped(_ sender: Any) {
+        searchBarSearchButtonClicked(searchBar)
+    }
+    
 
     // MARK: - Table view data source
 
