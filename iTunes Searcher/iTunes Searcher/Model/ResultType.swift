@@ -10,7 +10,7 @@ import Foundation
 
 enum ResultType: String {
 	case software
-	case musicTrack
+	case music
 	case movie
 
 	static func resultTypeFromString(_ string: String) -> ResultType {
@@ -18,11 +18,11 @@ enum ResultType: String {
 		case "software":
 			return .software
 		case "musicTrack":
-			return .musicTrack
+			return .music
 		case "movie":
 			return .movie
 		default:
-			return .musicTrack
+			return .music
 		}
 	}
 
@@ -31,11 +31,11 @@ enum ResultType: String {
 		case 0:
 			return .software
 		case 1:
-			return .musicTrack
+			return .music
 		case 2:
 			return .movie
 		default:
-			return .musicTrack
+			return .music
 		}
 	}
 }

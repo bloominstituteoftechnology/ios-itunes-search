@@ -73,7 +73,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QVZ-6T-T6e">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="22C-8R-xys" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="22C-8R-xys" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="C6b-ah-rlc">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
