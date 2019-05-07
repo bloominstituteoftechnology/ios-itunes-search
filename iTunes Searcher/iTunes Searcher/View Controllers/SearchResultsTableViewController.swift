@@ -22,7 +22,9 @@ class SearchResultsTableViewController: UITableViewController {
 		searchResultController.performSearch(with: searchTerm, resultType: mediaType) { (error) in
 			DispatchQueue.main.async { [weak self] in
 				if let error = error {
-					let alertController = UIAlertController(title: "ERROR", message: "There was an error: \(error)", preferredStyle: .alert)
+					let alertController = UIAlertController(title: "ERROR",
+															message: "There was an error: \(error)",
+															preferredStyle: .alert)
 					alertController.addAction(UIAlertAction(title: "Okay", style: .cancel))
 					self?.present(alertController, animated: true)
 					return
