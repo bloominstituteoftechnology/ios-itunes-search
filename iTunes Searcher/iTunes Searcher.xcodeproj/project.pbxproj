@@ -15,6 +15,7 @@
 		3375885B22821630006BF9B4 /* iTunes_SearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3375885A22821630006BF9B4 /* iTunes_SearcherTests.swift */; };
 		3375886622821B76006BF9B4 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3375886522821B76006BF9B4 /* SearchResult.swift */; };
 		3375886822821C94006BF9B4 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3375886722821C94006BF9B4 /* ResultType.swift */; };
+		3375886E22821E69006BF9B4 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3375886D22821E69006BF9B4 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		3375885C22821630006BF9B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3375886522821B76006BF9B4 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		3375886722821C94006BF9B4 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		3375886D22821E69006BF9B4 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				3375886B22821CF9006BF9B4 /* Model */,
+				3375886F22821E70006BF9B4 /* Model Controllers */,
 				3375886C22821D02006BF9B4 /* View Controllers */,
 				3375886922821CCF006BF9B4 /* Storyboards */,
 				3375886A22821CE1006BF9B4 /* Resources */,
@@ -132,6 +135,14 @@
 				337588472282162D006BF9B4 /* ViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3375886F22821E70006BF9B4 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3375886D22821E69006BF9B4 /* SearchResultController.swift */,
+			);
+			name = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				337588482282162D006BF9B4 /* ViewController.swift in Sources */,
 				3375886622821B76006BF9B4 /* SearchResult.swift in Sources */,
 				337588462282162D006BF9B4 /* AppDelegate.swift in Sources */,
+				3375886E22821E69006BF9B4 /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
