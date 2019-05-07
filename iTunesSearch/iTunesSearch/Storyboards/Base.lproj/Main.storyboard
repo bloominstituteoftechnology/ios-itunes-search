@@ -34,7 +34,7 @@
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aPy-Hk-9hE">
                                             <rect key="frame" x="0.0" y="44" width="414" height="56"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         </searchBar>
                                     </subviews>
                                 </stackView>
@@ -48,7 +48,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultsCell" textLabel="sYx-vd-FyV" detailTextLabel="yvz-WU-V7y" style="IBUITableViewCellStyleSubtitle" id="iZO-iU-w3r">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultsCell" textLabel="sYx-vd-FyV" detailTextLabel="yvz-WU-V7y" style="IBUITableViewCellStyleSubtitle" id="iZO-iU-w3r">
                                 <rect key="frame" x="0.0" y="128" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iZO-iU-w3r" id="hao-81-gYJ">

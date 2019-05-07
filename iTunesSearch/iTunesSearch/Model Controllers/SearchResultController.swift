@@ -29,6 +29,7 @@ class SearchResultController {
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"
+        print(request)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             
