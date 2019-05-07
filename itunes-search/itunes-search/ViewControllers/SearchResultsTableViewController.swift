@@ -20,21 +20,21 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
 	
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-		var resultType: SearchResultController.ResultType
 		guard let searchTerm = searchBar.text else { return }
+		let selectedSegment = segmentedControl.selectedSegmentIndex
 		
 		
-		
-		switch segmentedControl.selectedSegmentIndex {
-		case 0:
+		var resultType: SearchResultController.ResultType
+		if selectedSegment == 0 {
 			resultType = .software
-		case 1:
+		} else if selectedSegment == 1 {
 			resultType = .musicTrack
-		case 2:
+		} else if selectedSegment == 2 {
 			resultType = .movie
-		default:
-			print("error: segmentedControl.hashValue")
+		} else {
+			print("error: segmentedControl.selectedSegmentIndex")
 		}
+		
 		
 
 		controller.performSearch(searchTerm: searchTerm, resultType: .movie) { (error) in
