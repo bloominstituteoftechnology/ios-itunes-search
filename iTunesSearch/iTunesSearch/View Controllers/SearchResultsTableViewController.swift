@@ -52,17 +52,6 @@ class SearchResultsTableViewController: UITableViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "ShowMovieDetail" {
-            guard let destinationVC = segue.destination as? MovieDetailViewController,
-            let index = tableView.indexPathForSelectedRow?.row
-            else { return }
-            
-            destinationVC.searchResult = searchResultsController.searchResults[index]
-        }
-    }
-    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,7 +84,22 @@ class SearchResultsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowMovieDetail" {
+            guard let destinationVC = segue.destination as? MovieDetailViewController,
+                let index = tableView.indexPathForSelectedRow?.row
+                else { return }
+            
+            destinationVC.searchResult = searchResultsController.searchResults[index]
+        }
+    }
 }
+
+// MARK: - SearchBar Delegate Methods
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
