@@ -12,6 +12,8 @@
 		E84A342F228212BE004622AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84A342E228212BE004622AB /* Assets.xcassets */; };
 		E84A3432228212BE004622AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84A3430228212BE004622AB /* LaunchScreen.storyboard */; };
 		E84A344022821D19004622AB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A343F22821D19004622AB /* SearchResult.swift */; };
+		E84A344222822011004622AB /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A344122822011004622AB /* ResultType.swift */; };
+		E84A34442282229C004622AB /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A34432282229C004622AB /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E84A3431228212BE004622AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E84A3433228212BE004622AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E84A343F22821D19004622AB /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		E84A344122822011004622AB /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		E84A34432282229C004622AB /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E84A343F22821D19004622AB /* SearchResult.swift */,
+				E84A344122822011004622AB /* ResultType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 		E84A343C22821C3D004622AB /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				E84A34432282229C004622AB /* SearchResultController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84A34442282229C004622AB /* SearchResultController.swift in Sources */,
 				E84A344022821D19004622AB /* SearchResult.swift in Sources */,
+				E84A344222822011004622AB /* ResultType.swift in Sources */,
 				E84A3428228212BD004622AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
