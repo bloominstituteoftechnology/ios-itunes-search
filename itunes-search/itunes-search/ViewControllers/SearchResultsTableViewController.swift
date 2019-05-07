@@ -24,7 +24,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 		let selectedSegment = segmentedControl.selectedSegmentIndex
 		
 		
-		var resultType: SearchResultController.ResultType
+		var resultType: SearchResultController.ResultType = .software
 		if selectedSegment == 0 {
 			resultType = .software
 		} else if selectedSegment == 1 {
@@ -35,10 +35,13 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 			print("error: segmentedControl.selectedSegmentIndex")
 		}
 		
-		
 
-		controller.performSearch(searchTerm: searchTerm, resultType: .movie) { (error) in
-			
+		controller.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+			DispatchQueue.main.async {
+				self.tableView.reloadData()
+				guard let error = error else { return }
+				print("error \(error)")
+			}
 		}
 		
 		print(searchTerm)

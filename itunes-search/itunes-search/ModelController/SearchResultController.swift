@@ -49,7 +49,7 @@ class SearchResultController {
 			let jsonDecoder = JSONDecoder()
 			
 			do{
-				jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+				//jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 				let personSearch = try jsonDecoder.decode(SearchResults.self, from: data)
 				self.searchResults = personSearch.results
 				completion(nil)
