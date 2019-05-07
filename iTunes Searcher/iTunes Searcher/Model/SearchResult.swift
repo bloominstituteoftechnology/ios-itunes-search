@@ -8,11 +8,9 @@
 
 import Foundation
 
-
 struct SearchResult: Decodable {
 	let title: String
 	let creator: String
-
 
 //	enum CodingKeys: String, CodingKey {
 //		case title = "trackName"
