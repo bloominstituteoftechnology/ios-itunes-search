@@ -8,9 +8,10 @@
 
 import Foundation
 
-
-enum ResultType: String {
-	case software = "software"
-	case musicTrack = "musicTrack"
-	case movie = "movie"
+extension SearchResultController {
+	enum ResultType: String {
+		case software = "software"
+		case musicTrack = "musicTrack"
+		case movie = "movie"
+	}
 }
