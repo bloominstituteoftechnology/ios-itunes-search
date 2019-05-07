@@ -9,13 +9,13 @@
 import Foundation
 
 struct SearchResult: Decodable {
+	enum CodingKeys: String, CodingKey {
+		case title = "trackName"
+		case creator = "artistName"
+	}
+
 	let title: String
 	let creator: String
-
-//	enum CodingKeys: String, CodingKey {
-//		case title = "trackName"
-//		case createor = "artistName"
-//	}
 }
 
 struct SearchResults: Decodable {
