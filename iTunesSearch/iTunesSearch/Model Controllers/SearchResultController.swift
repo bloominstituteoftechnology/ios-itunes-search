@@ -17,9 +17,8 @@ class SearchResultController {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let countryQueryItem = URLQueryItem(name: "country", value: "US")
         let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents?.queryItems = [searchTermQueryItem, countryQueryItem, resultTypeQueryItem]
+        urlComponents?.queryItems = [searchTermQueryItem, resultTypeQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             NSLog("requestURL is nil")
@@ -29,7 +28,6 @@ class SearchResultController {
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"
-        print(request)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             
@@ -48,7 +46,7 @@ class SearchResultController {
                 let decodedResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = decodedResults.results
             } catch {
-                NSLog("Unable to decode data into object of type [SearchResult]: \(error.localizedDescription)")
+                NSLog("Unable to decode data into object of type [SearchResult]: \(error)")
             }
             
             completion()

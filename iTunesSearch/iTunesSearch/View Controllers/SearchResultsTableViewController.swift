@@ -11,6 +11,21 @@ import UIKit
 class SearchResultsTableViewController: UITableViewController {
     
     let searchResultsController = SearchResultController()
+    
+    var resultType: ResultType {
+        get {
+            switch contentTypeSegmentedControl.selectedSegmentIndex {
+            case 0:
+                return .software
+            case 1:
+                return .musicTrack
+            case 2:
+                return .movie
+            default:
+                return .software
+            }
+        }
+    }
 
     @IBOutlet weak var contentTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -21,7 +36,22 @@ class SearchResultsTableViewController: UITableViewController {
         searchBar.delegate = self
     }
     
-
+    @IBAction func contentTypeValueChanged(_ sender: UISegmentedControl) {
+        performSearch()
+    }
+    
+    private func performSearch() {
+        
+        guard let searchTerm = searchBar.text else { return }
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) {
+            DispatchQueue.main.async {
+                self.view.endEditing(true)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,26 +71,6 @@ class SearchResultsTableViewController: UITableViewController {
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        guard let searchTerm = searchBar.text else { return }
-        var resultType: ResultType
-        
-        switch contentTypeSegmentedControl.selectedSegmentIndex {
-        case 0:
-            resultType = .software
-        case 1:
-            resultType = .musicTrack
-        case 2:
-            resultType = .movie
-        default:
-            resultType = .software
-        }
-        
-        searchResultsController.performSearch(with: searchTerm, resultType: resultType) {
-            DispatchQueue.main.async {
-                self.view.endEditing(true)
-                self.tableView.reloadData()
-            }
-        }
+        performSearch()
     }
 }
