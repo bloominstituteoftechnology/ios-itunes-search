@@ -13,13 +13,26 @@ enum ResultType: String {
 	case musicTrack
 	case movie
 
-	func resultTypeFromString(_ string: String) -> ResultType {
+	static func resultTypeFromString(_ string: String) -> ResultType {
 		switch string {
 		case "software":
 			return .software
 		case "musicTrack":
 			return .musicTrack
 		case "movie":
+			return .movie
+		default:
+			return .musicTrack
+		}
+	}
+
+	static func resultTypeFromIndex(_ index: Int) -> ResultType {
+		switch index {
+		case 0:
+			return .software
+		case 1:
+			return .musicTrack
+		case 2:
 			return .movie
 		default:
 			return .musicTrack
