@@ -8,9 +8,9 @@
 
 import Foundation
 
-private let baseURL = URL(string: "https://itunes.apple.com/search")!
 
 class SearchResultController {
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
     enum HTTPMethod: String {
         case get = "GET"
@@ -19,19 +19,17 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (/*Error?*/) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let searchTermQueryType = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        // FIXME: Need tofigure out how to search for just a movie, music, or software.
-        
         urlComponents?.queryItems = [searchTermQueryItem, searchTermQueryType]
         guard let requestURL = urlComponents?.url else {
             NSLog("requestURL is nil")
-            // Is this right?
-            completion()
+            // Completion should be called with nil because it doesn't have access to any errors. Is that right?
+            completion(nil)
             return
         }
         var request = URLRequest(url: requestURL)
@@ -47,14 +45,13 @@ class SearchResultController {
             }
             let jsonDecoder = JSONDecoder()
             do {
-//                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = searchResults.results
             } catch {
                 NSLog("Undable to decode data into object of type [SearchResult]: \(error)")
                 print(requestURL)
             }
-            completion(/*error*/)
+            completion(error)
         }.resume()
     }
 }

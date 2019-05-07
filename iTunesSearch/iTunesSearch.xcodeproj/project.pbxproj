@@ -73,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				C0E2A7D82281CA2200BC008A /* SearchResult.swift */,
+				C0E2A7DA2281CE8A00BC008A /* ResultType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				C0E2A7DC2281D3BB00BC008A /* SearchResultController.swift */,
-				C0E2A7DA2281CE8A00BC008A /* ResultType.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
