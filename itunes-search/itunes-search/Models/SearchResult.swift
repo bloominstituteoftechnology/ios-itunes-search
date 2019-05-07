@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct SearchResult: Codable {
+struct SearchResult: Decodable {
 	let title: String
 	let creator: String
 	
@@ -17,4 +17,8 @@ struct SearchResult: Codable {
 //		case title = "trackName"
 //		case creator = "artistName"
 //	}
+}
+
+struct SearchResults: Decodable {
+	let results: [SearchResult]
 }
