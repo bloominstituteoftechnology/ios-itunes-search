@@ -11,12 +11,10 @@ import Foundation
 class SearchResultController {
 	let baseURL = URL(string: "https://itunes.apple.com/search")!
 
+	let mahDataGetter = MahDataGetter()
+
 	var searchResults = [SearchResult]()
 
-	enum HTTPError: Error {
-		case non200StatusCode
-		case noData
-	}
 
 	func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
 
@@ -29,7 +27,7 @@ class SearchResultController {
 		guard let url = urlComponents?.url else { return }
 		let request = URLRequest(url: url)
 
-		fetchMahDatas(with: request) { (data, error) in
+		mahDataGetter.fetchMahDatas(with: request) { (data, error) in
 			if let error = error {
 				completion(error)
 			}
@@ -46,26 +44,5 @@ class SearchResultController {
 				completion(error)
 			}
 		}
-	}
-
-	func fetchMahDatas(with request: URLRequest, completion: @escaping (Data?, Error?) -> Void) {
-		URLSession.shared.dataTask(with: request) { (data, response, error) in
-			if let error = error {
-				print("error getting url '\(request.url ?? URL(string: "")!)': \(error)")
-				completion(nil, error)
-				return
-			} else if let response = response as? HTTPURLResponse, response.statusCode != 200 {
-				print("non 200 http response: \(response.statusCode)")
-				let myError = HTTPError.non200StatusCode
-				completion(nil, myError)
-				return
-			}
-
-			guard let data = data else {
-				completion(nil, HTTPError.noData)
-				return
-			}
-			completion(data, nil)
-		}.resume()
 	}
 }
