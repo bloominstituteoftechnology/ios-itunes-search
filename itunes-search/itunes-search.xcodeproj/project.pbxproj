@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E84A3428228212BD004622AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3427228212BD004622AB /* AppDelegate.swift */; };
-		E84A342A228212BD004622AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3429228212BD004622AB /* ViewController.swift */; };
 		E84A342D228212BD004622AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84A342B228212BD004622AB /* Main.storyboard */; };
 		E84A342F228212BE004622AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84A342E228212BE004622AB /* Assets.xcassets */; };
 		E84A3432228212BE004622AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84A3430228212BE004622AB /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		E84A3424228212BD004622AB /* itunes-search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "itunes-search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84A3427228212BD004622AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E84A3429228212BD004622AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E84A342C228212BD004622AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E84A342E228212BE004622AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E84A3431228212BE004622AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +52,61 @@
 		E84A3426228212BD004622AB /* itunes-search */ = {
 			isa = PBXGroup;
 			children = (
-				E84A3427228212BD004622AB /* AppDelegate.swift */,
-				E84A3429228212BD004622AB /* ViewController.swift */,
-				E84A342B228212BD004622AB /* Main.storyboard */,
-				E84A342E228212BE004622AB /* Assets.xcassets */,
-				E84A3430228212BE004622AB /* LaunchScreen.storyboard */,
-				E84A3433228212BE004622AB /* Info.plist */,
+				E84A343B22821C33004622AB /* Models */,
+				E84A343C22821C3D004622AB /* ModelController */,
+				E84A343D22821C53004622AB /* Views */,
+				E84A343E22821C5D004622AB /* ViewControllers */,
+				E84A343922821BE9004622AB /* StoryBoards */,
+				E84A343A22821C14004622AB /* Resources */,
 			);
 			path = "itunes-search";
+			sourceTree = "<group>";
+		};
+		E84A343922821BE9004622AB /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				E84A342B228212BD004622AB /* Main.storyboard */,
+				E84A3430228212BE004622AB /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		E84A343A22821C14004622AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E84A3427228212BD004622AB /* AppDelegate.swift */,
+				E84A342E228212BE004622AB /* Assets.xcassets */,
+				E84A3433228212BE004622AB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E84A343B22821C33004622AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E84A343C22821C3D004622AB /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		E84A343D22821C53004622AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E84A343E22821C5D004622AB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +180,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E84A342A228212BD004622AB /* ViewController.swift in Sources */,
 				E84A3428228212BD004622AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
