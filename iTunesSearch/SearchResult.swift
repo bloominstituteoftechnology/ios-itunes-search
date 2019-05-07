@@ -17,3 +17,7 @@ struct SearchResult: Codable {
         case creator = "artistName"
     }
 }
+
+struct SearchResults: Codable {
+    let results: [SearchResult]
+}
