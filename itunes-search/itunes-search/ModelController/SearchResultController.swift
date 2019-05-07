@@ -13,7 +13,7 @@ class SearchResultController {
 	//https://itunes.apple.com/search?term=twitter&entity=software
 	//https://itunes.apple.com/search?term=Tron&entity=movie
 	
-	let baseURL = URL(string: "https://itunes.apple.com/")!
+	private let baseURL = URL(string: "https://itunes.apple.com/")!
 	private(set) var searchResults: [SearchResult] = []
 	
 	func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
