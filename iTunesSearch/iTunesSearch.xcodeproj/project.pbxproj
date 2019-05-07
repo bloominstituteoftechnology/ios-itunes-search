@@ -15,6 +15,7 @@
 		73370A3F22821289007694E4 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73370A3E22821289007694E4 /* ResultType.swift */; };
 		73370A42228212C7007694E4 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73370A41228212C7007694E4 /* SearchResultController.swift */; };
 		73370A4522821764007694E4 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73370A4422821764007694E4 /* SearchResultsTableViewController.swift */; };
+		73370A4822822B84007694E4 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73370A4722822B84007694E4 /* MovieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		73370A3E22821289007694E4 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		73370A41228212C7007694E4 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		73370A4422821764007694E4 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		73370A4722822B84007694E4 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				73370A4422821764007694E4 /* SearchResultsTableViewController.swift */,
+				73370A4722822B84007694E4 /* MovieDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				73370A3C228211C1007694E4 /* SearchResult.swift in Sources */,
 				73370A4522821764007694E4 /* SearchResultsTableViewController.swift in Sources */,
 				73370A3F22821289007694E4 /* ResultType.swift in Sources */,
+				73370A4822822B84007694E4 /* MovieDetailViewController.swift in Sources */,
 				73370A2722821065007694E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -52,6 +52,17 @@ class SearchResultsTableViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowMovieDetail" {
+            guard let destinationVC = segue.destination as? MovieDetailViewController,
+            let index = tableView.indexPathForSelectedRow?.row
+            else { return }
+            
+            destinationVC.searchResult = searchResultsController.searchResults[index]
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,17 +72,26 @@ class SearchResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath)
+        let searchResult: SearchResult = searchResultsController.searchResults[indexPath.row]
+        cell.isUserInteractionEnabled = false
         
         // Set the textLabel to title or collection (if title == nil) or "" (if title && collection == nil)
-        if let title = searchResultsController.searchResults[indexPath.row].title {
+        if let title = searchResult.title {
             cell.textLabel?.text = title
-        } else if let collection = searchResultsController.searchResults[indexPath.row].collection {
+            
+            // Add ability to select cell if type is a single movie
+            if resultType == .movie {
+                cell.accessoryType = .disclosureIndicator
+                cell.selectionStyle = .default
+                cell.isUserInteractionEnabled = true
+            }
+        } else if let collection = searchResult.collection {
             cell.textLabel?.text = collection
         } else {
             cell.textLabel?.text = ""
         }
         
-        cell.detailTextLabel?.text = searchResultsController.searchResults[indexPath.row].creator
+        cell.detailTextLabel?.text = searchResult.creator
 
         return cell
     }

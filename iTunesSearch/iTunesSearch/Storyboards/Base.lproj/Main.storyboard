@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,6 +75,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ogf-JO-drS" kind="show" identifier="ShowMovieDetail" id="6Gy-FA-Rav"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -90,6 +94,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2i-2H-obJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1104.3478260869565" y="161.38392857142856"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="k4e-bP-CxB">
+            <objects>
+                <viewController id="Ogf-JO-drS" customClass="MovieDetailViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3id-Lw-MB0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mrV-cK-b4B">
+                                <rect key="frame" x="16" y="104" width="382" height="742"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VA5-IQ-Ttn">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="62"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FmM-Ce-Cyj">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="62"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-7X-rnb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nvb-uo-khv">
+                                                        <rect key="frame" x="0.0" y="44" width="382" height="18"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creator Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vAT-07-XlJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="306.5" height="18"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$99.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Av-m7-GvQ">
+                                                                <rect key="frame" x="314.5" y="0.0" width="67.5" height="18"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Movie description." translatesAutoresizingMaskIntoConstraints="NO" id="AlK-Ax-1G6">
+                                        <rect key="frame" x="0.0" y="70" width="382" height="672"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mrV-cK-b4B" firstAttribute="top" secondItem="hYJ-wf-yss" secondAttribute="top" constant="16" id="ZlG-58-9EP"/>
+                            <constraint firstItem="hYJ-wf-yss" firstAttribute="bottom" secondItem="mrV-cK-b4B" secondAttribute="bottom" constant="16" id="bvs-oJ-fuu"/>
+                            <constraint firstItem="hYJ-wf-yss" firstAttribute="trailing" secondItem="mrV-cK-b4B" secondAttribute="trailing" constant="16" id="jGU-Mm-0B7"/>
+                            <constraint firstItem="mrV-cK-b4B" firstAttribute="leading" secondItem="hYJ-wf-yss" secondAttribute="leading" constant="16" id="kbr-lU-DRI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hYJ-wf-yss"/>
+                    </view>
+                    <connections>
+                        <outlet property="creatorLabel" destination="vAT-07-XlJ" id="TJi-cd-Ged"/>
+                        <outlet property="descriptionTextView" destination="AlK-Ax-1G6" id="i7Y-iY-zc8"/>
+                        <outlet property="nameLabel" destination="hUF-7X-rnb" id="74L-sc-qW7"/>
+                        <outlet property="priceLabel" destination="0Av-m7-GvQ" id="2Xw-W9-sJu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Il-Ox-t4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="161"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JNC-Ay-7cO">

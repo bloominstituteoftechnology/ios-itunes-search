@@ -13,11 +13,15 @@ struct SearchResult: Codable {
     var title: String?
     var collection: String?
     var creator: String
+    var price: Double?
+    var description: String?
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case collection = "collectionName"
         case creator = "artistName"
+        case price = "trackPrice"
+        case description = "longDescription"
     }
 }
 
