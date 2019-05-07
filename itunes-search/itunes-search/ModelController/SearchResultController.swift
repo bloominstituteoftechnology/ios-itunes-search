@@ -34,7 +34,25 @@ class SearchResultController {
 		
 		URLSession.shared.dataTask(with: request) { (data, _, error) in
 			
+			if let error = error {
+				NSLog("Error fetching data:\(error)")
+				return
+			}
 			
+			guard let data = data else {
+				NSLog("No data Returned")
+				return
+			}
+			
+			let jsonDecoder = JSONDecoder()
+			
+			do{
+				jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+				let personSearch = try jsonDecoder.decode(SearchResults.self, from: data)
+				self.searchResults = personSearch.results
+			} catch {
+				NSLog("Unable to decode data into object of type []")
+			}
 			
 			completion(error)
 		}.resume()
