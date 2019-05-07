@@ -9,10 +9,38 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
-	var searchResultController: SearchResultController?
+	let dataGetter = MahDataGetter()
 	var searchResult: SearchResult? {
 		didSet {
-			
+			updateViews()
+		}
+	}
+
+	private func updateViews() {
+		textLabel?.text = searchResult?.title
+		detailTextLabel?.text = searchResult?.creator
+		imageView?.image = nil
+
+		setImage()
+	}
+
+	private func setImage() {
+
+		guard let artworkURL = searchResult?.artworkURL,
+			let url = URL(string: artworkURL) else { return }
+		let request = URLRequest(url: url)
+
+		dataGetter.fetchMahDatas(with: request, requestID: searchResult?.artworkURL) { [weak self] (id, data, error) in
+			guard error == nil else { return }
+			guard id == self?.searchResult?.artworkURL else { return }
+			guard let data = data else { return }
+
+			let image = UIImage(data: data)
+
+			DispatchQueue.main.async {
+				self?.imageView?.image = image
+				self?.layoutSubviews()
+			}
 		}
 	}
 }

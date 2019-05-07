@@ -15,7 +15,6 @@ class SearchResultController {
 
 	var searchResults = [SearchResult]()
 
-
 	func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
 
 		var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
@@ -27,7 +26,7 @@ class SearchResultController {
 		guard let url = urlComponents?.url else { return }
 		let request = URLRequest(url: url)
 
-		mahDataGetter.fetchMahDatas(with: request) { (data, error) in
+		mahDataGetter.fetchMahDatas(with: request) { (_, data, error) in
 			if let error = error {
 				completion(error)
 			}

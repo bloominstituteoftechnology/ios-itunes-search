@@ -42,9 +42,9 @@ class SearchResultsTableViewController: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
+		guard let searchCell = cell as? SearchTableViewCell else { return cell }
 		let result = searchResultController.searchResults[indexPath.row]
-		cell.textLabel?.text = result.title
-		cell.detailTextLabel?.text = result.creator
+		searchCell.searchResult = result
 
 		return cell
 	}
