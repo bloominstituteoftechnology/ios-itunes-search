@@ -61,7 +61,16 @@ class SearchResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath)
-        cell.textLabel?.text = searchResultsController.searchResults[indexPath.row].title
+        
+        // Set the textLabel to title or collection (if title == nil) or "" (if title && collection == nil)
+        if let title = searchResultsController.searchResults[indexPath.row].title {
+            cell.textLabel?.text = title
+        } else if let collection = searchResultsController.searchResults[indexPath.row].collection {
+            cell.textLabel?.text = collection
+        } else {
+            cell.textLabel?.text = ""
+        }
+        
         cell.detailTextLabel?.text = searchResultsController.searchResults[indexPath.row].creator
 
         return cell
