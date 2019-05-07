@@ -12,10 +12,15 @@ struct SearchResult: Decodable {
 	enum CodingKeys: String, CodingKey {
 		case title = "trackName"
 		case creator = "artistName"
+		case artworkURL = "artworkUrl100"
+		case previewURL = "previewUrl"
 	}
 
 	let title: String
 	let creator: String
+	let artworkURL: String
+	let previewURL: String?
+	let uuid = UUID().uuidString
 }
 
 struct SearchResults: Decodable {

@@ -55,6 +55,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		let resultType = ResultType.resultTypeFromIndex(searchBar.selectedScopeButtonIndex)
 		requestSearch(with: searchBar.text, mediaType: resultType)
+		searchBar.resignFirstResponder()
 	}
 
 	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
