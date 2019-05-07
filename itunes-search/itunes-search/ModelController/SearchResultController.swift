@@ -36,11 +36,13 @@ class SearchResultController {
 			
 			if let error = error {
 				NSLog("Error fetching data:\(error)")
+				completion(error)
 				return
 			}
 			
 			guard let data = data else {
 				NSLog("No data Returned")
+				//NSError()
 				return
 			}
 			
@@ -50,11 +52,13 @@ class SearchResultController {
 				jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 				let personSearch = try jsonDecoder.decode(SearchResults.self, from: data)
 				self.searchResults = personSearch.results
+				completion(nil)
 			} catch {
+				completion(error)
 				NSLog("Unable to decode data into object of type []")
 			}
 			
-			completion(error)
+			
 		}.resume()
 		
 	}
