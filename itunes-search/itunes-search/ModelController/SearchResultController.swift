@@ -9,5 +9,11 @@
 import Foundation
 
 class SearchResultController {
+	//https://itunes.apple.com/search?term=thestrokes&entity=movie
+	
 	let baseURL = URL(string: "https://itunes.apple.com/search?term=thestrokes")!
+	private(set) var searchResults: [SearchResult] = []
+	
+	
+	
 }
