@@ -9,11 +9,15 @@
 import Foundation
 
 class SearchResultController {
-	//https://itunes.apple.com/search?term=thestrokes&entity=movie
+	//https://itunes.apple.com/search?term=thestrokes&entity=musicTrack
+	//https://itunes.apple.com/search?term=twitter&entity=software
+	//https://itunes.apple.com/search?term=Tron&entity=movie
 	
 	let baseURL = URL(string: "https://itunes.apple.com/search?term=thestrokes")!
 	private(set) var searchResults: [SearchResult] = []
 	
-	
+	func performSearch(searchTerm: String, resulType: ResultType, completion: () -> ()) {
+		
+	}
 	
 }

@@ -8,8 +8,10 @@
 
 import Foundation
 
-enum ResultType: String {
-	case software = "software"
-	case musicTrack = "musicTrack"
-	case movie = "movie"
+struct ResultType {
+	enum ResultType: String {
+		case software = "software"
+		case musicTrack = "musicTrack"
+		case movie = "movie"
+	}
 }
