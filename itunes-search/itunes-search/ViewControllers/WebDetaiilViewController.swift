@@ -28,18 +28,43 @@ class WebDetaiilViewController: UIViewController, WKNavigationDelegate {
 		
 		if let myurl = result.url {
 			
-			let url = URL(string: "https://www.google.com/")!
-			let myRequest = URLRequest(url: url)
+			let url = URL(string: myurl)!
+			let myRequest = URLRequest(url: url.absoluteURL)
 			webView.load(myRequest)
 			webView.allowsBackForwardNavigationGestures = true
 			
 			//https://itunes.apple.com/us/app/twitter/id333903271?mt=8&ign-mpt=uo%3D4
-			print(myRequest)
+			print(url)
+
+			
 		} else  {
 			print("Error : No url ")
 		}
 		
     }
+	func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+		
+	}
+	
+	func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+		
+	}
+	
+	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+		title = webView.title
+		print(title)
+	}
+	
+	func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+		
+		let url = navigationAction.request.url!
+		let urlAbs = url.absoluteURL
+		print(url)
+		print(urlAbs)
+		
+		//webView.load(URLRequest(url: urlAbs))
+		decisionHandler(.cancel)
+	}
 	
 	var result: SearchResult?
 	var webView: WKWebView!
