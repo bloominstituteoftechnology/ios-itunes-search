@@ -8,16 +8,13 @@
 
 import Foundation
 
+//https://itunes.apple.com/search?term=thestrokes&entity=musicTrack
+//https://itunes.apple.com/search?term=twitter&entity=software
+//https://itunes.apple.com/search?term=Tron&entity=movie
+
 class SearchResultController {
-	//https://itunes.apple.com/search?term=thestrokes&entity=musicTrack
-	//https://itunes.apple.com/search?term=twitter&entity=software
-	//https://itunes.apple.com/search?term=Tron&entity=movie
-	
-	private let baseURL = URL(string: "https://itunes.apple.com/search/")!
-	private(set) var searchResults: [SearchResult] = []
 	
 	func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
-		
 		var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
 		let searchTermQuery = URLQueryItem(name: "term", value: searchTerm)
 		let entityQuery = URLQueryItem(name: "entity", value: resultType.rawValue)
@@ -28,7 +25,9 @@ class SearchResultController {
 			completion(nil)
 			return
 		}
+		
 		print(requestURL)
+		
 		var request = URLRequest(url: requestURL)
 		request.httpMethod = "GET"
 		
@@ -62,4 +61,7 @@ class SearchResultController {
 		}.resume()
 		
 	}
+	
+	private let baseURL = URL(string: "https://itunes.apple.com/search/")!
+	private(set) var searchResults: [SearchResult] = []
 }

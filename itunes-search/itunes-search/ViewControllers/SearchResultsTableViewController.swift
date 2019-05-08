@@ -9,31 +9,28 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
-
-	@IBOutlet var searchBar: UISearchBar!
-	@IBOutlet var segmentedControl: UISegmentedControl!
-	let controller = SearchResultController()
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		searchBar.delegate = self
     }
 	
-	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-		guard let searchTerm = searchBar.text else { return }
+	@IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+		makeSearch(currentSearchTerm)
+	}
+	
+	private func makeSearch(_ searchTerm: String) {
 		let selectedSegment = segmentedControl.selectedSegmentIndex
-		
-		
 		var resultType: ResultType
+		
 		if selectedSegment == 0 {
 			resultType = .software
 		} else if selectedSegment == 1 {
 			resultType = .musicTrack
 		} else {
 			resultType = .movie
-		} 
-		
-
+		}
+	
 		controller.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
 			
 			DispatchQueue.main.async {
@@ -46,6 +43,12 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 		}
 	}
 	
+	
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		guard let searchTerm = searchBar.text else { return }
+		currentSearchTerm = searchTerm
+	}
+	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return controller.searchResults.count
 	}
@@ -56,6 +59,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 		cell.textLabel?.text = result.title
 		cell.detailTextLabel?.text = result.creator
 		return cell
+	}
+	@IBOutlet var searchBar: UISearchBar!
+	@IBOutlet var segmentedControl: UISegmentedControl!
+	let controller = SearchResultController()
+	
+	var currentSearchTerm : String = "" {
+		didSet {
+			makeSearch(currentSearchTerm)
+		}
 	}
 	
 }
