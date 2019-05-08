@@ -24,7 +24,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 		let selectedSegment = segmentedControl.selectedSegmentIndex
 		
 		
-		var resultType: SearchResultController.ResultType = .software
+		var resultType: SearchResultController.ResultType = .musicTrack
 		if selectedSegment == 0 {
 			resultType = .software
 		} else if selectedSegment == 1 {
@@ -38,12 +38,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
 		controller.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
 			DispatchQueue.main.async {
-				self.tableView.reloadData()
 				guard let error = error else { return }
 				print("error \(error)")
+				
+				
+				
+				self.tableView.reloadData()
 			}
 		}
-		
+		print(controller.searchResults.count)
 		print(searchTerm)
 	}
 	
@@ -53,7 +56,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
-		
+//		let result = controller.searchResults[indexPath.row]
+//		cell.textLabel?.text = result.title
+//		cell.detailTextLabel?.text = result.creator
 		return cell
 	}
 	

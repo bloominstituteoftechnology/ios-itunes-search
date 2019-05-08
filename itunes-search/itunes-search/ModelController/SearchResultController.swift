@@ -13,22 +13,22 @@ class SearchResultController {
 	//https://itunes.apple.com/search?term=twitter&entity=software
 	//https://itunes.apple.com/search?term=Tron&entity=movie
 	
-	private let baseURL = URL(string: "https://itunes.apple.com/")!
+	private let baseURL = URL(string: "https://itunes.apple.com/search/")!
 	private(set) var searchResults: [SearchResult] = []
 	
 	func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
 		
 		var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-		let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-		let entityTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-		urlComponents?.queryItems = [searchTermQueryItem, entityTermQueryItem]
+		let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+//		let entityTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+		urlComponents?.queryItems = [searchTermQueryItem]
 		
 		guard let requestURL = urlComponents?.url else {
 			NSLog("requestURL is nill)")
 			completion(nil)
 			return
 		}
-		
+		print(requestURL)
 		var request = URLRequest(url: requestURL)
 		request.httpMethod = "GET"
 		

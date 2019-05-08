@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct SearchResult: Decodable {
+struct SearchResult: Codable {
 	let title: String
 	let creator: String
 	
@@ -19,6 +19,6 @@ struct SearchResult: Decodable {
 	}
 }
 
-struct SearchResults: Decodable {
+struct SearchResults: Codable {
 	let results: [SearchResult]
 }
