@@ -24,16 +24,14 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 		let selectedSegment = segmentedControl.selectedSegmentIndex
 		
 		
-		var resultType: SearchResultController.ResultType = .musicTrack
+		var resultType: ResultType
 		if selectedSegment == 0 {
 			resultType = .software
 		} else if selectedSegment == 1 {
 			resultType = .musicTrack
-		} else if selectedSegment == 2 {
-			resultType = .movie
 		} else {
-			print("error: segmentedControl.selectedSegmentIndex")
-		}
+			resultType = .movie
+		} 
 		
 
 		controller.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
