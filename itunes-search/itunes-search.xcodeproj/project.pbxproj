@@ -15,6 +15,7 @@
 		E84A344222822011004622AB /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A344122822011004622AB /* ResultType.swift */; };
 		E84A34442282229C004622AB /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A34432282229C004622AB /* SearchResultController.swift */; };
 		E84A344622823E8B004622AB /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A344522823E8B004622AB /* SearchResultsTableViewController.swift */; };
+		E84A344822828948004622AB /* WebDetaiilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A344722828948004622AB /* WebDetaiilViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E84A344122822011004622AB /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		E84A34432282229C004622AB /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		E84A344522823E8B004622AB /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		E84A344722828948004622AB /* WebDetaiilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetaiilViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E84A344522823E8B004622AB /* SearchResultsTableViewController.swift */,
+				E84A344722828948004622AB /* WebDetaiilViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				E84A34442282229C004622AB /* SearchResultController.swift in Sources */,
 				E84A344022821D19004622AB /* SearchResult.swift in Sources */,
+				E84A344822828948004622AB /* WebDetaiilViewController.swift in Sources */,
 				E84A344622823E8B004622AB /* SearchResultsTableViewController.swift in Sources */,
 				E84A344222822011004622AB /* ResultType.swift in Sources */,
 				E84A3428228212BD004622AB /* AppDelegate.swift in Sources */,
