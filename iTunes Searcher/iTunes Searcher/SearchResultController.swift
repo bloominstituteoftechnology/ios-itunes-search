@@ -6,13 +6,13 @@
 //  Copyright © 2019 Michael Redig. All rights reserved.
 //
 
-import Foundation
+import AVFoundation
 
 class SearchResultController {
 	let baseURL = URL(string: "https://itunes.apple.com/search")!
+	var audioPlayer: AVAudioPlayer?
 
 	let mahDataGetter = MahDataGetter()
-
 	var searchResults = [SearchResult]()
 
 	func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
@@ -41,6 +41,25 @@ class SearchResultController {
 			} catch {
 				print("error decoding data: \(error)")
 				completion(error)
+			}
+		}
+	}
+
+	func fetchAndPlayPreview(for result: SearchResult) {
+		guard let urlString = result.previewURL, let url = URL(string: urlString) else { return }
+		let request = URLRequest(url: url)
+
+		mahDataGetter.fetchMahDatas(with: request) { [weak self] (_, data, error) in
+			if let error = error {
+				print("error loading preview for result '\(result.title)': \(error)")
+				return
+			}
+			guard let data = data else { return }
+			do {
+				self?.audioPlayer = try AVAudioPlayer(data: data)
+				self?.audioPlayer?.play()
+			} catch {
+				print("error playing back music: \(error)")
 			}
 		}
 	}

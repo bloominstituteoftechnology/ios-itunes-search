@@ -30,15 +30,16 @@ class SearchTableViewCell: UITableViewCell {
 			let url = URL(string: artworkURL) else { return }
 		let request = URLRequest(url: url)
 
-		dataGetter.fetchMahDatas(with: request, requestID: searchResult?.artworkURL) { [weak self] (id, data, error) in
+		dataGetter.fetchMahDatas(with: request, requestID: searchResult?.artworkURL) { [weak self] (requestID, data, error) in
 			guard error == nil else { return }
-			guard id == self?.searchResult?.artworkURL else { return }
+			guard requestID == self?.searchResult?.artworkURL else { return }
 			guard let data = data else { return }
 
 			let image = UIImage(data: data)
 
 			DispatchQueue.main.async {
 				self?.imageView?.image = image
+				//FIXME: Is this the right call to update the cell, or is this hacky and there's a better way?
 				self?.layoutSubviews()
 			}
 		}

@@ -10,12 +10,9 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
 
-	let searchResultController = SearchResultController()
+	@IBOutlet var searchBar: UISearchBar!
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view.
-	}
+	let searchResultController = SearchResultController()
 
 	func requestSearch(with searchTerm: String?, mediaType: ResultType) {
 		guard let searchTerm = searchTerm, !searchTerm.isEmpty else { return }
@@ -47,6 +44,15 @@ class SearchResultsTableViewController: UITableViewController {
 		searchCell.searchResult = result
 
 		return cell
+	}
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let resultType = ResultType.resultTypeFromIndex(searchBar.selectedScopeButtonIndex)
+		guard let cell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell,
+			let result = cell.searchResult else { return }
+		if resultType == .music {
+			searchResultController.fetchAndPlayPreview(for: result)
+		}
 	}
 }
 

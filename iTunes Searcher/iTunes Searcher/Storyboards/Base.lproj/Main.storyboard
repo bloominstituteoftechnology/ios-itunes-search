@@ -65,6 +65,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search and Rescue" largeTitleDisplayMode="never" id="xDR-Jz-aou"/>
+                    <connections>
+                        <outlet property="searchBar" destination="kZg-kO-eC9" id="xoU-hu-lDx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6l-Qg-Mb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
