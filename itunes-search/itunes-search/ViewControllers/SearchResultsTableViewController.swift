@@ -41,8 +41,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 				guard let error = error else { return }
 				print("error \(error)")
 				
-				
-				
+				print(self.controller.searchResults.count)
+				print(searchTerm)
 				self.tableView.reloadData()
 			}
 		}
@@ -56,9 +56,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
-//		let result = controller.searchResults[indexPath.row]
-//		cell.textLabel?.text = result.title
-//		cell.detailTextLabel?.text = result.creator
+		let result = controller.searchResults[indexPath.row]
+		cell.textLabel?.text = result.title
+		cell.detailTextLabel?.text = result.creator
 		return cell
 	}
 	

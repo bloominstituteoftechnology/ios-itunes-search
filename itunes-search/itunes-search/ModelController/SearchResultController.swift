@@ -49,13 +49,13 @@ class SearchResultController {
 			let jsonDecoder = JSONDecoder()
 			
 			do{
-				//jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+				jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 				let personSearch = try jsonDecoder.decode(SearchResults.self, from: data)
 				self.searchResults = personSearch.results
 				completion(nil)
 			} catch {
 				completion(error)
-				NSLog("Unable to decode data into object of type []")
+				NSLog("Unable to decode data into object of type [SearchResult]")
 			}
 			
 			
