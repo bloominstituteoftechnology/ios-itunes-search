@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
-	let dataGetter = MahDataGetter()
+	var dataGetter: MahDataGetter?
 	var searchResult: SearchResult? {
 		didSet {
 			updateViews()
@@ -25,12 +25,11 @@ class SearchTableViewCell: UITableViewCell {
 	}
 
 	private func setImage() {
-
 		guard let artworkURL = searchResult?.artworkURL,
 			let url = URL(string: artworkURL) else { return }
 		let request = URLRequest(url: url)
 
-		dataGetter.fetchMahDatas(with: request, requestID: searchResult?.artworkURL) { [weak self] (requestID, data, error) in
+		dataGetter?.fetchMahDatas(with: request, requestID: searchResult?.artworkURL) { [weak self] (requestID, data, error) in
 			guard error == nil else { return }
 			guard requestID == self?.searchResult?.artworkURL else { return }
 			guard let data = data else { return }

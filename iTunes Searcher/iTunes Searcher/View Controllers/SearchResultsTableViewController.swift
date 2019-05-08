@@ -13,6 +13,7 @@ class SearchResultsTableViewController: UITableViewController {
 	@IBOutlet var searchBar: UISearchBar!
 
 	let searchResultController = SearchResultController()
+	let mahDataGetter = MahDataGetter()
 
 	func requestSearch(with searchTerm: String?, mediaType: ResultType) {
 		guard let searchTerm = searchTerm, !searchTerm.isEmpty else { return }
@@ -41,6 +42,7 @@ class SearchResultsTableViewController: UITableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
 		guard let searchCell = cell as? SearchTableViewCell else { return cell }
 		let result = searchResultController.searchResults[indexPath.row]
+		searchCell.dataGetter = mahDataGetter
 		searchCell.searchResult = result
 
 		return cell
