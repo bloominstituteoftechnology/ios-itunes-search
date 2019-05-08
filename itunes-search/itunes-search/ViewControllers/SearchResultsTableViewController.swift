@@ -37,17 +37,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 		
 
 		controller.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+			
 			DispatchQueue.main.async {
-				guard let error = error else { return }
-				print("error \(error)")
-				
-				print(self.controller.searchResults.count)
-				print(searchTerm)
+				if let error = error {
+					print("error \(error)")
+					return
+				}
 				self.tableView.reloadData()
 			}
 		}
-		print(controller.searchResults.count)
-		print(searchTerm)
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
