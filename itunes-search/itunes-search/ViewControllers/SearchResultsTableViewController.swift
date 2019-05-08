@@ -60,6 +60,18 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 		cell.detailTextLabel?.text = result.creator
 		return cell
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "ShowSegue" {
+			guard let vc = segue.destination as? WebDetaiilViewController,
+				let cell = sender as? UITableViewCell	else { return }
+			if let indexPath = tableView.indexPath(for: cell) {
+				vc.result = controller.searchResults[indexPath.row]
+			}
+		}
+	}
+	
+	
 	@IBOutlet var searchBar: UISearchBar!
 	@IBOutlet var segmentedControl: UISegmentedControl!
 	let controller = SearchResultController()
