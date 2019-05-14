@@ -10,7 +10,7 @@ import Foundation
 
 class SearchResultController {
 
-    func performSearch(for searchTerm: String, ofType  resultType: ResultType, completion: @escaping () -> Void) {
+    func performSearch(for searchTerm: String, ofType  resultType: ResultType, completion: @escaping (Error?) -> Void) {
 
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
@@ -19,7 +19,7 @@ class SearchResultController {
         urlComponents?.queryItems = [searchQueryItem, mediaQueryItem]
 
         guard let formattedURL = urlComponents?.url else {
-            completion()
+            completion(nil)
             return
         }
         var request = URLRequest(url: formattedURL)
@@ -28,13 +28,13 @@ class SearchResultController {
 
             if let error = error {
                 NSLog("Error searching: \(error)")
-                completion()
+                completion(NSError())
                 return
             }
 
             guard let data = data else {
                 NSLog("No data has returned from the data task")
-                completion()
+                completion(NSError())
                 return
             }
 
@@ -42,10 +42,10 @@ class SearchResultController {
                 let decoder = JSONDecoder()
                 let iTunesSearch = try decoder.decode(SearchResults.self, from: data)
                 self.searchResults = iTunesSearch.results
-                completion()
+                completion(nil)
             } catch {
                 NSLog("Error decoding SearchResults from data: \(error)")
-                completion()
+                completion(NSError())
             }
         }
 

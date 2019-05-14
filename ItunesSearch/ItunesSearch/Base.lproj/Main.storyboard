@@ -12,7 +12,7 @@
         <!--iTunes Search-->
         <scene sceneID="qzW-WW-Fvl">
             <objects>
-                <tableViewController id="XaR-Q9-dXu" sceneMemberID="viewController">
+                <tableViewController id="XaR-Q9-dXu" customClass="SearchResultsTableViewController" customModule="ItunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dZI-wl-qSb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-C9-sai">
                                     <rect key="frame" x="8" y="8" width="398" height="29"/>
                                     <segments>
-                                        <segment title="First"/>
+                                        <segment title="Apps"/>
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
@@ -76,6 +76,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="Lz2-Sm-Uc8"/>
+                    <connections>
+                        <outlet property="resultTypeSegmentedControl" destination="VkA-C9-sai" id="pGi-mA-UZv"/>
+                        <outlet property="searchBar" destination="9ci-vh-Ux6" id="Lz3-5H-Dz4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmM-Vw-ugf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
