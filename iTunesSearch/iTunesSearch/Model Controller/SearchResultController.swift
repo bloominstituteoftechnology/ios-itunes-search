@@ -10,7 +10,7 @@ import Foundation
 
 class SearchResultController {
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
-    private var searchResults: [SearchResult] = []
+     var searchResults: [SearchResult] = []
     
     func performSearch(with searchTerm: String, for resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
@@ -33,6 +33,8 @@ class SearchResultController {
             case post = "POST"
             case delete = "DELETE"
         }
+        
+        print(requestURL)
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue

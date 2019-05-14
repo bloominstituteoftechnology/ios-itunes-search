@@ -32,7 +32,7 @@
                                                 <segment title="Movies"/>
                                             </segments>
                                         </segmentedControl>
-                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xc1-qn-TGS">
+                                        <searchBar contentMode="redraw" placeholder="Enter search term:" translatesAutoresizingMaskIntoConstraints="NO" id="Xc1-qn-TGS">
                                             <rect key="frame" x="0.0" y="32" width="414" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
