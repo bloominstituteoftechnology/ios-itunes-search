@@ -14,12 +14,12 @@ class SearchResultController {
 
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let mediaQueryItem = URLQueryItem(name: "media", value: resultType.rawValue)
+        let entityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
 
-        urlComponents?.queryItems = [searchQueryItem, mediaQueryItem]
+        urlComponents?.queryItems = [searchQueryItem, entityQueryItem]
 
         guard let formattedURL = urlComponents?.url else {
-            completion(nil)
+            completion(NSError())
             return
         }
         var request = URLRequest(url: formattedURL)
@@ -42,6 +42,7 @@ class SearchResultController {
                 let decoder = JSONDecoder()
                 let iTunesSearch = try decoder.decode(SearchResults.self, from: data)
                 self.searchResults = iTunesSearch.results
+                
                 completion(nil)
             } catch {
                 NSLog("Error decoding SearchResults from data: \(error)")
@@ -62,6 +63,6 @@ class SearchResultController {
         case delete = "DELETE"
     }
 
-    let baseURL = URL(string: "https://itunes.apple.com/search/")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
 }
