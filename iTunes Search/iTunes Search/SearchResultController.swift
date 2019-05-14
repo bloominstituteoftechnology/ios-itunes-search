@@ -9,7 +9,7 @@
 import Foundation
 
 class SearchResultController {
-    let baseURL = URL(string: "https://itunes.apple.com/")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     var results: [SearchResult] = []
     enum HTTPMethod: String {
         case get = "GET"
@@ -19,7 +19,7 @@ class SearchResultController {
     }
     
     func performSearch(with searchTerm: String, and resultType: ResultType, completion: @escaping (Error?) -> Void) {
-        let searchResultsURL = baseURL.appendingPathComponent("searchResults")
+        let searchResultsURL = baseURL.appendingPathComponent("results")
         var urlComponents = URLComponents(url: searchResultsURL, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         urlComponents?.queryItems = [searchQueryItem]
