@@ -19,17 +19,18 @@ class SearchResultController {
     }
     
     func performSearch(with searchTerm: String, and resultType: ResultType, completion: @escaping (Error?) -> Void) {
-        let searchResultsURL = baseURL.appendingPathComponent("results")
-        var urlComponents = URLComponents(url: searchResultsURL, resolvingAgainstBaseURL: true)
+        //let searchResultsURL = baseURL.appendingPathComponent("results")
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        urlComponents?.queryItems = [searchQueryItem]
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchQueryItem, resultTypeQueryItem]
         guard let formattedURL = urlComponents?.url else {
             completion(nil)
             return
         }
         var request = URLRequest(url: formattedURL)
         request.httpMethod = HTTPMethod.get.rawValue
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 NSLog("Error searching for people: \(error)")
                 completion(error)

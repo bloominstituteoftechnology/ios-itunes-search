@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3D2A4873228B4E3700AB37DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A4872228B4E3700AB37DA /* AppDelegate.swift */; };
-		3D2A4875228B4E3700AB37DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A4874228B4E3700AB37DA /* ViewController.swift */; };
 		3D2A4878228B4E3700AB37DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A4876228B4E3700AB37DA /* Main.storyboard */; };
 		3D2A487A228B4E3900AB37DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A4879228B4E3900AB37DA /* Assets.xcassets */; };
 		3D2A487D228B4E3900AB37DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A487B228B4E3900AB37DA /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		3D2A486F228B4E3700AB37DA /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2A4872228B4E3700AB37DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D2A4874228B4E3700AB37DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D2A4877228B4E3700AB37DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D2A4879228B4E3900AB37DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D2A487C228B4E3900AB37DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,17 +61,40 @@
 			isa = PBXGroup;
 			children = (
 				3D2A4872228B4E3700AB37DA /* AppDelegate.swift */,
-				3D2A4874228B4E3700AB37DA /* ViewController.swift */,
-				3D2A4884228B4EE200AB37DA /* SearchResult.swift */,
-				3D2A4888228B516300AB37DA /* SearchResultController.swift */,
-				3D2A488A228B652400AB37DA /* SearchResultsTableViewController.swift */,
-				3D2A4886228B508800AB37DA /* ResultType.swift */,
+				3D2A488C228B7A6300AB37DA /* Model */,
+				3D2A488D228B7A7300AB37DA /* Model Controller */,
+				3D2A488E228B7A9500AB37DA /* View Controller */,
 				3D2A4876228B4E3700AB37DA /* Main.storyboard */,
 				3D2A4879228B4E3900AB37DA /* Assets.xcassets */,
 				3D2A487B228B4E3900AB37DA /* LaunchScreen.storyboard */,
 				3D2A487E228B4E3900AB37DA /* Info.plist */,
 			);
 			path = "iTunes Search";
+			sourceTree = "<group>";
+		};
+		3D2A488C228B7A6300AB37DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A4886228B508800AB37DA /* ResultType.swift */,
+				3D2A4884228B4EE200AB37DA /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D2A488D228B7A7300AB37DA /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A4888228B516300AB37DA /* SearchResultController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		3D2A488E228B7A9500AB37DA /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A488A228B652400AB37DA /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D2A4887228B508800AB37DA /* ResultType.swift in Sources */,
-				3D2A4875228B4E3700AB37DA /* ViewController.swift in Sources */,
 				3D2A488B228B652400AB37DA /* SearchResultsTableViewController.swift in Sources */,
 				3D2A4885228B4EE200AB37DA /* SearchResult.swift in Sources */,
 				3D2A4873228B4E3700AB37DA /* AppDelegate.swift in Sources */,
