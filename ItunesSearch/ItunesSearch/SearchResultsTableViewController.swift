@@ -20,6 +20,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else { return }
+
         var resultType: ResultType!
 
         switch resultTypeSegmentedControl.selectedSegmentIndex {
@@ -36,6 +37,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         searchResultsController.performSearch(for: searchTerm, ofType: resultType) { (error) in
             if let error = error {
                 NSLog("Error searching from API: \(error)")
+
                 return
             } else {
                 DispatchQueue.main.async {

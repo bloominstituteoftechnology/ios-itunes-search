@@ -16,8 +16,8 @@ struct SearchResult: Codable {
     }
 
 
-    let title: String
-    let creator: String
+    let title: String?
+    let creator: String?
 
 }
 
