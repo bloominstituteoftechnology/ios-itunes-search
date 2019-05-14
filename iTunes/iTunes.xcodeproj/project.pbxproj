@@ -13,6 +13,8 @@
 		EF8580B2228B5B5E00F24183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF8580B0228B5B5E00F24183 /* LaunchScreen.storyboard */; };
 		EF8580BA228B5ED700F24183 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8580B9228B5ED700F24183 /* SearchResult.swift */; };
 		EF8580BC228B618E00F24183 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8580BB228B618E00F24183 /* ResultType.swift */; };
+		EF8580C2228B638B00F24183 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8580C1228B638B00F24183 /* SearchResultController.swift */; };
+		EF8580C4228B7C6900F24183 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8580C3228B7C6900F24183 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EF8580B3228B5B5E00F24183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF8580B9228B5ED700F24183 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		EF8580BB228B618E00F24183 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		EF8580C1228B638B00F24183 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		EF8580C3228B7C6900F24183 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				EF8580BD228B623900F24183 /* Model */,
+				EF8580C0228B636800F24183 /* Model Controller */,
+				EF8580C5228B7C6D00F24183 /* View Controllers */,
 				EF8580BE228B625600F24183 /* Storyboard */,
 			);
 			path = iTunes;
@@ -89,6 +95,22 @@
 				EF8580B3228B5B5E00F24183 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EF8580C0228B636800F24183 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF8580C1228B638B00F24183 /* SearchResultController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		EF8580C5228B7C6D00F24183 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF8580C3228B7C6900F24183 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF8580C2228B638B00F24183 /* SearchResultController.swift in Sources */,
 				EF8580BC228B618E00F24183 /* ResultType.swift in Sources */,
+				EF8580C4228B7C6900F24183 /* SearchResultsTableViewController.swift in Sources */,
 				EF8580BA228B5ED700F24183 /* SearchResult.swift in Sources */,
 				EF8580A8228B5B5E00F24183 /* AppDelegate.swift in Sources */,
 			);
