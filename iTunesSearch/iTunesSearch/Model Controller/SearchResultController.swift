@@ -17,10 +17,11 @@ class SearchResultController {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let countryQueryItem = URLQueryItem(name: "country", value: "US")
         
         let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        urlComponents?.queryItems = [searchQueryItem, resultTypeQueryItem]
+        urlComponents?.queryItems = [searchQueryItem, countryQueryItem, resultTypeQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             completion(NSError())
@@ -33,8 +34,6 @@ class SearchResultController {
             case post = "POST"
             case delete = "DELETE"
         }
-        
-        print(requestURL)
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
