@@ -10,7 +10,7 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     enum HTTPMethod: String {
         case get = "GET"
@@ -25,15 +25,25 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchQueryItem]
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        //https://itunes.apple.com/search?term=(searchTerm)
         
-        guard let formattedURL = urlComponents?.url else { return }
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        //https://itunes.apple.com/search?term=(searchTerm)&entity=(resultType)
+        
+        urlComponents?.queryItems = [searchQueryItem, resultTypeQueryItem]
+        
+        
+        guard let formattedURL = urlComponents?.url else {
+            completion(nil)
+            return
+        }
+        
         
         var request = URLRequest(url: formattedURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             
             if let error = error {
                 NSLog("Error searching iTunes \(error)")
