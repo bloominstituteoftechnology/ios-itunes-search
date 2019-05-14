@@ -12,10 +12,11 @@
 		F52DE642228B567C00F3643E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52DE640228B567C00F3643E /* Main.storyboard */; };
 		F52DE644228B567D00F3643E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F52DE643228B567D00F3643E /* Assets.xcassets */; };
 		F52DE647228B567D00F3643E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52DE645228B567D00F3643E /* LaunchScreen.storyboard */; };
-		F52DE64F228B574800F3643E /* SwiftResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DE64E228B574800F3643E /* SwiftResult.swift */; };
+		F52DE64F228B574800F3643E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DE64E228B574800F3643E /* SearchResult.swift */; };
 		F52DE651228B58D300F3643E /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DE650228B58D300F3643E /* ResultType.swift */; };
 		F52DE653228B593000F3643E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DE652228B593000F3643E /* SearchResultController.swift */; };
 		F52DE655228B6D9D00F3643E /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DE654228B6D9D00F3643E /* SearchResultsTableViewController.swift */; };
+		F52DE657228B729900F3643E /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DE656228B729900F3643E /* ResultsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +27,11 @@
 		F52DE643228B567D00F3643E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F52DE646228B567D00F3643E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F52DE648228B567D00F3643E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F52DE64E228B574800F3643E /* SwiftResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftResult.swift; sourceTree = "<group>"; };
+		F52DE64E228B574800F3643E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		F52DE650228B58D300F3643E /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		F52DE652228B593000F3643E /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		F52DE654228B6D9D00F3643E /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		F52DE656228B729900F3643E /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,10 @@
 				F52DE63E228B567C00F3643E /* ViewController.swift */,
 				F52DE650228B58D300F3643E /* ResultType.swift */,
 				F52DE652228B593000F3643E /* SearchResultController.swift */,
-				F52DE64E228B574800F3643E /* SwiftResult.swift */,
+				F52DE64E228B574800F3643E /* SearchResult.swift */,
 				F52DE640228B567C00F3643E /* Main.storyboard */,
 				F52DE654228B6D9D00F3643E /* SearchResultsTableViewController.swift */,
+				F52DE656228B729900F3643E /* ResultsTableViewCell.swift */,
 				F52DE643228B567D00F3643E /* Assets.xcassets */,
 				F52DE645228B567D00F3643E /* LaunchScreen.storyboard */,
 				F52DE648228B567D00F3643E /* Info.plist */,
@@ -149,9 +152,10 @@
 			files = (
 				F52DE651228B58D300F3643E /* ResultType.swift in Sources */,
 				F52DE63F228B567C00F3643E /* ViewController.swift in Sources */,
+				F52DE657228B729900F3643E /* ResultsTableViewCell.swift in Sources */,
 				F52DE655228B6D9D00F3643E /* SearchResultsTableViewController.swift in Sources */,
 				F52DE63D228B567C00F3643E /* AppDelegate.swift in Sources */,
-				F52DE64F228B574800F3643E /* SwiftResult.swift in Sources */,
+				F52DE64F228B574800F3643E /* SearchResult.swift in Sources */,
 				F52DE653228B593000F3643E /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
