@@ -15,6 +15,7 @@
 		8FFF6029228B47060074DCF6 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFF6028228B47060074DCF6 /* SearchResult.swift */; };
 		8FFF602C228B48A40074DCF6 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFF602B228B48A40074DCF6 /* ResultType.swift */; };
 		8FFF602E228B49190074DCF6 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFF602D228B49190074DCF6 /* SearchResultController.swift */; };
+		8FFF6031228B577F0074DCF6 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFF6030228B577F0074DCF6 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8FFF6028228B47060074DCF6 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		8FFF602B228B48A40074DCF6 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		8FFF602D228B49190074DCF6 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		8FFF6030228B577F0074DCF6 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8FFF602A228B470D0074DCF6 /* Model */,
 				8FFF602B228B48A40074DCF6 /* ResultType.swift */,
 				8FFF602F228B49200074DCF6 /* Model Controller */,
+				8FFF6032228B57830074DCF6 /* View Controllers */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -87,6 +90,14 @@
 				8FFF602D228B49190074DCF6 /* SearchResultController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		8FFF6032228B57830074DCF6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8FFF6030228B577F0074DCF6 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 			files = (
 				8FFF602C228B48A40074DCF6 /* ResultType.swift in Sources */,
 				8FFF6019228B46D40074DCF6 /* ViewController.swift in Sources */,
+				8FFF6031228B577F0074DCF6 /* SearchResultsTableViewController.swift in Sources */,
 				8FFF6029228B47060074DCF6 /* SearchResult.swift in Sources */,
 				8FFF6017228B46D40074DCF6 /* AppDelegate.swift in Sources */,
 				8FFF602E228B49190074DCF6 /* SearchResultController.swift in Sources */,
