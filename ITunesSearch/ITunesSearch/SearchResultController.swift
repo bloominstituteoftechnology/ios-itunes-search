@@ -10,7 +10,7 @@ import Foundation
 
 
 class SearchResultController {
-	let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")!
+	let baseURL = URL(string: "https://itunes.apple.com/search")!
 	var searchResults: [SearchResult] = []
 	
 	func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
@@ -19,12 +19,15 @@ class SearchResultController {
 		
 		var urlComponents = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)
 
-		let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+		let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
 		
-		urlComponents?.queryItems = [searchQueryItem]
+		let searchQueryType = URLQueryItem(name: "entity", value: resultType.rawValue)
+		urlComponents?.queryItems = [searchQueryItem, searchQueryType]
 		
+
 		guard let formattedURL = urlComponents?.url else {
-			completion()
+			NSLog("Not getting url")
+			completion(nil)
 			return
 		}
 		
@@ -32,32 +35,30 @@ class SearchResultController {
 		
 		request.httpMethod = HTTPMethod.get.rawValue
 		
-		let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+		let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
 			if let error = error {
 				NSLog("Error searching for media: \(error)")
-				completion()
 				return
 			}
 			
 			guard let data = data else {
-				NSError("Error, no data")
-				completion()
+				NSLog("Error, no data")
 				return
 			}
+			
 			
 			do {
 				
 				let decoder = JSONDecoder()
 				
-				let musicResults = try decoder.decode(SearchResult.self, from: data)
+				let results = try decoder.decode(SearchResults.self, from: data)
 				
-				self.searchResults = musicResults.results
+				self.searchResults = results.results
 				
 				completion(nil)
 				
 			} catch {
 				NSLog("Error decoding: \(error)")
-				
 				completion(error)
 			}
 			
