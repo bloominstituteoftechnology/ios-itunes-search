@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BA7-fO-OVe">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--iTunes Search-->
+        <scene sceneID="D2T-nu-BBC">
+            <objects>
+                <tableViewController id="S5n-PD-KaB" customClass="SearchResultsTableViewController" customModule="iTunes_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HYU-gK-lmv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Vkn-6C-3RZ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xg6-ht-0s6">
+                                    <rect key="frame" x="16" y="8" width="382" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="Sxo-qj-6uL"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="Apps"/>
+                                        <segment title="Music"/>
+                                        <segment title="Movies"/>
+                                    </segments>
+                                </segmentedControl>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-mE-gyg">
+                                    <rect key="frame" x="16" y="44" width="382" height="48"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="gpe-mE-gyg" firstAttribute="top" secondItem="Xg6-ht-0s6" secondAttribute="bottom" constant="8" id="Bsc-Ej-XMk"/>
+                                <constraint firstItem="gpe-mE-gyg" firstAttribute="leading" secondItem="Vkn-6C-3RZ" secondAttribute="leading" constant="16" id="Gz5-We-8Ux"/>
+                                <constraint firstAttribute="trailing" secondItem="Xg6-ht-0s6" secondAttribute="trailing" constant="16" id="aH6-Dv-t5X"/>
+                                <constraint firstAttribute="bottom" secondItem="gpe-mE-gyg" secondAttribute="bottom" constant="8" id="cPL-Vv-xXe"/>
+                                <constraint firstItem="Xg6-ht-0s6" firstAttribute="top" secondItem="Vkn-6C-3RZ" secondAttribute="top" constant="8" id="cYC-Mo-Zgp"/>
+                                <constraint firstAttribute="trailing" secondItem="gpe-mE-gyg" secondAttribute="trailing" constant="16" id="dk6-hh-3Jo"/>
+                                <constraint firstAttribute="trailing" secondItem="gpe-mE-gyg" secondAttribute="trailing" constant="16" id="qqh-ah-mdX"/>
+                                <constraint firstItem="Xg6-ht-0s6" firstAttribute="leading" secondItem="Vkn-6C-3RZ" secondAttribute="leading" constant="16" id="vxS-LC-DaL"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" textLabel="ae2-QX-rNy" detailTextLabel="cUp-2N-T1S" style="IBUITableViewCellStyleSubtitle" id="B1f-gS-WVg">
+                                <rect key="frame" x="0.0" y="128" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B1f-gS-WVg" id="fZH-Qn-2aZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ae2-QX-rNy">
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cUp-2N-T1S">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="S5n-PD-KaB" id="owB-UU-bj7"/>
+                            <outlet property="delegate" destination="S5n-PD-KaB" id="vyN-kV-snF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="Adw-1Q-qAu"/>
+                    <connections>
+                        <outlet property="searchBar" destination="gpe-mE-gyg" id="4cV-nf-Ux5"/>
+                        <outlet property="segmentedControl" destination="Xg6-ht-0s6" id="1Ud-b4-jMR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C2N-nc-Ktf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973.91304347826099" y="132.58928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UcZ-rT-tsP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BA7-fO-OVe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VF1-yC-1U6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S5n-PD-KaB" kind="relationship" relationship="rootViewController" id="OBv-td-6Xq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSj-Ah-JXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="132.58928571428572"/>
+        </scene>
+    </scenes>
+</document>
