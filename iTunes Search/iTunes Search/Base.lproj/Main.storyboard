@@ -44,12 +44,13 @@
                                 <constraint firstAttribute="trailing" secondItem="Xg6-ht-0s6" secondAttribute="trailing" constant="16" id="aH6-Dv-t5X"/>
                                 <constraint firstAttribute="bottom" secondItem="gpe-mE-gyg" secondAttribute="bottom" constant="8" id="cPL-Vv-xXe"/>
                                 <constraint firstItem="Xg6-ht-0s6" firstAttribute="top" secondItem="Vkn-6C-3RZ" secondAttribute="top" constant="8" id="cYC-Mo-Zgp"/>
+                                <constraint firstAttribute="trailing" secondItem="gpe-mE-gyg" secondAttribute="trailing" constant="16" id="dk6-hh-3Jo"/>
                                 <constraint firstAttribute="trailing" secondItem="gpe-mE-gyg" secondAttribute="trailing" constant="16" id="qqh-ah-mdX"/>
                                 <constraint firstItem="Xg6-ht-0s6" firstAttribute="leading" secondItem="Vkn-6C-3RZ" secondAttribute="leading" constant="16" id="vxS-LC-DaL"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ae2-QX-rNy" detailTextLabel="cUp-2N-T1S" style="IBUITableViewCellStyleSubtitle" id="B1f-gS-WVg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="ae2-QX-rNy" detailTextLabel="cUp-2N-T1S" style="IBUITableViewCellStyleSubtitle" id="B1f-gS-WVg">
                                 <rect key="frame" x="0.0" y="128" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B1f-gS-WVg" id="fZH-Qn-2aZ">
