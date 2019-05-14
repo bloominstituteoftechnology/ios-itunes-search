@@ -12,11 +12,11 @@ class SearchResultController {
     
     func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
-        let resultURL = baseURL.appendingPathComponent("results")
-        var urlComponents = URLComponents(url: resultURL, resolvingAgainstBaseURL: true)
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        urlComponents?.queryItems = [searchQueryItem]
+        urlComponents?.queryItems = [searchQueryItem, resultTypeQueryItem]
         
         guard let formattedURL = urlComponents?.url else { completion(nil)
             return
