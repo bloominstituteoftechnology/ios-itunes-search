@@ -12,16 +12,17 @@ class SearchResultController {
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
      var searchResults: [SearchResult] = []
     
-    func performSearch(with searchTerm: String, for resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func performSearch(with searchTerm: String, for resultType: ResultType, withResultLimit limit: Int = 50, forCountry country: String = "US", completion: @escaping (Error?) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let countryQueryItem = URLQueryItem(name: "country", value: "US")
+        let countryQueryItem = URLQueryItem(name: "country", value: "\(country)")
         
         let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        let resultLimitQueryItem = URLQueryItem(name: "limit", value: "\(limit)")
         
-        urlComponents?.queryItems = [searchQueryItem, countryQueryItem, resultTypeQueryItem]
+        urlComponents?.queryItems = [searchQueryItem, countryQueryItem, resultTypeQueryItem, resultLimitQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             completion(NSError())

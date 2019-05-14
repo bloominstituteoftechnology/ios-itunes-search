@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8FFF6017228B46D40074DCF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFF6016228B46D40074DCF6 /* AppDelegate.swift */; };
-		8FFF6019228B46D40074DCF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFF6018228B46D40074DCF6 /* ViewController.swift */; };
 		8FFF601C228B46D40074DCF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FFF601A228B46D40074DCF6 /* Main.storyboard */; };
 		8FFF601E228B46D50074DCF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FFF601D228B46D50074DCF6 /* Assets.xcassets */; };
 		8FFF6021228B46D50074DCF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FFF601F228B46D50074DCF6 /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		8FFF6013228B46D40074DCF6 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFF6016228B46D40074DCF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8FFF6018228B46D40074DCF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8FFF601B228B46D40074DCF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FFF601D228B46D50074DCF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FFF6020228B46D50074DCF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				8FFF6016228B46D40074DCF6 /* AppDelegate.swift */,
-				8FFF6018228B46D40074DCF6 /* ViewController.swift */,
 				8FFF601A228B46D40074DCF6 /* Main.storyboard */,
 				8FFF601D228B46D50074DCF6 /* Assets.xcassets */,
 				8FFF601F228B46D50074DCF6 /* LaunchScreen.storyboard */,
@@ -172,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FFF602C228B48A40074DCF6 /* ResultType.swift in Sources */,
-				8FFF6019228B46D40074DCF6 /* ViewController.swift in Sources */,
 				8FFF6031228B577F0074DCF6 /* SearchResultsTableViewController.swift in Sources */,
 				8FFF6029228B47060074DCF6 /* SearchResult.swift in Sources */,
 				8FFF6017228B46D40074DCF6 /* AppDelegate.swift in Sources */,

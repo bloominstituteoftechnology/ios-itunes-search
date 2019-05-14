@@ -37,17 +37,19 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             resultType = .software
         }
         
-        searchResultsController.performSearch(with: searchTerm, for: resultType) { (error) in
+        searchResultsController.performSearch(with: searchTerm, for: resultType, withResultLimit: 10, forCountry: "US") { (error) in
             if let error = error {
                 NSLog("Error performing seach: \(error)")
                 return
-
+                
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
+        
+            
 
     // MARK: - Table view data source
 
