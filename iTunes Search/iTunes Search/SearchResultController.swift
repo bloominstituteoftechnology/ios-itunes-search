@@ -21,7 +21,7 @@ class SearchResultController {
     func performSearch(with searchTerm: String, and resultType: ResultType, completion: @escaping (Error?) -> Void) {
         let searchResultsURL = baseURL.appendingPathComponent("searchResults")
         var urlComponents = URLComponents(url: searchResultsURL, resolvingAgainstBaseURL: true)
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
         urlComponents?.queryItems = [searchQueryItem]
         guard let formattedURL = urlComponents?.url else {
             completion(nil)
