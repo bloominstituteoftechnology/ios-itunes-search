@@ -23,11 +23,13 @@
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-C9-sai">
                                     <rect key="frame" x="8" y="8" width="398" height="29"/>
+                                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <segments>
                                         <segment title="Apps"/>
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9ci-vh-Ux6">
                                     <rect key="frame" x="0.0" y="48" width="414" height="56"/>
