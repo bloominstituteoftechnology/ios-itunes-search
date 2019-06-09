@@ -21,7 +21,7 @@ struct SearchResult: Codable {
     }
 }
 
-struct SearchResuts: Codable {
+struct SearchResults: Codable {
     
     let results: [SearchResult]
     
