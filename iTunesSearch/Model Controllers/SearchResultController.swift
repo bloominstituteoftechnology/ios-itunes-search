@@ -19,7 +19,6 @@ class SearchResultController {
         guard let requestURL = urlCompontents?.url else {
             NSLog("URL could not be found")
             return }
-        
         let request = URLRequest(url: requestURL)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
@@ -31,12 +30,12 @@ class SearchResultController {
             }
             
             guard let data = data else {
-                NSLog("No data returned from task.")
-                completion(error)
+                completion(NSError())
                 return
             }
             
             let jsonDecoder = JSONDecoder()
+            
             
             do {
                 let dataLoadedSearchResults = try jsonDecoder.decode(SearchResults.self, from: data)
