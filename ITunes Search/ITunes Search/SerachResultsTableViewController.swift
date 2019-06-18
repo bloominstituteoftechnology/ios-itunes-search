@@ -46,6 +46,11 @@ class SerachResultsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    @IBAction func searchSelectionChanged(_ sender: Any) {
+        self.searchBarSearchButtonClicked(searchBar)
+    }
+    
 }
 
 extension SerachResultsTableViewController: UISearchBarDelegate {
