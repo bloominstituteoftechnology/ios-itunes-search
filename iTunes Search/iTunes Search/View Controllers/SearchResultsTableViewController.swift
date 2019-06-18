@@ -43,6 +43,8 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         var resultType: ResultType!
         
         switch segmentControl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
         case 1:
             resultType = .musicTrack
         case 2:
@@ -62,4 +64,6 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             }
         }
     }
+    
+    
 }
