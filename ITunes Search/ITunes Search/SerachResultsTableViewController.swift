@@ -69,7 +69,8 @@ extension SerachResultsTableViewController: UISearchBarDelegate {
             break
         }
         
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType //, countryCode: .in, limit: 5
+        ) { (error) in
             if let error = error {
                 print("\(error)")
                 return
