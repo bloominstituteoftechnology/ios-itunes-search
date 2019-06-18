@@ -33,7 +33,13 @@ class SerachResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
 
         let result = searchResultsController.searchResults[indexPath.row]
-        cell.textLabel?.text = result.title
+        
+        if let title = result.title {
+            cell.textLabel?.text = title
+        } else {
+            cell.textLabel?.text = "Audiobook"
+        }
+        
         cell.detailTextLabel?.text = result.creator
 
         return cell
