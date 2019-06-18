@@ -9,6 +9,7 @@
 import Foundation
 
 struct SearchResult: Codable {
+    // These are supposed to be optional bc there will be sometimes entities
     var title: String?
     var creator: String?
     
