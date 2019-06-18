@@ -48,7 +48,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="HE5-15-2PT" detailTextLabel="b58-nH-DQe" style="IBUITableViewCellStyleSubtitle" id="8E0-Pb-1qH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mediaCell" textLabel="HE5-15-2PT" detailTextLabel="b58-nH-DQe" style="IBUITableViewCellStyleSubtitle" id="8E0-Pb-1qH">
                                 <rect key="frame" x="0.0" y="128" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8E0-Pb-1qH" id="5NL-UD-Y3c">
