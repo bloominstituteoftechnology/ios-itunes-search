@@ -12,6 +12,9 @@
 		322665B822B976AD004CBFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 322665B722B976AD004CBFA2 /* Assets.xcassets */; };
 		322665BB22B976AD004CBFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322665B922B976AD004CBFA2 /* LaunchScreen.storyboard */; };
 		322665C322B9777B004CBFA2 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322665C222B9777B004CBFA2 /* SearchResult.swift */; };
+		322665C722B9799A004CBFA2 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322665C622B9799A004CBFA2 /* ResultType.swift */; };
+		322665C922B97A67004CBFA2 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322665C822B97A67004CBFA2 /* SearchResultController.swift */; };
+		322665CD22B989C1004CBFA2 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322665CC22B989C1004CBFA2 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		322665BA22B976AD004CBFA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		322665BC22B976AD004CBFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		322665C222B9777B004CBFA2 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		322665C622B9799A004CBFA2 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		322665C822B97A67004CBFA2 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		322665CC22B989C1004CBFA2 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				322665AF22B976AC004CBFA2 /* iTunes Search */,
-				322665C422B9778C004CBFA2 /* Resources */,
 				322665AE22B976AC004CBFA2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,8 +60,11 @@
 		322665AF22B976AC004CBFA2 /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
-				322665B422B976AC004CBFA2 /* Main.storyboard */,
-				322665C222B9777B004CBFA2 /* SearchResult.swift */,
+				322665C522B9798B004CBFA2 /* Model */,
+				322665CB22B97A77004CBFA2 /* View */,
+				322665CA22B97A6F004CBFA2 /* Controller */,
+				322665CE22B989C8004CBFA2 /* View Controllers */,
+				322665C422B9778C004CBFA2 /* Resources */,
 			);
 			path = "iTunes Search";
 			sourceTree = "<group>";
@@ -70,6 +78,39 @@
 				322665BC22B976AD004CBFA2 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		322665C522B9798B004CBFA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				322665C222B9777B004CBFA2 /* SearchResult.swift */,
+				322665C622B9799A004CBFA2 /* ResultType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		322665CA22B97A6F004CBFA2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				322665C822B97A67004CBFA2 /* SearchResultController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		322665CB22B97A77004CBFA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				322665B422B976AC004CBFA2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		322665CE22B989C8004CBFA2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				322665CC22B989C1004CBFA2 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				322665C922B97A67004CBFA2 /* SearchResultController.swift in Sources */,
 				322665C322B9777B004CBFA2 /* SearchResult.swift in Sources */,
+				322665CD22B989C1004CBFA2 /* SearchResultsTableViewController.swift in Sources */,
+				322665C722B9799A004CBFA2 /* ResultType.swift in Sources */,
 				322665B122B976AC004CBFA2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM84C6XKT7;
-				INFOPLIST_FILE = "iTunes Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM84C6XKT7;
-				INFOPLIST_FILE = "iTunes Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
