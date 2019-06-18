@@ -14,7 +14,7 @@
 		66DBDF4322B96E4500239E7D /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDF4222B96E4500239E7D /* SearchResult.swift */; };
 		66DBDF4522B96F7300239E7D /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDF4422B96F7300239E7D /* ResultType.swift */; };
 		66DBDF4722B96F9E00239E7D /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDF4622B96F9E00239E7D /* SearchResultController.swift */; };
-		66DBDF4922B9759400239E7D /* SerachResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDF4822B9759400239E7D /* SerachResultsTableViewController.swift */; };
+		66DBDF4922B9759400239E7D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDF4822B9759400239E7D /* SearchResultsTableViewController.swift */; };
 		66DBDF4B22B985E800239E7D /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDF4A22B985E800239E7D /* CountryCode.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		66DBDF4222B96E4500239E7D /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		66DBDF4422B96F7300239E7D /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		66DBDF4622B96F9E00239E7D /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
-		66DBDF4822B9759400239E7D /* SerachResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachResultsTableViewController.swift; sourceTree = "<group>"; };
+		66DBDF4822B9759400239E7D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		66DBDF4A22B985E800239E7D /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +86,7 @@
 		66DBDF4D22B98A0600239E7D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				66DBDF4822B9759400239E7D /* SerachResultsTableViewController.swift */,
+				66DBDF4822B9759400239E7D /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66DBDF4922B9759400239E7D /* SerachResultsTableViewController.swift in Sources */,
+				66DBDF4922B9759400239E7D /* SearchResultsTableViewController.swift in Sources */,
 				66DBDF4522B96F7300239E7D /* ResultType.swift in Sources */,
 				66DBDF4322B96E4500239E7D /* SearchResult.swift in Sources */,
 				66DBDF3122B95EA100239E7D /* AppDelegate.swift in Sources */,

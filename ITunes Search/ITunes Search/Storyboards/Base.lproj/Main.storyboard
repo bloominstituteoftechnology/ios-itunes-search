@@ -12,7 +12,7 @@
         <!--iTunes Search-->
         <scene sceneID="8Nz-sh-JzA">
             <objects>
-                <tableViewController id="7QV-Pk-BwE" customClass="SerachResultsTableViewController" customModule="ITunes_Search" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7QV-Pk-BwE" customClass="SearchResultsTableViewController" customModule="ITunes_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cSK-St-V02">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
