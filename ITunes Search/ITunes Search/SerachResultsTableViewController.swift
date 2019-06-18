@@ -36,9 +36,7 @@ class SerachResultsTableViewController: UITableViewController {
         
         if let title = result.title {
             cell.textLabel?.text = title
-        }
-        
-        if let collectionName = result.collectionName {
+        } else if let collectionName = result.collectionName {
             cell.textLabel?.text = collectionName
         }
         
