@@ -22,7 +22,17 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userSearchBar.delegate = self
+       
     }
+    
+    //
+    // MARK: - IBActions
+    //
+    
+    @IBAction func userChangeValue(_ sender: UISegmentedControl) {
+        updateViews()
+    }
+    
     
     //
     // MARK: - Table view data source
@@ -43,20 +53,17 @@ class SearchResultsTableViewController: UITableViewController {
 
         return cell
     }
-}
-
-extension SearchResultsTableViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func updateViews() {
         var resultType: ResultType!
         switch searchGroupSegmentedControl.selectedSegmentIndex {
-            case 0:
-                resultType = .software
-            case 1:
-                resultType = .musicTrack
-            case 2:
-                resultType = .movie
-            default:
-                resultType = .musicTrack
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            resultType = .musicTrack
         }
         guard let searchTerm = userSearchBar.text else { return }
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {_ in
@@ -64,5 +71,15 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
                 self.tableView.reloadData()
             }
         }
+    }
+}
+
+    //
+    // MARK: - Extensions
+    //
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        updateViews()
     }
 }
