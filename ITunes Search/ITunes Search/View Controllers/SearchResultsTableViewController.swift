@@ -1,5 +1,5 @@
 //
-//  SerachResultsTableViewController.swift
+//  SearchResultsTableViewController.swift
 //  ITunes Search
 //
 //  Created by Sean Acres on 6/18/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SerachResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController {
 
     @IBOutlet weak var entitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -48,10 +48,9 @@ class SerachResultsTableViewController: UITableViewController {
     @IBAction func searchSelectionChanged(_ sender: Any) {
         self.searchBarSearchButtonClicked(searchBar)
     }
-    
 }
 
-extension SerachResultsTableViewController: UISearchBarDelegate {
+extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text, searchBar.text != "" else { return }
         var resultType: ResultType!

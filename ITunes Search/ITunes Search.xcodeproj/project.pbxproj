@@ -63,17 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				66DBDF3022B95EA100239E7D /* AppDelegate.swift */,
-				66DBDF4222B96E4500239E7D /* SearchResult.swift */,
-				66DBDF4422B96F7300239E7D /* ResultType.swift */,
-				66DBDF4A22B985E800239E7D /* CountryCode.swift */,
-				66DBDF4822B9759400239E7D /* SerachResultsTableViewController.swift */,
-				66DBDF4622B96F9E00239E7D /* SearchResultController.swift */,
-				66DBDF3422B95EA100239E7D /* Main.storyboard */,
+				66DBDF4E22B98A1300239E7D /* Storyboards */,
+				66DBDF4C22B989F300239E7D /* Models */,
+				66DBDF4D22B98A0600239E7D /* View Controllers */,
 				66DBDF3722B95EA200239E7D /* Assets.xcassets */,
-				66DBDF3922B95EA200239E7D /* LaunchScreen.storyboard */,
 				66DBDF3C22B95EA200239E7D /* Info.plist */,
 			);
 			path = "ITunes Search";
+			sourceTree = "<group>";
+		};
+		66DBDF4C22B989F300239E7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66DBDF4222B96E4500239E7D /* SearchResult.swift */,
+				66DBDF4622B96F9E00239E7D /* SearchResultController.swift */,
+				66DBDF4422B96F7300239E7D /* ResultType.swift */,
+				66DBDF4A22B985E800239E7D /* CountryCode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66DBDF4D22B98A0600239E7D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66DBDF4822B9759400239E7D /* SerachResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		66DBDF4E22B98A1300239E7D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				66DBDF3422B95EA100239E7D /* Main.storyboard */,
+				66DBDF3922B95EA200239E7D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
