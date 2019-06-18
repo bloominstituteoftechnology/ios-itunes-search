@@ -36,8 +36,10 @@ class SerachResultsTableViewController: UITableViewController {
         
         if let title = result.title {
             cell.textLabel?.text = title
-        } else {
-            cell.textLabel?.text = "Audiobook"
+        }
+        
+        if let collectionName = result.collectionName {
+            cell.textLabel?.text = collectionName
         }
         
         cell.detailTextLabel?.text = result.creator
