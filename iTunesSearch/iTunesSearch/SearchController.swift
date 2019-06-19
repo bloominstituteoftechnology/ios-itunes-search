@@ -13,20 +13,38 @@ class SearchResultControllers {
     var searchResult: [SearchResult] = []
     
     
-func perfomSearch(searchTerm: String, completion: @escaping () -> Void) {
-   var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-    let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-    urlComponents?.queryItems = [searchTermQueryItem]
-    guard let requestURL = urlComponents?.url else {
-        print("request URL is nil")
-        completion()
-        return
-    }
-    let request = URLRequest(url: requestURL)
-    
-           
-    URLSession.shared.dataTask(with: request) { data
-    }
+    func perfomSearch(searchTerm: String, completion: @escaping () -> Void) {
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        urlComponents?.queryItems = [searchTermQueryItem]
+        guard let requestURL = urlComponents?.url else {
+            print("request URL is nil")
+            completion()
+            return
+        }
+        let request = URLRequest(url: requestURL)
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                print("Error fetcing data: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data return from data task")
+                return
+            }
+            let jsonDecoder = JSONDecoder()
+            do {
+                let resultSearch = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResult = resultSearch.results
+                
+            } catch {
+                print("Unable to decode data into object of type [SearchResult]")
+            }
+            completion()
+            }
+            .resume()
     }
     
 }

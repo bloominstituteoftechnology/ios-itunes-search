@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		E820E6F222B9782B00FA79FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E820E6F122B9782B00FA79FD /* AppDelegate.swift */; };
-		E820E6F422B9782B00FA79FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E820E6F322B9782B00FA79FD /* ViewController.swift */; };
 		E820E6F722B9782B00FA79FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E820E6F522B9782B00FA79FD /* Main.storyboard */; };
 		E820E6F922B9782D00FA79FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E820E6F822B9782D00FA79FD /* Assets.xcassets */; };
 		E820E6FC22B9782D00FA79FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E820E6FA22B9782D00FA79FD /* LaunchScreen.storyboard */; };
 		E820E70422B985B300FA79FD /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E820E70322B985B300FA79FD /* SearchResults.swift */; };
 		E820E70622B9941800FA79FD /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E820E70522B9941800FA79FD /* ResultType.swift */; };
 		E820E70822B9949E00FA79FD /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E820E70722B9949E00FA79FD /* SearchController.swift */; };
+		E820E70A22BA815700FA79FD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E820E70922BA815700FA79FD /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E820E6EE22B9782B00FA79FD /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E820E6F122B9782B00FA79FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E820E6F322B9782B00FA79FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E820E6F622B9782B00FA79FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E820E6F822B9782D00FA79FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E820E6FB22B9782D00FA79FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		E820E70322B985B300FA79FD /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		E820E70522B9941800FA79FD /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		E820E70722B9949E00FA79FD /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		E820E70922BA815700FA79FD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 				E820E6F122B9782B00FA79FD /* AppDelegate.swift */,
 				E820E70322B985B300FA79FD /* SearchResults.swift */,
 				E820E70522B9941800FA79FD /* ResultType.swift */,
-				E820E6F322B9782B00FA79FD /* ViewController.swift */,
 				E820E70722B9949E00FA79FD /* SearchController.swift */,
+				E820E70922BA815700FA79FD /* SearchResultsTableViewController.swift */,
 				E820E6F522B9782B00FA79FD /* Main.storyboard */,
 				E820E6F822B9782D00FA79FD /* Assets.xcassets */,
 				E820E6FA22B9782D00FA79FD /* LaunchScreen.storyboard */,
@@ -146,7 +146,7 @@
 			files = (
 				E820E70622B9941800FA79FD /* ResultType.swift in Sources */,
 				E820E70822B9949E00FA79FD /* SearchController.swift in Sources */,
-				E820E6F422B9782B00FA79FD /* ViewController.swift in Sources */,
+				E820E70A22BA815700FA79FD /* SearchResultsTableViewController.swift in Sources */,
 				E820E70422B985B300FA79FD /* SearchResults.swift in Sources */,
 				E820E6F222B9782B00FA79FD /* AppDelegate.swift in Sources */,
 			);

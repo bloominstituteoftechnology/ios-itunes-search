@@ -18,6 +18,6 @@ struct SearchResult: Codable {
     }
 }
 
-struct PersonSearch: Decodable {
+struct SearchResults: Codable {
     let results: [SearchResult]
 }
