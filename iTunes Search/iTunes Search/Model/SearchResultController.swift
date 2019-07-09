@@ -15,6 +15,8 @@ class SearchResultController {
 
     var searchResults: [SearchResult] = []
     
+    
+    
     enum HTTPMethod: String {
         case get = "GET"
         case put = "PUT"
@@ -66,3 +68,5 @@ class SearchResultController {
     }
 
 }
+
+

@@ -68,6 +68,14 @@ class SearchResultsTableViewController: UITableViewController {
             }
         }
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetails" {
+            guard let resultDetailVC = segue.destination as? ResultDetailViewController, let index = tableView.indexPathForSelectedRow else { return }
+            let searchResult = searchResultsController.searchResults[index.row]
+            resultDetailVC.searchResult = searchResult
+        }
+    }
 
     
 
