@@ -21,33 +21,32 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="4vo-Al-YKK">
-                                    <rect key="frame" x="0.0" y="8" width="414" height="92"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4vo-Al-YKK">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yxI-IO-OFE">
-                                            <rect key="frame" x="50" y="0.0" width="314" height="29"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yxI-IO-OFE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <segments>
                                                 <segment title="Apps"/>
                                                 <segment title="Music"/>
                                                 <segment title="Movies"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="searchByCategory:" destination="sFH-SL-w51" eventType="valueChanged" id="Qsw-5K-80N"/>
+                                            </connections>
                                         </segmentedControl>
-                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="opc-cx-pRM">
-                                            <rect key="frame" x="0.0" y="41" width="414" height="51"/>
+                                        <searchBar contentMode="redraw" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" placeholder="Enter search term" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opc-cx-pRM">
+                                            <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="yxI-IO-OFE" firstAttribute="leading" secondItem="4vo-Al-YKK" secondAttribute="leading" constant="50" id="TXJ-Wf-uZe"/>
-                                        <constraint firstAttribute="trailing" secondItem="yxI-IO-OFE" secondAttribute="trailing" constant="50" id="pbe-uf-uYQ"/>
-                                    </constraints>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="4vo-Al-YKK" secondAttribute="bottom" id="3eU-Gz-2a4"/>
                                 <constraint firstAttribute="trailing" secondItem="4vo-Al-YKK" secondAttribute="trailing" id="VbN-jn-fVX"/>
-                                <constraint firstItem="4vo-Al-YKK" firstAttribute="top" secondItem="g3C-TF-iJA" secondAttribute="top" constant="8" id="csx-V0-N9a"/>
+                                <constraint firstItem="4vo-Al-YKK" firstAttribute="top" secondItem="g3C-TF-iJA" secondAttribute="top" id="csx-V0-N9a"/>
                                 <constraint firstItem="4vo-Al-YKK" firstAttribute="leading" secondItem="g3C-TF-iJA" secondAttribute="leading" id="iek-Sz-aCo"/>
                             </constraints>
                         </view>
