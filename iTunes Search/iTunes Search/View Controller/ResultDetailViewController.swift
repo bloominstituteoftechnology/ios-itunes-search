@@ -34,12 +34,14 @@ class ResultDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         self.title = searchResult?.title
+        mediaPreview.layer.cornerRadius = 6.0
+        mediaPreview.clipsToBounds = true
         
     }
     
     
     @IBAction func playVideo(_ sender: UIButton) {
-        guard let url = URL(string: searchResult?.preview?.previewUrl ?? " ") else {
+        guard let url = URL(string: searchResult?.preview ?? " ") else {
             return
         }
         // Create an AVPlayer, passing it the HTTP Live Streaming URL.
@@ -77,7 +79,7 @@ class ResultDetailViewController: UIViewController {
             artworkDisplay.isHidden = true
         } else {
             
-            guard let url = URL(string:searchResult?.artwork?.artworkUrl100 ?? " "),
+            guard let url = URL(string:searchResult?.artwork ?? " "),
                 let artworkData = try? Data(contentsOf: url) else { return }
             artworkDisplay.image = UIImage(data: artworkData)
         }

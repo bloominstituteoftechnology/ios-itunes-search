@@ -13,8 +13,8 @@ struct SearchResult: Codable {
     let creator: String
     let trackTime: Int?
     let kind: String
-    let artwork: Artwork? = nil
-    let preview: Preview? = nil
+    let artwork: String?
+    let preview: String?
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
@@ -25,13 +25,8 @@ struct SearchResult: Codable {
         case preview = "previewUrl"
     }
     
-    struct Artwork: Codable {
-        let artworkUrl100: String
-    }
     
-    struct Preview: Codable {
-        let previewUrl: String
-    }
+    
 }
 
 struct SearchResults: Codable {
