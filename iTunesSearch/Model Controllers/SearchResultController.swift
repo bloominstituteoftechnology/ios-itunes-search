@@ -14,6 +14,7 @@ class SearchResultController {
         
         
         var urlCompontents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        //Key-Value Pair
         let queryItems     = URLQueryItem(name: "term", value: searchTerm)
         let queryItemsType = URLQueryItem(name: "entity", value: resultType.rawValue)
     
@@ -53,6 +54,6 @@ class SearchResultController {
             }
             
         }.resume()
-        print(requestURL)
+        //print(requestURL)
     }
 }

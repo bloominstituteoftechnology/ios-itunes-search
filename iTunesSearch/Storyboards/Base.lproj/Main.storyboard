@@ -28,6 +28,9 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="resultTypeSegmentControlSearch:" destination="KkE-aK-fdy" eventType="valueChanged" id="jrF-Du-JGe"/>
+                                    </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hXA-TR-Nuu">
                                     <rect key="frame" x="0.0" y="78" width="414" height="56"/>

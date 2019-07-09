@@ -14,6 +14,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var resultTypeSegmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
     let searchResultsController = SearchResultController()
     
     let cellID = "ResultsCell"
@@ -23,10 +24,41 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self
+        
     }
 
     
+    
+    @IBAction func resultTypeSegmentControlSearch(_ sender: Any) {
+        
+        guard let searchText = searchBar.text else {return}
+        var resultType: ResultType!
+        let searchType = resultTypeSegmentControl.selectedSegmentIndex
+        
+        //Handles the results returned to the array
+        if searchType == 0 {
+            resultType = .software
+        } else if searchType == 1 {
+            resultType = .musicTrack
+        } else {
+            resultType = .movie
+        }
+        //Dismisses Keyboard
+        self.view.endEditing(true)
+        
+        searchResultsController.performSearch(searchTerm: searchText, resultType: resultType) { (error) in
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //Dissmisses keyboard
+        self.view.endEditing(true)
+        
         guard let searchText = searchBar.text else {return}
         var resultType: ResultType!
         let searchType = resultTypeSegmentControl.selectedSegmentIndex
@@ -45,10 +77,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
         }
-        
-        print(searchResultsController.searchResults)
     }
     
     
@@ -71,5 +100,4 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
         return cell
     }
-   
 }
