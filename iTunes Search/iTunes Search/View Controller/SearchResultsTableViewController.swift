@@ -19,12 +19,9 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         searchBar.delegate = self
+        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       
     }
 
     // MARK: - Table view data source
@@ -50,6 +47,8 @@ class SearchResultsTableViewController: UITableViewController {
     @IBAction func searchByCategory(_ sender: UISegmentedControl) {
         updateSearch()
     }
+    
+    
     
     private func updateSearch() {
         var resultType: ResultType!
@@ -84,7 +83,9 @@ class SearchResultsTableViewController: UITableViewController {
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         updateSearch()
+        searchBar.resignFirstResponder()
     }
+    
     
     
 }
