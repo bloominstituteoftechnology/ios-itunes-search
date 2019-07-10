@@ -34,10 +34,16 @@ class ResultDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         self.title = searchResult?.title
+        adjustLargeTitleSize()
+        
         mediaPreview.layer.cornerRadius = 6.0
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateViews()
+    }
     
     @IBAction func playVideo(_ sender: UIButton) {
         guard let url = URL(string: searchResult?.preview ?? " ") else {
@@ -71,23 +77,43 @@ class ResultDetailViewController: UIViewController {
 //    }
 //
     
+    
 
     
     func updateViews() {
         creatorLabel.text = searchResult?.creator
         kindLabel.text = searchResult?.kind
         
-        
-        let ms = searchResult?.trackTime
-        let runTime = ms?.msToSeconds.minuteSecondMS
-        
+        let runTime = searchResult?.trackTime
         if let runTime = runTime {
-            if runTime.isEmpty {
-                trackTimeLabel.isHidden = true
+        
+        let time = NSDate(timeIntervalSince1970: Double(runTime) / 1000)
+        let formatter = DateFormatter()
+        formatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+        formatter.dateFormat = "HH mm ss SSS"
+            let trackTime = formatter.string(from: time as Date)
+            var timeArray = trackTime.components(separatedBy: " ")
+            if searchResult?.trackTime == nil {
+                    trackTimeLabel.isHidden = true
             } else {
-            trackTimeLabel.text = runTime
+                if Int(timeArray[0]) == 0 {
+                    
+                    trackTimeLabel.text = "\(timeArray[1]) min \(timeArray[2]) sec"
+                } else {
+                    trackTimeLabel.text = "\(timeArray[0]) hr(s) \(timeArray[1]) min \(timeArray[2]) sec"
+                }
             }
-        }
+    }
+//        let ms = searchResult?.trackTime
+//        let runTime = ms?.msToSeconds.minuteSecondMS
+//
+//        if let runTime = runTime {
+//            if runTime.isEmpty {
+//                trackTimeLabel.isHidden = true
+//            } else {
+//            trackTimeLabel.text = runTime
+//            }
+//        }
         
        
         if searchResult?.artwork == nil {
@@ -113,6 +139,7 @@ class ResultDetailViewController: UIViewController {
         
         
         
+        
     }
     
     /*
@@ -127,23 +154,23 @@ class ResultDetailViewController: UIViewController {
 
 }
 
-extension TimeInterval {
-    var minuteSecondMS: String {
-        return String(format:"%d:%02d.%03d", minute, second, millisecond)
-    }
-    var minute: Int {
-        return Int((self/60).truncatingRemainder(dividingBy: 60))
-    }
-    var second: Int {
-        return Int(truncatingRemainder(dividingBy: 60))
-    }
-    var millisecond: Int {
-        return Int((self*1000).truncatingRemainder(dividingBy: 1000))
-    }
-}
 
-extension Int {
-    var msToSeconds: Double {
-        return Double(self) / 1000
+
+extension UIViewController {
+    func adjustLargeTitleSize() {
+        guard let title = title, #available(iOS 11.0, *) else { return }
+        
+        let maxWidth = UIScreen.main.bounds.size.width - 60
+        var fontSize = UIFont.preferredFont(forTextStyle: .largeTitle).pointSize
+        var width = title.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)]).width
+        
+        while width > maxWidth {
+            fontSize -= 1
+            width = title.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)]).width
+        }
+        
+        navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: fontSize)
+        ]
     }
 }
