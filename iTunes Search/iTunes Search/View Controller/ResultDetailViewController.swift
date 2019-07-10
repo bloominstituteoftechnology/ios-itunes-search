@@ -34,8 +34,6 @@ class ResultDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         self.title = searchResult?.title
-        mediaPreview.layer.cornerRadius = 6.0
-        mediaPreview.clipsToBounds = true
         
     }
     
@@ -56,6 +54,22 @@ class ResultDetailViewController: UIViewController {
             player.play()
         }
     }
+    
+//    func createThumbnailOfVideoFromFileURL(videoURL: String) -> UIImage? {
+//        let asset = AVAsset(url: URL(string: videoURL)!)
+//        let assetImgGenerate = AVAssetImageGenerator(asset: asset)
+//        assetImgGenerate.appliesPreferredTrackTransform = true
+//        let time = CMTimeMakeWithSeconds(Float64(1), preferredTimescale: 100)
+//        do {
+//            let img = try assetImgGenerate.copyCGImage(at: time, actualTime: nil)
+//            let thumbnail = UIImage(cgImage: img)
+//            return thumbnail
+//        } catch {
+//            return UIImage(named: "ico_placeholder")
+//        }
+//    }
+//
+    
 
     
     func updateViews() {
@@ -82,11 +96,38 @@ class ResultDetailViewController: UIViewController {
             guard let url = URL(string:searchResult?.artwork ?? " "),
                 let artworkData = try? Data(contentsOf: url) else { return }
             artworkDisplay.image = UIImage(data: artworkData)
+            artworkDisplay.layer.cornerRadius = 6.0
+            artworkDisplay.clipsToBounds = true
         }
         
         if searchResult?.preview == nil {
             mediaPreview.isHidden = true
+        } else {
+            mediaPreview.isHidden = false
+            
+            DispatchQueue.global().async {
+                let imageUrl = URL(string: self.searchResult?.preview ?? " ")
+                let asset = AVAsset(url: imageUrl!)
+                let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+                assetImgGenerate.appliesPreferredTrackTransform = true
+                let time = CMTimeMake(value: 5, timescale: 100)
+                let img = try? assetImgGenerate.copyCGImage(at: time, actualTime: nil)
+                if img != nil {
+                    let frameImg  = UIImage(cgImage: img!)
+                    DispatchQueue.main.async(execute: {
+                        // assign your image to UIImageView
+                        self.mediaPreview.setImage(frameImg, for: .normal)
+                    })
+                } else {
+                    self.mediaPreview.titleLabel?.text = "Play Preview"
+                }
+            }
+            
+            
+            
         }
+        
+        
         
     }
     
