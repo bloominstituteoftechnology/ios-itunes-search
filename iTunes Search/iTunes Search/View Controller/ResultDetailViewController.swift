@@ -93,16 +93,16 @@ class ResultDetailViewController: UIViewController {
         formatter.dateFormat = "HH mm ss SSS"
             let trackTime = formatter.string(from: time as Date)
             var timeArray = trackTime.components(separatedBy: " ")
-            if searchResult?.trackTime == nil {
-                    trackTimeLabel.isHidden = true
-            } else {
+            
                 if Int(timeArray[0]) == 0 {
                     
                     trackTimeLabel.text = "\(timeArray[1]) min \(timeArray[2]) sec"
+                } else if Int(timeArray[0]) == 1 {
+                    trackTimeLabel.text = "\(timeArray[0]) hr \(timeArray[1]) min \(timeArray[2]) sec"
                 } else {
-                    trackTimeLabel.text = "\(timeArray[0]) hr(s) \(timeArray[1]) min \(timeArray[2]) sec"
+                    trackTimeLabel.text = "\(timeArray[0]) hrs \(timeArray[1]) min \(timeArray[2]) sec"
                 }
-            }
+            
     }
 //        let ms = searchResult?.trackTime
 //        let runTime = ms?.msToSeconds.minuteSecondMS
