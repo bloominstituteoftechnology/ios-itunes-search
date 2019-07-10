@@ -34,6 +34,7 @@ class ResultDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         self.title = searchResult?.title
+        mediaPreview.layer.cornerRadius = 6.0
         
     }
     
@@ -105,23 +106,6 @@ class ResultDetailViewController: UIViewController {
         } else {
             mediaPreview.isHidden = false
             
-            DispatchQueue.global().async {
-                let imageUrl = URL(string: self.searchResult?.preview ?? " ")
-                let asset = AVAsset(url: imageUrl!)
-                let assetImgGenerate : AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-                assetImgGenerate.appliesPreferredTrackTransform = true
-                let time = CMTimeMake(value: 5, timescale: 100)
-                let img = try? assetImgGenerate.copyCGImage(at: time, actualTime: nil)
-                if img != nil {
-                    let frameImg  = UIImage(cgImage: img!)
-                    DispatchQueue.main.async(execute: {
-                        // assign your image to UIImageView
-                        self.mediaPreview.setImage(frameImg, for: .normal)
-                    })
-                } else {
-                    self.mediaPreview.titleLabel?.text = "Play Preview"
-                }
-            }
             
             
             

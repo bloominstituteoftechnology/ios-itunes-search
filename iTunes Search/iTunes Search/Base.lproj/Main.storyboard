@@ -104,7 +104,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qp-zP-xuT">
-                                <rect key="frame" x="0.0" y="298" width="414" height="464"/>
+                                <rect key="frame" x="157" y="298" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.13505540460000001" green="0.51922058760000001" blue="0.70247065360000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7gz-cw-puG"/>
+                                    <constraint firstAttribute="height" constant="50" id="kYW-HL-e71"/>
+                                </constraints>
+                                <state key="normal" title="Play Preview">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="playVideo:" destination="wXm-Zy-SAh" eventType="touchUpInside" id="FtI-KS-IuB"/>
                                 </connections>
@@ -122,7 +130,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="A2d-O2-1O7">
                                         <rect key="frame" x="120" y="0.0" width="234" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Creator" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSE-0R-yCx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Creator" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rSE-0R-yCx">
                                                 <rect key="frame" x="0.0" y="0.0" width="234" height="36.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
                                                 <nil key="textColor"/>
@@ -148,12 +156,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Sxh-wN-ACD" firstAttribute="trailing" secondItem="Hpt-j4-NDc" secondAttribute="trailing" constant="30" id="1hJ-MG-BKW"/>
-                            <constraint firstItem="Sxh-wN-ACD" firstAttribute="bottom" secondItem="0qp-zP-xuT" secondAttribute="bottom" constant="100" id="3Bq-Yi-cXN"/>
-                            <constraint firstItem="0qp-zP-xuT" firstAttribute="leading" secondItem="Sxh-wN-ACD" secondAttribute="leading" id="IdE-em-A4N"/>
                             <constraint firstItem="Hpt-j4-NDc" firstAttribute="top" secondItem="Sxh-wN-ACD" secondAttribute="top" constant="8" id="Wz1-mw-Bbq"/>
                             <constraint firstItem="0qp-zP-xuT" firstAttribute="top" secondItem="Hpt-j4-NDc" secondAttribute="bottom" constant="50" id="dTL-wa-037"/>
+                            <constraint firstItem="0qp-zP-xuT" firstAttribute="centerX" secondItem="BH4-hd-KAG" secondAttribute="centerX" id="fud-O5-hEH"/>
                             <constraint firstItem="Hpt-j4-NDc" firstAttribute="leading" secondItem="Sxh-wN-ACD" secondAttribute="leading" constant="30" id="nCT-fT-hCa"/>
-                            <constraint firstItem="Sxh-wN-ACD" firstAttribute="trailing" secondItem="0qp-zP-xuT" secondAttribute="trailing" id="thj-fP-8co"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sxh-wN-ACD"/>
                     </view>
