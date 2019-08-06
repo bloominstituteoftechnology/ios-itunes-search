@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="klN-ra-5Uc">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,6 +31,9 @@
                                                 <segment title="Music"/>
                                                 <segment title="Movies"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="categoryChange:" destination="bBB-3R-FJf" eventType="valueChanged" id="bSX-xi-CkM"/>
+                                            </connections>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NUx-NN-k3Y">
                                             <rect key="frame" x="0.0" y="38" width="414" height="53"/>
@@ -52,7 +55,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Sw7-Af-Sq4" detailTextLabel="eaO-d9-WSI" rowHeight="61" style="IBUITableViewCellStyleSubtitle" id="Bos-67-k1g">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" textLabel="Sw7-Af-Sq4" detailTextLabel="eaO-d9-WSI" rowHeight="61" style="IBUITableViewCellStyleSubtitle" id="Bos-67-k1g">
                                 <rect key="frame" x="0.0" y="129" width="414" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bos-67-k1g" id="4e1-Fh-fFU">
