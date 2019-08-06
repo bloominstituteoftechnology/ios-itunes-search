@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		A29A16F922FA0CAF00B4EA38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A16F822FA0CAF00B4EA38 /* AppDelegate.swift */; };
-		A29A16FB22FA0CAF00B4EA38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A16FA22FA0CAF00B4EA38 /* ViewController.swift */; };
 		A29A16FE22FA0CAF00B4EA38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29A16FC22FA0CAF00B4EA38 /* Main.storyboard */; };
 		A29A170022FA0CAF00B4EA38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29A16FF22FA0CAF00B4EA38 /* Assets.xcassets */; };
 		A29A170322FA0CAF00B4EA38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29A170122FA0CAF00B4EA38 /* LaunchScreen.storyboard */; };
 		A29A170B22FA14C400B4EA38 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A170A22FA14C400B4EA38 /* SearchResult.swift */; };
 		A29A170D22FA173F00B4EA38 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A170C22FA173F00B4EA38 /* ResultType.swift */; };
 		A29A170F22FA184D00B4EA38 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A170E22FA184D00B4EA38 /* SearchResultController.swift */; };
+		A29A171122FA21C800B4EA38 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A171022FA21C800B4EA38 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A29A16F522FA0CAF00B4EA38 /* ios-8-iTunes-search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-8-iTunes-search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29A16F822FA0CAF00B4EA38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A29A16FA22FA0CAF00B4EA38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A29A16FD22FA0CAF00B4EA38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A29A16FF22FA0CAF00B4EA38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A29A170222FA0CAF00B4EA38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		A29A170A22FA14C400B4EA38 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		A29A170C22FA173F00B4EA38 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		A29A170E22FA184D00B4EA38 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		A29A171022FA21C800B4EA38 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				A29A16F822FA0CAF00B4EA38 /* AppDelegate.swift */,
-				A29A16FA22FA0CAF00B4EA38 /* ViewController.swift */,
 				A29A16FC22FA0CAF00B4EA38 /* Main.storyboard */,
 				A29A16FF22FA0CAF00B4EA38 /* Assets.xcassets */,
 				A29A170122FA0CAF00B4EA38 /* LaunchScreen.storyboard */,
+				A29A171022FA21C800B4EA38 /* SearchResultsTableViewController.swift */,
 				A29A170422FA0CAF00B4EA38 /* Info.plist */,
 				A29A170A22FA14C400B4EA38 /* SearchResult.swift */,
 				A29A170C22FA173F00B4EA38 /* ResultType.swift */,
@@ -145,8 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29A170D22FA173F00B4EA38 /* ResultType.swift in Sources */,
-				A29A16FB22FA0CAF00B4EA38 /* ViewController.swift in Sources */,
 				A29A170B22FA14C400B4EA38 /* SearchResult.swift in Sources */,
+				A29A171122FA21C800B4EA38 /* SearchResultsTableViewController.swift in Sources */,
 				A29A16F922FA0CAF00B4EA38 /* AppDelegate.swift in Sources */,
 				A29A170F22FA184D00B4EA38 /* SearchResultController.swift in Sources */,
 			);
