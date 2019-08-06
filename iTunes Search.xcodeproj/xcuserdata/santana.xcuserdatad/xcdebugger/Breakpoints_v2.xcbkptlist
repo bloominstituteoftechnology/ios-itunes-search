@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTunes Search/Controllers/SearchResultController.swift"
-            timestampString = "586819145.262675"
+            timestampString = "586820220.703814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "performSearch(forSearch:ofResult:_:)"
             landmarkType = "7">
          </BreakpointContent>
