@@ -12,6 +12,9 @@
 		F6A2D57422FA15C200CEB08D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6A2D57222FA15C200CEB08D /* Main.storyboard */; };
 		F6A2D57622FA15C200CEB08D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6A2D57522FA15C200CEB08D /* Assets.xcassets */; };
 		F6A2D57922FA15C200CEB08D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6A2D57722FA15C200CEB08D /* LaunchScreen.storyboard */; };
+		F6A2D58622FA199A00CEB08D /* BaseResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D58522FA199A00CEB08D /* BaseResults.swift */; };
+		F6A2D58822FA1C0C00CEB08D /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D58722FA1C0C00CEB08D /* ResultType.swift */; };
+		F6A2D58A22FA1C6200CEB08D /* SeachResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D58922FA1C6200CEB08D /* SeachResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		F6A2D57522FA15C200CEB08D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6A2D57822FA15C200CEB08D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6A2D57A22FA15C200CEB08D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6A2D58522FA199A00CEB08D /* BaseResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResults.swift; sourceTree = "<group>"; };
+		F6A2D58722FA1C0C00CEB08D /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		F6A2D58922FA1C6200CEB08D /* SeachResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 		F6A2D56D22FA15C200CEB08D /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
+				F6A2D58022FA179900CEB08D /* M */,
+				F6A2D58122FA17AB00CEB08D /* V */,
+				F6A2D58222FA17BE00CEB08D /* C */,
 				F6A2D56E22FA15C200CEB08D /* AppDelegate.swift */,
 				F6A2D57022FA15C200CEB08D /* ViewController.swift */,
 				F6A2D57222FA15C200CEB08D /* Main.storyboard */,
@@ -62,6 +71,30 @@
 				F6A2D57A22FA15C200CEB08D /* Info.plist */,
 			);
 			path = "iTunes Search";
+			sourceTree = "<group>";
+		};
+		F6A2D58022FA179900CEB08D /* M */ = {
+			isa = PBXGroup;
+			children = (
+				F6A2D58522FA199A00CEB08D /* BaseResults.swift */,
+				F6A2D58722FA1C0C00CEB08D /* ResultType.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		F6A2D58122FA17AB00CEB08D /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		F6A2D58222FA17BE00CEB08D /* C */ = {
+			isa = PBXGroup;
+			children = (
+				F6A2D58922FA1C6200CEB08D /* SeachResultController.swift */,
+			);
+			path = C;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A2D58822FA1C0C00CEB08D /* ResultType.swift in Sources */,
+				F6A2D58622FA199A00CEB08D /* BaseResults.swift in Sources */,
 				F6A2D57122FA15C200CEB08D /* ViewController.swift in Sources */,
+				F6A2D58A22FA1C6200CEB08D /* SeachResultController.swift in Sources */,
 				F6A2D56F22FA15C200CEB08D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
