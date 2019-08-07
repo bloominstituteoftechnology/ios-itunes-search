@@ -52,7 +52,7 @@ class SearchResultController {
                 
                 let searchResultData = try jsonDecoder.decode(BaseResults.self, from: data)
                 
-                self.searchResults = searchResultData.result
+                self.searchResults = searchResultData.results
                 
                 completion(nil)
             
