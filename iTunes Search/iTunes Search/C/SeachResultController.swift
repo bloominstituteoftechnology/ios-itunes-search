@@ -48,8 +48,9 @@ class SearchResultController {
             
             do {
                 
+                let jsonDecoder = JSONDecoder()
                 
-                let searchResultData = try JSONDecoder().decode(BaseResults.self, from: data)
+                let searchResultData = try jsonDecoder.decode(BaseResults.self, from: data)
                 
                 self.searchResults = searchResultData.result
                 

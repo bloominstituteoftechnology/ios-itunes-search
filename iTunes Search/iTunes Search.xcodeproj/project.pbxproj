@@ -15,6 +15,7 @@
 		F6A2D58622FA199A00CEB08D /* BaseResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D58522FA199A00CEB08D /* BaseResults.swift */; };
 		F6A2D58822FA1C0C00CEB08D /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D58722FA1C0C00CEB08D /* ResultType.swift */; };
 		F6A2D58A22FA1C6200CEB08D /* SeachResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D58922FA1C6200CEB08D /* SeachResultController.swift */; };
+		F6A2D58C22FA412400CEB08D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D58B22FA412400CEB08D /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F6A2D58522FA199A00CEB08D /* BaseResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResults.swift; sourceTree = "<group>"; };
 		F6A2D58722FA1C0C00CEB08D /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		F6A2D58922FA1C6200CEB08D /* SeachResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachResultController.swift; sourceTree = "<group>"; };
+		F6A2D58B22FA412400CEB08D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		F6A2D58122FA17AB00CEB08D /* V */ = {
 			isa = PBXGroup;
 			children = (
+				F6A2D58B22FA412400CEB08D /* SearchResultsTableViewController.swift */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				F6A2D58822FA1C0C00CEB08D /* ResultType.swift in Sources */,
 				F6A2D58622FA199A00CEB08D /* BaseResults.swift in Sources */,
+				F6A2D58C22FA412400CEB08D /* SearchResultsTableViewController.swift in Sources */,
 				F6A2D57122FA15C200CEB08D /* ViewController.swift in Sources */,
 				F6A2D58A22FA1C6200CEB08D /* SeachResultController.swift in Sources */,
 				F6A2D56F22FA15C200CEB08D /* AppDelegate.swift in Sources */,
