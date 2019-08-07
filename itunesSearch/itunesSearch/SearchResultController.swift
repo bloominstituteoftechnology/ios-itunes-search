@@ -16,13 +16,15 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?)-> Void){
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        components?.queryItems = [searchQueryItem]
+        let searchQueryItem2 = URLQueryItem(name: "media", value: resultType.rawValue)
+        components?.queryItems = [searchQueryItem, searchQueryItem2]
+        
         guard let requestURL = components?.url else{
             NSLog("Request URL is nil")
             completion(NSError())
             return
         }
-        
+        print(requestURL)
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         URLSession.shared.dataTask(with: request) { (data, _, error) in
