@@ -10,85 +10,89 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
 
+	// MARK: - IBOutlets
+
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	@IBOutlet weak var searchBar: UISearchBar!
 
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	// MARK: - Properties
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+	private var searchResultsController = SearchResultController()
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+	// MARK: - Life Cycle
 
-    // MARK: - Table view data source
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+		searchBar.delegate = self
+	}
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+	// MARK: - IBActions
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+	@IBAction func categoryChange(_ sender: Any) {
+		searchMode()
+	}
+		// MARK: - Helpers
 
-        // Configure the cell...
+		private func searchMode() {
+			guard let searchText = searchBar.optionalText else { return }
+			var resultType: ResultType {
+				switch segmentedControl.selectedSegmentIndex {
+				case 0:
+					return ResultType.app
+				case 1:
+					return ResultType.music
+				case 2:
+					return ResultType.movie
+				default:
+					return ResultType.all
+				}
+			}
 
-        return cell
-    }
-    */
+			searchResultsController.performSearch(forSearch: searchText, ofResult: resultType) { (error) in
+				if let _ = error {	} else {
+					DispatchQueue.main.async {
+						self.tableView.reloadData()
+					}
+				}
+			}
+		}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+		// MARK: - Table view data source
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+		//    override func numberOfSections(in tableView: UITableView) -> Int {
+		//        // #warning Incomplete implementation, return the number of sections
+		//        return 0
+		//    }
 
-    }
-    */
+		override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+			// #warning Incomplete implementation, return the number of rows
+			return searchResultsController.searchResults.count
+		}
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
-    /*
-    // MARK: - Navigation
+		override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+			let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+			let result = searchResultsController.searchResults[indexPath.row]
+			cell.textLabel?.text = result.title
+			cell.detailTextLabel?.text = result.creator
 
+			return cell
+		}
+	}
+
+	extension SearchResultsTableViewController: UISearchBarDelegate {
+		func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+			searchMode()
+		}
+	}
+
+	extension UISearchBar {
+		var optionalText: String? {
+			let trimmedText = self.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+			return (trimmedText ?? "").isEmpty ? nil : trimmedText
+		}
 }

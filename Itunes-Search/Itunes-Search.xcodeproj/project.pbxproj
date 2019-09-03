@@ -14,6 +14,9 @@
 		DD0E154D231EC24F0082D908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0E154B231EC24F0082D908 /* LaunchScreen.storyboard */; };
 		DD0E1558231EC2E80082D908 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E1557231EC2E80082D908 /* SearchResult.swift */; };
 		DD0E1562231F040D0082D908 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E1561231F040D0082D908 /* SearchResultsTableViewController.swift */; };
+		DD0E1564231F06D20082D908 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E1563231F06D20082D908 /* ResultType.swift */; };
+		DD0E1567231F0D2F0082D908 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E1566231F0D2F0082D908 /* SearchResultController.swift */; };
+		DD0E1569231F13AA0082D908 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E1568231F13AA0082D908 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		DD0E154E231EC24F0082D908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD0E1557231EC2E80082D908 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		DD0E1561231F040D0082D908 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		DD0E1563231F06D20082D908 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		DD0E1566231F0D2F0082D908 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		DD0E1568231F13AA0082D908 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,11 +48,11 @@
 		DD0E1536231EC24A0082D908 = {
 			isa = PBXGroup;
 			children = (
-				DD0E1560231F03E10082D908 /* Table View Controller */,
+				DD0E1541231EC24A0082D908 /* Itunes-Search */,
 				DD0E1554231EC29A0082D908 /* Models */,
 				DD0E1555231EC2A40082D908 /* Model Controllers */,
 				DD0E1556231EC2AD0082D908 /* View Controllers */,
-				DD0E1541231EC24A0082D908 /* Itunes-Search */,
+				DD0E1560231F03E10082D908 /* Table View Controller */,
 				DD0E1540231EC24A0082D908 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,9 +68,9 @@
 		DD0E1541231EC24A0082D908 /* Itunes-Search */ = {
 			isa = PBXGroup;
 			children = (
+				DD0E1546231EC24A0082D908 /* Main.storyboard */,
 				DD0E1542231EC24A0082D908 /* AppDelegate.swift */,
 				DD0E1544231EC24A0082D908 /* ViewController.swift */,
-				DD0E1546231EC24A0082D908 /* Main.storyboard */,
 				DD0E1549231EC24F0082D908 /* Assets.xcassets */,
 				DD0E154B231EC24F0082D908 /* LaunchScreen.storyboard */,
 				DD0E154E231EC24F0082D908 /* Info.plist */,
@@ -75,6 +81,9 @@
 		DD0E1554231EC29A0082D908 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD0E1563231F06D20082D908 /* ResultType.swift */,
+				DD0E1557231EC2E80082D908 /* SearchResult.swift */,
+				DD0E1568231F13AA0082D908 /* Enums.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -82,7 +91,7 @@
 		DD0E1555231EC2A40082D908 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD0E1557231EC2E80082D908 /* SearchResult.swift */,
+				DD0E1566231F0D2F0082D908 /* SearchResultController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -173,8 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0E1567231F0D2F0082D908 /* SearchResultController.swift in Sources */,
+				DD0E1564231F06D20082D908 /* ResultType.swift in Sources */,
 				DD0E1562231F040D0082D908 /* SearchResultsTableViewController.swift in Sources */,
 				DD0E1545231EC24A0082D908 /* ViewController.swift in Sources */,
+				DD0E1569231F13AA0082D908 /* Enums.swift in Sources */,
 				DD0E1558231EC2E80082D908 /* SearchResult.swift in Sources */,
 				DD0E1543231EC24A0082D908 /* AppDelegate.swift in Sources */,
 			);
