@@ -19,6 +19,6 @@ struct SearchResult: Codable {
     let creator: String
 }
 
-struct SearchResults {
+struct SearchResults: Codable {
     let results: [SearchResult]
 }
