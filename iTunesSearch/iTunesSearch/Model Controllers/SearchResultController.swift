@@ -15,10 +15,12 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         let fullRequestURL = baseURL.appendingPathComponent("search")
         var components = URLComponents(url: fullRequestURL, resolvingAgainstBaseURL: true)
-        let searchItem = URLQueryItem(name: "term", value: searchTerm)
-        components?.queryItems = [searchItem]
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+      // ⚠️  let typeOfQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        components?.queryItems = [searchQueryItem]
         
         guard let requestURL = components?.url else {
+            //⚠️ completion(nil, NSError())
             return
         }
         var request = URLRequest(url: requestURL)
