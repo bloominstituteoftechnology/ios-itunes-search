@@ -60,14 +60,12 @@
 		385DDE81231EF5FD0050A855 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				385DDE82231EF5FD0050A855 /* AppDelegate.swift */,
-				385DDE86231EF5FD0050A855 /* Main.storyboard */,
-				385DDE89231EF5FF0050A855 /* Assets.xcassets */,
-				385DDE8B231EF5FF0050A855 /* LaunchScreen.storyboard */,
-				385DDE8E231EF5FF0050A855 /* Info.plist */,
 				385DDE96231EFA160050A855 /* Model */,
-				385DDE97231EFA2C0050A855 /* ResultType.swift */,
-				385DDE9B231F06390050A855 /* SearchResultsTableViewController.swift */,
+				385DDE9D231F06720050A855 /* View Controllers */,
+				385DDE9E231F06820050A855 /* Storyboards */,
+				385DDE82231EF5FD0050A855 /* AppDelegate.swift */,
+				385DDE89231EF5FF0050A855 /* Assets.xcassets */,
+				385DDE8E231EF5FF0050A855 /* Info.plist */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -77,8 +75,26 @@
 			children = (
 				385DDE94231EF7550050A855 /* SearchResult.swift */,
 				385DDE99231EFAB90050A855 /* SearchResultsController.swift */,
+				385DDE97231EFA2C0050A855 /* ResultType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		385DDE9D231F06720050A855 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				385DDE9B231F06390050A855 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		385DDE9E231F06820050A855 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				385DDE86231EF5FD0050A855 /* Main.storyboard */,
+				385DDE8B231EF5FF0050A855 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

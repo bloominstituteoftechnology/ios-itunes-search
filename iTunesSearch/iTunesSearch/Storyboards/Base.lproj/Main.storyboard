@@ -12,7 +12,7 @@
         <!--iTunes Search-->
         <scene sceneID="gSF-cJ-Xi5">
             <objects>
-                <tableViewController id="vur-kp-LkR" sceneMemberID="viewController">
+                <tableViewController id="vur-kp-LkR" customClass="SearchResultsTableViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qQR-WT-trD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,9 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="segmentedControlChanged:" destination="vur-kp-LkR" eventType="valueChanged" id="jT8-PW-ONL"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,6 +79,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="nS1-x2-XAH"/>
+                    <connections>
+                        <outlet property="searchBar" destination="nAr-qw-c1o" id="pwd-o1-3E4"/>
+                        <outlet property="segmentedControl" destination="BWo-ZD-v2G" id="nvE-jN-O4z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAv-Tg-D5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

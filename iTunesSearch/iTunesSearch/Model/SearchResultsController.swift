@@ -10,22 +10,22 @@ import Foundation
 
 class SearchResultsController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     var searchResults: [SearchResult] = []
     
-    func preformSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func preformSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
-        let appendSearchURL = baseURL.appendingPathComponent("search")
         
-        var components = URLComponents(url: appendSearchURL, resolvingAgainstBaseURL: true)
+        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
-        let searchItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTypeQueuryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        components?.queryItems = [searchItem]
+        components?.queryItems = [resultTypeQueuryItem, searchItem]
         
         guard let requestURL = components?.url else {
-            completion(nil)
+            NSLog("Error unwrapping request URL")
             return
         
         }
@@ -49,14 +49,13 @@ class SearchResultsController {
             }
             
             // decode the data
+             let decoder = JSONDecoder()
+            
             do {
                 
-                let decoder = JSONDecoder()
-                
-                let resultOfSearch = try decoder.decode(SearchResult.self, from: data)
-                
-                #warning("This could not be right lmao")
-                self.searchResults = [resultOfSearch]
+                let resultOfSearch = try decoder.decode(SearchResults.self, from: data)
+            
+                self.searchResults = resultOfSearch.results
                 completion(nil)
                 
             } catch {
@@ -66,8 +65,10 @@ class SearchResultsController {
             completion(nil)
             
         }.resume()
-        
+
     }
+    
+    
     enum HTTPMethod: String {
         case get = "GET"
         case put = "PUT"
