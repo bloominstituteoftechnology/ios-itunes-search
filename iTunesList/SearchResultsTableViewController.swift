@@ -13,6 +13,8 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let searchResultController = SearchResultController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
