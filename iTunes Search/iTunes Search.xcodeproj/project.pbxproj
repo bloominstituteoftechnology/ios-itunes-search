@@ -14,7 +14,7 @@
 		0E51A32E231EFD33004AA9B4 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51A32D231EFD33004AA9B4 /* SearchResult.swift */; };
 		0E51A330231EFE91004AA9B4 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51A32F231EFE91004AA9B4 /* ResultType.swift */; };
 		0E51A332231EFEFD004AA9B4 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51A331231EFEFD004AA9B4 /* SearchResultController.swift */; };
-		0E51A338231F0E4B004AA9B4 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51A337231F0E4B004AA9B4 /* SearchTableViewController.swift */; };
+		0E51A338231F0E4B004AA9B4 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51A337231F0E4B004AA9B4 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		0E51A32D231EFD33004AA9B4 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		0E51A32F231EFE91004AA9B4 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		0E51A331231EFEFD004AA9B4 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
-		0E51A337231F0E4B004AA9B4 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		0E51A337231F0E4B004AA9B4 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		0E51A336231F0D38004AA9B4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0E51A337231F0E4B004AA9B4 /* SearchTableViewController.swift */,
+				0E51A337231F0E4B004AA9B4 /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			files = (
 				0E51A330231EFE91004AA9B4 /* ResultType.swift in Sources */,
 				0E51A32E231EFD33004AA9B4 /* SearchResult.swift in Sources */,
-				0E51A338231F0E4B004AA9B4 /* SearchTableViewController.swift in Sources */,
+				0E51A338231F0E4B004AA9B4 /* SearchResultsTableViewController.swift in Sources */,
 				0E51A31B231EF59B004AA9B4 /* AppDelegate.swift in Sources */,
 				0E51A332231EFEFD004AA9B4 /* SearchResultController.swift in Sources */,
 			);

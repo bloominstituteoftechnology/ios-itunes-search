@@ -12,7 +12,7 @@
         <!--iTunes Search-->
         <scene sceneID="AEP-rJ-e2S">
             <objects>
-                <tableViewController id="A6C-0Y-nZm" sceneMemberID="viewController">
+                <tableViewController id="A6C-0Y-nZm" customClass="SearchResultsTableViewController" customModule="iTunes_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Ui-e9-WA0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,22 +21,25 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="WCo-gT-WDg">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WCo-gT-WDg">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pMG-NA-mxf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pMG-NA-mxf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                             <segments>
                                                 <segment title="Apps"/>
                                                 <segment title="Music"/>
                                                 <segment title="Movies"/>
                                             </segments>
                                         </segmentedControl>
-                                        <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edn-Ms-8mZ">
+                                        <searchBar contentMode="redraw" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edn-Ms-8mZ">
                                             <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="edn-Ms-8mZ" firstAttribute="top" secondItem="pMG-NA-mxf" secondAttribute="bottom" constant="8" id="CJ3-Ha-zc4"/>
+                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,6 +82,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="LTa-fL-VqY"/>
+                    <connections>
+                        <outlet property="itemSearchBar" destination="edn-Ms-8mZ" id="5cW-ea-8fy"/>
+                        <outlet property="typeSegmentedControl" destination="pMG-NA-mxf" id="SlP-Tb-grm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEi-IT-JoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
