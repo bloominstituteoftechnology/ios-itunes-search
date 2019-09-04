@@ -15,6 +15,7 @@
 		451F69E5231EFE4900B19E07 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F69E4231EFE4900B19E07 /* SearchResult.swift */; };
 		451F69E7231F115100B19E07 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F69E6231F115100B19E07 /* Result.swift */; };
 		451F69E9231F146A00B19E07 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F69E8231F146A00B19E07 /* SearchResultController.swift */; };
+		451F69EB231FF3AB00B19E07 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F69EA231FF3AB00B19E07 /* PersonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		451F69E4231EFE4900B19E07 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		451F69E6231F115100B19E07 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		451F69E8231F146A00B19E07 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		451F69EA231FF3AB00B19E07 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		451F69C4231EF46D00B19E07 = {
 			isa = PBXGroup;
 			children = (
+				451F69EA231FF3AB00B19E07 /* PersonTableViewCell.swift */,
 				451F69E8231F146A00B19E07 /* SearchResultController.swift */,
 				451F69E6231F115100B19E07 /* Result.swift */,
 				451F69E4231EFE4900B19E07 /* SearchResult.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451F69EB231FF3AB00B19E07 /* PersonTableViewCell.swift in Sources */,
 				451F69D1231EF46D00B19E07 /* AppDelegate.swift in Sources */,
 				451F69E5231EFE4900B19E07 /* SearchResult.swift in Sources */,
 				451F69E7231F115100B19E07 /* Result.swift in Sources */,
