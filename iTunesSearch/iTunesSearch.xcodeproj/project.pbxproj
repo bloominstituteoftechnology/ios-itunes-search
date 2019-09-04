@@ -16,6 +16,7 @@
 		385DDE9A231EFAB90050A855 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDE99231EFAB90050A855 /* SearchResultsController.swift */; };
 		385DDE9C231F06390050A855 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDE9B231F06390050A855 /* SearchResultsTableViewController.swift */; };
 		385DDEA0231F62A00050A855 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDE9F231F62A00050A855 /* Country.swift */; };
+		385DDEA3231F69360050A855 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDEA2231F69360050A855 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		385DDE99231EFAB90050A855 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		385DDE9B231F06390050A855 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		385DDE9F231F62A00050A855 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		385DDEA2231F69360050A855 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				385DDE96231EFA160050A855 /* Model */,
+				385DDEA4231F693B0050A855 /* CustomView */,
 				385DDE9D231F06720050A855 /* View Controllers */,
 				385DDE9E231F06820050A855 /* Storyboards */,
 				385DDE82231EF5FD0050A855 /* AppDelegate.swift */,
@@ -106,6 +109,14 @@
 				385DDE9F231F62A00050A855 /* Country.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		385DDEA4231F693B0050A855 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				385DDEA2231F69360050A855 /* CustomTableViewCell.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				385DDE98231EFA2C0050A855 /* ResultType.swift in Sources */,
 				385DDE95231EF7550050A855 /* SearchResult.swift in Sources */,
 				385DDE9C231F06390050A855 /* SearchResultsTableViewController.swift in Sources */,
+				385DDEA3231F69360050A855 /* CustomTableViewCell.swift in Sources */,
 				385DDE9A231EFAB90050A855 /* SearchResultsController.swift in Sources */,
 				385DDEA0231F62A00050A855 /* Country.swift in Sources */,
 				385DDE83231EF5FD0050A855 /* AppDelegate.swift in Sources */,

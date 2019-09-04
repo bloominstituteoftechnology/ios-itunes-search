@@ -14,11 +14,13 @@ struct SearchResult: Codable {
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case creator = "artistName"
+        case country = "country"
     }
     
     let title: String
     let creator: String
-    
+    let country: String
+
 }
 
 struct SearchResults: Codable {
