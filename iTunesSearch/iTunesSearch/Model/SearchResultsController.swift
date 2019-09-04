@@ -14,15 +14,17 @@ class SearchResultsController {
     
     var searchResults: [SearchResult] = []
     
-    func preformSearch(with searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func preformSearch(with searchTerm: String, resultType: ResultType, country: Country, searchLimit: Int, completion: @escaping (Error?) -> Void) {
         
         
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
+        let setLimit = URLQueryItem(name: "limit", value: String(searchLimit))
+        let countrySearchTerm = URLQueryItem(name: "country", value: country.rawValue)
         let searchItem = URLQueryItem(name: "term", value: searchTerm)
         let resultTypeQueuryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        components?.queryItems = [resultTypeQueuryItem, searchItem]
+        components?.queryItems = [resultTypeQueuryItem, countrySearchTerm, setLimit, searchItem]
         
         guard let requestURL = components?.url else {
             NSLog("Error unwrapping request URL")

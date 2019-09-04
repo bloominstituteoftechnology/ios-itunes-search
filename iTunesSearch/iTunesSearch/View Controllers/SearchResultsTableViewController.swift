@@ -10,6 +10,7 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
     
+    @IBOutlet weak var countrySegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -44,7 +45,26 @@ class SearchResultsTableViewController: UITableViewController {
         setViews()
     }
     
+    @IBAction func countrySegmentedControlChanged(_ sender: UISegmentedControl) {
+        setViews()
+    }
+    
+    
+    
     func setViews() {
+        
+        var country: Country!
+        
+        switch countrySegmentedControl.selectedSegmentIndex {
+        case 0:
+            country = .us
+        case 1:
+            country = .mexico
+        case 2:
+            country = .france
+        default:
+            break
+        }
         
         var resultType: ResultType!
         
@@ -61,7 +81,7 @@ class SearchResultsTableViewController: UITableViewController {
         
         guard let searchBarText = searchBar.text else {return}
         
-        searchController.preformSearch(with: searchBarText, resultType: resultType) { _ in
+        searchController.preformSearch(with: searchBarText, resultType: resultType, country: country, searchLimit: 5) { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

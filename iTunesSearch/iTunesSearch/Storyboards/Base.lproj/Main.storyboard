@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="qqa-e6-AQq">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nAr-qw-c1o">
-                                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                    <rect key="frame" x="0.0" y="80" width="414" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BWo-ZD-v2G">
-                                    <rect key="frame" x="20" y="8" width="374" height="29"/>
+                                    <rect key="frame" x="20" y="44" width="374" height="29"/>
                                     <segments>
                                         <segment title="Apps"/>
                                         <segment title="Music"/>
@@ -36,20 +36,34 @@
                                         <action selector="segmentedControlChanged:" destination="vur-kp-LkR" eventType="valueChanged" id="jT8-PW-ONL"/>
                                     </connections>
                                 </segmentedControl>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pw0-lu-w0N">
+                                    <rect key="frame" x="20" y="8" width="374" height="29"/>
+                                    <segments>
+                                        <segment title="United States"/>
+                                        <segment title="Mexico"/>
+                                        <segment title="France"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="countrySegmentedControlChanged:" destination="vur-kp-LkR" eventType="valueChanged" id="9Cc-NI-ZjW"/>
+                                    </connections>
+                                </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="nAr-qw-c1o" firstAttribute="top" secondItem="BWo-ZD-v2G" secondAttribute="bottom" constant="8" id="6R7-hT-Tm9"/>
-                                <constraint firstItem="nAr-qw-c1o" firstAttribute="leading" secondItem="qqa-e6-AQq" secondAttribute="leading" id="Dch-Vn-1PY"/>
-                                <constraint firstItem="BWo-ZD-v2G" firstAttribute="top" secondItem="qqa-e6-AQq" secondAttribute="top" constant="8" id="Iz3-eP-OeA"/>
-                                <constraint firstItem="BWo-ZD-v2G" firstAttribute="leading" secondItem="qqa-e6-AQq" secondAttribute="leading" constant="20" id="b5O-5U-kC9"/>
-                                <constraint firstAttribute="trailing" secondItem="BWo-ZD-v2G" secondAttribute="trailing" constant="20" id="eh6-z5-QMV"/>
-                                <constraint firstAttribute="trailing" secondItem="nAr-qw-c1o" secondAttribute="trailing" id="yli-n1-CCf"/>
+                                <constraint firstItem="nAr-qw-c1o" firstAttribute="leading" secondItem="qqa-e6-AQq" secondAttribute="leading" id="5ru-VZ-GZb"/>
+                                <constraint firstItem="BWo-ZD-v2G" firstAttribute="leading" secondItem="qqa-e6-AQq" secondAttribute="leading" constant="20" id="8ZL-m0-jMU"/>
+                                <constraint firstAttribute="trailing" secondItem="Pw0-lu-w0N" secondAttribute="trailing" constant="20" id="Qbz-R1-KN3"/>
+                                <constraint firstItem="Pw0-lu-w0N" firstAttribute="leading" secondItem="qqa-e6-AQq" secondAttribute="leading" constant="20" id="VOE-rS-GnG"/>
+                                <constraint firstAttribute="trailing" secondItem="nAr-qw-c1o" secondAttribute="trailing" id="a3n-zr-eGY"/>
+                                <constraint firstItem="Pw0-lu-w0N" firstAttribute="top" secondItem="qqa-e6-AQq" secondAttribute="top" constant="8" id="cXP-ko-VwL"/>
+                                <constraint firstItem="BWo-ZD-v2G" firstAttribute="top" secondItem="Pw0-lu-w0N" secondAttribute="bottom" constant="8" id="kVy-Cp-v1f"/>
+                                <constraint firstAttribute="trailing" secondItem="BWo-ZD-v2G" secondAttribute="trailing" constant="20" id="oDw-6e-hbI"/>
+                                <constraint firstItem="nAr-qw-c1o" firstAttribute="top" secondItem="BWo-ZD-v2G" secondAttribute="bottom" constant="8" id="s7a-f3-Yqi"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="bhY-i2-5RK" detailTextLabel="7zo-fl-DQ2" style="IBUITableViewCellStyleSubtitle" id="FXI-Pf-Sof">
-                                <rect key="frame" x="0.0" y="128" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FXI-Pf-Sof" id="2FQ-28-2Bh">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -80,6 +94,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="nS1-x2-XAH"/>
                     <connections>
+                        <outlet property="countrySegmentedControl" destination="Pw0-lu-w0N" id="SJK-xp-b47"/>
                         <outlet property="searchBar" destination="nAr-qw-c1o" id="pwd-o1-3E4"/>
                         <outlet property="segmentedControl" destination="BWo-ZD-v2G" id="nvE-jN-O4z"/>
                     </connections>

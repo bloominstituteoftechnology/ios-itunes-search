@@ -15,3 +15,5 @@ enum ResultType: String {
     case movie = "movie"
     
 }
+
+

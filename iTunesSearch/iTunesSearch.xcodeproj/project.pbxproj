@@ -15,6 +15,7 @@
 		385DDE98231EFA2C0050A855 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDE97231EFA2C0050A855 /* ResultType.swift */; };
 		385DDE9A231EFAB90050A855 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDE99231EFAB90050A855 /* SearchResultsController.swift */; };
 		385DDE9C231F06390050A855 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDE9B231F06390050A855 /* SearchResultsTableViewController.swift */; };
+		385DDEA0231F62A00050A855 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DDE9F231F62A00050A855 /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		385DDE97231EFA2C0050A855 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		385DDE99231EFAB90050A855 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		385DDE9B231F06390050A855 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		385DDE9F231F62A00050A855 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,7 @@
 			children = (
 				385DDE94231EF7550050A855 /* SearchResult.swift */,
 				385DDE99231EFAB90050A855 /* SearchResultsController.swift */,
-				385DDE97231EFA2C0050A855 /* ResultType.swift */,
+				385DDEA1231F64980050A855 /* Enums */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,6 +97,15 @@
 				385DDE8B231EF5FF0050A855 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		385DDEA1231F64980050A855 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				385DDE97231EFA2C0050A855 /* ResultType.swift */,
+				385DDE9F231F62A00050A855 /* Country.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				385DDE95231EF7550050A855 /* SearchResult.swift in Sources */,
 				385DDE9C231F06390050A855 /* SearchResultsTableViewController.swift in Sources */,
 				385DDE9A231EFAB90050A855 /* SearchResultsController.swift in Sources */,
+				385DDEA0231F62A00050A855 /* Country.swift in Sources */,
 				385DDE83231EF5FD0050A855 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
