@@ -16,11 +16,11 @@ class SearchResultController {
         let fullRequestURL = baseURL.appendingPathComponent("search")
         var components = URLComponents(url: fullRequestURL, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-      // ⚠️  let typeOfQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        components?.queryItems = [searchQueryItem]
+        let typeOfQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        components?.queryItems = [searchQueryItem, typeOfQueryItem]
         
         guard let requestURL = components?.url else {
-            //⚠️ completion(nil, NSError())
+            completion(NSError())
             return
         }
         var request = URLRequest(url: requestURL)
@@ -44,8 +44,7 @@ class SearchResultController {
                 NSLog("Error decoding SearchResults from data: \(error)")
                 completion(error)
             }
-        }
-            
+        }.resume()
     }
     enum HTTPMethod: String {
         case get = "GET"
