@@ -11,10 +11,10 @@ import Foundation
 class SearchResultController {
     
     var searchResults:[SearchResult] = []
-    let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")!
+    let baseURL = URL(string: "https://itunes.apple.com/search?")!
     
-    func performSearch(with searchTerm: String, resultType: ResultType,completion: @escaping() -> Void) {
-        let SearchURL = baseURL.appendingPathComponent("")
+    func performSearch(with searchTerm: String, resultType: ResultType,completion: @escaping(Error?) -> Void) {
+        let SearchURL = baseURL.appendingPathComponent("key1=value1")
         var components = URLComponents(url: SearchURL, resolvingAgainstBaseURL: true)
         let searchItem  = URLQueryItem(name: "search", value: searchTerm)
         components?.queryItems = [searchItem]
