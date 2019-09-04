@@ -9,7 +9,7 @@
 import Foundation
 
 class SearchResultController {
-    let baseURL = URL(string: "https://itunes.apple.com/search?term=yelp&entity=software")!
+    let baseURL = URL(string: "https://itunes.apple.com/search?")!
     
     var searchResults: [SearchResult] = []
     
