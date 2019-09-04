@@ -19,6 +19,11 @@ class SearchResultController {
 
 		urlComponents?.queryItems = [searchTermQI, entityQI]
 
+		if let countryCode = fetchCountryCode() {
+			let countryCodeQI = URLQueryItem(name: "country", value: countryCode)
+			urlComponents?.queryItems?.append(countryCodeQI)
+		}
+
 		guard let requestURL = urlComponents?.url else {
 			NSLog("Request URL is nil")
 			completion(NSError())
@@ -49,4 +54,8 @@ class SearchResultController {
 			completion(nil)
 			}.resume()
 }
+
+	private func fetchCountryCode() -> String? {
+		return Locale.current.regionCode
+	}
 }
