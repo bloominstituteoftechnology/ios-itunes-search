@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fQj-CY-BeU">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--iTunes Search-->
+        <scene sceneID="sbC-1J-OI9">
+            <objects>
+                <viewController id="gGe-X0-Xsa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ag4-c4-PAg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="quG-E4-R9A">
+                                <rect key="frame" x="0.0" y="184" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4XC-Hy-EDv">
+                                <rect key="frame" x="16" y="148" width="382" height="29"/>
+                                <segments>
+                                    <segment title="Apps"/>
+                                    <segment title="Music"/>
+                                    <segment title="Movies"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rw0-Da-bGb">
+                                <rect key="frame" x="0.0" y="240" width="414" height="656"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ebF-bi-8jt">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ebF-bi-8jt" id="7RV-LU-6Ft">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="quG-E4-R9A" firstAttribute="leading" secondItem="JbA-jK-XSA" secondAttribute="leading" id="3Rg-yI-hMt"/>
+                            <constraint firstItem="quG-E4-R9A" firstAttribute="top" secondItem="4XC-Hy-EDv" secondAttribute="bottom" constant="8" id="AYC-gA-waf"/>
+                            <constraint firstItem="rw0-Da-bGb" firstAttribute="leading" secondItem="JbA-jK-XSA" secondAttribute="leading" id="BEe-Kz-KxT"/>
+                            <constraint firstAttribute="bottom" secondItem="rw0-Da-bGb" secondAttribute="bottom" id="Daq-Ee-g0l"/>
+                            <constraint firstItem="rw0-Da-bGb" firstAttribute="trailing" secondItem="JbA-jK-XSA" secondAttribute="trailing" id="GJM-Ec-2ka"/>
+                            <constraint firstItem="4XC-Hy-EDv" firstAttribute="top" secondItem="JbA-jK-XSA" secondAttribute="top" constant="8" id="MeA-FZ-HDa"/>
+                            <constraint firstItem="rw0-Da-bGb" firstAttribute="top" secondItem="quG-E4-R9A" secondAttribute="bottom" id="N9J-62-SXZ"/>
+                            <constraint firstItem="4XC-Hy-EDv" firstAttribute="leading" secondItem="JbA-jK-XSA" secondAttribute="leading" constant="16" id="R6m-06-xec"/>
+                            <constraint firstItem="quG-E4-R9A" firstAttribute="trailing" secondItem="JbA-jK-XSA" secondAttribute="trailing" id="pi2-Xm-3b9"/>
+                            <constraint firstItem="JbA-jK-XSA" firstAttribute="trailing" secondItem="4XC-Hy-EDv" secondAttribute="trailing" constant="16" id="xzg-oN-4sJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JbA-jK-XSA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="g6f-ET-Mqe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1F-Xj-pdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813.04347826086962" y="94.419642857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u3K-hk-yJT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fQj-CY-BeU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4Rb-4k-sNw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gGe-X0-Xsa" kind="relationship" relationship="rootViewController" id="z7e-wC-tDY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3F-1U-qTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="94.419642857142847"/>
+        </scene>
+    </scenes>
+</document>
