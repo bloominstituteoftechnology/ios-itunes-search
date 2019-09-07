@@ -20,7 +20,7 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    private func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
         guard let baseURL = baseURL else {
             completion(nil)
