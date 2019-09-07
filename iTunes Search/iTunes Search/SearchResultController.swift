@@ -21,11 +21,12 @@ class SearchResultController {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+        let resultQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchTermQueryItem, resultQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("request URL is nil")
-            completion(nil)
+            completion(NSError())
             return
         }
         
@@ -34,7 +35,7 @@ class SearchResultController {
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 print("Error fetching data: \(error)")
-                completion(error)
+                completion(NSError())
                 return
             }
             guard let data = data else {
@@ -46,10 +47,10 @@ class SearchResultController {
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = searchResults.results
-                completion(nil)
+                completion(NSError())
             } catch {
                 print("Unable to decode data into search object: \(error)")
-                completion(error)
+                completion(NSError())
             }
         }.resume()
         
