@@ -9,17 +9,23 @@
 import Foundation
 
 class SearchResultController {
-    let baseURL = URL(string: "https://itunes.apple.com/")
+    let baseURL = URL(string: "https://itunes.apple.com/search")
     var searchResults: [SearchResult] = []
+    
+    func clearResults() {
+        searchResults = []
+    }
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         guard let baseURL = baseURL else {
             completion(nil)
             return
         }
-        let queryItem = URLQueryItem(name: resultType.rawValue, value: searchTerm)
         var searchURLComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        searchURLComponents?.queryItems = [queryItem]
+        let queryItems = [URLQueryItem(name: "entity", value: resultType.rawValue),
+                          URLQueryItem(name: "term", value: searchTerm)]
+        
+        searchURLComponents?.queryItems = queryItems
         
         guard let requestURL = searchURLComponents?.url else {
             completion(nil)
