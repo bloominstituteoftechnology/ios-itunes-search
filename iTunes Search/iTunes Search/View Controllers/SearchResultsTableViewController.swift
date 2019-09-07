@@ -33,6 +33,14 @@ class SearchResultsTableViewController: UIViewController {
         tableView.reloadData()
         initiateSearch()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetailSegue" {
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow,
+                let detailVC = segue.destination as? SearchDetailViewController else { return }
+                    detailVC.result = searchResultsController.searchResults[selectedIndexPath.row]
+        }
+    }
 
 }
 

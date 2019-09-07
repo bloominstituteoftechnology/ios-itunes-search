@@ -15,6 +15,7 @@
 		A49380532322741A0015C2A4 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49380522322741A0015C2A4 /* ResultType.swift */; };
 		A4938055232274400015C2A4 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4938054232274400015C2A4 /* SearchResultController.swift */; };
 		A49380582322784A0015C2A4 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49380572322784A0015C2A4 /* SearchResultsTableViewController.swift */; };
+		A4C09B1D2324459A00E87012 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C09B1C2324459A00E87012 /* SearchDetailViewController.swift */; };
 		A4E70542232431A70027FE83 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E70541232431A70027FE83 /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		A49380522322741A0015C2A4 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		A4938054232274400015C2A4 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		A49380572322784A0015C2A4 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		A4C09B1C2324459A00E87012 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		A4E70541232431A70027FE83 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A49380572322784A0015C2A4 /* SearchResultsTableViewController.swift */,
+				A4C09B1C2324459A00E87012 /* SearchDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C09B1D2324459A00E87012 /* SearchDetailViewController.swift in Sources */,
 				A4938055232274400015C2A4 /* SearchResultController.swift in Sources */,
 				A4938051232273060015C2A4 /* SearchResult.swift in Sources */,
 				A4E70542232431A70027FE83 /* SearchResultTableViewCell.swift in Sources */,
