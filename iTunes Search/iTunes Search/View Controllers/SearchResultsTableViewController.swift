@@ -28,6 +28,7 @@ class SearchResultsTableViewController: UIViewController {
         searchTypeTabBar.delegate = self
         searchBar.showsCancelButton = true
         searchTypeTabBar.selectedItem = searchTypeTabBar.items?[0]
+        searchTypeTabBar.frame.size.height = 50
         title = "Apps"
     }
     

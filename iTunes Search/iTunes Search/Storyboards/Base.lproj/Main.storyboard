@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZgI-xN-99G">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZgI-xN-99G">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,14 +21,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jQ4-EP-Trz">
-                                <rect key="frame" x="0.0" y="196" width="414" height="583"/>
+                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="100" id="5Ka-i9-zsG" customClass="SearchResultTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Ka-i9-zsG" id="Htp-P3-gSZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wuc-a3-R93">
@@ -75,42 +73,81 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM0-Os-f4n">
-                                <rect key="frame" x="0.0" y="779" width="414" height="83"/>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvm-KE-ih0">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem title="Apps" image="mobile-7" selectedImage="mobile-7" id="5eP-2q-K0z"/>
-                                    <tabBarItem title="Music" image="music-7" id="mjq-bJ-xwu"/>
-                                    <tabBarItem title="Movies" image="video-player-7" id="dXl-jR-J6y"/>
+                                    <tabBarItem title="Apps" image="mobile-7" id="rSg-QL-SRf"/>
+                                    <tabBarItem title="Music" image="music-7" id="Hgp-Kd-8qZ"/>
+                                    <tabBarItem title="Movies" image="video-player-7" id="UvA-aV-GdX"/>
                                 </items>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kM0-Os-f4n" firstAttribute="leading" secondItem="Rtd-et-H1B" secondAttribute="leading" id="Cwe-Jy-djf"/>
-                            <constraint firstItem="kM0-Os-f4n" firstAttribute="bottom" secondItem="Rtd-et-H1B" secondAttribute="bottom" id="F4c-HD-RH3"/>
-                            <constraint firstItem="kM0-Os-f4n" firstAttribute="trailing" secondItem="Rtd-et-H1B" secondAttribute="trailing" id="FdP-39-4bI"/>
+                            <constraint firstItem="hvm-KE-ih0" firstAttribute="top" secondItem="jQ4-EP-Trz" secondAttribute="bottom" id="4nc-ED-8bg"/>
+                            <constraint firstItem="jQ4-EP-Trz" firstAttribute="trailing" secondItem="Rtd-et-H1B" secondAttribute="trailing" id="CVk-zD-2Cb"/>
+                            <constraint firstItem="hvm-KE-ih0" firstAttribute="leading" secondItem="Rtd-et-H1B" secondAttribute="leading" id="F0E-6o-qcy"/>
+                            <constraint firstItem="jQ4-EP-Trz" firstAttribute="top" secondItem="v1Y-5S-lEa" secondAttribute="bottom" id="G6G-Dh-5CK"/>
                             <constraint firstItem="v1Y-5S-lEa" firstAttribute="top" secondItem="Rtd-et-H1B" secondAttribute="top" id="Kh0-XV-CIk"/>
                             <constraint firstItem="jQ4-EP-Trz" firstAttribute="trailing" secondItem="Rtd-et-H1B" secondAttribute="trailing" id="M4V-6n-ny2"/>
+                            <constraint firstItem="hvm-KE-ih0" firstAttribute="centerX" secondItem="Rtd-et-H1B" secondAttribute="centerX" id="Ql0-c9-5Os"/>
                             <constraint firstItem="jQ4-EP-Trz" firstAttribute="leading" secondItem="Rtd-et-H1B" secondAttribute="leading" id="Tam-X0-BZz"/>
+                            <constraint firstItem="hvm-KE-ih0" firstAttribute="bottom" secondItem="Rtd-et-H1B" secondAttribute="bottom" id="d11-TU-cuY"/>
                             <constraint firstItem="v1Y-5S-lEa" firstAttribute="leading" secondItem="Rtd-et-H1B" secondAttribute="leading" id="kBM-Mm-XcM"/>
-                            <constraint firstItem="jQ4-EP-Trz" firstAttribute="top" secondItem="v1Y-5S-lEa" secondAttribute="bottom" id="kPV-iZ-hGJ"/>
-                            <constraint firstItem="kM0-Os-f4n" firstAttribute="top" secondItem="jQ4-EP-Trz" secondAttribute="bottom" id="o2V-va-moj"/>
+                            <constraint firstItem="jQ4-EP-Trz" firstAttribute="leading" secondItem="Rtd-et-H1B" secondAttribute="leading" id="qn7-Oi-mmg"/>
                             <constraint firstItem="v1Y-5S-lEa" firstAttribute="trailing" secondItem="Rtd-et-H1B" secondAttribute="trailing" id="tBB-vl-xTU"/>
+                            <constraint firstItem="hvm-KE-ih0" firstAttribute="trailing" secondItem="Rtd-et-H1B" secondAttribute="trailing" id="xhS-YP-ldi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rtd-et-H1B"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="BGT-O3-6lp"/>
-                    <navigationItem key="navigationItem" id="lFT-za-dra"/>
+                    <navigationItem key="navigationItem" id="lFT-za-dra">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="mcz-SF-4AA">
+                            <connections>
+                                <segue destination="YB1-6I-R07" kind="popoverPresentation" identifier="FavoritesPopoverSegue" popoverAnchorBarButtonItem="mcz-SF-4AA" id="97U-fk-Du9">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="v1Y-5S-lEa" id="F0T-dh-tEA"/>
-                        <outlet property="searchTypeTabBar" destination="kM0-Os-f4n" id="va0-Nf-Qh9"/>
+                        <outlet property="searchTypeTabBar" destination="hvm-KE-ih0" id="Vhi-7S-wFK"/>
                         <outlet property="tableView" destination="jQ4-EP-Trz" id="BTE-X2-i4G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dR7-2Z-NOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-833.33333333333337" y="81.696428571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="96a-Jy-gja">
+            <objects>
+                <viewController id="YB1-6I-R07" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="06I-gd-XLU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8f-81-dX6">
+                                <rect key="frame" x="20" y="30" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="k8f-81-dX6" firstAttribute="top" secondItem="J9D-UR-Rjl" secondAttribute="top" constant="30" id="GNQ-RA-zu2"/>
+                            <constraint firstItem="k8f-81-dX6" firstAttribute="leading" secondItem="J9D-UR-Rjl" secondAttribute="leading" constant="20" id="cLI-Vs-r0v"/>
+                            <constraint firstItem="J9D-UR-Rjl" firstAttribute="trailing" secondItem="k8f-81-dX6" secondAttribute="trailing" constant="20" id="ovy-9C-MRN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J9D-UR-Rjl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yVD-uw-LRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-833" y="820"/>
         </scene>
         <!--Search Detail View Controller-->
         <scene sceneID="OfD-Ri-Bd6">
