@@ -44,7 +44,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         var resultType: ResultType!
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            resultType = ResultType.software
+            resultType = ResultType.apps
         case 1:
             resultType = ResultType.musicTrack
         case 2:
@@ -54,7 +54,9 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         }
         
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
-            guard error != nil else { return }
+            if error != nil {
+                print("Search failed")
+            }
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()

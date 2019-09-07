@@ -28,17 +28,9 @@ class SearchResultController {
         }
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        switch resultType {
-        case .movie:
-            let movieSearchTermQueryItem = URLQueryItem(name: "movie", value: searchTerm)
-            urlComponents?.queryItems = [movieSearchTermQueryItem]
-        case .musicTrack:
-            let musicSearchTermQueryItem = URLQueryItem(name: "music", value: searchTerm)
-            urlComponents?.queryItems = [musicSearchTermQueryItem]
-        case .software:
-            let softwareSearchTermQueryItem = URLQueryItem(name: "software", value: searchTerm)
-            urlComponents?.queryItems = [softwareSearchTermQueryItem]
-        }
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchTermQueryItem, resultTypeQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("Request URL is nil")
