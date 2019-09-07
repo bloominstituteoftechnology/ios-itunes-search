@@ -11,26 +11,45 @@ import UIKit
 class SearchResultsTableViewController: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var searchTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var searchTypeTabBar: UITabBar!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
     let searchResultsController = SearchResultController()
+    var selectedTabBarItemIndex = 0
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         searchBar.delegate = self
+        searchTypeTabBar.delegate = self
         searchBar.showsCancelButton = true
-        
-        searchTypeSegmentedControl.addTarget(self, action: Selector(("searchTypeValueChanged")), for: .valueChanged)
+        searchTypeTabBar.selectedItem = searchTypeTabBar.items?[0]
+        title = "Apps"
     }
     
+    // MARK: - Functions
     @objc func searchTypeValueChanged() {
         searchResultsController.searchResults = []
         tableView.reloadData()
+        initiateSearch()
+    }
+    
+    func tabBarItemChanged(tabBar: UITabBar, item: UITabBarItem) {
+        if item == tabBar.items?[0] {
+            selectedTabBarItemIndex = 0
+            title = "Apps"
+        } else if item == tabBar.items?[1] {
+            selectedTabBarItemIndex = 1
+            title = "Music"
+        } else if item == tabBar.items?[2] {
+            selectedTabBarItemIndex = 2
+            title = "Movies"
+        }
+        
         initiateSearch()
     }
     
@@ -41,9 +60,9 @@ class SearchResultsTableViewController: UIViewController {
                     detailVC.result = searchResultsController.searchResults[selectedIndexPath.row]
         }
     }
-
 }
 
+// MARK: - UITableViewDelegate Section
 extension SearchResultsTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,6 +71,7 @@ extension SearchResultsTableViewController: UITableViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource Section
 extension SearchResultsTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,6 +89,7 @@ extension SearchResultsTableViewController: UITableViewDataSource {
 
 }
 
+// MARK: - UISearchBarDelegate Section
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -98,7 +119,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         guard let searchText = searchBar.text else { return }
         var resultType: ResultType!
         
-        switch searchTypeSegmentedControl.selectedSegmentIndex {
+        switch selectedTabBarItemIndex{
         case 0:
             resultType = .software
         case 1:
@@ -119,5 +140,13 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             }
         }
         
+    }
+}
+
+// MARK: - UITabBarDelegate Section
+extension SearchResultsTableViewController: UITabBarDelegate {
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        tabBarItemChanged(tabBar: tabBar, item: item)
     }
 }
