@@ -1,70 +1,42 @@
 //
-//  SearchResultsTableViewController.swift
+//  AppStoreSearchViewController.swift
 //  iTunes Search
 //
-//  Created by Eoin Lavery on 06/09/2019.
+//  Created by Eoin Lavery on 08/09/2019.
 //  Copyright © 2019 Eoin Lavery. All rights reserved.
 //
 
 import UIKit
 
-class SearchResultsTableViewController: UIViewController {
+class AppStoreSearchViewController: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var searchTypeTabBar: UITabBar!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
     let searchResultsController = SearchResultController()
-    var selectedTabBarItemIndex = 0
     
-    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.dataSource = self
         searchBar.delegate = self
-        searchTypeTabBar.delegate = self
         searchBar.showsCancelButton = true
-        searchTypeTabBar.selectedItem = searchTypeTabBar.items?[0]
-        searchTypeTabBar.frame.size.height = 50
-        title = "Apps"
-    }
-    
-    // MARK: - Functions
-    @objc func searchTypeValueChanged() {
-        searchResultsController.searchResults = []
-        tableView.reloadData()
-        initiateSearch()
-    }
-    
-    func tabBarItemChanged(tabBar: UITabBar, item: UITabBarItem) {
-        if item == tabBar.items?[0] {
-            selectedTabBarItemIndex = 0
-            title = "Apps"
-        } else if item == tabBar.items?[1] {
-            selectedTabBarItemIndex = 1
-            title = "Music"
-        } else if item == tabBar.items?[2] {
-            selectedTabBarItemIndex = 2
-            title = "Movies"
-        }
-        
-        initiateSearch()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowDetailSegue" {
+        if segue.identifier == "ShowAppSegue" {
             guard let selectedIndexPath = tableView.indexPathForSelectedRow,
                 let detailVC = segue.destination as? SearchDetailViewController else { return }
                     detailVC.result = searchResultsController.searchResults[selectedIndexPath.row]
         }
     }
+    
 }
 
 // MARK: - UITableViewDelegate Section
-extension SearchResultsTableViewController: UITableViewDelegate {
+extension AppStoreSearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -73,7 +45,7 @@ extension SearchResultsTableViewController: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource Section
-extension SearchResultsTableViewController: UITableViewDataSource {
+extension AppStoreSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultsController.searchResults.count
@@ -91,7 +63,7 @@ extension SearchResultsTableViewController: UITableViewDataSource {
 }
 
 // MARK: - UISearchBarDelegate Section
-extension SearchResultsTableViewController: UISearchBarDelegate {
+extension AppStoreSearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         initiateSearch()
@@ -118,20 +90,8 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
     
     func initiateSearch() {
         guard let searchText = searchBar.text else { return }
-        var resultType: ResultType!
         
-        switch selectedTabBarItemIndex{
-        case 0:
-            resultType = .software
-        case 1:
-            resultType = .musicTrack
-        case 2:
-            resultType = .movie
-        default:
-            return
-        }
-        
-        searchResultsController.performSearch(searchTerm: searchText, resultType: resultType) { error in
+        searchResultsController.performSearch(searchTerm: searchText, resultType: .software) { error in
             if let error = error {
                 print("Unable to fetch data: \(error)")
             }
@@ -141,13 +101,5 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             }
         }
         
-    }
-}
-
-// MARK: - UITabBarDelegate Section
-extension SearchResultsTableViewController: UITabBarDelegate {
-    
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        tabBarItemChanged(tabBar: tabBar, item: item)
     }
 }
