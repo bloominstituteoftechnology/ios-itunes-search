@@ -144,25 +144,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uTh-bo-mAr">
-                                <rect key="frame" x="107" y="160" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="8Jc-ij-ctk"/>
-                                    <constraint firstAttribute="height" constant="200" id="9Qf-tB-wh5"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Result Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyv-QQ-c9Q">
-                                <rect key="frame" x="20" y="390" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Result Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkP-Oi-uKN">
-                                <rect key="frame" x="20" y="432" width="374" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="IBB-4i-CJ3">
+                                <rect key="frame" x="20" y="170" width="374" height="296"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uTh-bo-mAr">
+                                        <rect key="frame" x="87" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="8Jc-ij-ctk"/>
+                                            <constraint firstAttribute="height" constant="200" id="9Qf-tB-wh5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ocq-Y1-OLg">
+                                        <rect key="frame" x="68.5" y="227" width="237" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Result Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyv-QQ-c9Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="237" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Result Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkP-Oi-uKN">
+                                                <rect key="frame" x="0.0" y="41.5" width="237" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04n-N4-7kh">
                                 <rect key="frame" x="12" y="743" width="390" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -181,16 +191,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="txw-5R-UjT" firstAttribute="bottom" secondItem="04n-N4-7kh" secondAttribute="bottom" constant="20" id="1hP-Jk-Jhh"/>
-                            <constraint firstItem="SkP-Oi-uKN" firstAttribute="top" secondItem="Iyv-QQ-c9Q" secondAttribute="bottom" constant="8" id="6oh-Ug-aPW"/>
                             <constraint firstItem="04n-N4-7kh" firstAttribute="leading" secondItem="txw-5R-UjT" secondAttribute="leading" constant="12" id="9YW-CK-QAr"/>
                             <constraint firstItem="txw-5R-UjT" firstAttribute="trailing" secondItem="04n-N4-7kh" secondAttribute="trailing" constant="12" id="ExQ-Sw-pmH"/>
-                            <constraint firstItem="txw-5R-UjT" firstAttribute="trailing" secondItem="Iyv-QQ-c9Q" secondAttribute="trailing" constant="20" id="IwS-T5-E4T"/>
-                            <constraint firstItem="Iyv-QQ-c9Q" firstAttribute="top" secondItem="uTh-bo-mAr" secondAttribute="bottom" constant="30" id="NNt-uW-X4T"/>
-                            <constraint firstItem="Iyv-QQ-c9Q" firstAttribute="leading" secondItem="txw-5R-UjT" secondAttribute="leading" constant="20" id="dcl-kc-NiM"/>
-                            <constraint firstItem="uTh-bo-mAr" firstAttribute="centerX" secondItem="txw-5R-UjT" secondAttribute="centerX" id="foC-ls-GYY"/>
-                            <constraint firstItem="SkP-Oi-uKN" firstAttribute="leading" secondItem="txw-5R-UjT" secondAttribute="leading" constant="20" id="pfU-HG-IwY"/>
-                            <constraint firstItem="uTh-bo-mAr" firstAttribute="top" secondItem="txw-5R-UjT" secondAttribute="top" constant="20" id="q4B-fs-J26"/>
-                            <constraint firstItem="txw-5R-UjT" firstAttribute="trailing" secondItem="SkP-Oi-uKN" secondAttribute="trailing" constant="20" id="zdK-5c-7lH"/>
+                            <constraint firstItem="IBB-4i-CJ3" firstAttribute="leading" secondItem="txw-5R-UjT" secondAttribute="leading" constant="20" id="W29-Zx-bsn"/>
+                            <constraint firstItem="txw-5R-UjT" firstAttribute="trailing" secondItem="IBB-4i-CJ3" secondAttribute="trailing" constant="20" id="e5m-dg-qgZ"/>
+                            <constraint firstItem="IBB-4i-CJ3" firstAttribute="top" secondItem="txw-5R-UjT" secondAttribute="top" constant="30" id="vPD-0g-SiM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="txw-5R-UjT"/>
                     </view>

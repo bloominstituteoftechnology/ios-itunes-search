@@ -41,11 +41,11 @@ class SearchDetailViewController: UIViewController {
         
         if let imageURL512 = result.imageURL512 {
             guard let imageURL512 = URL(string: imageURL512) else { return }
-            print(imageURL512)
             searchImageView.load(url: imageURL512)
         } else {
             searchImageView.load(url: imageURL100)
         }
+
     }
     
     func viewURL() {
