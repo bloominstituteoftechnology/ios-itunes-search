@@ -31,6 +31,9 @@
                                                 <segment title="Music"/>
                                                 <segment title="Movies"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="resetSearchByType:" destination="bhO-zp-VMc" eventType="valueChanged" id="gxT-tK-se9"/>
+                                            </connections>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pWQ-16-WxW">
                                             <rect key="frame" x="0.0" y="36" width="390" height="56"/>
@@ -47,7 +50,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="UYX-OE-jcb" detailTextLabel="MzO-un-BBc" style="IBUITableViewCellStyleSubtitle" id="dyt-ao-57K">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" textLabel="UYX-OE-jcb" detailTextLabel="MzO-un-BBc" style="IBUITableViewCellStyleSubtitle" id="dyt-ao-57K">
                                 <rect key="frame" x="0.0" y="128" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dyt-ao-57K" id="XFj-fF-HdB">

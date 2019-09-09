@@ -20,18 +20,17 @@ class SearchResultController {
     }
         
     func performSearch(with searchTerm: String, type resultType: ResultType, completion: @escaping (Error?) -> Void) {
-        guard let baseURL = baseURL else {
-//            completion()
-            return
-        }
-        
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
-        
-        guard let requestUrl = urlComponents?.url else {
+
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "itunes.apple.com"
+        urlComponents.path = "/search"
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let entityItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents.queryItems = [searchTermQueryItem, entityItem]
+        print(urlComponents)
+        guard let requestUrl = urlComponents.url else {
             print("Request URL is nil.")
-//            completion()
             return
         }
         
