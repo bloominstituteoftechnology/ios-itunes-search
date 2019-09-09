@@ -34,7 +34,7 @@ class AppStoreSearchViewController: UIViewController {
             guard let selectedIndexPath = tableView.indexPathForSelectedRow,
                 let detailVC = segue.destination as? SearchDetailViewController else { return }
             detailVC.result = searchResultsController.searchResults[selectedIndexPath.row]
-            detailVC.cornerRadius = 45.0
+            detailVC.cornerRadius = 45.0 
         }
     }
     

@@ -75,10 +75,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjH-qJ-WIk">
-                                                    <rect key="frame" x="344" y="35" width="50" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="avz-6A-OkK"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="357" y="35" width="37" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <state key="normal" title="Store"/>
                                                     <connections>
