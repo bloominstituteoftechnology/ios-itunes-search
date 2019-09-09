@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		95693D052325D2C700F42E1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95693D042325D2C700F42E1B /* AppDelegate.swift */; };
-		95693D072325D2C700F42E1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95693D062325D2C700F42E1B /* ViewController.swift */; };
 		95693D0A2325D2C700F42E1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95693D082325D2C700F42E1B /* Main.storyboard */; };
 		95693D0C2325D2C800F42E1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95693D0B2325D2C800F42E1B /* Assets.xcassets */; };
 		95693D0F2325D2C800F42E1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95693D0D2325D2C800F42E1B /* LaunchScreen.storyboard */; };
 		95693D1C2325D4C100F42E1B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95693D1B2325D4C100F42E1B /* SearchResult.swift */; };
 		95693D1E2325D81200F42E1B /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95693D1D2325D81200F42E1B /* ResultType.swift */; };
 		95693D202325D8BE00F42E1B /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95693D1F2325D8BE00F42E1B /* SearchResultController.swift */; };
+		95693D222325E31200F42E1B /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95693D212325E31200F42E1B /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		95693D012325D2C700F42E1B /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95693D042325D2C700F42E1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95693D062325D2C700F42E1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		95693D092325D2C700F42E1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95693D0B2325D2C800F42E1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95693D0E2325D2C800F42E1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		95693D1B2325D4C100F42E1B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		95693D1D2325D81200F42E1B /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		95693D1F2325D8BE00F42E1B /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		95693D212325E31200F42E1B /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,6 @@
 				95693D172325D34100F42E1B /* View Controllers */,
 				95693D162325D32D00F42E1B /* Storyboards */,
 				95693D042325D2C700F42E1B /* AppDelegate.swift */,
-				95693D062325D2C700F42E1B /* ViewController.swift */,
 				95693D0B2325D2C800F42E1B /* Assets.xcassets */,
 				95693D102325D2C800F42E1B /* Info.plist */,
 			);
@@ -85,6 +84,7 @@
 		95693D172325D34100F42E1B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95693D212325E31200F42E1B /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -185,8 +185,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95693D1E2325D81200F42E1B /* ResultType.swift in Sources */,
-				95693D072325D2C700F42E1B /* ViewController.swift in Sources */,
 				95693D052325D2C700F42E1B /* AppDelegate.swift in Sources */,
+				95693D222325E31200F42E1B /* SearchResultsTableViewController.swift in Sources */,
 				95693D1C2325D4C100F42E1B /* SearchResult.swift in Sources */,
 				95693D202325D8BE00F42E1B /* SearchResultController.swift in Sources */,
 			);
