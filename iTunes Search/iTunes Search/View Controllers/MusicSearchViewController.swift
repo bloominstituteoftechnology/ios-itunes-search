@@ -21,6 +21,8 @@ class MusicSearchViewController: UIViewController {
         super.viewDidLoad()
 
         tableView.dataSource = self
+        tableView.delegate = self
+        
         searchBar.delegate = self
         searchBar.showsCancelButton = true
     }

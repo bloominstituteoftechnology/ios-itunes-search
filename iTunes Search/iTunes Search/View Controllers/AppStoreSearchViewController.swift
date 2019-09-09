@@ -17,19 +17,24 @@ class AppStoreSearchViewController: UIViewController {
     // MARK: - Properties
     let searchResultsController = SearchResultController()
     
+    // MARK: _ viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
+        tableView.delegate = self
+        
         searchBar.delegate = self
         searchBar.showsCancelButton = true
     }
     
+    // MARK: - Prepare For Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowAppSegue" {
             guard let selectedIndexPath = tableView.indexPathForSelectedRow,
                 let detailVC = segue.destination as? SearchDetailViewController else { return }
-                    detailVC.result = searchResultsController.searchResults[selectedIndexPath.row]
+            detailVC.result = searchResultsController.searchResults[selectedIndexPath.row]
+            detailVC.cornerRadius = 45.0
         }
     }
     
@@ -37,11 +42,9 @@ class AppStoreSearchViewController: UIViewController {
 
 // MARK: - UITableViewDelegate Section
 extension AppStoreSearchViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 100.0
     }
-    
 }
 
 // MARK: - UITableViewDataSource Section
@@ -53,10 +56,9 @@ extension AppStoreSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as? SearchResultTableViewCell else { return UITableViewCell() }
-        
         let result = searchResultsController.searchResults[indexPath.row]
         cell.searchResult = result
-        
+        cell.searchImage.layer.cornerRadius = 15.0
         return cell
     }
 
@@ -82,7 +84,6 @@ extension AppStoreSearchViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         guard let firstSubview = searchBar.subviews.first else { return }
-        
         firstSubview.subviews.forEach {
             ($0 as? UITextField)?.clearButtonMode = .never
         }

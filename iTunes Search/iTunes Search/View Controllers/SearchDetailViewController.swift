@@ -19,13 +19,17 @@ class SearchDetailViewController: UIViewController {
     
     // MARK: - Properties
     var result: SearchResult?
+    var cornerRadius: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
-        searchImageView.layer.cornerRadius = 45.0
+        
+        title = "Details"
         viewContentButton.layer.cornerRadius = 10.0
-        title = result?.title
+        updateViews()
+        
+        guard let cornerRadius = cornerRadius else { return }
+        searchImageView.layer.cornerRadius = cornerRadius
     }
     
     func updateViews() {
@@ -33,8 +37,15 @@ class SearchDetailViewController: UIViewController {
         searchTitleLabel?.text = result.title
         searchAuthorLabel?.text = result.creator
         
-        guard let imageURL = URL(string: result.imageURL) else { return }
-        searchImageView?.load(url: imageURL)
+        guard let imageURL100 = URL(string: result.imageURL100) else { return }
+        
+        if let imageURL512 = result.imageURL512 {
+            guard let imageURL512 = URL(string: imageURL512) else { return }
+            print(imageURL512)
+            searchImageView.load(url: imageURL512)
+        } else {
+            searchImageView.load(url: imageURL100)
+        }
     }
     
     func viewURL() {
