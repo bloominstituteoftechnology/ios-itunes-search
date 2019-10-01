@@ -24,9 +24,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         searchBar.delegate = self
     }
     
-    //MARK: Search Bar Delegate
+    //MARK: Private
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    private func search() {
         guard let searchTerm = searchBar.text,
             searchTerm != "" else { return }
         
@@ -50,6 +50,12 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             }
         }
     }
+    
+    //MARK: Search Bar Delegate
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        search()
+    }
 
     //MARK: Table view data source
 
@@ -66,5 +72,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
         return cell
     }
-
+    
+    //MARK: Actions
+    
+    @IBAction func categoryChanged(_ sender: UISegmentedControl) {
+        search()
+    }
+    
 }

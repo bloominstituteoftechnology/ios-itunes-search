@@ -29,6 +29,9 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="categoryChanged:" destination="Czg-as-Y16" eventType="valueChanged" id="k9d-ZB-4hc"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
