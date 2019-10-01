@@ -26,7 +26,7 @@
                                     <segments>
                                         <segment title="Apps"/>
                                         <segment title="Music"/>
-                                        <segment title="Moves"/>
+                                        <segment title="Movies"/>
                                     </segments>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="x4v-V5-l3B">
@@ -50,7 +50,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="oUI-BT-dxa" detailTextLabel="FHd-I4-c53" style="IBUITableViewCellStyleSubtitle" id="YZV-yW-4dZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" textLabel="oUI-BT-dxa" detailTextLabel="FHd-I4-c53" style="IBUITableViewCellStyleSubtitle" id="YZV-yW-4dZ" customClass="SearchResultsTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="118" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YZV-yW-4dZ" id="L5G-Yn-M15">
@@ -73,6 +73,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="artistName" destination="FHd-I4-c53" id="Lkj-Ce-skg"/>
+                                    <outlet property="titleName" destination="oUI-BT-dxa" id="lxb-rR-pxZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
