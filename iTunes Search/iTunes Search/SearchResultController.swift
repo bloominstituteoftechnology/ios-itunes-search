@@ -37,7 +37,7 @@ class SearchResultController {
             }
             
             guard let data = data else {
-                completion("No data returned from search." as? Error)
+                completion(NSError())
                 return
             }
             

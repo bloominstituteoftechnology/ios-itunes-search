@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		599FFDF42343E84E004AB19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599FFDF32343E84E004AB19E /* AppDelegate.swift */; };
 		599FFDF62343E84E004AB19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599FFDF52343E84E004AB19E /* SceneDelegate.swift */; };
-		599FFDF82343E84E004AB19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599FFDF72343E84E004AB19E /* ViewController.swift */; };
 		599FFDFB2343E84E004AB19E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599FFDF92343E84E004AB19E /* Main.storyboard */; };
 		599FFDFD2343E84F004AB19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 599FFDFC2343E84F004AB19E /* Assets.xcassets */; };
 		599FFE002343E84F004AB19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599FFDFE2343E84F004AB19E /* LaunchScreen.storyboard */; };
 		599FFE082343E8CA004AB19E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599FFE072343E8CA004AB19E /* SearchResult.swift */; };
 		599FFE0A2343EAA5004AB19E /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599FFE092343EAA5004AB19E /* ResultType.swift */; };
 		599FFE0C2343EAE5004AB19E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599FFE0B2343EAE5004AB19E /* SearchResultController.swift */; };
+		599FFE0E2343F6BF004AB19E /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599FFE0D2343F6BF004AB19E /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		599FFDF02343E84E004AB19E /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		599FFDF32343E84E004AB19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		599FFDF52343E84E004AB19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		599FFDF72343E84E004AB19E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		599FFDFA2343E84E004AB19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		599FFDFC2343E84F004AB19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		599FFDFF2343E84F004AB19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		599FFE072343E8CA004AB19E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		599FFE092343EAA5004AB19E /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		599FFE0B2343EAE5004AB19E /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		599FFE0D2343F6BF004AB19E /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 				599FFE072343E8CA004AB19E /* SearchResult.swift */,
 				599FFE092343EAA5004AB19E /* ResultType.swift */,
 				599FFE0B2343EAE5004AB19E /* SearchResultController.swift */,
-				599FFDF72343E84E004AB19E /* ViewController.swift */,
+				599FFE0D2343F6BF004AB19E /* SearchResultsTableViewController.swift */,
 				599FFDF92343E84E004AB19E /* Main.storyboard */,
 				599FFDFC2343E84F004AB19E /* Assets.xcassets */,
 				599FFDFE2343E84F004AB19E /* LaunchScreen.storyboard */,
@@ -149,9 +149,9 @@
 			files = (
 				599FFE0C2343EAE5004AB19E /* SearchResultController.swift in Sources */,
 				599FFE0A2343EAA5004AB19E /* ResultType.swift in Sources */,
-				599FFDF82343E84E004AB19E /* ViewController.swift in Sources */,
 				599FFDF42343E84E004AB19E /* AppDelegate.swift in Sources */,
 				599FFE082343E8CA004AB19E /* SearchResult.swift in Sources */,
+				599FFE0E2343F6BF004AB19E /* SearchResultsTableViewController.swift in Sources */,
 				599FFDF62343E84E004AB19E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
