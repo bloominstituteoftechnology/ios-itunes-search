@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Syncing Github project
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
