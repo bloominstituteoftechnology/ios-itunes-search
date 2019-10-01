@@ -16,6 +16,7 @@
 		844F76BF2343E9030051DD70 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F76BE2343E9030051DD70 /* ResultType.swift */; };
 		844F76C12343EA9C0051DD70 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F76C02343EA9C0051DD70 /* SearchResultController.swift */; };
 		845197262344092F00A898BA /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845197252344092E00A898BA /* SearchResultsTableViewController.swift */; };
+		84519728234410E500A898BA /* iTunesSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84519727234410E500A898BA /* iTunesSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		844F76BE2343E9030051DD70 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		844F76C02343EA9C0051DD70 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		845197252344092E00A898BA /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		84519727234410E500A898BA /* iTunesSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				844F76BE2343E9030051DD70 /* ResultType.swift */,
 				844F76C02343EA9C0051DD70 /* SearchResultController.swift */,
 				845197252344092E00A898BA /* SearchResultsTableViewController.swift */,
+				84519727234410E500A898BA /* iTunesSearchTableViewCell.swift */,
 			);
 			path = flexiTunesSearch;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84519728234410E500A898BA /* iTunesSearchTableViewCell.swift in Sources */,
 				844F76BF2343E9030051DD70 /* ResultType.swift in Sources */,
 				844F76AD2343E7BA0051DD70 /* ViewController.swift in Sources */,
 				845197262344092F00A898BA /* SearchResultsTableViewController.swift in Sources */,

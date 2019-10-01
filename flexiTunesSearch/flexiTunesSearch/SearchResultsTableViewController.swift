@@ -52,8 +52,12 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath)
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as? iTunesSearchTableViewCell else { return UITableViewCell() }
+        
+        let searcResult = searchResultsController.searchResults[indexPath.row]
+        
+        cell.titleLabel.text = searcResult.title
+        cell.subtitleLabel.text = searcResult.creator
         
         return cell
     }
