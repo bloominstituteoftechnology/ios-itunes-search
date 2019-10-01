@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		808973CD2343EBAD0094C20F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D820C42343DB2E0028C4CA /* Info.plist */; };
+		808973CE2343EBC50094C20F /* iTunes Search.app in Resources */ = {isa = PBXBuildFile; fileRef = 80D820B52343DB2B0028C4CA /* iTunes Search.app */; };
 		80D820B92343DB2B0028C4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D820B82343DB2B0028C4CA /* AppDelegate.swift */; };
-		80D820BB2343DB2B0028C4CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D820BA2343DB2B0028C4CA /* ViewController.swift */; };
 		80D820BE2343DB2B0028C4CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D820BC2343DB2B0028C4CA /* Main.storyboard */; };
 		80D820C02343DB2E0028C4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D820BF2343DB2E0028C4CA /* Assets.xcassets */; };
 		80D820C32343DB2E0028C4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D820C12343DB2E0028C4CA /* LaunchScreen.storyboard */; };
 		80D820CB2343DD420028C4CA /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D820CA2343DD420028C4CA /* SearchResult.swift */; };
 		80D820CE2343DF4C0028C4CA /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D820CD2343DF4C0028C4CA /* ResultType.swift */; };
 		80D820D02343DFB80028C4CA /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D820CF2343DFB80028C4CA /* SearchResultController.swift */; };
+		80D820D42343E9BE0028C4CA /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D820D32343E9BE0028C4CA /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		80D820B52343DB2B0028C4CA /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D820B82343DB2B0028C4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80D820BA2343DB2B0028C4CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80D820BD2343DB2B0028C4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80D820BF2343DB2E0028C4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80D820C22343DB2E0028C4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +29,7 @@
 		80D820CA2343DD420028C4CA /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		80D820CD2343DF4C0028C4CA /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		80D820CF2343DFB80028C4CA /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		80D820D32343E9BE0028C4CA /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResultsTableViewController.swift; path = ../SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				80D820B82343DB2B0028C4CA /* AppDelegate.swift */,
-				80D820BA2343DB2B0028C4CA /* ViewController.swift */,
 				80D820BC2343DB2B0028C4CA /* Main.storyboard */,
 				80D820BF2343DB2E0028C4CA /* Assets.xcassets */,
 				80D820C12343DB2E0028C4CA /* LaunchScreen.storyboard */,
 				80D820C42343DB2E0028C4CA /* Info.plist */,
+				80D820D52343E9C20028C4CA /* View Controllers */,
 				80D820D22343DFC90028C4CA /* Model Contollers */,
 				80D820CC2343DD490028C4CA /* Models */,
 			);
@@ -87,6 +89,15 @@
 				80D820CF2343DFB80028C4CA /* SearchResultController.swift */,
 			);
 			path = "Model Contollers";
+			sourceTree = "<group>";
+		};
+		80D820D52343E9C20028C4CA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80D820D32343E9BE0028C4CA /* SearchResultsTableViewController.swift */,
+			);
+			name = "View Controllers";
+			path = "Model Contollers/View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				808973CE2343EBC50094C20F /* iTunes Search.app in Resources */,
+				808973CD2343EBAD0094C20F /* Info.plist in Resources */,
 				80D820C32343DB2E0028C4CA /* LaunchScreen.storyboard in Resources */,
 				80D820C02343DB2E0028C4CA /* Assets.xcassets in Resources */,
 				80D820BE2343DB2B0028C4CA /* Main.storyboard in Resources */,
@@ -161,8 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				80D820CE2343DF4C0028C4CA /* ResultType.swift in Sources */,
-				80D820BB2343DB2B0028C4CA /* ViewController.swift in Sources */,
 				80D820CB2343DD420028C4CA /* SearchResult.swift in Sources */,
+				80D820D42343E9BE0028C4CA /* SearchResultsTableViewController.swift in Sources */,
 				80D820B92343DB2B0028C4CA /* AppDelegate.swift in Sources */,
 				80D820D02343DFB80028C4CA /* SearchResultController.swift in Sources */,
 			);
@@ -311,7 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iTunes Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Search/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,7 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iTunes Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Search/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
