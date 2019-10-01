@@ -10,30 +10,33 @@ import Foundation
 
 class SearchResultController{
     
-    let baseURL = URL(string: "https://itunes.apple.com/")! // base url for itunes api
+    let baseURL = URL(string: "https://itunes.apple.com/search")! // base url for itunes api
     
     var searchResults: [SearchResult] = [] // data source for the tableView
     
     // MARK: Functions
     
     // function with searchTerm: String, resultType: ResultType, and completion should take an Error? argument and return a void
-    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping ()  -> Void) {
+    func performSearch(with searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
-        let workingRequestURL = baseURL.appendingPathComponent("result")
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
-        var components = URLComponents(url: workingRequestURL, resolvingAgainstBaseURL: true)
+      let parameters: [String: String] = ["term": searchTerm,
+                          "entity": resultType.rawValue]
         
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let queryItems = parameters.compactMap({ URLQueryItem(name: $0.key, value: $0.value) })
         
-        components?.queryItems = [searchQueryItem]
+        urlComponents?.queryItems = queryItems
         
-        guard let fullRequestURL = components?.url else {
+        guard let fullRequestURL = urlComponents?.url else {
+            NSLog("request URL is nil")
             completion()
             return
         }
         
         var request = URLRequest(url: fullRequestURL)
         request.httpMethod = HTTPMethod.get.rawValue
+        
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
@@ -53,18 +56,15 @@ class SearchResultController{
             
             do {
                 
-                let resultSearch = try decoder.decode(SearchResults.self, from: data)
+                let searchResults = try decoder.decode(SearchResults.self, from: data)
+                self.searchResults = searchResults.results
                 completion()
-                
-                self.searchResults = resultSearch.results
-                
             } catch {
-                
+                completion()
                 NSLog("Unable to decode data into SearchResults: \(error)")
             }
-            completion()
         }
-        dataTask.resume()
+            dataTask.resume()        
     }
     
 }
