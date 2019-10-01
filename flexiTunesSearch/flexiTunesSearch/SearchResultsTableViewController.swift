@@ -8,44 +8,56 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
 
     @IBOutlet weak var iTunesSearchSegment: UISegmentedControl!
     @IBOutlet weak var iTunesSearchBar: UISearchBar!
     
     
+    let searchResultsController = SearchResultController()
+    
+    var resultType: ResultType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        iTunesSearchBar.delegate = self
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = iTunesSearchBar.text else { return }
+        if iTunesSearchSegment.selectedSegmentIndex == 0 {
+            resultType = ResultType.software
+        } else if iTunesSearchSegment.selectedSegmentIndex == 1 {
+            resultType = ResultType.musicTrack
+        } else {
+            resultType = ResultType.movie
+        }
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
+
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath)
 
-        // Configure the cell...
-
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
