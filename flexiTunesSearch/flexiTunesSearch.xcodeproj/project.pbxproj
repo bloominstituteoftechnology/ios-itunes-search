@@ -14,6 +14,7 @@
 		844F76B52343E7BF0051DD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844F76B32343E7BF0051DD70 /* LaunchScreen.storyboard */; };
 		844F76BD2343E80D0051DD70 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F76BC2343E80D0051DD70 /* SearchResult.swift */; };
 		844F76BF2343E9030051DD70 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F76BE2343E9030051DD70 /* ResultType.swift */; };
+		844F76C12343EA9C0051DD70 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F76C02343EA9C0051DD70 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		844F76B62343E7BF0051DD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844F76BC2343E80D0051DD70 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		844F76BE2343E9030051DD70 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		844F76C02343EA9C0051DD70 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				844F76B62343E7BF0051DD70 /* Info.plist */,
 				844F76BC2343E80D0051DD70 /* SearchResult.swift */,
 				844F76BE2343E9030051DD70 /* ResultType.swift */,
+				844F76C02343EA9C0051DD70 /* SearchResultController.swift */,
 			);
 			path = flexiTunesSearch;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				844F76AD2343E7BA0051DD70 /* ViewController.swift in Sources */,
 				844F76BD2343E80D0051DD70 /* SearchResult.swift in Sources */,
 				844F76AB2343E7BA0051DD70 /* AppDelegate.swift in Sources */,
+				844F76C12343EA9C0051DD70 /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
