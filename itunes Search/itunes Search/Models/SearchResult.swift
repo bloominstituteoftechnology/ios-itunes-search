@@ -9,18 +9,18 @@
 import Foundation
 
 struct SearchResults: Codable {
-    var results: [SearchResult]
+    let results: [SearchResult]
 }
 
 
 struct SearchResult: Codable {
-    var title: String
-    var creator: String
-    var artworkURL: String
+    var title: String?
+    var creator: String?
+    var artworkURL: String?
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case creator = "artistName"
-        case artworkURL = "artworkUrl60"
+        case artworkURL = "artworkUrl100"
     }
 }

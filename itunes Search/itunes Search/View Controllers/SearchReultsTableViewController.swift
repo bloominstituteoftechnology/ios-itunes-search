@@ -19,6 +19,7 @@ class SearchReultsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         searchBar.delegate = self
+        tableView.keyboardDismissMode = .onDrag
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
@@ -30,7 +31,7 @@ class SearchReultsTableViewController: UITableViewController {
         case 0:
             resultType = .software
         case 1:
-            resultType = .music
+            resultType = .musicTrack
         default:
             resultType = .movie
         }
@@ -44,8 +45,8 @@ class SearchReultsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        
-    }
+        searchBar.resignFirstResponder()
+   }
     
     // MARK: - Table view data source
 
@@ -73,7 +74,7 @@ extension SearchReultsTableViewController: UISearchBarDelegate {
         case 0:
             resultType = .software
         case 1:
-            resultType = .music
+            resultType = .musicTrack
         default:
             resultType = .movie
         }
@@ -87,5 +88,6 @@ extension SearchReultsTableViewController: UISearchBarDelegate {
                 self.tableView.reloadData()
             }
         }
+        searchBar.resignFirstResponder()
     }
 }

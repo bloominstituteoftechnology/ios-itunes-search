@@ -19,9 +19,15 @@ class SearchResultController {
         // Build out the URL
         let searchURL = baseURL.appendingPathComponent("search")
         var components = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let searchTypeQueryTiem = URLQueryItem(name: "media", value: resultType.rawValue)
-        components?.queryItems = [searchTermQueryItem, searchTypeQueryTiem]
+        
+        let parameters: [String: String] = ["term": searchTerm,
+                          "entity": resultType.rawValue]
+        
+        let queryItems = parameters.compactMap({ URLQueryItem(name: $0.key, value: $0.value) })
+        
+//        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+//        let searchTypeQueryTiem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        components?.queryItems = queryItems
         guard let requestURL = components?.url else {
             completion(NSError())
             return

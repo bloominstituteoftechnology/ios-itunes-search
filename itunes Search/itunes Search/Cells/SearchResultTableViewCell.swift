@@ -22,9 +22,9 @@ class SearchResultTableViewCell: UITableViewCell {
     
     
     private func updateViews() {
-        guard let searchResult = searchResult else { return }
+        guard let searchResult = searchResult, let artwork = searchResult.artworkURL else { return }
         
-        if let imageURL = URL(string: searchResult.artworkURL) {
+        if let imageURL = URL(string: artwork) {
             cellImageView.load(url: imageURL)
         }
         titleLabel.text = searchResult.title
