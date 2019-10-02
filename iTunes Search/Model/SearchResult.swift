@@ -8,13 +8,14 @@
 
 import Foundation
 
+
+struct SearchResults: Codable {
+    var results: [SearchResult]
+}
+
+
 struct SearchResult: Codable {
-    
-    struct SearchResults: Codable {
-        
-        results: [SearchResult]
-    }
-    
+
     
     var title: String
     var creator: String
