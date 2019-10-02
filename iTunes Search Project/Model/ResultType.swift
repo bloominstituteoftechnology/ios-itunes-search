@@ -9,10 +9,8 @@
 import Foundation
 
 
-
 enum ResultType: String {
     case software      // For apps
     case musicTrack
     case movie
-    
 }

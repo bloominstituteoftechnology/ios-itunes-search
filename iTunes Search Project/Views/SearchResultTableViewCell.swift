@@ -18,7 +18,7 @@ class SearchResultTableViewCell: UITableViewCell {
         didSet {
             updateViews()
         }
-    }  // TODO: - didSet?
+    }
     
     
     override func awakeFromNib() {
