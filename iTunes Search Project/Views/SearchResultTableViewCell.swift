@@ -14,7 +14,11 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
-    var searchResult: SearchResult?  // TODO: - didSet?
+    var searchResult: SearchResult? {
+        didSet {
+            updateViews()
+        }
+    }  // TODO: - didSet?
     
     
     override func awakeFromNib() {

@@ -42,7 +42,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="searchResultCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="mOO-b2-PvX" detailTextLabel="DAp-bA-Np8" style="IBUITableViewCellStyleSubtitle" id="ci7-Kp-7qf" customClass="SearchResultTableViewCell" customModule="iTunes_Search_Project" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="searchResultCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" textLabel="mOO-b2-PvX" detailTextLabel="DAp-bA-Np8" style="IBUITableViewCellStyleSubtitle" id="ci7-Kp-7qf" customClass="SearchResultTableViewCell" customModule="iTunes_Search_Project" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ci7-Kp-7qf" id="DpN-Vr-JhK">
