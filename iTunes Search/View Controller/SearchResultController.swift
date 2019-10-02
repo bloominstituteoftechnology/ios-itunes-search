@@ -26,9 +26,7 @@ class SearchResultController {
         components?.queryItems = [searchQueryItem, searchQueryItemTwo]
         
         guard let requestURL = components?.url else {
-            
-            // TODO: Unsure what error to place in completion code
-            // completion(Error)
+            completion(NSError())
             return
         }
         
@@ -44,9 +42,9 @@ class SearchResultController {
             // Handle any errors
             
             if let error = error {
-                NSLog("Error fetching people: \(error)")
-                // TODO: What error to place here?
-                // completion(<#Error?#>)
+                NSLog("Error fetching iTunes content: \(error)")
+                
+                completion(NSError())
                 return
             }
             
