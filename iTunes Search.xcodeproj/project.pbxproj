@@ -16,6 +16,7 @@
 		86E07A0F2343F34E001E75C0 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E07A0E2343F34E001E75C0 /* SearchResult.swift */; };
 		86E07A122343F7D3001E75C0 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E07A112343F7D3001E75C0 /* ResultType.swift */; };
 		86E07A152343FBCE001E75C0 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E07A142343FBCE001E75C0 /* SearchResultController.swift */; };
+		86E07A17234479F4001E75C0 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E07A16234479F4001E75C0 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		86E07A0E2343F34E001E75C0 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		86E07A112343F7D3001E75C0 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		86E07A142343FBCE001E75C0 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		86E07A16234479F4001E75C0 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				86E079FE2343F2A6001E75C0 /* ViewController.swift */,
 				86E07A142343FBCE001E75C0 /* SearchResultController.swift */,
+				86E07A16234479F4001E75C0 /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				86E079FF2343F2A6001E75C0 /* ViewController.swift in Sources */,
 				86E079FB2343F2A6001E75C0 /* AppDelegate.swift in Sources */,
 				86E07A0F2343F34E001E75C0 /* SearchResult.swift in Sources */,
+				86E07A17234479F4001E75C0 /* SearchResultsTableViewController.swift in Sources */,
 				86E079FD2343F2A6001E75C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

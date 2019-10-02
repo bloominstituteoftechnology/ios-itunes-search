@@ -21,9 +21,9 @@ class SearchResultController {
         
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
-        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let searchQueryItemTwo = URLQueryItem(name: "entity", value: resultType.rawValue)
-        components?.queryItems = [searchQueryItem, searchQueryItemTwo]
+        let searchQueryItemTerm = URLQueryItem(name: "term", value: searchTerm)
+        let searchQueryItemEntity = URLQueryItem(name: "entity", value: resultType.rawValue)
+        components?.queryItems = [searchQueryItemTerm, searchQueryItemEntity]
         
         guard let requestURL = components?.url else {
             completion(NSError())
@@ -43,18 +43,14 @@ class SearchResultController {
             
             if let error = error {
                 NSLog("Error fetching iTunes content: \(error)")
-                
                 completion(NSError())
                 return
             }
             
             // (Usually) decode the data
-            
             guard let data = data else {
                 NSLog("No data returned from iTunes search")
-                
-                // TODO: What error to place here?
-                // completion()
+                completion(NSError())
                 return
             }
             
@@ -62,16 +58,14 @@ class SearchResultController {
             
             do {
                 let searchResults = try decoder.decode(SearchResults.self, from: data)
-                
                 self.searchResults = searchResults.results
+                completion(nil)
             } catch {
                 NSLog("Unable to decode data into iTunes Search: \(error)")
+                completion(error)
             }
-            
-            // TODO: What error to place here?
-            // completion()
+            completion(NSError())
         }
-        
         // This is what performs the data task, or gets it to go to the server
         dataTask.resume()
     }
