@@ -10,6 +10,7 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
 
+    // MARK: IBOutlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
     
@@ -19,7 +20,45 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         searchBar.delegate = self
     }
+    
+    private func searchResults(_ segmentedControl: UISegmentedControl)
+    {
+        guard let searchTerm = searchBar.text,
+            !searchTerm.isEmpty else { return }
+        
+        var resultType: ResultType!
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            resultType = nil
+        }
+        
+        if searchResultController.searchResults.count > 0 {
+            searchResultController.searchResults.removeAll()
+        }
+        
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
+            if let error = error {
+                print("Error with search: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
+    // MARK: IBActions
+    @IBAction func resultTypeChanged(_ sender: UISegmentedControl) {
+        searchResults(sender)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,35 +86,6 @@ class SearchResultsTableViewController: UITableViewController {
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text,
-            !searchTerm.isEmpty else { return }
-        
-        var resultType: ResultType!
-        
-        switch resultTypeSegmentedControl.selectedSegmentIndex {
-        case 0:
-            resultType = .software
-        case 1:
-            resultType = .musicTrack
-        case 2:
-            resultType = .movie
-        default:
-            resultType = nil
-        }
-        
-        if searchResultController.searchResults.count > 0 {
-            searchResultController.searchResults.removeAll()
-        }
-        
-        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
-            if let error = error {
-                print("Error with search: \(error)")
-                return
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        
+        searchResults(resultTypeSegmentedControl)
     }
 }
