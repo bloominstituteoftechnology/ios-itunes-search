@@ -46,7 +46,7 @@ class SearchResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mediaCell", for: indexPath)
         let result = searchResultsController.searchResults[indexPath.row]
         
-        cell.textLabel?.text = result.title
+        cell.textLabel?.text = result.title ?? result.collectionName
         cell.detailTextLabel?.text = result.creator
 
         return cell
