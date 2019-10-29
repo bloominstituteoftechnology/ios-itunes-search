@@ -32,7 +32,29 @@ class SearchResultController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                print("Error fetching data: \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                print("No data returned from data task.")
+                completion(NSError())
+                return
+            }
+            
+            let jsonDecoder = JSONDecoder()
+            do {
+                let resultSearch = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults = resultSearch.results
+                completion(nil)
+            } catch {
+                print("Unable to decode data into object of type [Result]: \(error)")
+                completion(error)
+            }
+        }.resume()
     }
     
 }
