@@ -14,6 +14,8 @@
 		BB61B1812368C79700003044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB61B1802368C79700003044 /* Assets.xcassets */; };
 		BB61B1842368C79700003044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB61B1822368C79700003044 /* LaunchScreen.storyboard */; };
 		BB61B18C2368C8FC00003044 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B18B2368C8FC00003044 /* SearchResult.swift */; };
+		BB61B18E2368CB4700003044 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B18D2368CB4700003044 /* ResultType.swift */; };
+		BB61B1902368CD1C00003044 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B18F2368CD1C00003044 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		BB61B1832368C79700003044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB61B1852368C79700003044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB61B18B2368C8FC00003044 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		BB61B18D2368CB4700003044 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		BB61B18F2368CD1C00003044 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				BB61B1822368C79700003044 /* LaunchScreen.storyboard */,
 				BB61B1852368C79700003044 /* Info.plist */,
 				BB61B18B2368C8FC00003044 /* SearchResult.swift */,
+				BB61B18D2368CB4700003044 /* ResultType.swift */,
+				BB61B18F2368CD1C00003044 /* SearchResultController.swift */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB61B1902368CD1C00003044 /* SearchResultController.swift in Sources */,
+				BB61B18E2368CB4700003044 /* ResultType.swift in Sources */,
 				BB61B17C2368C79500003044 /* ViewController.swift in Sources */,
 				BB61B1782368C79500003044 /* AppDelegate.swift in Sources */,
 				BB61B18C2368C8FC00003044 /* SearchResult.swift in Sources */,
