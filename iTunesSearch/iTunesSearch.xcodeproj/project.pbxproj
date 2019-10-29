@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		BB61B1782368C79500003044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B1772368C79500003044 /* AppDelegate.swift */; };
 		BB61B17A2368C79500003044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B1792368C79500003044 /* SceneDelegate.swift */; };
-		BB61B17C2368C79500003044 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B17B2368C79500003044 /* ViewController.swift */; };
 		BB61B17F2368C79500003044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB61B17D2368C79500003044 /* Main.storyboard */; };
 		BB61B1812368C79700003044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB61B1802368C79700003044 /* Assets.xcassets */; };
 		BB61B1842368C79700003044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB61B1822368C79700003044 /* LaunchScreen.storyboard */; };
 		BB61B18C2368C8FC00003044 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B18B2368C8FC00003044 /* SearchResult.swift */; };
 		BB61B18E2368CB4700003044 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B18D2368CB4700003044 /* ResultType.swift */; };
 		BB61B1902368CD1C00003044 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B18F2368CD1C00003044 /* SearchResultController.swift */; };
+		BB61B1922368D5DB00003044 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61B1912368D5DB00003044 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB61B1742368C79500003044 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB61B1772368C79500003044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB61B1792368C79500003044 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BB61B17B2368C79500003044 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BB61B17E2368C79500003044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB61B1802368C79700003044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB61B1832368C79700003044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		BB61B18B2368C8FC00003044 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		BB61B18D2368CB4700003044 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		BB61B18F2368CD1C00003044 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		BB61B1912368D5DB00003044 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +64,8 @@
 			children = (
 				BB61B1772368C79500003044 /* AppDelegate.swift */,
 				BB61B1792368C79500003044 /* SceneDelegate.swift */,
-				BB61B17B2368C79500003044 /* ViewController.swift */,
 				BB61B17D2368C79500003044 /* Main.storyboard */,
+				BB61B1912368D5DB00003044 /* SearchResultsTableViewController.swift */,
 				BB61B1802368C79700003044 /* Assets.xcassets */,
 				BB61B1822368C79700003044 /* LaunchScreen.storyboard */,
 				BB61B1852368C79700003044 /* Info.plist */,
@@ -149,7 +149,7 @@
 			files = (
 				BB61B1902368CD1C00003044 /* SearchResultController.swift in Sources */,
 				BB61B18E2368CB4700003044 /* ResultType.swift in Sources */,
-				BB61B17C2368C79500003044 /* ViewController.swift in Sources */,
+				BB61B1922368D5DB00003044 /* SearchResultsTableViewController.swift in Sources */,
 				BB61B1782368C79500003044 /* AppDelegate.swift in Sources */,
 				BB61B18C2368C8FC00003044 /* SearchResult.swift in Sources */,
 				BB61B17A2368C79500003044 /* SceneDelegate.swift in Sources */,
