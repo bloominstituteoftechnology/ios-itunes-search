@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum ResultType {
+    case software
+    case musicTrack
+    case movie
+}
