@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ResultType: String {
+enum ResultType: String, CaseIterable {
     case software
     case musicTrack
     case movie
