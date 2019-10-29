@@ -28,6 +28,11 @@ class SearchResultsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    @IBAction func changedCategory(_ sender: Any) {
+        searchBarSearchButtonClicked(searchBar)
+    }
+    
 
     // MARK: - Table view data source
 
@@ -102,6 +107,7 @@ class SearchResultsTableViewController: UITableViewController {
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("New! \(Date())")
         if let searchTerm = searchBar.text, !searchTerm.isEmpty {
             var resultType: ResultType!
             switch segmentedControl.selectedSegmentIndex {
@@ -110,11 +116,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             default: resultType = .software
             }
             searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
-                error in
-                if let error = error {
-                    print("Error fetching results: \(error)")
-                }
-                
+                _ in
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

@@ -33,6 +33,7 @@ class SearchResultController {
         request.httpMethod = HTTPMethod.get.rawValue
         
         URLSession.shared.dataTask(with: request) { data, _, error in
+            print(request)
             if let error = error {
                 print("Error fetching data: \(error)")
                 completion(error)
