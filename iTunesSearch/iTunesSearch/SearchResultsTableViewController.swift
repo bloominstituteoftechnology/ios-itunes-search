@@ -123,4 +123,8 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             }
         }
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBarSearchButtonClicked(searchBar)
+    }
 }
