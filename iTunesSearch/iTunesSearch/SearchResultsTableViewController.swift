@@ -100,4 +100,25 @@ class SearchResultsTableViewController: UITableViewController {
 
 }
 
-
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchTerm = searchBar.text, !searchTerm.isEmpty {
+            var resultType: ResultType!
+            switch segmentedControl.selectedSegmentIndex {
+            case 1: resultType = .musicTrack
+            case 2: resultType = .movie
+            default: resultType = .software
+            }
+            searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+                error in
+                if let error = error {
+                    print("Error fetching results: \(error)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+}
