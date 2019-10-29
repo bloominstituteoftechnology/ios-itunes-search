@@ -51,7 +51,8 @@ class SearchResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.cell, for: indexPath)
         
         let searchResult = searchResultsController.searchResults[indexPath.row]
-        cell.textLabel?.text = searchResult.title
+//        let name =
+        cell.textLabel?.text = searchResult.title ?? searchResult.collectionName
         cell.detailTextLabel?.text = searchResult.creator
 
         return cell
@@ -124,7 +125,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         }
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchBarSearchButtonClicked(searchBar)
-    }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        searchBarSearchButtonClicked(searchBar)
+//    }
 }

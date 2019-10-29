@@ -49,7 +49,9 @@ class SearchResultController {
             let jsonDecoder = JSONDecoder()
             do {
                 let resultSearch = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults = resultSearch.results.sorted { $0.title < $1.title }
+                self.searchResults = resultSearch.results//.sorted {
+//                    guard let title1 = $0.title, let title2 = $0.title else { }
+//                    $0.title < $1.title }
                 completion(nil)
             } catch {
                 print("Unable to decode data into object of type [Result]: \(error)")
