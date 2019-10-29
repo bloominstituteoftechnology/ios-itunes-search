@@ -18,9 +18,14 @@ class SearchResultController {
         completion: @escaping (_ error: Error?) -> Void
     ) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let resultQuery = URLQueryItem(name: "entity", value: resultType.rawValue)
-        let searchQuery = URLQueryItem(name: "term", value: searchTerm)
-        urlComponents?.queryItems = [resultQuery, searchQuery]
+//        let resultQuery = URLQueryItem(name: "entity", value: resultType.rawValue)
+//        let searchQuery = URLQueryItem(name: "term", value: searchTerm)
+        
+        let parameters: [String: String] = ["term": searchTerm, "entity": resultType.rawValue]
+        
+        let queryItems = parameters.compactMap({ URLQueryItem(name: $0.key, value: $0.value) })
+        
+        urlComponents?.queryItems = queryItems
         
         guard let searchURL = urlComponents?.url else {
             print("Invalid search.")

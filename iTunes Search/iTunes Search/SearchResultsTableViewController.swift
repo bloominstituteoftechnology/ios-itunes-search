@@ -15,24 +15,30 @@ class SearchResultsTableViewController: UITableViewController {
     
     var currentResultType: ResultType {
         let resultTypeIndex = resultTypeControl.selectedSegmentIndex
-        return ResultType.allCases[resultTypeIndex]
+        switch resultTypeIndex {
+        case 1:
+            return .musicTrack
+        case 2:
+            return .movie
+        default:
+            return .software
+        }
     }
     
     var searchResultsController = SearchResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return searchResultsController.searchResults.count
     }
 
@@ -46,27 +52,28 @@ class SearchResultsTableViewController: UITableViewController {
         return cell
     }
     
-    func performSearch() {
+    private func search() {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty
             else { return }
+        searchBar.resignFirstResponder()
         
         searchResultsController.performSearch(with: searchTerm, resultType: currentResultType) { (error) in
+            if let error = error {
+                print("Error fetching search results: \(error)")
+            }
             DispatchQueue.main.async {
-                if let error = error {
-                    print("Error fetching search results: \(error)")
-                }
                 self.tableView.reloadData()
             }
         }
     }
 
     @IBAction func resultTypeChanged(_ sender: UISegmentedControl) {
-        performSearch()
+        search()
     }
 }
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        performSearch()
+        search()
     }
 }
