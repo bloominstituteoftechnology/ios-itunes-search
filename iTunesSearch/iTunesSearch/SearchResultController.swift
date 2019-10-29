@@ -23,6 +23,15 @@ class SearchResultController {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         urlComponents?.queryItems = [URLQueryItem(name: "entity", value: resultType.rawValue), URLQueryItem(name: "term", value: searchTerm)]
         
+        guard let requestURL = urlComponents?.url else {
+            print("Request URL in nil")
+            completion(NSError())
+            return
+        }
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
         
     }
     
