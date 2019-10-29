@@ -19,6 +19,11 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        urlComponents?.queryItems = [URLQueryItem(name: "entity", value: resultType.rawValue), URLQueryItem(name: "term", value: searchTerm)]
+        
+        
+    }
     
 }
