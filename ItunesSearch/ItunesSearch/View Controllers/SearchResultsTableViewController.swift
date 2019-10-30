@@ -18,7 +18,7 @@ class SearchResultsTableViewController: UITableViewController {
     
   
     @IBOutlet weak var searchBar: UISearchBar!
-    var searchResultsCOntroller = SearchResultController()
+    var searchResultsController = SearchResultController()
 
     // MARK: - Table view data source
 
@@ -29,13 +29,13 @@ class SearchResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return searchResultsCOntroller.searchResults.count
+        return searchResultsController.searchResults.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItunesItemCell", for: indexPath)
-        let itunesSearchedItem = searchResultsCOntroller.searchResults[indexPath.row]
+        let itunesSearchedItem = searchResultsController.searchResults[indexPath.row]
         cell.textLabel?.text = itunesSearchedItem.title
         cell.detailTextLabel?.text = itunesSearchedItem.creator
         return cell
@@ -43,7 +43,7 @@ class SearchResultsTableViewController: UITableViewController {
 
 }
 extension SearchResultsTableViewController: UISearchBarDelegate {
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else {return}
         var resultType: ResultType!
@@ -54,7 +54,8 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         case 2 : resultType = .movie
         default: break
         }
-        searchResultsCOntroller.performSearch(with: searchTerm, resultType: resultType ) { error in
+        
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType ) { error in
             
             if let error = error {
                 NSLog("cannot load searched Items: \(error)")

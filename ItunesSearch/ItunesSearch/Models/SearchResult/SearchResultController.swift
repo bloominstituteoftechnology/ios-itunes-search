@@ -11,36 +11,30 @@ import Foundation
 class SearchResultController {
     
     var searchResults:[SearchResult] = []
-    let baseURL = URL(string: "https://itunes.apple.com/search?")!
+    let baseURL = URL(string: "https://itunes.apple.com/search?")
     
     func performSearch(with searchTerm: String, resultType: ResultType,completion: @escaping(Error?) -> Void) {
-        let SearchURL = baseURL.appendingPathComponent("key1=value1")
-        var components = URLComponents(url: SearchURL, resolvingAgainstBaseURL: true)
-        let searchItem  = URLQueryItem(name: "search", value: searchTerm)
-        components?.queryItems = [searchItem]
         
-        guard let requestURL = components?.url else { return }
+        guard let itunesURL = baseURL else {return}
         
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = HTTPMethod.get.rawValue
-        URLSession.shared.dataTask(with: request, completionHandler: { (data, _, error) in
+        switch resultType {
+        case .movie:
+            var urlComponents = URLComponents(url: itunesURL, resolvingAgainstBaseURL: true)
+            let searchedItems = URLQueryItem(name: "term=", value: searchTerm)
+            urlComponents?.queryItems = [searchedItems]
+            guard let requestURL = urlComponents?.url else { return }
             
-            if let error = error {
-                print("error searchng for Item: \(error)")
-            }
-            guard let data = data else {
-                NSLog("no data returned from searching.")
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                let itunesSearch = try decoder.decode(SearchResults.self, from: data)
-                self.searchResults = itunesSearch.results
-            } catch {
-                NSLog("Error decoding itunesSearch from data: \(error)")
-            }
+            var request = URLRequest(url: requestURL)
+            request.httpMethod = HTTPMethod.get.rawValue
             
-        }).resume()
+            
+        case .software:
+            break
+        case .musicTrack:
+            break
+        }
+        
+
     }
     
     enum HTTPMethod:String {

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0B2F472369B649002BA648 /* ItunesItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B2F462369B649002BA648 /* ItunesItemTableViewCell.swift */; };
 		DDFCD279231FF0AC0077496E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCD278231FF0AC0077496E /* AppDelegate.swift */; };
-		DDFCD27B231FF0AC0077496E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCD27A231FF0AC0077496E /* ViewController.swift */; };
 		DDFCD27E231FF0AC0077496E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFCD27C231FF0AC0077496E /* Main.storyboard */; };
 		DDFCD280231FF0AE0077496E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFCD27F231FF0AE0077496E /* Assets.xcassets */; };
 		DDFCD283231FF0AE0077496E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFCD281231FF0AE0077496E /* LaunchScreen.storyboard */; };
@@ -19,9 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD0B2F462369B649002BA648 /* ItunesItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItunesItemTableViewCell.swift; path = ../../../../FindACrew/FindACrew/ItunesItemTableViewCell.swift; sourceTree = "<group>"; };
 		DDFCD275231FF0AC0077496E /* ItunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFCD278231FF0AC0077496E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDFCD27A231FF0AC0077496E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDFCD27D231FF0AC0077496E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDFCD27F231FF0AE0077496E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDFCD282231FF0AE0077496E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,7 +67,6 @@
 				DDFCD28C231FF0CA0077496E /* StoryBoards */,
 				DDFCD28B231FF0BF0077496E /* View Controllers */,
 				DDFCD28A231FF0B80077496E /* Models */,
-				DDFCD27A231FF0AC0077496E /* ViewController.swift */,
 				DDFCD27F231FF0AE0077496E /* Assets.xcassets */,
 				DDFCD284231FF0AE0077496E /* Info.plist */,
 			);
@@ -103,6 +102,7 @@
 		DDFCD28D231FF0DC0077496E /* views */ = {
 			isa = PBXGroup;
 			children = (
+				DD0B2F462369B649002BA648 /* ItunesItemTableViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -187,10 +187,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0B2F472369B649002BA648 /* ItunesItemTableViewCell.swift in Sources */,
 				DDFCD297231FF5A60077496E /* SearchResultController.swift in Sources */,
 				DDFCD291231FF3D70077496E /* SearchResultsTableViewController.swift in Sources */,
 				DDFCD293231FF4090077496E /* SearchResult.swift in Sources */,
-				DDFCD27B231FF0AC0077496E /* ViewController.swift in Sources */,
 				DDFCD295231FF5050077496E /* ResultType.swift in Sources */,
 				DDFCD279231FF0AC0077496E /* AppDelegate.swift in Sources */,
 			);
