@@ -15,7 +15,7 @@ class SearchResultsTableViewController: UITableViewController {
         searchBar.delegate = self
     }
     @IBOutlet weak var itunesPreference: UISegmentedControl!
-    
+    var resultType: ResultType?
   
     @IBOutlet weak var searchBar: UISearchBar!
     var searchResultsController = SearchResultController()
@@ -29,15 +29,14 @@ class SearchResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return searchResultsController.searchResults.count
+        return searchResultsController.artistSearchedResults.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItunesItemCell", for: indexPath)
-        let itunesSearchedItem = searchResultsController.searchResults[indexPath.row]
-        cell.textLabel?.text = itunesSearchedItem.title
-        cell.detailTextLabel?.text = itunesSearchedItem.creator
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItunesItemCell", for: indexPath) as? ItemTableViewCell else {return UITableViewCell() }
+        let artist = searchResultsController.artistSearchedResults[indexPath.row]
+        cell.artist = artist
         return cell
     }
 
@@ -45,17 +44,17 @@ class SearchResultsTableViewController: UITableViewController {
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
         guard let searchTerm = searchBar.text else {return}
-        var resultType: ResultType!
-        
+
         switch itunesPreference.selectedSegmentIndex {
         case 0: resultType = .software
         case 1: resultType = .musicTrack
         case 2 : resultType = .movie
         default: break
         }
-        
-        searchResultsController.performSearch(with: searchTerm, resultType: resultType ) { error in
+        print(resultType ?? .movie)
+        searchResultsController.performSearch(with: searchTerm, resultType: resultType!) { error in
             
             if let error = error {
                 NSLog("cannot load searched Items: \(error)")
@@ -64,9 +63,6 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-                
-        
-            
         }
     }
 }
