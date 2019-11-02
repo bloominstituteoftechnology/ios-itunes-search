@@ -99,6 +99,9 @@
 		830AEE2B236D14FC001220BD /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				830AEE5E236D1583001220BD /* Controllers */,
+				830AEE5D236D1568001220BD /* Views */,
+				830AEE5C236D1559001220BD /* Models */,
 				830AEE2C236D14FC001220BD /* AppDelegate.swift */,
 				830AEE2E236D14FC001220BD /* SceneDelegate.swift */,
 				830AEE30236D14FC001220BD /* ViewController.swift */,
@@ -126,6 +129,27 @@
 				830AEE50236D1501001220BD /* Info.plist */,
 			);
 			path = iTunesSearchUITests;
+			sourceTree = "<group>";
+		};
+		830AEE5C236D1559001220BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		830AEE5D236D1568001220BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		830AEE5E236D1583001220BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
