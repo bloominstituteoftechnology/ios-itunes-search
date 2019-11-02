@@ -42,6 +42,25 @@ class SearchResultsTableViewController: UITableViewController {
         cell.detailTextLabel?.text = searchResult.creator
         return cell
     }
+    
+    //MARK: Actions
+    
+    
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            searchBarSearchButtonClicked(searchBar)
+            self.tableView.reloadData()
+        }else if sender.selectedSegmentIndex == 1 {
+             searchBarSearchButtonClicked(searchBar)
+            self.tableView.reloadData()
+        }else {
+             searchBarSearchButtonClicked(searchBar)
+            self.tableView.reloadData()
+        }
+    }
+    
+    
 }
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
@@ -58,11 +77,10 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         default:
             break
         }
-        
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+                searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
     }
 }
