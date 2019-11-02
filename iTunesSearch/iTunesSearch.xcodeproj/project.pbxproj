@@ -15,6 +15,9 @@
 		830AEE39236D1500001220BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830AEE37236D1500001220BD /* LaunchScreen.storyboard */; };
 		830AEE44236D1501001220BD /* iTunesSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE43236D1501001220BD /* iTunesSearchTests.swift */; };
 		830AEE4F236D1501001220BD /* iTunesSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE4E236D1501001220BD /* iTunesSearchUITests.swift */; };
+		830AEE62236D1745001220BD /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE61236D1745001220BD /* SearchResults.swift */; };
+		830AEE64236D1882001220BD /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE63236D1882001220BD /* ResultType.swift */; };
+		830AEE66236D18C9001220BD /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE65236D18C9001220BD /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		830AEE4A236D1501001220BD /* iTunesSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		830AEE4E236D1501001220BD /* iTunesSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchUITests.swift; sourceTree = "<group>"; };
 		830AEE50236D1501001220BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		830AEE61236D1745001220BD /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		830AEE63236D1882001220BD /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		830AEE65236D18C9001220BD /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,8 @@
 		830AEE5C236D1559001220BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				830AEE61236D1745001220BD /* SearchResults.swift */,
+				830AEE63236D1882001220BD /* ResultType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 		830AEE5E236D1583001220BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				830AEE65236D18C9001220BD /* SearchResultController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,8 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830AEE66236D18C9001220BD /* SearchResultController.swift in Sources */,
+				830AEE64236D1882001220BD /* ResultType.swift in Sources */,
 				830AEE31236D14FC001220BD /* ViewController.swift in Sources */,
 				830AEE2D236D14FC001220BD /* AppDelegate.swift in Sources */,
+				830AEE62236D1745001220BD /* SearchResults.swift in Sources */,
 				830AEE2F236D14FC001220BD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
