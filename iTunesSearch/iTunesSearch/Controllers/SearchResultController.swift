@@ -28,23 +28,33 @@ class SearchResultController{
     //MARK: Neworking Method Call
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
+        
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        
       let parameters: [String : String] = ["term": searchTerm, "entity": resultType.rawValue]
+        
       let queryItems = parameters.compactMap({ URLQueryItem(name: $0.key, value: $0.value) })
       urlComponents?.queryItems = queryItems
+        
       guard let requestURL = urlComponents?.url else { return }
+        
         var request = URLRequest(url: requestURL)
+        
                request.httpMethod = HTTPMethod.get.rawValue
+        
                URLSession.shared.dataTask(with: request) { data, _, error in
                    if let error = error {
                        print("Error fetching data: \(error)")
                        return
                    }
+                
                    guard let data = data else {
                        print("No data returned from data Task")
                        return
                    }
+                
                    let jsonDecoder = JSONDecoder()
+                
                    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                    do{
                     let iTunesSearch = try jsonDecoder.decode(SearchResults.self, from: data)
@@ -52,6 +62,7 @@ class SearchResultController{
                    } catch {
                        print("Unable to decode data into object of type [SearchResults]: \(error)")
                    }
+                
                    completion()
                }.resume()
            }
