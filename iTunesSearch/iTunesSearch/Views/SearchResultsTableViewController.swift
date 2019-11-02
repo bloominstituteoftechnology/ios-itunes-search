@@ -14,10 +14,12 @@ class SearchResultsTableViewController: UITableViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var limitSearchButton: UIBarButtonItem!
     
     let searchResultsController = SearchResultController()
     var resultType: ResultType!
-
+    var limit: Int = 25
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -45,7 +47,14 @@ class SearchResultsTableViewController: UITableViewController {
     
     //MARK: Actions
     
-    
+    @IBAction func filterButtonPressed(_ sender: UIBarButtonItem) {
+        if limitSearchButton.title == "show more" {
+            limitSearchButton.title = "show less"
+        } else {
+            limitSearchButton.title = "show more"
+        }
+        
+    }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
