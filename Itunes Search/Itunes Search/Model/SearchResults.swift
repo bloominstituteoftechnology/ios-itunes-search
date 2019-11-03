@@ -8,14 +8,24 @@
 
 import Foundation
 
-struct SearchResult {
+struct SearchResult: Codable {
     var title: String
     var creator: String
-
-    enum CodingKeys: String, CodingKey {
-        typealias RawValue = <#type#>
-        
-
-    }
-
 }
+   
+
+struct searchResults: Codable {
+    let results: [SearchResult]
+}
+
+
+
+enum CodingKeys: String, CodingKey {
+    case title = "TrackName"
+    case creator = "artistName"
+        
+}
+
+
+
+
