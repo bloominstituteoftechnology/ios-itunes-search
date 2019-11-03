@@ -18,7 +18,7 @@ class SearchResultsTableViewController: UITableViewController {
     
     let searchResultsController = SearchResultController()
     var resultType: ResultType!
-    var limit: Int = 25
+    var limit: SearchLimit = SearchLimit(limit: "5")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +33,14 @@ class SearchResultsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
         return searchResultsController.searchResults.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
-
+        print("search results count \(searchResultsController.searchResults.count)")
+        print("index path: \(indexPath.row)")
         let searchResult = searchResultsController.searchResults[indexPath.row]
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
@@ -48,10 +50,16 @@ class SearchResultsTableViewController: UITableViewController {
     //MARK: Actions
     
     @IBAction func filterButtonPressed(_ sender: UIBarButtonItem) {
-        if limitSearchButton.title == "show more" {
-            limitSearchButton.title = "show less"
-        } else {
-            limitSearchButton.title = "show more"
+        if limitSearchButton.title == "show 10" {
+            limitSearchButton.title = "show 5"
+            limit.limit = "10"
+            searchBarSearchButtonClicked(searchBar)
+            tableView.reloadData()
+        } else if limitSearchButton.title == "show 5"{
+            limitSearchButton.title = "show 10"
+            limit.limit = "5"
+            searchBarSearchButtonClicked(searchBar)
+            tableView.reloadData()
         }
         
     }
@@ -86,7 +94,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         default:
             break
         }
-                searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType, limit: limit) {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }

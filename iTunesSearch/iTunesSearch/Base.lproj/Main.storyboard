@@ -76,7 +76,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" largeTitleDisplayMode="always" id="Tbl-Wg-vPk">
-                        <barButtonItem key="rightBarButtonItem" title="show more" id="mav-yn-7kG">
+                        <barButtonItem key="rightBarButtonItem" title="show 10" id="mav-yn-7kG">
                             <connections>
                                 <action selector="filterButtonPressed:" destination="eZi-cx-ULb" id="Enc-cK-Fhi"/>
                             </connections>
