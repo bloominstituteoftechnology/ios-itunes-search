@@ -19,5 +19,5 @@ struct SearchResult: Codable {
 }
 //this allows us to dig deeper into the JSON.
 struct SearchResults: Codable {
-       let results: [SearchResult]
+    let results: [SearchResult]
    }
