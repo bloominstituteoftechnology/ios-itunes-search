@@ -15,23 +15,23 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
-class SearchResultController{
+class SearchResultController {
     
     //MARK: Properties
     //data source for the table view
     var searchResults: [SearchResult] = []
-    
+    var limitToUse: [SearchLimit] = []
     //MARK: Networking
     
     let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     //MARK: Neworking Method Call
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, limit: SearchLimit, completion: @escaping () -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
-      let parameters: [String : String] = ["term": searchTerm, "entity": resultType.rawValue]
+        let parameters: [String : String] = ["term": searchTerm, "entity": resultType.rawValue, "limit": limit.limit?.description ?? "10"]
         
       let queryItems = parameters.compactMap({ URLQueryItem(name: $0.key, value: $0.value) })
       urlComponents?.queryItems = queryItems

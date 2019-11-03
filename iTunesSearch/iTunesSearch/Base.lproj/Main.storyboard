@@ -75,8 +75,15 @@
                             <outlet property="delegate" destination="eZi-cx-ULb" id="A9R-uR-Fhc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="iTunes Search" largeTitleDisplayMode="always" id="Tbl-Wg-vPk"/>
+                    <navigationItem key="navigationItem" title="iTunes Search" largeTitleDisplayMode="always" id="Tbl-Wg-vPk">
+                        <barButtonItem key="rightBarButtonItem" title="show 10" id="mav-yn-7kG">
+                            <connections>
+                                <action selector="filterButtonPressed:" destination="eZi-cx-ULb" id="Enc-cK-Fhi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="limitSearchButton" destination="mav-yn-7kG" id="c6M-dg-gD5"/>
                         <outlet property="searchBar" destination="hth-uO-43K" id="N4k-jl-Pm2"/>
                         <outlet property="segmentedControl" destination="xau-4m-EDp" id="lfU-EC-P5Y"/>
                     </connections>

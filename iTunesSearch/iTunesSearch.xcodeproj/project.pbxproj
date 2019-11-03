@@ -18,6 +18,7 @@
 		830AEE64236D1882001220BD /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE63236D1882001220BD /* ResultType.swift */; };
 		830AEE66236D18C9001220BD /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE65236D18C9001220BD /* SearchResultController.swift */; };
 		830AEE68236D206F001220BD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE67236D206F001220BD /* SearchResultsTableViewController.swift */; };
+		830AEE6C236E4D5A001220BD /* SearchLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AEE6B236E4D5A001220BD /* SearchLimit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		830AEE63236D1882001220BD /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		830AEE65236D18C9001220BD /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		830AEE67236D206F001220BD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		830AEE6B236E4D5A001220BD /* SearchLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLimit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				830AEE61236D1745001220BD /* SearchResults.swift */,
 				830AEE63236D1882001220BD /* ResultType.swift */,
+				830AEE6B236E4D5A001220BD /* SearchLimit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				830AEE66236D18C9001220BD /* SearchResultController.swift in Sources */,
 				830AEE64236D1882001220BD /* ResultType.swift in Sources */,
 				830AEE68236D206F001220BD /* SearchResultsTableViewController.swift in Sources */,
+				830AEE6C236E4D5A001220BD /* SearchLimit.swift in Sources */,
 				830AEE2D236D14FC001220BD /* AppDelegate.swift in Sources */,
 				830AEE62236D1745001220BD /* SearchResults.swift in Sources */,
 				830AEE2F236D14FC001220BD /* SceneDelegate.swift in Sources */,
