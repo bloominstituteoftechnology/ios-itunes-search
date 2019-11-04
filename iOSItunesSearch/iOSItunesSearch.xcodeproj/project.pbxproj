@@ -15,6 +15,8 @@
 		12E2AD2F236F2EBF0028C949 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E2AD2E236F2EBF0028C949 /* SearchResult.swift */; };
 		12E2AD31236F32830028C949 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E2AD30236F32830028C949 /* ResultType.swift */; };
 		12E2AD33236F6C8B0028C949 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E2AD32236F6C8B0028C949 /* SearchResultController.swift */; };
+		12E2AD35236FDF550028C949 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E2AD34236FDF550028C949 /* SearchResultsTableViewController.swift */; };
+		12E2AD37236FE5670028C949 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E2AD36236FE5670028C949 /* ResultsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		12E2AD2E236F2EBF0028C949 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		12E2AD30236F32830028C949 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		12E2AD32236F6C8B0028C949 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		12E2AD34236FDF550028C949 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		12E2AD36236FE5670028C949 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				12E2AD2E236F2EBF0028C949 /* SearchResult.swift */,
 				12E2AD30236F32830028C949 /* ResultType.swift */,
 				12E2AD32236F6C8B0028C949 /* SearchResultController.swift */,
+				12E2AD34236FDF550028C949 /* SearchResultsTableViewController.swift */,
+				12E2AD36236FE5670028C949 /* ResultsTableViewCell.swift */,
 				12E2AD23236E2D410028C949 /* Assets.xcassets */,
 				12E2AD25236E2D410028C949 /* LaunchScreen.storyboard */,
 				12E2AD28236E2D410028C949 /* Info.plist */,
@@ -146,9 +152,11 @@
 			files = (
 				12E2AD31236F32830028C949 /* ResultType.swift in Sources */,
 				12E2AD1B236E2D3F0028C949 /* AppDelegate.swift in Sources */,
+				12E2AD35236FDF550028C949 /* SearchResultsTableViewController.swift in Sources */,
 				12E2AD2F236F2EBF0028C949 /* SearchResult.swift in Sources */,
 				12E2AD1D236E2D3F0028C949 /* SceneDelegate.swift in Sources */,
 				12E2AD33236F6C8B0028C949 /* SearchResultController.swift in Sources */,
+				12E2AD37236FE5670028C949 /* ResultsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

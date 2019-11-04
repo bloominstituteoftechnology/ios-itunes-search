@@ -9,7 +9,7 @@
         <!--iTunes Search-->
         <scene sceneID="oOR-rK-5EW">
             <objects>
-                <tableViewController id="R3A-wZ-kSd" sceneMemberID="viewController">
+                <tableViewController id="R3A-wZ-kSd" customClass="SearchResultsTableViewController" customModule="iOSItunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xnt-Ic-fAU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="8Jp-8d-sdI" detailTextLabel="iDW-hc-9WS" style="IBUITableViewCellStyleSubtitle" id="HoV-Mo-CVl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackCell" textLabel="8Jp-8d-sdI" detailTextLabel="iDW-hc-9WS" style="IBUITableViewCellStyleSubtitle" id="HoV-Mo-CVl" customClass="ResultsTableViewCell" customModule="iOSItunesSearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HoV-Mo-CVl" id="rC3-9P-Sb0">
@@ -77,6 +77,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="subtitleLabel" destination="iDW-hc-9WS" id="G4n-Ls-kwe"/>
+                                    <outlet property="titleLabel" destination="8Jp-8d-sdI" id="kSO-e9-4vt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -85,6 +89,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="jun-de-DS4"/>
+                    <connections>
+                        <outlet property="searchBar" destination="vxs-bH-d6P" id="4o4-wv-P2m"/>
+                        <outlet property="segmentedResultsType" destination="PJW-Wi-bkV" id="cPC-23-u8i"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jz3-47-eo1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
