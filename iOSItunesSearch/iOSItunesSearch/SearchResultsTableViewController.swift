@@ -14,6 +14,7 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var segmentedResultsType: UISegmentedControl!
     
     let searchResultsController = SearchResultController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -42,7 +43,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         guard let searchTerm = searchBar.text else { return }
         var resultType: ResultType!
-
+        self.searchResultsController.searchResults.removeAll()
                switch segmentedResultsType.selectedSegmentIndex {
                case 0:
                    resultType = .software
@@ -59,6 +60,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             }
 
             DispatchQueue.main.async {
+                
                 self.tableView.reloadData()
             }
         }

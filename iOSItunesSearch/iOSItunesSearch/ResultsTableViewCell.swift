@@ -15,13 +15,14 @@ class ResultsTableViewCell: UITableViewCell {
     
     var result: SearchResult? {
         didSet{
+            
             updateViews()
         }
     }
     
     private func updateViews() {
         guard let result = result else { return }
-        
+    
         titleLabel.text = result.title
         subtitleLabel.text = result.creator
     }
