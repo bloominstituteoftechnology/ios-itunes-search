@@ -10,7 +10,11 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
 
-    let SearchResultsTableViewController: SearchResultsTableViewController
+let SearchResultsTableViewController: SearchResultsTableViewController
+    
+ @IBOutlet weak var searchBar: UISearchBar!
+    
+    searchBar.delegate = self
     
     
     
