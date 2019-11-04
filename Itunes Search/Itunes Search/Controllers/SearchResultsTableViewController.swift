@@ -10,6 +10,11 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
 
+    let SearchResultsTableViewController: SearchResultsTableViewController
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

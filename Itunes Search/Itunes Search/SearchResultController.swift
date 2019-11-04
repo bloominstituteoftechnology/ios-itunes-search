@@ -14,11 +14,12 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
+// creates a url
 class SearchResultController {
     let baseURL = URL(string:"https://itunes.apple.com/search?term = yelp&entity=software")!
     var search: [SearchResult] = []
 
-    func performSearch(searchItem:String,resultType:
+    func performSearch(searchItem: String,resultType:
         [ResultType],completion: @escaping() -> Void) {
         var urlComponents = URLComponents(url:baseURL,
          resolvingAgainstBaseURL: true)
@@ -53,7 +54,7 @@ class SearchResultController {
             
             do{
               let searchResults = try
-                jsonDecoder.decode(SearchResults.self,from:data)
+                jsonDecoder.decode(searchResults.self,from:data)
                 self.search.append(contentsOf:
                     searchResults.results)
                 
@@ -65,3 +66,4 @@ class SearchResultController {
         }  .resume()
       }
 }
+
