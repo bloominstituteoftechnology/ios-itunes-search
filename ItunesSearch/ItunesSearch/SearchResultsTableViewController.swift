@@ -14,6 +14,8 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     let searchResultsController = SearchResultController()
+    var resultType: ResultType!
+    var searchTerm = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,38 @@ class SearchResultsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    private func startNewSearch(term: String, resultType: ResultType) {
+        searchResultsController.preformSearch(searchTerm: term, resultType: resultType) { error in
+                 if let error = error {
+                     print("Error fetching results: \(error)")
+                 }
+                 DispatchQueue.main.async {
+                 self.tableView.reloadData()
+                 }
+             }
+          }
 
+    @IBAction func resultTypedChanged(_ sender: Any) {
+        
+        if searchResultsController.searchResults.count > 0 {
+            searchResultsController.searchResults.removeAll()
+            tableView.reloadData()
+        }
+        
+        switch resultTypeSegmentedControll.selectedSegmentIndex {
+               case 0:
+                   resultType = .software
+               case 1:
+                   resultType = .musicTrack
+               case 2:
+                   resultType = .movie
+               default:
+                   break
+               }
+        startNewSearch(term: searchTerm, resultType: resultType)
+    }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -43,27 +76,7 @@ class SearchResultsTableViewController: UITableViewController {
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let term = searchBar.text, !term.isEmpty else { return }
-        var resultType: ResultType!
-        switch resultTypeSegmentedControll.selectedSegmentIndex {
-        case 0:
-            resultType = .software
-        case 1:
-            resultType = .musicTrack
-        case 2:
-            resultType = .movie
-        default:
-            break
-        }
-        
-        searchResultsController.preformSearch(searchTerm: term, resultType: resultType) { error in
-            if let error = error {
-                print("Error fetching results: \(error)")
-            }
-            DispatchQueue.main.async {
-                
-            
-            self.tableView.reloadData()
-            }
-        }
+        searchTerm = term
+        startNewSearch(term: searchTerm, resultType: resultType)
     }
 }
