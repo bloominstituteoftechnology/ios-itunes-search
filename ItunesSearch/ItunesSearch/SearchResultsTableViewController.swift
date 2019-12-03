@@ -13,31 +13,53 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var resultTypeSegmentedControll: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
+    let searchResultsController = SearchResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
 
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "iTunesCell", for: indexPath)
+        let result = searchResultsController.searchResults[indexPath.row]
+        cell.textLabel?.text = result.title
+        cell.detailTextLabel?.text = result.creator
         return cell
+    }
+}
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let term = searchBar.text, !term.isEmpty else { return }
+        var resultType: ResultType!
+        switch resultTypeSegmentedControll.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        
+        searchResultsController.preformSearch(searchTerm: term, resultType: resultType) { error in
+            if let error = error {
+                print("Error fetching results: \(error)")
+            }
+            self.tableView.reloadData()
+        }
     }
 }
