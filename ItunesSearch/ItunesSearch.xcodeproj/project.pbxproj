@@ -15,6 +15,7 @@
 		D5D725272396F87E00B97A5A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D725262396F87E00B97A5A /* SearchResult.swift */; };
 		D5D725292397001B00B97A5A /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D725282397001B00B97A5A /* ResultType.swift */; };
 		D5D7252B2397011C00B97A5A /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D7252A2397011C00B97A5A /* SearchResultController.swift */; };
+		D5D7252D2397191600B97A5A /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D7252C2397191600B97A5A /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D5D725262396F87E00B97A5A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		D5D725282397001B00B97A5A /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		D5D7252A2397011C00B97A5A /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		D5D7252C2397191600B97A5A /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				D5D725162396F7D400B97A5A /* Main.storyboard */,
+				D5D7252C2397191600B97A5A /* SearchResultsTableViewController.swift */,
 				D5D725262396F87E00B97A5A /* SearchResult.swift */,
 				D5D725282397001B00B97A5A /* ResultType.swift */,
 				D5D7252A2397011C00B97A5A /* SearchResultController.swift */,
@@ -154,6 +157,7 @@
 			files = (
 				D5D725292397001B00B97A5A /* ResultType.swift in Sources */,
 				D5D725112396F7D400B97A5A /* AppDelegate.swift in Sources */,
+				D5D7252D2397191600B97A5A /* SearchResultsTableViewController.swift in Sources */,
 				D5D725272396F87E00B97A5A /* SearchResult.swift in Sources */,
 				D5D725132396F7D400B97A5A /* SceneDelegate.swift in Sources */,
 				D5D7252B2397011C00B97A5A /* SearchResultController.swift in Sources */,
