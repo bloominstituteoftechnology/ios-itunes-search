@@ -10,18 +10,60 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Outlets
     @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Properties
     let searchResultsController = SearchResultController()
+    var resultType: ResultType!
+    var searchTerm = ""
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
     }
     
-    // MARK: - Table view data source
+    private func startNewSearch(term: String, resultType: ResultType) {
+        
+        if searchResultsController.searchResults.count > 0 {
+            searchResultsController.searchResults.removeAll()
+            tableView.reloadData()
+        }
+        
+        searchResultsController.performSearch(searchTerm: term, resultType: resultType) { error in
+            if let error = error {
+                print("Error fetching results: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Actions
+    @IBAction func resultTypeChanged(_ sender: UISegmentedControl) {
+        switch resultTypeSegmentedControl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        startNewSearch(term: searchTerm, resultType: resultType)
+    }
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Table View DataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -39,29 +81,12 @@ class SearchResultsTableViewController: UITableViewController {
     }
 }
 
+// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+// MARK: - UISearchBar Delegate Extension
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let term = searchBar.text, !term.isEmpty else { return }
-        var resultType: ResultType!
-        switch resultTypeSegmentedControl.selectedSegmentIndex {
-        case 0:
-            resultType = .software
-        case 1:
-            resultType = .musicTrack
-        case 2:
-            resultType = .movie
-        default:
-            break
-        }
-        
-        searchResultsController.performSearch(searchTerm: term, resultType: resultType) { error in
-            if let error = error {
-                print("Error fetching results: \(error)")
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        searchTerm = term
+        startNewSearch(term: searchTerm, resultType: resultType)
     }
 }
