@@ -17,7 +17,7 @@ enum HTTPMethod: String {
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/")
+    let baseURL = URL(string: "https://itunes.apple.com/search")
     var searchResults: [SearchResult] = []
     
     func preformSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
@@ -25,7 +25,7 @@ class SearchResultController {
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
         let termQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let entityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents?.queryItems = [entityQueryItem, termQueryItem]
+        urlComponents?.queryItems = [termQueryItem, entityQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("Request URL not valid: \(NSError())")
@@ -51,10 +51,8 @@ class SearchResultController {
             
             do {
                 let resultSearch = try decoder.decode(SearchResults.self, from: data)
-                DispatchQueue.main.async {
-                self.searchResults = resultSearch.ressults
+                self.searchResults = resultSearch.results
                 completion(nil)
-                }
             } catch let networkError {
                 print("Unable to decode data into object of type [SearchResult]: \(networkError)")
                 completion(networkError)

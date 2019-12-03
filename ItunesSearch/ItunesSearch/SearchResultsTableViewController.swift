@@ -59,7 +59,11 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             if let error = error {
                 print("Error fetching results: \(error)")
             }
+            DispatchQueue.main.async {
+                
+            
             self.tableView.reloadData()
+            }
         }
     }
 }
