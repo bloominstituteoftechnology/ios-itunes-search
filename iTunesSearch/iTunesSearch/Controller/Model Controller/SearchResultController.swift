@@ -17,7 +17,7 @@ enum HTTPMethod: String {
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/")
+    let baseURL = URL(string: "https://itunes.apple.com/search")
     var searchResults: [SearchResult] = []
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
@@ -32,6 +32,7 @@ class SearchResultController {
             completion(NSError())
             return
         }
+        print(requestURL)
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -51,10 +52,8 @@ class SearchResultController {
             
             do {
                 let resultSearch = try decoder.decode(SearchResults.self, from: data)
-                DispatchQueue.main.async {
-                    self.searchResults = resultSearch.results
-                    completion(nil)
-                }
+                self.searchResults = resultSearch.results
+                completion(nil)
             } catch let networkError {
                 print("Unable to decode data into object of type [SearchResult]: \(networkError)")
                 completion(networkError)

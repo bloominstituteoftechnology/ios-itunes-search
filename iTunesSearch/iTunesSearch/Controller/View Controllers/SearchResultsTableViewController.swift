@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -19,13 +19,13 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         searchBar.delegate = self
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultsController.searchResults.count
     }
@@ -59,7 +59,9 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
                 print("Error fetching results: \(error)")
             }
             
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }
