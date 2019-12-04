@@ -68,6 +68,7 @@
 				D5D725282397001B00B97A5A /* ResultType.swift */,
 				D5D7252A2397011C00B97A5A /* SearchResultController.swift */,
 				D5D725192396F7D700B97A5A /* Assets.xcassets */,
+				D5D7251E2396F7D700B97A5A /* Info.plist */,
 				D5D725252396F83900B97A5A /* Resources */,
 			);
 			path = ItunesSearch;
@@ -79,7 +80,6 @@
 				D5D725102396F7D400B97A5A /* AppDelegate.swift */,
 				D5D725122396F7D400B97A5A /* SceneDelegate.swift */,
 				D5D7251B2396F7D700B97A5A /* LaunchScreen.storyboard */,
-				D5D7251E2396F7D700B97A5A /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
