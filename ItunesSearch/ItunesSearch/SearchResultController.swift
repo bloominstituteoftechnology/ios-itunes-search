@@ -20,9 +20,10 @@ class SearchResultController {
         case delete = "DELETE"
     }
 
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let searchTermQueryItem = URLQueryItem(name: "entity", value: searchTerm)
         urlComponents?.queryItems = [searchTermQueryItem]
         guard let requestURL = urlComponents?.url else {
             print ("request URL is nil")
