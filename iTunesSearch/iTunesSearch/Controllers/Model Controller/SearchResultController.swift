@@ -16,13 +16,16 @@ enum HTTPMethod: String {
 }
 
 class SearchResultController {
-    let baseURL = URL(string: "https://itunes.apple.com/")!
+    let baseURL = URL(string: "https://itunes.apple.com")!
     var searchResults: [SearchResult] = []
     
     func performSearch(searchTerm: String, resultType: ResulType, completion: @escaping (Error?) -> Void) {
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchQueryItem = URLQueryItem(name: "search?", value: searchTerm)
-        urlComponents?.queryItems = [searchQueryItem]
+        
+        let searchURL = baseURL.appendingPathComponent("search")
+        var urlComponents = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let typeOfQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchQueryItem, typeOfQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("URL request is nil")
