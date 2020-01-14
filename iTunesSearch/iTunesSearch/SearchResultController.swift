@@ -10,28 +10,37 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/")! // search
+    let baseURL = URL(string: "https://itunes.apple.com/search?term=")! // search
     var searchResults: [SearchResult] = [] // data source for the table view
     
     // The completion closure should take an Error? argument and should return Void. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of this page. You're obviously free to ask a PM for help as well.
                                                                                     // (Error?)
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        // I know it's not working right because im not filter for apps/music/movies
         
-        let searchTermQueryItem = URLQueryItem(name: "search?term", value: searchTerm) // name: "search?media"
-        urlComponents?.queryItems = [searchTermQueryItem]
-        //let term = "?term"
-        //let searchURL = baseURL.appendingPathComponent(term)
+        var testURL = baseURL
+        testURL = URL(string: "\(baseURL)" + searchTerm)!
         
+        var newComponents = URLComponents(url: testURL, resolvingAgainstBaseURL: true)
+        // this was the old one
+        //var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
-        guard let requestUrl = urlComponents?.url else {
+        // this was adding ?
+        //let searchTermQueryItem = URLQueryItem(name: "search?term", value: searchTerm) // name: "search?media"
+        //urlComponents?.queryItems = [searchTermQueryItem]
+        
+        // this also wasn't really working
+        //let searchURL = baseURL.appendingPathComponent("?term") // prints 000000.0
+        
+        // guard let requestUrl = urlComponents?.url else
+        guard let requestUrl = newComponents?.url else {
             print("request URL is nil")
             completion() // NSError()
             return
         }
         NSLog("\(requestUrl)")
-        //NSLog("\(searchURL)")
+        NSLog("\(testURL)")
         // https://itunes.apple.com/search?term=jack+johnson. example
         // https://itunes.apple.com/??term=Baby what I got, always puts ?
         
