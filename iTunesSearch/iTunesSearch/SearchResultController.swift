@@ -10,7 +10,7 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com")! // could be wrong
+    let baseURL = URL(string: "https://itunes.apple.com/")! // search
     var searchResults: [SearchResult] = [] // data source for the table view
     
     // The completion closure should take an Error? argument and should return Void. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of this page. You're obviously free to ask a PM for help as well.
@@ -18,14 +18,22 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        
+        let searchTermQueryItem = URLQueryItem(name: "search?term", value: searchTerm) // name: "search?media"
         urlComponents?.queryItems = [searchTermQueryItem]
+        //let term = "?term"
+        //let searchURL = baseURL.appendingPathComponent(term)
+        
         
         guard let requestUrl = urlComponents?.url else {
             print("request URL is nil")
-            completion()
+            completion() // NSError()
             return
         }
+        NSLog("\(requestUrl)")
+        //NSLog("\(searchURL)")
+        // https://itunes.apple.com/search?term=jack+johnson. example
+        // https://itunes.apple.com/??term=Baby what I got, always puts ?
         
         /*
         7.In the completion closure of the data task:
@@ -43,6 +51,9 @@ class SearchResultController {
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
+            
+            
             if let error = error {
                 print("Error fetching data: \(error)")
                 return
@@ -60,7 +71,7 @@ class SearchResultController {
             } catch {
                 print("Unable to decode data into object of type [SearchResult]: \(error)")
             }
-            completion()
+            completion() // NSError()
         }.resume()
         
         /*

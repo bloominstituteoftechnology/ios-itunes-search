@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ResultType: String {
+enum ResultType: String, Decodable {
     case software = "software"
     case musicTrack = "musicTrack"
     case movie = "movie"
