@@ -109,7 +109,7 @@ When using a `UISearchBar`, you use a method in the `UISearchBarDelegate` to tri
 <p>
 
 1. Unwrap the search bar's text
-2. Create a variable `resultType: ResultType!`. This will hold the result type selected from the segmented control.
+2. Create a variable `s`. This will hold the result type selected from the segmented control.
 3. Using a conditional statement like a `switch` or `if-else`, check the segmented control's `selectedSegmentIndex` property. The `selectedSegmentIndex` is an integer value that represents which segment is currently selected. Since this segmented control has three segments, its possible indexes will be 0, 1, or 2. Set the `resultType`'s value to the correct case for each possible `selectedSegmentIndex` value. (for example, 0 would be `.software` since the selected segment would be apps.)
 4. Call the `performSearch` method of the `searchResultsController`. Pass in the search term, and the `resultType`. In the completion closure of this method, check for errors. If there is no error, reload the table view on the correct queue.
 
