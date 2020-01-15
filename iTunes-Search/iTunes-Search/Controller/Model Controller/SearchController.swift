@@ -72,13 +72,13 @@ class SearchController {
     }
     
     /**
-        Decode Data into SearchResult and append to self.results or return an error
+        Decode Data into SearchResult and append to searchResults or return an error
      */
     private func decodeSearchResult(data: Data) -> Error? {
         let jsonDecoder = JSONDecoder()
         do {
             let musicSearch = try jsonDecoder.decode(SearchResults.self, from: data)
-            self.searchResults.append(contentsOf: musicSearch.results)
+            self.searchResults = musicSearch.results
             return nil
         } catch {
             NSLog("Data is not decodable to JSON, Data: \(data.description)")

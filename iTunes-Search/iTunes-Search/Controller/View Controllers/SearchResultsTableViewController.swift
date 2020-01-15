@@ -13,6 +13,11 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    //MARK: IBActions
+    @IBAction func categoryWasChanged(_ sender: Any) {
+        search()
+    }
+    
     //MARK: Class Properties
     private let searchController = SearchController()
     
@@ -22,30 +27,9 @@ class SearchResultsTableViewController: UITableViewController {
         searchBar.delegate = self
         
     }
-
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchController.searchResults.count
-    }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SubtitleTableViewCell", for: indexPath)
-        let searchResult = searchController.searchResults[indexPath.row]
-        cell.textLabel?.text = searchResult.title
-        cell.detailTextLabel?.text = searchResult.creator
-
-        return cell
-    }
-
-}
-
-extension SearchResultsTableViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    //MARK: Helper Methods
+    func search() {
         guard let searchBarText = searchBar.text,
             searchBarText != ""
         else {return}
@@ -71,5 +55,31 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
                 }
             }
         }
+    }
+
+    // MARK: - Table view data source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchController.searchResults.count
+    }
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SubtitleTableViewCell", for: indexPath)
+        let searchResult = searchController.searchResults[indexPath.row]
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+
+        return cell
+    }
+
+}
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        search()
     }
 }
