@@ -12,7 +12,7 @@ class SearchController {
     let baseURL: URL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
 
-
+    //MARK: Methods
     /**
         Constructs the proper URL, executes an async call to the iTunes API and returns search results or an error
      - Parameter resultType: Ensures that the proper URL is used in the search query (i.e. using .movie would search through the movies API)
@@ -41,6 +41,7 @@ class SearchController {
         }).resume()
     }
     
+    //MARK: Helper Methods
     /**
         Construct URLs for performSearch method
         - parameter urlString: Base Search URL

@@ -49,17 +49,19 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         guard let searchBarText = searchBar.text,
             searchBarText != ""
         else {return}
-        var resultText = ""
+        
+        var resultType: ResultType
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            resultText = ResultType.software.rawValue
+            resultType = .software
         case 1:
-            resultText = ResultType.musicTrack.rawValue
+            resultType = .musicTrack
         case 2:
-            resultText = ResultType.movie.rawValue
-        default: break
+            resultType = .movie
+        default: resultType = .software
         }
-        searchController.performSearch(searchTerm: searchBarText, resultType: ResultType(rawValue: resultText) ?? .movie) { (error) in
+        
+        searchController.performSearch(searchTerm: searchBarText, resultType: resultType) { (error) in
             if let error = error {
                 print(error)
             } else {
