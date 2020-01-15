@@ -36,7 +36,7 @@ class SearchResultController {
         // guard let requestUrl = urlComponents?.url else
         guard let requestUrl = newComponents?.url else {
             print("request URL is nil")
-            completion() // NSError()
+            completion() 
             return
         }
         NSLog("\(requestUrl)")
