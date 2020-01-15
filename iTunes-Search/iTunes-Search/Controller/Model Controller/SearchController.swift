@@ -77,8 +77,8 @@ class SearchController {
     private func decodeSearchResult(data: Data) -> Error? {
         let jsonDecoder = JSONDecoder()
         do {
-            let musicSearch = try jsonDecoder.decode(SearchResults.self, from: data)
-            self.searchResults = musicSearch.results
+            let iTunesSearch = try jsonDecoder.decode(SearchResults.self, from: data)
+            self.searchResults = iTunesSearch.results
             return nil
         } catch {
             NSLog("Data is not decodable to JSON, Data: \(data.description)")
