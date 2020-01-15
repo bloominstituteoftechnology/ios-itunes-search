@@ -27,6 +27,11 @@ class SearchResultController {
         let typeOfQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         urlComponents?.queryItems = [searchQueryItem, typeOfQueryItem]
         
+        if searchResults.isEmpty == false {
+          searchResults.removeAll()
+        }
+
+        
         guard let requestURL = urlComponents?.url else {
             print("URL request is nil")
             completion(NSError())
