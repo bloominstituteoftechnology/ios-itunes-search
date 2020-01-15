@@ -20,15 +20,7 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        searchController.performSearch(searchTerm: "Top Gun", resultType: .movie) { (error) in
-            if let error = error {
-                print(error)
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
-        }
+        
     }
 
     // MARK: - Table view data source
@@ -54,6 +46,28 @@ class SearchResultsTableViewController: UITableViewController {
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        guard let searchBarText = searchBar.text,
+            searchBarText != ""
+        else {return}
+        var resultText = ""
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            resultText = ResultType.software.rawValue
+        case 1:
+            resultText = ResultType.musicTrack.rawValue
+        case 2:
+            resultText = ResultType.movie.rawValue
+        default: break
+        }
+        searchController.performSearch(searchTerm: searchBarText, resultType: ResultType(rawValue: resultText) ?? .movie) { (error) in
+            if let error = error {
+                print(error)
+            } else {
+                print(self.searchController.searchResults)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 }
