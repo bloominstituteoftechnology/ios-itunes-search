@@ -17,41 +17,65 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var mediaTypeSelector: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    // MARK: - Private Methods
+    // MARK: - Action Handlers
 
+    @IBAction func mediaTypeSelectorChanged(_ sender: UISegmentedControl) {
+        updateDataSource()
+    }
     
+    // MARK: - Private Methods
+    
+    private func resultTypeFor(selectedSegmentIndex: Int) -> ResultType {
+        switch selectedSegmentIndex {
+        case 0:
+            return .software
+        case 1:
+            return .musicTrack
+        default:
+            return .movie
+        }
+    }
+    
+    private func updateDataSource() {
+        guard let searchTerm = searchBar.text,
+            let selectedSegmentIndex = mediaTypeSelector?.selectedSegmentIndex else { return }
+        
+        let resultType = resultTypeFor(selectedSegmentIndex: selectedSegmentIndex)
+        
+        print("Searching for \(searchTerm)...")
+        
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType, completion: { (error) in
+            guard error == nil else { return }
+            
+            DispatchQueue.main.async {
+                print("Found \(self.searchResultsController.searchResults.count) results!")
+                self.tableView.reloadData()
+            }
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchBar.delegate = self
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultTableViewCell
+        
+        guard indexPath.row < searchResultsController.searchResults.count else { return cell }
+        
+        let searchResult = searchResultsController.searchResults[indexPath.row]
+        cell.searchResult = searchResult
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -98,4 +122,10 @@ class SearchResultsTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        updateDataSource()
+    }
 }

@@ -25,6 +25,9 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="mediaTypeSelectorChanged:" destination="tA2-Ll-FGM" eventType="valueChanged" id="YRe-b1-Xb7"/>
+                                    </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sDw-w6-QFu">
                                     <rect key="frame" x="0.0" y="47" width="414" height="57"/>
@@ -43,7 +46,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="Kb7-wA-EwS" detailTextLabel="omH-Tj-70u" style="IBUITableViewCellStyleSubtitle" id="Of8-3e-gUi">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="Kb7-wA-EwS" detailTextLabel="omH-Tj-70u" style="IBUITableViewCellStyleSubtitle" id="Of8-3e-gUi" customClass="SearchResultTableViewCell" customModule="iTunesSearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="132" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Of8-3e-gUi" id="9KA-4i-dRM">
@@ -66,6 +69,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="creatorLabel" destination="omH-Tj-70u" id="jFS-Qx-Z96"/>
+                                    <outlet property="titleLabel" destination="Kb7-wA-EwS" id="Vcv-Ky-iO9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
