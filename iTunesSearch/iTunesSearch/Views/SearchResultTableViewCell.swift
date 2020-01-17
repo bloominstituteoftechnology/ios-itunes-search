@@ -21,7 +21,6 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var creatorLabel: UILabel!
     
-    
     // MARK: - Private Methods
     
     private func updateViews() {

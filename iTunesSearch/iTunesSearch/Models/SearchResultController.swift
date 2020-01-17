@@ -20,15 +20,16 @@ class SearchResultController {
         case get = "GET"
         case put = "PUT"
         case post = "POST"
-        case delete = "Delete"
+        case delete = "DELETE"
     }
     
     // MARK: - Private Methods
 
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTypeQueryItem = URLQueryItem(name: "media", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchTermQueryItem, resultTypeQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("Error: Request URL is nil!")
@@ -58,7 +59,7 @@ class SearchResultController {
                 self.searchResults = searchResults.results
                 completion(nil)
             } catch {
-                print("Unable to decode data into object of type []: \(error)")
+                print("Unable to decode data into object of type [SearchResult]: \(error)")
                 completion(error)
             }
         }.resume()
