@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		6335FF4F23D185E900F3B8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335FF4E23D185E900F3B8A3 /* AppDelegate.swift */; };
 		6335FF5123D185E900F3B8A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335FF5023D185E900F3B8A3 /* SceneDelegate.swift */; };
-		6335FF5323D185E900F3B8A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335FF5223D185E900F3B8A3 /* ViewController.swift */; };
 		6335FF5623D185E900F3B8A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6335FF5423D185E900F3B8A3 /* Main.storyboard */; };
 		6335FF5823D185EA00F3B8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6335FF5723D185EA00F3B8A3 /* Assets.xcassets */; };
 		6335FF5B23D185EA00F3B8A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6335FF5923D185EA00F3B8A3 /* LaunchScreen.storyboard */; };
 		6335FF6323D18B8600F3B8A3 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335FF6223D18B8600F3B8A3 /* SearchResult.swift */; };
 		6335FF6523D1984500F3B8A3 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335FF6423D1984500F3B8A3 /* ResultType.swift */; };
 		6335FF6723D198AF00F3B8A3 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335FF6623D198AE00F3B8A3 /* SearchResultController.swift */; };
+		6335FF6A23D1A70600F3B8A3 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335FF6923D1A70600F3B8A3 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6335FF4B23D185E900F3B8A3 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6335FF4E23D185E900F3B8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6335FF5023D185E900F3B8A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6335FF5223D185E900F3B8A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6335FF5523D185E900F3B8A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6335FF5723D185EA00F3B8A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6335FF5A23D185EA00F3B8A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		6335FF6223D18B8600F3B8A3 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		6335FF6423D1984500F3B8A3 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		6335FF6623D198AE00F3B8A3 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		6335FF6923D1A70600F3B8A3 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +62,13 @@
 		6335FF4D23D185E900F3B8A3 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				6335FF5C23D185EA00F3B8A3 /* Info.plist */,
 				6335FF4E23D185E900F3B8A3 /* AppDelegate.swift */,
 				6335FF5023D185E900F3B8A3 /* SceneDelegate.swift */,
-				6335FF5223D185E900F3B8A3 /* ViewController.swift */,
-				6335FF5423D185E900F3B8A3 /* Main.storyboard */,
 				6335FF5723D185EA00F3B8A3 /* Assets.xcassets */,
-				6335FF5923D185EA00F3B8A3 /* LaunchScreen.storyboard */,
-				6335FF5C23D185EA00F3B8A3 /* Info.plist */,
 				6335FF6823D198F600F3B8A3 /* Models */,
+				6335FF6C23D1A72500F3B8A3 /* Storyboards */,
+				6335FF6B23D1A70E00F3B8A3 /* View Controllers */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -82,6 +81,23 @@
 				6335FF6623D198AE00F3B8A3 /* SearchResultController.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6335FF6B23D1A70E00F3B8A3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6335FF6923D1A70600F3B8A3 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6335FF6C23D1A72500F3B8A3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6335FF5923D185EA00F3B8A3 /* LaunchScreen.storyboard */,
+				6335FF5423D185E900F3B8A3 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +173,9 @@
 			files = (
 				6335FF6723D198AF00F3B8A3 /* SearchResultController.swift in Sources */,
 				6335FF6523D1984500F3B8A3 /* ResultType.swift in Sources */,
-				6335FF5323D185E900F3B8A3 /* ViewController.swift in Sources */,
 				6335FF4F23D185E900F3B8A3 /* AppDelegate.swift in Sources */,
 				6335FF6323D18B8600F3B8A3 /* SearchResult.swift in Sources */,
+				6335FF6A23D1A70600F3B8A3 /* SearchResultsTableViewController.swift in Sources */,
 				6335FF5123D185E900F3B8A3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
