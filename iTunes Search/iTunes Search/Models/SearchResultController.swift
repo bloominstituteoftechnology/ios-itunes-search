@@ -8,18 +8,22 @@
 
 import Foundation
 
+enum HTTPMethod: String {
+        case get = "GET"
+        case put = "PUT"
+        case post = "POST"
+        case delete = "DELETE"
+    }
+  
+
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/search")!
-    
+    //MARK: - Properties
     var searchResults: [SearchResult] = []
     
-    enum HTTPMethod: String {
-          case get = "GET"
-          case put = "PUT"
-          case post = "POST"
-          case delete = "DELETE"
-      }
+    //MARK: Networking
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
+   
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (_ error: Error?) -> Void) {
         
@@ -51,8 +55,8 @@ class SearchResultController {
                   
                   let jsonDecoder = JSONDecoder()
                   do {
-                    let searchResult = try jsonDecoder.decode(SearchResult.self, from: data)
-                    self.searchResults.append(searchResult)
+                    let iTunesSearch = try jsonDecoder.decode(SearchResults.self, from: data)
+                    self.searchResults = iTunesSearch.results
                   } catch {
                       print("Unable to decode data into object of type [SearchResult]: \(error)")
                   }
