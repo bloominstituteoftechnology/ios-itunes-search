@@ -15,6 +15,7 @@
 		E03A8BF923D2A2CA00D280DB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8BF823D2A2CA00D280DB /* SearchResult.swift */; };
 		E03A8BFC23D2A7F100D280DB /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8BFB23D2A7F100D280DB /* ResultType.swift */; };
 		E03A8BFE23D2A85F00D280DB /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8BFD23D2A85F00D280DB /* SearchResultController.swift */; };
+		E03A8C0023D2BE5700D280DB /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A8BFF23D2BE5700D280DB /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E03A8BF823D2A2CA00D280DB /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		E03A8BFB23D2A7F100D280DB /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		E03A8BFD23D2A85F00D280DB /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		E03A8BFF23D2BE5700D280DB /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				E03A8BF823D2A2CA00D280DB /* SearchResult.swift */,
 				E03A8BFB23D2A7F100D280DB /* ResultType.swift */,
 				E03A8BFD23D2A85F00D280DB /* SearchResultController.swift */,
+				E03A8BFF23D2BE5700D280DB /* SearchResultsTableViewController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				E03A8BFC23D2A7F100D280DB /* ResultType.swift in Sources */,
 				E03A8BE523D2A23800D280DB /* AppDelegate.swift in Sources */,
+				E03A8C0023D2BE5700D280DB /* SearchResultsTableViewController.swift in Sources */,
 				E03A8BF923D2A2CA00D280DB /* SearchResult.swift in Sources */,
 				E03A8BE723D2A23800D280DB /* SceneDelegate.swift in Sources */,
 				E03A8BFE23D2A85F00D280DB /* SearchResultController.swift in Sources */,
