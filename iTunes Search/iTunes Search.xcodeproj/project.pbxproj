@@ -62,7 +62,7 @@
 		423FB31123D271F9008CAB1E /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
-				423FB33523D333F3008CAB1E /* New Group */,
+				423FB33823D33675008CAB1E /* Model Controller */,
 				423FB33323D333C4008CAB1E /* Storyboards */,
 				423FB33023D32F5D008CAB1E /* View Controller */,
 				423FB32723D27541008CAB1E /* Resources */,
@@ -75,7 +75,6 @@
 		423FB32623D2753C008CAB1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				423FB33123D32F73008CAB1E /* SearchResultController.swift */,
 				423FB32823D2755D008CAB1E /* SearchResult.swift */,
 				423FB32E23D32F45008CAB1E /* ResultType.swift */,
 			);
@@ -109,11 +108,12 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		423FB33523D333F3008CAB1E /* New Group */ = {
+		423FB33823D33675008CAB1E /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				423FB33123D32F73008CAB1E /* SearchResultController.swift */,
 			);
-			path = "New Group";
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
