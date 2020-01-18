@@ -8,15 +8,17 @@
 
 import Foundation
 
-enum HTTPMethod: String {
-        case get = "GET"
-        case put = "PUT"
-        case post = "POST"
-        case delete = "DELETE"
-    }
-  
+
 
 class SearchResultController {
+    
+    enum HTTPMethod: String {
+          case get = "GET"
+          case put = "PUT"
+          case post = "POST"
+          case delete = "DELETE"
+      }
+    
     
     //MARK: - Properties
     var searchResults: [SearchResult] = []

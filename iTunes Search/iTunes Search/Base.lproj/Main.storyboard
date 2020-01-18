@@ -46,7 +46,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="paq-0E-CVw" detailTextLabel="JtK-Qq-YuC" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="0nc-fN-kza">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultsCell" textLabel="paq-0E-CVw" detailTextLabel="JtK-Qq-YuC" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="0nc-fN-kza" customClass="SearchResultTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0nc-fN-kza" id="acy-3q-nbC">
@@ -60,8 +60,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JtK-Qq-YuC">
-                                            <rect key="frame" x="20" y="33.5" width="44" height="14.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Creator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JtK-Qq-YuC">
+                                            <rect key="frame" x="20" y="33.5" width="42.5" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -69,6 +69,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="creatorLbl" destination="JtK-Qq-YuC" id="dee-jz-LYm"/>
+                                    <outlet property="titleLbl" destination="paq-0E-CVw" id="gIU-oX-vF8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
