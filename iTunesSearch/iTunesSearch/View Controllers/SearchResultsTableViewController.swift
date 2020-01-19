@@ -9,16 +9,16 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
-
+    
     // MARK: - Properties
-
+    
     let searchResultsController = SearchResultController()
     
     @IBOutlet weak var mediaTypeSelector: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
     // MARK: - Action Handlers
-
+    
     @IBAction func mediaTypeSelectorChanged(_ sender: UISegmentedControl) {
         updateDataSource()
     }
@@ -38,14 +38,20 @@ class SearchResultsTableViewController: UITableViewController {
     
     private func updateDataSource() {
         guard let searchTerm = searchBar.text,
-            let selectedSegmentIndex = mediaTypeSelector?.selectedSegmentIndex else { return }
+            let selectedSegmentIndex = mediaTypeSelector?.selectedSegmentIndex else {
+                searchResultsController.searchResults = []
+                return
+        }
         
         let resultType = resultTypeFor(selectedSegmentIndex: selectedSegmentIndex)
         
-        print("Searching for \"\(searchTerm)\" in \(mediaTypeSelector.titleForSegment(at: selectedSegmentIndex)!)...")
+        print("Searching \(mediaTypeSelector.titleForSegment(at: selectedSegmentIndex)!) for \"\(searchTerm)\"...")
         
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType, completion: { (error) in
-            guard error == nil else { return }
+            if error != nil {
+                // Clear table view data when search fails to prevent incorrect results from being displayed
+                self.searchResultsController.searchResults = []
+            }
             
             DispatchQueue.main.async {
                 print("Found \(self.searchResultsController.searchResults.count) results!")
@@ -58,14 +64,14 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         searchBar.delegate = self
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return searchResultsController.searchResults.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultTableViewCell
         

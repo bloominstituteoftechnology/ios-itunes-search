@@ -57,7 +57,6 @@ class SearchResultController {
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = searchResults.results
-                NSLog("Successfully decoded \(searchResults.results.count) results!")
                 completion(nil)
             } catch {
                 NSLog("Unable to decode data into object of type [SearchResult]: \(error)")
