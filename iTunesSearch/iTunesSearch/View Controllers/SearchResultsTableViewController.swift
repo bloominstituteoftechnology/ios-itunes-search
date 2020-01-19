@@ -30,7 +30,7 @@ class SearchResultsTableViewController: UITableViewController {
         case 0:
             return .software
         case 1:
-            return .musicTrack
+            return .music
         default:
             return .movie
         }
@@ -42,7 +42,7 @@ class SearchResultsTableViewController: UITableViewController {
         
         let resultType = resultTypeFor(selectedSegmentIndex: selectedSegmentIndex)
         
-        print("Searching for \(searchTerm)...")
+        print("Searching for \"\(searchTerm)\" in \(mediaTypeSelector.titleForSegment(at: selectedSegmentIndex)!)...")
         
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType, completion: { (error) in
             guard error == nil else { return }

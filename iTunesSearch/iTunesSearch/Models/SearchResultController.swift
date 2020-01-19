@@ -12,7 +12,7 @@ class SearchResultController {
     
     // MARK: - Properties
     
-    private let baseURL = URL(string: "https://itunes.apple.com")!
+    private let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     var searchResults: [SearchResult] = []
     
@@ -40,15 +40,15 @@ class SearchResultController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
             guard error == nil else {
-                print("Error fetching data: \(error!)")
+                NSLog("Error fetching data: \(error!)")
                 completion(error!)
                 return
             }
             
             guard let data = data else {
-                print("Error: No data returned from data task!")
+                NSLog("Error: No data returned from data task!")
                 completion(NSError())
                 return
             }
@@ -57,9 +57,10 @@ class SearchResultController {
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = searchResults.results
+                NSLog("Successfully decoded \(searchResults.results.count) results!")
                 completion(nil)
             } catch {
-                print("Unable to decode data into object of type [SearchResult]: \(error)")
+                NSLog("Unable to decode data into object of type [SearchResult]: \(error)")
                 completion(error)
             }
         }.resume()
