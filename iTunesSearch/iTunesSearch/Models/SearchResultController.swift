@@ -56,7 +56,7 @@ class SearchResultController {
             let jsonDecoder = JSONDecoder()
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults = searchResults.results
+                self.searchResults = searchResults.results.filter { $0.title != nil }
                 completion(nil)
             } catch {
                 NSLog("Unable to decode data into object of type [SearchResult]: \(error)")
