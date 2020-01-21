@@ -10,13 +10,8 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
-    let searchResultsController = SearchResultController()
+   private let searchResultsController = SearchResultController()
     
-    var searchResult: SearchResult? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
     
     @IBOutlet weak var typeSelection: UISegmentedControl!
     
@@ -25,7 +20,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     override func viewDidLoad() {
          super.viewDidLoad()
          searchBar.delegate = self
-         self.tableView.reloadData()
      }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

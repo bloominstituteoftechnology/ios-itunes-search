@@ -8,9 +8,6 @@
 
 import Foundation
 
-struct SearchResults: Codable {
-    let results: [SearchResult]
-}
 
 struct SearchResult: Codable {
     let title: String
@@ -20,4 +17,8 @@ struct SearchResult: Codable {
         case title = "trackName"
         case creator = "artistName"
     }
+}
+
+struct SearchResults: Codable {
+    let results: [SearchResult]
 }
