@@ -35,7 +35,7 @@ class SearchResultController {
         
         guard let requestURL = urlComponents?.url else {
             print("Error: Request URL is nil!")
-            completion(nil)
+            completion(NSError())
             return
     }
         var request = URLRequest(url: requestURL)
@@ -44,11 +44,13 @@ class SearchResultController {
     URLSession.shared.dataTask(with: request) { (data, _, error) in
                guard error == nil else {
                    print("Error fetching data: \(error!)")
+                    completion(error)
                    return
                }
                
                guard let data = data else {
                    print("Error: no data returned from data task")
+                completion(NSError())
                    return
                }
                
@@ -59,8 +61,9 @@ class SearchResultController {
                 self.searchResults.append(contentsOf: itunesSearch.results)
                } catch {
                    print("Unable to decode data into object of type [SearchResults]: \(error)")
+                    completion(error)
                }
-            completion(error)
+            completion(nil)
            }.resume()
 }
 }
