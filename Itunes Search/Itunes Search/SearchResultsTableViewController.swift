@@ -34,8 +34,10 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             return resultType = .software
         case 1:
             return resultType = .musicTrack
-        default:
+        case 2:
             return resultType = .movie
+        default:
+           break
         }
         
         searchResultsController.performSearch(searchTerm: searchResult, resultType: resultType) { (error) in

@@ -38,8 +38,10 @@ class SearchResultController {
             completion(NSError())
             return
     }
+         print("\(requestURL)")
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
+
     
     URLSession.shared.dataTask(with: request) { (data, _, error) in
                guard error == nil else {
