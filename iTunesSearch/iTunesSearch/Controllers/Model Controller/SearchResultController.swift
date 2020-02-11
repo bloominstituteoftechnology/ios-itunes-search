@@ -14,11 +14,12 @@ enum HTTPMethod: String {
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com")!
+    var baseURL = URL(string: "https://itunes.apple.com")!
     var searchResults: [SearchResult] = []
     
     func performSearch(for searchTerm: String, ofType resultType: ResultType, completion: @escaping (Error?) -> ()) {
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        let searchURL = baseURL.appendingPathComponent("search")
+        var urlComponents = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)
         let termQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let typeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         urlComponents?.queryItems = [termQueryItem, typeQueryItem]
