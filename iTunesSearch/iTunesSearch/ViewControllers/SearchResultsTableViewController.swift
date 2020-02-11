@@ -19,6 +19,10 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBAction func changedSegment(_ sender: Any) {
+        searchBarSearchButtonClicked(searchBar)
+    }
+    
     // MARK: -View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +73,9 @@ extension SearchResultsTableViewController: UISearchBarDelegate{
             }
         }
     }
+    
+    
+    
 }
 
 
