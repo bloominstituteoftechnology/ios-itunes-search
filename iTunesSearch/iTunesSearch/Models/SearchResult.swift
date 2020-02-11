@@ -23,7 +23,7 @@ struct SearchResult: Codable {
 }
 
 
-struct SearchResults{
+struct SearchResults: Decodable{
     
     var results: [SearchResult]
 }
