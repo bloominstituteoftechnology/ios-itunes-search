@@ -19,6 +19,36 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         searchBar.delegate = self
     }
+    
+    func search() {
+        guard let searchTerm = searchBar.text else { return }
+        var resultType: ResultType!
+        
+        switch selectedType.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            print("Don't know what you selected")
+        }
+        
+        searchResultsController.performSearch(for: searchTerm, ofType: resultType) { (error) in
+            if let error = error {
+                print("Error fetching results: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    @IBAction func changedSelection(_ sender: Any) {
+        search()
+    }
 
     // MARK: - Table view data source
 
@@ -35,32 +65,14 @@ class SearchResultsTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else { return }
-        var resultType: ResultType!
-        
-        switch selectedType.selectedSegmentIndex {
-        case 0:
-            resultType = .software
-        case 1:
-            resultType = .musicTrack
-        case 2:
-            resultType = .movie
-        default:
-            resultType = .software
-        }
-        
-        searchResultsController.performSearch(for: searchTerm, ofType: resultType) { (error) in
-            if let error = error {
-                print("Error fetching results: \(error)")
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        search()
     }
 }
