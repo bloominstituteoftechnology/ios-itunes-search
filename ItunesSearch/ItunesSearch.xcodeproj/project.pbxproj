@@ -15,6 +15,7 @@
 		B5DBDFF523F35694002CB1DE /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DBDFF423F35694002CB1DE /* SearchResult.swift */; };
 		B5DBDFF723F3592D002CB1DE /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DBDFF623F3592D002CB1DE /* ResultType.swift */; };
 		B5DBDFF923F35A84002CB1DE /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DBDFF823F35A84002CB1DE /* SearchResultController.swift */; };
+		B5DBDFFB23F36974002CB1DE /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DBDFFA23F36974002CB1DE /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B5DBDFF423F35694002CB1DE /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		B5DBDFF623F3592D002CB1DE /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		B5DBDFF823F35A84002CB1DE /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		B5DBDFFA23F36974002CB1DE /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				B5DBDFE023F35616002CB1DE /* AppDelegate.swift */,
 				B5DBDFE223F35616002CB1DE /* SceneDelegate.swift */,
 				B5DBDFE623F35616002CB1DE /* Main.storyboard */,
+				B5DBDFFA23F36974002CB1DE /* SearchResultsTableViewController.swift */,
 				B5DBDFE923F35617002CB1DE /* Assets.xcassets */,
 				B5DBDFEB23F35617002CB1DE /* LaunchScreen.storyboard */,
 				B5DBDFEE23F35617002CB1DE /* Info.plist */,
@@ -146,6 +149,7 @@
 			files = (
 				B5DBDFF723F3592D002CB1DE /* ResultType.swift in Sources */,
 				B5DBDFE123F35616002CB1DE /* AppDelegate.swift in Sources */,
+				B5DBDFFB23F36974002CB1DE /* SearchResultsTableViewController.swift in Sources */,
 				B5DBDFF523F35694002CB1DE /* SearchResult.swift in Sources */,
 				B5DBDFE323F35616002CB1DE /* SceneDelegate.swift in Sources */,
 				B5DBDFF923F35A84002CB1DE /* SearchResultController.swift in Sources */,
