@@ -14,6 +14,8 @@
 		D2CA090D23F3593D00546CAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CA090B23F3593D00546CAF /* LaunchScreen.storyboard */; };
 		D2CA091A23F3619100546CAF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA091923F3619100546CAF /* SearchResult.swift */; };
 		D2CA091D23F3630000546CAF /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA091C23F3630000546CAF /* ResultType.swift */; };
+		D2CA091F23F363D800546CAF /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA091E23F363D800546CAF /* SearchResultsController.swift */; };
+		D2CA092123F3662B00546CAF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA092023F3662B00546CAF /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D2CA090E23F3593D00546CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2CA091923F3619100546CAF /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		D2CA091C23F3630000546CAF /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		D2CA091E23F363D800546CAF /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		D2CA092023F3662B00546CAF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		D2CA091723F35FE000546CAF /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2CA091E23F363D800546CAF /* SearchResultsController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				D2CA091C23F3630000546CAF /* ResultType.swift */,
+				D2CA092023F3662B00546CAF /* HTTPMethod.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -191,7 +197,9 @@
 			files = (
 				D2CA090123F3593B00546CAF /* AppDelegate.swift in Sources */,
 				D2CA091D23F3630000546CAF /* ResultType.swift in Sources */,
+				D2CA092123F3662B00546CAF /* HTTPMethod.swift in Sources */,
 				D2CA091A23F3619100546CAF /* SearchResult.swift in Sources */,
+				D2CA091F23F363D800546CAF /* SearchResultsController.swift in Sources */,
 				D2CA090323F3593B00546CAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
