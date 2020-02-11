@@ -19,6 +19,6 @@ struct SearchResult: Codable {
 }
 
 // Struct used to decode the JSON data we need
-struct SearchResults {
+struct SearchResults: Codable {
     let results: [SearchResult]
 }
