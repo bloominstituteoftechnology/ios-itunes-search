@@ -12,6 +12,8 @@
 		D2CA090823F3593B00546CAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CA090623F3593B00546CAF /* Main.storyboard */; };
 		D2CA090A23F3593D00546CAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2CA090923F3593D00546CAF /* Assets.xcassets */; };
 		D2CA090D23F3593D00546CAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CA090B23F3593D00546CAF /* LaunchScreen.storyboard */; };
+		D2CA091A23F3619100546CAF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA091923F3619100546CAF /* SearchResult.swift */; };
+		D2CA091D23F3630000546CAF /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA091C23F3630000546CAF /* ResultType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D2CA090923F3593D00546CAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2CA090C23F3593D00546CAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2CA090E23F3593D00546CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2CA091923F3619100546CAF /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		D2CA091C23F3630000546CAF /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		D2CA08FF23F3593B00546CAF /* ItunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				D2CA091B23F362F100546CAF /* Enums */,
 				D2CA090E23F3593D00546CAF /* Info.plist */,
 				D2CA091823F3601800546CAF /* Resources */,
 				D2CA091723F35FE000546CAF /* Model Controllers */,
@@ -67,6 +72,7 @@
 		D2CA091423F35FC500546CAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2CA091923F3619100546CAF /* SearchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -102,6 +108,14 @@
 				D2CA090B23F3593D00546CAF /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2CA091B23F362F100546CAF /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D2CA091C23F3630000546CAF /* ResultType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +190,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2CA090123F3593B00546CAF /* AppDelegate.swift in Sources */,
+				D2CA091D23F3630000546CAF /* ResultType.swift in Sources */,
+				D2CA091A23F3619100546CAF /* SearchResult.swift in Sources */,
 				D2CA090323F3593B00546CAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
