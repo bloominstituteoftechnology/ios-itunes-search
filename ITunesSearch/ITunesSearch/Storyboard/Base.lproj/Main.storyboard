@@ -29,9 +29,12 @@
                                                 <segment title="Movies"/>
                                             </segments>
                                             <color key="selectedSegmentTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="segmentChanged:" destination="CXN-5T-c45" eventType="valueChanged" id="7dQ-na-wih"/>
+                                            </connections>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" placeholder="Search iTunes" translatesAutoresizingMaskIntoConstraints="NO" id="zeX-bJ-nPD">
-                                            <rect key="frame" x="0.0" y="35.5" width="414" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="36" width="414" height="64"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>

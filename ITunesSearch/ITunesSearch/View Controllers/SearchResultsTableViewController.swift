@@ -10,18 +10,25 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
 
-    
+     private let searchResultsController = SearchResultController()
+    //MARK:- Properties
     
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
             searchBar.delegate = self
         }
     }
-
-    @IBOutlet weak var segment: UISegmentedControl!
+     @IBOutlet weak var segment: UISegmentedControl!
     
-    let searchResultsController = SearchResultController()
     
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        searchResultsController.searchResults.removeAll()
+        tableView.reloadData()
+        searchBar.text = ""
+    }
+    
+    
+ //MARK: - App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -60,23 +67,21 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         switch segment.selectedSegmentIndex {
         case 0:
             resultType = .software
-
-
         case 1:
             resultType = .musicTrack
-
-
         case 2 :
             resultType = .movie
-
         default:
             break
         }
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
               DispatchQueue.main.async {
                 self.tableView.reloadData()
-                  }
+              
         }
+            
+        }
+        
       
     }
 }
