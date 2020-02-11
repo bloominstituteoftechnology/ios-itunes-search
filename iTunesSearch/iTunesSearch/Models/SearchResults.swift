@@ -21,3 +21,5 @@ struct SearchResult: Codable {
 struct SearchResults: Codable {
     let results: [SearchResult]
    }
+
+//we use structs to model our data to JSON. We demonstrate understanding on Swift syntax and nested properties.

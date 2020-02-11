@@ -8,6 +8,8 @@
 
 import UIKit
 
+//networking is a great way to demonstrate essential skills in the programming world. I really enjoyed working on this project. 
+
 class SearchResultsTableViewController: UITableViewController {
     
     //MARK: Properties
@@ -47,6 +49,7 @@ class SearchResultsTableViewController: UITableViewController {
     
     //MARK: Actions
     
+    //here we are making the filter button make network calls with the SearchBars information.
     @IBAction func filterButtonPressed(_ sender: UIBarButtonItem) {
         if limitSearchButton.title == "show 10" {
             limit.limit = "10"

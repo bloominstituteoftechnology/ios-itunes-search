@@ -47,14 +47,12 @@ class SearchResultController {
                 print("Error fetching data: \(error)")
                 return
             }
-            
             guard let data = data else {
                 print("No data returned from data Task")
                 return
             }
             
             let jsonDecoder = JSONDecoder()
-            
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             do{
                 let iTunesSearch = try jsonDecoder.decode(SearchResults.self, from: data)
@@ -62,12 +60,9 @@ class SearchResultController {
                     self.searchResults = iTunesSearch.results
                     completion()
                 }
-                
             } catch {
                 print("Unable to decode data into object of type [SearchResults]: \(error)")
             }
-            
-            
         }.resume()
     }
 }
