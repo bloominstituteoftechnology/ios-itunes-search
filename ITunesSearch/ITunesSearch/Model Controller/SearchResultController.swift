@@ -32,10 +32,9 @@ class SearchResultController {
         
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let entity = URLQueryItem(name: "entity", value: resultType.rawValue)
-
-
+        let limitSearch = URLQueryItem(name: "limit", value: "200")
         
-        urlComponents?.queryItems = [searchTermQueryItem,entity]
+        urlComponents?.queryItems = [searchTermQueryItem,entity,limitSearch]
         
         guard let requestURL = urlComponents?.url else {
           NSLog("URL is nil")
@@ -46,7 +45,7 @@ class SearchResultController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        
+        print(request)
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 NSLog("Error fetching data: \(error)")
