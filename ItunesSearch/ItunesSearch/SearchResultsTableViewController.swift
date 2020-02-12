@@ -13,10 +13,13 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var SegmentedControl: UISegmentedControl!
     
-    var searchResultController = SearchResultController()
+    private let searchResultController = SearchResultController()
+    var resultType: ResultType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SearchBar.delegate = self
     }
 
     // MARK: - Table view data source
@@ -36,6 +39,26 @@ class SearchResultsTableViewController: UITableViewController {
     }
 }
 
-extension searchBarSearchButtonClicked: UISearchBarDelegate {
+extension SearchResultsTableViewController: UISearchBarDelegate {
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+        
+        
+        switch SegmentedControl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
