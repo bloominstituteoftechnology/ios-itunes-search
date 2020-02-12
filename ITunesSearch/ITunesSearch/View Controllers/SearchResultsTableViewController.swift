@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SearchResultsTableViewController: UITableViewController {
 
@@ -31,7 +32,7 @@ class SearchResultsTableViewController: UITableViewController {
  //MARK: - App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+      
     }
 
  // MARK: - Table View Data Source
@@ -46,7 +47,14 @@ class SearchResultsTableViewController: UITableViewController {
         return cell
     }
    
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let index = tableView.indexPathForSelectedRow {
+            let url = URL(string: searchResultsController.searchResults[index.row].artistViewUrl!)
+            let safariVC = SFSafariViewController(url: url!)
+            present(safariVC, animated: true, completion: nil)
+        }
+      
+    }
 }
 
 //MARK: - SearchBar Delegate
