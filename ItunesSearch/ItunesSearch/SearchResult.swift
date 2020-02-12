@@ -16,7 +16,7 @@ struct SearchResult: Codable {
      case title = "trackName"
      case creator = "artistName"
     }
-    struct SearchResults: Decodable {
+    struct SearchResults: Codable {
         let results: [SearchResult]
     }
 }

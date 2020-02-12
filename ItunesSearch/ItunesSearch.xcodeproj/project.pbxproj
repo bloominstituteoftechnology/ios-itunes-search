@@ -62,13 +62,13 @@
 		B5DBDFDF23F35616002CB1DE /* ItunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				B5DBDFF423F35694002CB1DE /* SearchResult.swift */,
-				B5DBDFF823F35A84002CB1DE /* SearchResultController.swift */,
 				B5DBDFF623F3592D002CB1DE /* ResultType.swift */,
 				B5DBDFE023F35616002CB1DE /* AppDelegate.swift */,
 				B5DBDFE223F35616002CB1DE /* SceneDelegate.swift */,
 				B5DBDFE623F35616002CB1DE /* Main.storyboard */,
 				B5DBDFFA23F36974002CB1DE /* SearchResultsTableViewController.swift */,
+				B5DBDFF823F35A84002CB1DE /* SearchResultController.swift */,
+				B5DBDFF423F35694002CB1DE /* SearchResult.swift */,
 				B5DBDFE923F35617002CB1DE /* Assets.xcassets */,
 				B5DBDFEB23F35617002CB1DE /* LaunchScreen.storyboard */,
 				B5DBDFEE23F35617002CB1DE /* Info.plist */,
