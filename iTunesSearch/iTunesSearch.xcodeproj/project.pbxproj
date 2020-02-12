@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		5CDD49D823F351E70043459A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD49D723F351E70043459A /* AppDelegate.swift */; };
 		5CDD49DA23F351E70043459A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD49D923F351E70043459A /* SceneDelegate.swift */; };
-		5CDD49DC23F351E70043459A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD49DB23F351E70043459A /* ViewController.swift */; };
 		5CDD49DF23F351E70043459A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDD49DD23F351E70043459A /* Main.storyboard */; };
 		5CDD49E123F351E80043459A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CDD49E023F351E80043459A /* Assets.xcassets */; };
 		5CDD49E423F351E80043459A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDD49E223F351E80043459A /* LaunchScreen.storyboard */; };
 		5CDD49EC23F355BE0043459A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD49EB23F355BE0043459A /* SearchResult.swift */; };
 		5CDD49EE23F362830043459A /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD49ED23F362830043459A /* ResultType.swift */; };
 		5CDD49F023F3636F0043459A /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD49EF23F3636F0043459A /* SearchResultController.swift */; };
+		5CDD49F223F378410043459A /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD49F123F378410043459A /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5CDD49D423F351E70043459A /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDD49D723F351E70043459A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CDD49D923F351E70043459A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5CDD49DB23F351E70043459A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CDD49DE23F351E70043459A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CDD49E023F351E80043459A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CDD49E323F351E80043459A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		5CDD49EB23F355BE0043459A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		5CDD49ED23F362830043459A /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		5CDD49EF23F3636F0043459A /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		5CDD49F123F378410043459A /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +64,8 @@
 			children = (
 				5CDD49D723F351E70043459A /* AppDelegate.swift */,
 				5CDD49D923F351E70043459A /* SceneDelegate.swift */,
-				5CDD49DB23F351E70043459A /* ViewController.swift */,
 				5CDD49DD23F351E70043459A /* Main.storyboard */,
+				5CDD49F123F378410043459A /* SearchResultsTableViewController.swift */,
 				5CDD49EB23F355BE0043459A /* SearchResult.swift */,
 				5CDD49ED23F362830043459A /* ResultType.swift */,
 				5CDD49EF23F3636F0043459A /* SearchResultController.swift */,
@@ -149,9 +149,9 @@
 			files = (
 				5CDD49F023F3636F0043459A /* SearchResultController.swift in Sources */,
 				5CDD49EE23F362830043459A /* ResultType.swift in Sources */,
-				5CDD49DC23F351E70043459A /* ViewController.swift in Sources */,
 				5CDD49D823F351E70043459A /* AppDelegate.swift in Sources */,
 				5CDD49EC23F355BE0043459A /* SearchResult.swift in Sources */,
+				5CDD49F223F378410043459A /* SearchResultsTableViewController.swift in Sources */,
 				5CDD49DA23F351E70043459A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

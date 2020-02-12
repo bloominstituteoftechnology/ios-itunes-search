@@ -19,15 +19,16 @@ class SearchResultController {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         // Create a key-value pair for the end of the URL
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
         // Set the above query item to the urlComponents
-        urlComponents?.queryItems = [searchTermQueryItem]
+        urlComponents?.queryItems = [searchTermQueryItem, resultTermQueryItem]
         
         // Create a formal URL from the components
         guard let requestURL = urlComponents?.url else { print("request URL is nil"); completion(NSError()); return }
         
-        // Rquired by the dataTask initializer to make a request of the API
+        // Required by the dataTask initializer to make a request of the API
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         

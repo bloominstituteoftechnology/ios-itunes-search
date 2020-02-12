@@ -17,7 +17,6 @@ struct SearchResult: Codable {
         case creator = "artistName"
     }
 }
-
 // Struct used to decode the JSON data we need
 struct SearchResults: Codable {
     let results: [SearchResult]
