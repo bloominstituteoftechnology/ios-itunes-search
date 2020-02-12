@@ -30,7 +30,7 @@ class SearchResultsTableViewController: UITableViewController {
         return searchResultController.searchResults.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "iTunesCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "iTunesCell", for: indexPath) 
 
        let searchResult = searchResultController.searchResults[indexPath.row]
         cell.textLabel?.text = searchResult.title

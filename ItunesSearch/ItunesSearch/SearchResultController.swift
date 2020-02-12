@@ -22,16 +22,19 @@ class SearchResultController {
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
      let searchEntityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         urlComponents?.queryItems = [searchTermQueryItem, searchEntityQueryItem]
+        
         guard let requestURL = urlComponents?.url else {
             print ("request URL is nil")
+            completion(NSError())
             return
         }
-        print(requestURL)
+        
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
             NSLog("Error fetching data: \(error)")
+            completion(nil)
             return
         }
         guard let data = data else {
@@ -42,7 +45,7 @@ class SearchResultController {
         let jsonDecoder = JSONDecoder()
          do {
         let searchResult = try jsonDecoder.decode(SearchResult.self, from: data)
-            self.searchResults.append(searchResult)
+            self.searchResults = searchResult.results
              print (self.searchResults)
                    } catch {
              print("Unable to decode data into object of type [SearchResult]: \(error)")
@@ -51,6 +54,6 @@ class SearchResultController {
         DispatchQueue.main.async {
         completion(nil)
          }
-       } .resume()
+        }.resume()
     }
 }

@@ -46,7 +46,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iTunesCell" textLabel="jwo-ee-qol" detailTextLabel="LQ5-xy-2Dm" style="IBUITableViewCellStyleSubtitle" id="xU2-GW-Jzh" customClass="iTunesTableViewCell" customModule="ItunesSearch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iTunesCell" textLabel="jwo-ee-qol" detailTextLabel="LQ5-xy-2Dm" style="IBUITableViewCellStyleSubtitle" id="xU2-GW-Jzh">
                                 <rect key="frame" x="0.0" y="128" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xU2-GW-Jzh" id="9rT-RZ-ldt">
