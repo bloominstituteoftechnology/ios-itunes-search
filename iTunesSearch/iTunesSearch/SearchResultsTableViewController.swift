@@ -22,7 +22,7 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         searchBar.delegate = self
     }
-    
+
     //MARK: - TableView Functions
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultsController.searchResults.count
