@@ -52,8 +52,9 @@ class SearchResultController {
                 NSLog("Error fetching data: \(error)")
                 completion(NetworkError.requestFailed)
             }
-            if let response = response {
-                print(response)
+            guard response != nil else {
+                NSLog("Error getting response from JSON")
+                return
                 
             }
             guard let data = data else {

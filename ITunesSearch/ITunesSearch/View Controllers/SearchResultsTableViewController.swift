@@ -57,6 +57,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else { return }
         var resultType: ResultType!
+        
         // If search bar empty show nothing
         if searchTerm.isEmpty {
             DispatchQueue.main.async {
@@ -70,12 +71,14 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         case 1:
             resultType = .musicTrack
         case 2 :
+            
             resultType = .movie
         default:
             break
         }
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
               DispatchQueue.main.async {
+                
                 self.tableView.reloadData()
               
         }
