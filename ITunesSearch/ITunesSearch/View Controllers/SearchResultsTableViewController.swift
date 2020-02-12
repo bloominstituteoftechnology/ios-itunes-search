@@ -52,6 +52,12 @@ class SearchResultsTableViewController: UITableViewController {
 //MARK: - SearchBar Delegate
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            searchResultsController.searchResults.removeAll()
+            tableView.reloadData()
+        }
+    }
   
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
