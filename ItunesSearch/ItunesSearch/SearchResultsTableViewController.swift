@@ -54,7 +54,7 @@ class SearchResultsTableViewController: UITableViewController {
        default:
            break
        }
-       searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { DispatchQueue.main.async {
+    searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { _ in DispatchQueue.main.async {
                self.tableView.reloadData()
            }
        }

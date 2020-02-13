@@ -19,13 +19,13 @@ class SearchResultController {
         case post = "POST"
         case delete = "DELETE"
     }
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (_ error: Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         // create a URL components objects from our base URL
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
 
-        let resultTermQueryItem = URLQueryItem(name: "type", value: resultType.rawValue)
+        let resultTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         urlComponents?.queryItems = [searchTermQueryItem, resultTermQueryItem]
        
         guard let requestURL = urlComponents?.url else {
@@ -47,8 +47,8 @@ class SearchResultController {
              }
              let jsonDecoder = JSONDecoder()
              do {
-                 let searchResult = try jsonDecoder.decode(SearchResult.self, from: data)
-                 self.searchResults.append(searchResult)
+                 let searchResult = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults = searchResult.results
              } catch {
                  NSLog("Unable to decode data into object of type [SearchResult]: \(error)")
              }
