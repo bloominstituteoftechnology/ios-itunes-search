@@ -31,21 +31,29 @@ class SearchResultsTableViewController: UITableViewController {
     
     private var searchResultController = SearchResultController()
     private var lastSearchTerm: String?
+    private var activityIndicator = UIActivityIndicatorView()
     
-    func search(withTerm searchTerm: String) {
+    private func search(withTerm searchTerm: String) {
         
         let resultType = resultTypeOptions[resultTypeSelector.selectedSegmentIndex]
         
         searchResultController.performSearch(withTerm: searchTerm, resultType: resultType) { error in
-            if let error = error {
-                // We should really let the user know that we are unable to fetch results for whatever reason
-                NSLog("There was an error when attempting to search: \(error)")
-            }
-            
             DispatchQueue.main.async {
+                
+                self.activityIndicator.stopAnimating()
+                
+                if let error = error {
+                    // We should really let the user know that we are unable to fetch results for whatever reason
+                    NSLog("There was an error when attempting to search: \(error)")
+                }
+                
+                
                 self.tableView.reloadData()
             }
         }
+        
+        activityIndicator.startAnimating()
+        self.tableView.reloadData()
         
         lastSearchTerm = searchTerm
     }
@@ -56,14 +64,16 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         searchBar.delegate = self
         tableView.keyboardDismissMode = .interactive
+        tableView.backgroundView = activityIndicator
     }
 
     
     // MARK: - Table View Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return searchResultController.searchResults.count
+        let numRows = searchResultController.searchResults.count
+        tableView.separatorStyle = numRows == 0 ? .none : .singleLine
+        return numRows
     }
 
     
