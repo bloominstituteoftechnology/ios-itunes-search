@@ -29,6 +29,9 @@
                                         <segment title="Movies"/>
                                         <segment title="Music"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="resultTypeSelected:" destination="BFy-2Y-Ayt" eventType="valueChanged" id="Rrh-LQ-N2I"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -18,10 +18,32 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     
-    //MARK: - Properties
+    //MARK: - IBActions
+    
+    @IBAction func resultTypeSelected(_ sender: UISegmentedControl) {
+        search()
+    }
+    
+    
+    //MARK: - Private
     
     private var searchResultController = SearchResultController()
     
+    func search() {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        let resultType = resultTypeOptions[resultTypeSelector.selectedSegmentIndex]
+        
+        searchResultController.performSearch(withTerm: searchTerm, resultType: resultType) { error in
+            if let error = error {
+                // We should really let the user know that we are unable to fetch results for whatever reason
+                NSLog("There was an error when attempting to search: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     //MARK: - View Lifecycle
     
@@ -55,18 +77,6 @@ class SearchResultsTableViewController: UITableViewController {
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
-        let resultType = resultTypeOptions[resultTypeSelector.selectedSegmentIndex]
-        
-        searchResultController.performSearch(withTerm: searchTerm, resultType: resultType) { error in
-            if let error = error {
-                // We should really let the user know that we are unable to fetch results for whatever reason
-                NSLog("There was an error when attempting to search: \(error)")
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        search()
     }
 }
