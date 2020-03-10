@@ -13,6 +13,8 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let searchResultsController = SearchResultController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,12 +23,14 @@ class SearchResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = searchResultsController.searchResults[indexPath.row].title
+        cell.detailTextLabel?.text = searchResultsController.searchResults[indexPath.row].creator
 
         return cell
     }
