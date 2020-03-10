@@ -21,16 +21,19 @@ class SearchResultsTableViewController: UITableViewController {
     //MARK: - IBActions
     
     @IBAction func resultTypeSelected(_ sender: UISegmentedControl) {
-        search()
+        if let lastSearchTerm = lastSearchTerm {
+            search(withTerm: lastSearchTerm)
+        }
     }
     
     
     //MARK: - Private
     
     private var searchResultController = SearchResultController()
+    private var lastSearchTerm: String?
     
-    func search() {
-        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+    func search(withTerm searchTerm: String) {
+        
         let resultType = resultTypeOptions[resultTypeSelector.selectedSegmentIndex]
         
         searchResultController.performSearch(withTerm: searchTerm, resultType: resultType) { error in
@@ -43,6 +46,8 @@ class SearchResultsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        lastSearchTerm = searchTerm
     }
     
     //MARK: - View Lifecycle
@@ -50,6 +55,7 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        tableView.keyboardDismissMode = .interactive
     }
 
     
@@ -77,6 +83,8 @@ class SearchResultsTableViewController: UITableViewController {
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        search()
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        search(withTerm: searchTerm)
+        searchBar.resignFirstResponder()
     }
 }
