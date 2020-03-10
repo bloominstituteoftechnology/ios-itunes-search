@@ -14,6 +14,7 @@
 		92EFC1B724183AB300D75B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92EFC1B624183AB300D75B27 /* Assets.xcassets */; };
 		92EFC1BA24183AB300D75B27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92EFC1B824183AB300D75B27 /* LaunchScreen.storyboard */; };
 		92EFC1C324183BAC00D75B27 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFC1C224183BAC00D75B27 /* SearchResult.swift */; };
+		92EFC1C524183F9A00D75B27 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFC1C424183F9A00D75B27 /* ResultType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		92EFC1B924183AB300D75B27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92EFC1BB24183AB300D75B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92EFC1C224183BAC00D75B27 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		92EFC1C424183F9A00D75B27 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		92EFC1C124183B9C00D75B27 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92EFC1C424183F9A00D75B27 /* ResultType.swift */,
 				92EFC1C224183BAC00D75B27 /* SearchResult.swift */,
 			);
 			path = Model;
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92EFC1C524183F9A00D75B27 /* ResultType.swift in Sources */,
 				92EFC1B224183AB100D75B27 /* ViewController.swift in Sources */,
 				92EFC1AE24183AB100D75B27 /* AppDelegate.swift in Sources */,
 				92EFC1C324183BAC00D75B27 /* SearchResult.swift in Sources */,
