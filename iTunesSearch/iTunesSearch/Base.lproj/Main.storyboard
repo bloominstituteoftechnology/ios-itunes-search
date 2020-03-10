@@ -26,7 +26,7 @@
                                         <segment title="Movies"/>
                                     </segments>
                                     <connections>
-                                        <action selector="searchSegment:" destination="teK-Ib-udh" eventType="valueChanged" id="Yl9-Iy-Bvt"/>
+                                        <action selector="segmentedControl:" destination="teK-Ib-udh" eventType="valueChanged" id="grt-GS-i2t"/>
                                     </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tG1-1l-yBE">
@@ -46,7 +46,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="0Gg-DG-UC6" detailTextLabel="d2h-gJ-Yjd" style="IBUITableViewCellStyleSubtitle" id="Osw-AH-0lf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iTunesCell" textLabel="0Gg-DG-UC6" detailTextLabel="d2h-gJ-Yjd" style="IBUITableViewCellStyleSubtitle" id="Osw-AH-0lf">
                                 <rect key="frame" x="0.0" y="123" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Osw-AH-0lf" id="5IG-5l-PEs">
@@ -78,7 +78,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="1q0-aD-L2x"/>
                     <connections>
-                        <outlet property="iSearchBar" destination="tG1-1l-yBE" id="6sy-SG-cMW"/>
+                        <outlet property="searchBar" destination="tG1-1l-yBE" id="3zX-oO-Ycw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqq-RZ-EGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
