@@ -40,16 +40,12 @@ class SearchResultsTableViewController: UITableViewController {
     }
     
     @IBAction func changeSegmentTapped(_ sender: UISegmentedControl) {
-        print("Worked")
+        search()
     }
-}
-
-
-extension SearchResultsTableViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("TOp")
+    
+    func search() {
         guard let searchTerm = searchBar.text else { return }
-        print("Past guard")
+        
         let resultType: ResultType
         switch segmentControl.selectedSegmentIndex {
         case 0:
@@ -62,25 +58,26 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             fatalError("Literally how?")
         }
         
-        print("past enum switch")
-        
         
         
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
-            print("inside of method")
             
             if let error = error {
                 print("error here: \(error)")
                 return
             }
-            
-            
-            print("Reload")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 print("Reloaded")
                 print(self.searchResultsController.searchResults)
             }
         }
+    }
+}
+
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+       search()
     }
 }
