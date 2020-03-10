@@ -41,7 +41,7 @@ class SearchResultController {
             
             guard let data = data else {
                 NSLog("No data returned from data task.")
-                completion(error)
+                completion(NSError()) // TODO: Why NSError?
                 return
             }
             
@@ -49,11 +49,11 @@ class SearchResultController {
             do {
                 let thisSearch = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults.append(contentsOf: thisSearch.results)
+                completion(nil)
             } catch {
                 NSLog("Unable to decode data into object of type [SearchResults]: \(error)")
+                completion(error)
             }
-            
-            completion(error)
         }.resume()
     }
 }
