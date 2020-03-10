@@ -9,7 +9,7 @@
 import Foundation
 
 enum ResultType: String {
-    case software
-    case musicTrack
-    case movie
+    case software = "software"
+    case musicTrack = "music"
+    case movie = "movie"
 }

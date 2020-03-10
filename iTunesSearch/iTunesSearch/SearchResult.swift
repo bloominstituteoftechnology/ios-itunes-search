@@ -19,5 +19,5 @@ struct SearchResult: Codable {
 }
 
 struct SearchResults: Codable {
-    var results: [SearchResult]
+    let results: [SearchResult]
 }
