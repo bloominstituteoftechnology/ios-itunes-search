@@ -10,7 +10,7 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
@@ -24,18 +24,20 @@ class SearchResultController {
             NSLog("Failed to generate request url")
             return
         }
-        print("Url Gets formed.")
+        print("Url Gets formed. \(requestURL)")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
+                print("Boom1")
                 completion(error)
                 return
             }
             
             guard let data = data else {
+                print("Boom2")
                 completion(NSError())
                 return
             }
@@ -45,8 +47,10 @@ class SearchResultController {
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults.append(contentsOf: searchResults.results)
+                print("Pushed results: \(searchResults.results)")
                 completion(nil)
             } catch {
+                print("Boom3")
                 completion(error)
             }
             

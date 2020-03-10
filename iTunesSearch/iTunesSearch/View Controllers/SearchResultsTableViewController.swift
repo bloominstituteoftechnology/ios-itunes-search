@@ -64,15 +64,18 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         
         print("past enum switch")
         
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
+        
+        
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
             print("inside of method")
-            guard let _ = error else  {
-                NSLog("Boom")
-                return
-            }
+            
+            
+            
             print("Reload")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                print("Reloaded")
+                print(self.searchResultsController.searchResults)
             }
         }
     }
