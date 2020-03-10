@@ -12,6 +12,8 @@ class SearchResultsTableViewController: UITableViewController {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var limitToUs: UISwitch!
+    @IBOutlet weak var numberLimit: UITextField!
     
     let searchResultsController = SearchResultController()
     
@@ -60,7 +62,7 @@ class SearchResultsTableViewController: UITableViewController {
         
         
         
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType, limitByUS: limitToUs.isOn, searchLimit: Int(numberLimit!.text!)) { (error) in
             
             if let error = error {
                 print("error here: \(error)")

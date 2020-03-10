@@ -15,11 +15,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="qGA-i6-zdK">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SxD-Uh-bXo">
-                                    <rect key="frame" x="8" y="8" width="398" height="87"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="SxD-Uh-bXo">
+                                    <rect key="frame" x="8" y="8" width="398" height="152"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E0n-o4-8Bb">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="32"/>
@@ -32,8 +32,33 @@
                                                 <action selector="changeSegmentTapped:" destination="9Wc-pZ-9XZ" eventType="valueChanged" id="zaT-Bo-AQz"/>
                                             </connections>
                                         </segmentedControl>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mEt-Rt-0dF">
+                                            <rect key="frame" x="0.0" y="48" width="398" height="31"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit to US: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2f0-as-UJj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahT-gB-j0y">
+                                                    <rect key="frame" x="132" y="0.0" width="69" height="31"/>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit results: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lM-9o-S56">
+                                                    <rect key="frame" x="204" y="0.0" width="139.5" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jtf-h4-Hb1">
+                                                    <rect key="frame" x="348.5" y="0.0" width="49.5" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Zco-Dw-lhc">
-                                            <rect key="frame" x="0.0" y="31" width="398" height="56"/>
+                                            <rect key="frame" x="0.0" y="96" width="398" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
@@ -42,14 +67,14 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="SxD-Uh-bXo" firstAttribute="top" secondItem="qGA-i6-zdK" secondAttribute="topMargin" id="MfO-09-8is"/>
+                                <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="SxD-Uh-bXo" secondAttribute="bottom" id="au5-jW-MI5"/>
                                 <constraint firstItem="SxD-Uh-bXo" firstAttribute="leading" secondItem="qGA-i6-zdK" secondAttribute="leadingMargin" id="meV-Li-RpU"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="SxD-Uh-bXo" secondAttribute="trailing" id="s1m-Qq-tnw"/>
-                                <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="SxD-Uh-bXo" secondAttribute="bottom" id="uYM-06-4PU"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" textLabel="oHS-QA-SMW" detailTextLabel="Yt9-4q-QQo" style="IBUITableViewCellStyleSubtitle" id="Smd-4u-uxZ">
-                                <rect key="frame" x="0.0" y="128" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="183" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Smd-4u-uxZ" id="uii-CL-nPQ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
@@ -80,6 +105,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="UYs-a6-XZq"/>
                     <connections>
+                        <outlet property="limitToUs" destination="ahT-gB-j0y" id="foZ-aY-fnI"/>
+                        <outlet property="numberLimit" destination="Jtf-h4-Hb1" id="EcL-uP-f9D"/>
                         <outlet property="searchBar" destination="Zco-Dw-lhc" id="0nn-7O-beh"/>
                         <outlet property="segmentControl" destination="E0n-o4-8Bb" id="QaX-Aq-PGE"/>
                     </connections>
