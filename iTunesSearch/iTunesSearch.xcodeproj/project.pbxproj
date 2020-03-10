@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		04CBC2DA24181E2400A0E283 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC2D924181E2400A0E283 /* AppDelegate.swift */; };
 		04CBC2DC24181E2400A0E283 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC2DB24181E2400A0E283 /* SceneDelegate.swift */; };
-		04CBC2DE24181E2400A0E283 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC2DD24181E2400A0E283 /* ViewController.swift */; };
 		04CBC2E124181E2400A0E283 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC2DF24181E2400A0E283 /* Main.storyboard */; };
 		04CBC2E324181E2600A0E283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC2E224181E2600A0E283 /* Assets.xcassets */; };
 		04CBC2E624181E2600A0E283 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CBC2E424181E2600A0E283 /* LaunchScreen.storyboard */; };
+		04CBC2EE2418224400A0E283 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC2ED2418224400A0E283 /* SearchResult.swift */; };
+		04CBC2F02418238300A0E283 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC2EF2418238300A0E283 /* ResultType.swift */; };
+		04CBC2F2241823C600A0E283 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC2F1241823C600A0E283 /* SearchResultController.swift */; };
+		04CBC2F424182B1800A0E283 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBC2F324182B1800A0E283 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04CBC2D624181E2400A0E283 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CBC2D924181E2400A0E283 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04CBC2DB24181E2400A0E283 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04CBC2DD24181E2400A0E283 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04CBC2E024181E2400A0E283 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04CBC2E224181E2600A0E283 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04CBC2E524181E2600A0E283 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CBC2E724181E2600A0E283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CBC2ED2418224400A0E283 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		04CBC2EF2418238300A0E283 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		04CBC2F1241823C600A0E283 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		04CBC2F324182B1800A0E283 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		04CBC2D824181E2400A0E283 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				04CBC2D924181E2400A0E283 /* AppDelegate.swift */,
-				04CBC2DB24181E2400A0E283 /* SceneDelegate.swift */,
-				04CBC2DD24181E2400A0E283 /* ViewController.swift */,
-				04CBC2DF24181E2400A0E283 /* Main.storyboard */,
+				04CBC2F62418327500A0E283 /* Application */,
+				04CBC2F52418326900A0E283 /* Models */,
+				04CBC2F72418328B00A0E283 /* Storyboards */,
+				04CBC2F82418329A00A0E283 /* ViewControllers */,
 				04CBC2E224181E2600A0E283 /* Assets.xcassets */,
-				04CBC2E424181E2600A0E283 /* LaunchScreen.storyboard */,
 				04CBC2E724181E2600A0E283 /* Info.plist */,
 			);
 			path = iTunesSearch;
+			sourceTree = "<group>";
+		};
+		04CBC2F52418326900A0E283 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04CBC2ED2418224400A0E283 /* SearchResult.swift */,
+				04CBC2EF2418238300A0E283 /* ResultType.swift */,
+				04CBC2F1241823C600A0E283 /* SearchResultController.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04CBC2F62418327500A0E283 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				04CBC2D924181E2400A0E283 /* AppDelegate.swift */,
+				04CBC2DB24181E2400A0E283 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		04CBC2F72418328B00A0E283 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				04CBC2DF24181E2400A0E283 /* Main.storyboard */,
+				04CBC2E424181E2600A0E283 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		04CBC2F82418329A00A0E283 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04CBC2F324182B1800A0E283 /* SearchResultsTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04CBC2DE24181E2400A0E283 /* ViewController.swift in Sources */,
+				04CBC2F2241823C600A0E283 /* SearchResultController.swift in Sources */,
+				04CBC2F02418238300A0E283 /* ResultType.swift in Sources */,
 				04CBC2DA24181E2400A0E283 /* AppDelegate.swift in Sources */,
+				04CBC2EE2418224400A0E283 /* SearchResult.swift in Sources */,
+				04CBC2F424182B1800A0E283 /* SearchResultsTableViewController.swift in Sources */,
 				04CBC2DC24181E2400A0E283 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

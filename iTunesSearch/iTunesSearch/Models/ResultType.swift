@@ -9,5 +9,5 @@
 import Foundation
 
 enum ResultType: String {
-    case sotware, musicTrack, movie
+    case software, musicTrack, movie
 }

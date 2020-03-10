@@ -16,7 +16,7 @@ class SearchResultController {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         components?.queryItems = [
             URLQueryItem(name: "term", value: searchTerm),
-            URLQueryItem(name: "media", value: resultType.rawValue)
+            URLQueryItem(name: "entity", value: resultType.rawValue)
         ]
         
         guard let requestURL = components?.url else {
@@ -24,6 +24,8 @@ class SearchResultController {
             completion(error)
             return
         }
+        
+        print(requestURL)
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"

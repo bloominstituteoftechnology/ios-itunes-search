@@ -13,7 +13,7 @@ class SearchResultsTableViewController: UITableViewController {
     //MARK: - IBOutlets
     
     @IBOutlet weak var resultTypeSelector: UISegmentedControl!
-    private let resultTypeOptions: [ResultType] = [.sotware, .movie, .musicTrack]
+    private let resultTypeOptions: [ResultType] = [.software, .movie, .musicTrack]
     
     @IBOutlet weak var searchBar: UISearchBar!
     
