@@ -37,6 +37,36 @@ class SearchResultsTableViewController: UITableViewController {
         return cell
     }
 
+    @IBAction func segmentedControlTapped(_ sender: Any) {
+        guard let searchTerm = searchBar.text else {
+            return
+        }
+        
+        var resultType: ResultType!
+        let type = segmentedControl.selectedSegmentIndex
+        switch type {
+            case 0:
+                resultType = .software
+            case 1:
+                resultType = .musicTrack
+            case 2:
+                resultType = .movie
+            default:
+                resultType = .software
+        }
+
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    NSLog("error \(error)")
+                    return
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
 }
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
@@ -57,7 +87,6 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             default:
                 resultType = .software
         }
-        print("Search")
 
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
             DispatchQueue.main.async {

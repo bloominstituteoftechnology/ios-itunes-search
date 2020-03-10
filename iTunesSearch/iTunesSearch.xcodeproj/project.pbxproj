@@ -62,18 +62,42 @@
 		137C119D24181DBC00979315 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				137C11AC24181DBD00979315 /* Info.plist */,
+				139805522418325A007593EC /* Application */,
+				1398055424183271007593EC /* Controller */,
+				1398055324183266007593EC /* Model */,
+			);
+			path = iTunesSearch;
+			sourceTree = "<group>";
+		};
+		139805522418325A007593EC /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				137C119E24181DBC00979315 /* AppDelegate.swift */,
 				137C11A024181DBC00979315 /* SceneDelegate.swift */,
 				137C11A424181DBC00979315 /* Main.storyboard */,
-				137C11B82418266200979315 /* SearchResultsTableViewController.swift */,
 				137C11A724181DBD00979315 /* Assets.xcassets */,
 				137C11A924181DBD00979315 /* LaunchScreen.storyboard */,
-				137C11AC24181DBD00979315 /* Info.plist */,
-				137C11B224181DE200979315 /* SearchResult.swift */,
-				137C11B424181F6600979315 /* ResultType.swift */,
-				137C11BA2418280400979315 /* SearchResultController.swift */,
 			);
-			path = iTunesSearch;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1398055324183266007593EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				137C11B224181DE200979315 /* SearchResult.swift */,
+				137C11BA2418280400979315 /* SearchResultController.swift */,
+				137C11B424181F6600979315 /* ResultType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1398055424183271007593EC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				137C11B82418266200979315 /* SearchResultsTableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
