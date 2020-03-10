@@ -16,6 +16,7 @@
 		3FA483772418298500438CD1 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA483762418298500438CD1 /* SearchResult.swift */; };
 		3FA4837924182B6100438CD1 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4837824182B6100438CD1 /* ResultType.swift */; };
 		3FA4837B24182C3D00438CD1 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4837A24182C3D00438CD1 /* SearchResultController.swift */; };
+		3FA4838124184A3500438CD1 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4838024184A3500438CD1 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3FA483762418298500438CD1 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		3FA4837824182B6100438CD1 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		3FA4837A24182C3D00438CD1 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		3FA4838024184A3500438CD1 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResultsTableViewController.swift; path = iTunesSearch/SearchResultsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		3FA4835C2418266300438CD1 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				3FA4837D2418491700438CD1 /* View Controllers */,
 				3FA4835D2418266300438CD1 /* AppDelegate.swift */,
 				3FA4835F2418266300438CD1 /* SceneDelegate.swift */,
 				3FA483632418266300438CD1 /* Main.storyboard */,
@@ -82,6 +85,14 @@
 				3FA4837A24182C3D00438CD1 /* SearchResultController.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3FA4837D2418491700438CD1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FA4838024184A3500438CD1 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 			files = (
 				3FA4837B24182C3D00438CD1 /* SearchResultController.swift in Sources */,
 				3FA4837924182B6100438CD1 /* ResultType.swift in Sources */,
+				3FA4838124184A3500438CD1 /* SearchResultsTableViewController.swift in Sources */,
 				3FA4835E2418266300438CD1 /* AppDelegate.swift in Sources */,
 				3FA483772418298500438CD1 /* SearchResult.swift in Sources */,
 				3FA483602418266300438CD1 /* SceneDelegate.swift in Sources */,
