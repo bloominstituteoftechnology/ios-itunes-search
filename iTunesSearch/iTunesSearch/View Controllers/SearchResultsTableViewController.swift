@@ -47,8 +47,10 @@ class SearchResultsTableViewController: UITableViewController {
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("TOp")
         guard let searchTerm = searchBar.text else { return }
-        let resultType: ResultType!
+        print("Past guard")
+        let resultType: ResultType
         switch segmentControl.selectedSegmentIndex {
         case 0:
             resultType = .software
@@ -60,14 +62,18 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             fatalError("Literally how?")
         }
         
+        print("past enum switch")
+        
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
+            print("inside of method")
             guard let _ = error else  {
                 NSLog("Boom")
                 return
             }
-            
-            self.tableView.reloadData()
-            
+            print("Reload")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }
