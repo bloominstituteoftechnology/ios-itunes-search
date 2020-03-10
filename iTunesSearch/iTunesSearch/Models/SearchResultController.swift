@@ -15,8 +15,9 @@ class SearchResultController {
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchQueryItem]
+        let termQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let entityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents?.queryItems = [termQueryItem, entityQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             NSLog("Failed to generate request url")
