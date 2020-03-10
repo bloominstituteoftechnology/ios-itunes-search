@@ -15,8 +15,10 @@ class SearchResultsTableViewController: UITableViewController {
     
     let searchResultsController = SearchResultController()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
     }
 
     // MARK: - Table view data source
@@ -31,7 +33,41 @@ class SearchResultsTableViewController: UITableViewController {
         // Configure the cell...
         cell.textLabel?.text = searchResultsController.searchResults[indexPath.row].title
         cell.detailTextLabel?.text = searchResultsController.searchResults[indexPath.row].creator
+        
+        
 
         return cell
+    }
+    
+    @IBAction func changeSegmentTapped(_ sender: UISegmentedControl) {
+        print("Worked")
+    }
+}
+
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+        let resultType: ResultType!
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            fatalError("Literally how?")
+        }
+        
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
+            guard let _ = error else  {
+                NSLog("Boom")
+                return
+            }
+            
+            self.tableView.reloadData()
+            
+        }
     }
 }
