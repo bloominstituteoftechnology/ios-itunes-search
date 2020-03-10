@@ -69,6 +69,10 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
             print("inside of method")
             
+            if let error = error {
+                print("error here: \(error)")
+                return
+            }
             
             
             print("Reload")

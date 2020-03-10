@@ -46,7 +46,7 @@ class SearchResultController {
             let jsonDecoder = JSONDecoder()
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults.append(contentsOf: searchResults.results)
+                self.searchResults = searchResults.results
                 print("Pushed results: \(searchResults.results)")
                 completion(nil)
             } catch {
