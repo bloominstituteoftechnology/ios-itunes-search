@@ -12,11 +12,13 @@ class SearchResultsTableViewController: UITableViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
+
     
     let searchResultsController = SearchResultController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
 
     
     }
@@ -24,7 +26,6 @@ class SearchResultsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return searchResultsController.searchResults.count
     }
 
@@ -32,8 +33,8 @@ class SearchResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath) as? SearchResultsTableViewCell else { return UITableViewCell()}
 
-        // Configure the cell...
         let searchResult = searchResultsController.searchResults[indexPath.row]
+        cell.searchResult = searchResult
         cell.searchResult?.title = searchResult.title
         cell.searchResult?.creator = searchResult.creator
 
@@ -54,15 +55,18 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         case 2:
             resultType = .movie
         default:
-            resultType = .software
+            break
         }
     
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType){_ in
-               DispatchQueue.main.async {
-                   self.tableView.reloadData()
-               }
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType){ error in
+            if let error = error {
+               NSLog("Error in search: \(error)")
+            } else {
+                DispatchQueue.main.async {
+                self.tableView.reloadData()
            }
-       }
+        }
+     }
+   }
 }
-
 

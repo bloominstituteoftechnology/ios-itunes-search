@@ -72,8 +72,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="creatorLabel" destination="Fi3-2w-Bui" id="UM6-d7-hcX"/>
-                                    <outlet property="titleLabel" destination="qjH-3T-caD" id="A9r-BQ-oyP"/>
+                                    <outlet property="creatorLabel" destination="Fi3-2w-Bui" id="UEB-54-bcB"/>
+                                    <outlet property="titleLabel" destination="qjH-3T-caD" id="ahw-aW-idr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
