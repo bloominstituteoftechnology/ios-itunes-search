@@ -11,11 +11,13 @@ import Foundation
 class SearchResultController {
     var searchResults: [SearchResult] = []
     
-    let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void ) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+       urlComponents?.queryItems = [ URLQueryItem(name: "search", value: searchTerm),
+                                     URLQueryItem(name: "result", value: resultType.rawValue)
+        
+        ]
         guard let requestURL = urlComponents?.url else {
         NSLog("request url is nil")
         completion()
@@ -37,9 +39,8 @@ class SearchResultController {
               do {
                 let itunesSearch = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults.append(contentsOf: itunesSearch.results)
-               
               } catch {
-                  NSLog("Unable to decode the data into object of type [Person]: \(error)")
+                  NSLog("Unable to decode the data into object of type [SearchResult]: \(error)")
               }
               completion()
           } .resume()

@@ -79,6 +79,7 @@
                     <navigationItem key="navigationItem" title="iTunes Search" id="1q0-aD-L2x"/>
                     <connections>
                         <outlet property="searchBar" destination="tG1-1l-yBE" id="3zX-oO-Ycw"/>
+                        <outlet property="segmentedControl" destination="9L6-Ik-lpm" id="inJ-pP-p8M"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqq-RZ-EGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

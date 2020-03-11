@@ -10,17 +10,23 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var searchResultController = SearchResultController()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ searchBar.delegate = self
+        self.tableView.reloadData()
+        
     }
 
     @IBAction func segmentedControl(_ sender: Any) {
+    searchBarSearchButtonClicked(searchBar)
+        self.tableView.reloadData()
     }
     
-var searchResultController = SearchResultController()
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -42,3 +48,27 @@ var searchResultController = SearchResultController()
    
 }
 
+extension  SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        var resultType: ResultType!
+        guard let resultType1 = resultType else { return }
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+    
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType1) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+}

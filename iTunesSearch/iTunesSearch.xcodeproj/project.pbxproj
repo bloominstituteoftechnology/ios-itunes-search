@@ -12,7 +12,7 @@
 		3FA483652418266300438CD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA483632418266300438CD1 /* Main.storyboard */; };
 		3FA483672418266600438CD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA483662418266600438CD1 /* Assets.xcassets */; };
 		3FA4836A2418266600438CD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA483682418266600438CD1 /* LaunchScreen.storyboard */; };
-		3FA483752418285500438CD1 /* students.json in Resources */ = {isa = PBXBuildFile; fileRef = 3FA483742418285500438CD1 /* students.json */; };
+		3FA483752418285500438CD1 /* MovieTracks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3FA483742418285500438CD1 /* MovieTracks.json */; };
 		3FA483772418298500438CD1 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA483762418298500438CD1 /* SearchResult.swift */; };
 		3FA4837924182B6100438CD1 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4837824182B6100438CD1 /* ResultType.swift */; };
 		3FA4837B24182C3D00438CD1 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4837A24182C3D00438CD1 /* SearchResultController.swift */; };
@@ -27,7 +27,7 @@
 		3FA483662418266600438CD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FA483692418266600438CD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FA4836B2418266600438CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FA483742418285500438CD1 /* students.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = students.json; sourceTree = "<group>"; };
+		3FA483742418285500438CD1 /* MovieTracks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MovieTracks.json; sourceTree = "<group>"; };
 		3FA483762418298500438CD1 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		3FA4837824182B6100438CD1 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		3FA4837A24182C3D00438CD1 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				3FA483662418266600438CD1 /* Assets.xcassets */,
 				3FA483682418266600438CD1 /* LaunchScreen.storyboard */,
 				3FA4836B2418266600438CD1 /* Info.plist */,
-				3FA483742418285500438CD1 /* students.json */,
+				3FA483742418285500438CD1 /* MovieTracks.json */,
 				3FA4837C2418458E00438CD1 /* Models */,
 			);
 			path = iTunesSearch;
@@ -156,7 +156,7 @@
 				3FA4836A2418266600438CD1 /* LaunchScreen.storyboard in Resources */,
 				3FA483672418266600438CD1 /* Assets.xcassets in Resources */,
 				3FA483652418266300438CD1 /* Main.storyboard in Resources */,
-				3FA483752418285500438CD1 /* students.json in Resources */,
+				3FA483752418285500438CD1 /* MovieTracks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
