@@ -21,5 +21,3 @@ struct SearchResult: Codable {
 struct SearchResults: Codable {
     let results: [SearchResult]
 }
-
-//some result type on model should be optional

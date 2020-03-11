@@ -18,11 +18,16 @@ class SearchResultsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         searchBar.delegate = self
-
-    
+        
     }
-
+    
+    @IBAction func indexChanged(_ sender: Any) {
+       
+        searchBarSearchButtonClicked(searchBar)
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

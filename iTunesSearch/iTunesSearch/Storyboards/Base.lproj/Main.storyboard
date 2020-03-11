@@ -19,7 +19,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="DBB-4d-R7N">
-                                    <rect key="frame" x="8" y="8" width="398" height="84"/>
+                                    <rect key="frame" x="8" y="8" width="398" height="96"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tN4-At-3aS">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="32"/>
@@ -28,23 +28,29 @@
                                                 <segment title="Music"/>
                                                 <segment title="Movies"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="indexChanged:" destination="yEE-Jl-cel" eventType="valueChanged" id="7CQ-lh-1gS"/>
+                                            </connections>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="M0p-PA-PAU">
-                                            <rect key="frame" x="0.0" y="40" width="398" height="44"/>
+                                            <rect key="frame" x="0.0" y="40" width="398" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="M0p-PA-PAU" secondAttribute="trailing" symbolic="YES" id="1v9-dV-7YT"/>
+                                        <constraint firstItem="M0p-PA-PAU" firstAttribute="top" secondItem="tN4-At-3aS" secondAttribute="bottom" constant="9" id="U16-I1-T91"/>
+                                        <constraint firstItem="M0p-PA-PAU" firstAttribute="trailing" secondItem="tN4-At-3aS" secondAttribute="trailing" id="cHv-8u-404"/>
                                         <constraint firstItem="tN4-At-3aS" firstAttribute="leading" secondItem="M0p-PA-PAU" secondAttribute="leading" id="gEO-Zv-VcA"/>
+                                        <constraint firstItem="M0p-PA-PAU" firstAttribute="leading" secondItem="DBB-4d-R7N" secondAttribute="leading" symbolic="YES" id="z8X-3y-7OW"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="DBB-4d-R7N" firstAttribute="leading" secondItem="xyx-ek-JAS" secondAttribute="leadingMargin" id="PkL-uS-lQ4"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="DBB-4d-R7N" secondAttribute="trailing" id="UJI-3y-MXl"/>
-                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="DBB-4d-R7N" secondAttribute="bottom" id="v1L-db-bb5"/>
-                                <constraint firstItem="DBB-4d-R7N" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xyx-ek-JAS" secondAttribute="topMargin" id="vZD-fw-Dtg"/>
+                                <constraint firstItem="DBB-4d-R7N" firstAttribute="top" secondItem="xyx-ek-JAS" secondAttribute="topMargin" id="GbL-Vw-siw"/>
+                                <constraint firstItem="DBB-4d-R7N" firstAttribute="trailing" secondItem="xyx-ek-JAS" secondAttribute="trailingMargin" id="e4j-Rg-MmO"/>
+                                <constraint firstItem="DBB-4d-R7N" firstAttribute="leading" secondItem="xyx-ek-JAS" secondAttribute="leadingMargin" id="khD-au-zMS"/>
                             </constraints>
                         </view>
                         <prototypes>

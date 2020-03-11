@@ -11,7 +11,6 @@ import Foundation
 class SearchResultController {
     let baseURL = URL(string: "https://itunes.apple.com/search")!
     
-    //data source for table view
     var searchResults: [SearchResult] = []
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
@@ -47,6 +46,7 @@ class SearchResultController {
                 
             } catch {
                 completion(error)
+                return
             }
       }.resume()
     }
