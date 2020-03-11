@@ -14,6 +14,10 @@ class SearchResultController {
 
     private(set) var searchResults: [SearchResult] = []
 
+    func clearResults() {
+        searchResults = [SearchResult(title: "... Searching ...", creator: "")]
+    }
+    
     func performSearch(searchTerm: String,
                        resultType: ResultType,
                        twoLetterCountryCode: String,
@@ -41,13 +45,17 @@ class SearchResultController {
         // Make the call!
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
-                NSLog("Error fetching data: \(error)")
+                let msg = "Error fetching data: \(error)"
+                self.searchResults = [SearchResult(title: msg, creator: "")]
+                NSLog(msg)
                 completion(error)
                 return
             }
             
             guard let data = data else {
-                NSLog("No data returned from data task.")
+                let msg = "No data returned from data task."
+                NSLog(msg)
+                self.searchResults = [SearchResult(title: msg, creator: "")]
                 completion(NSError()) // TODO: Why NSError?
                 return
             }
@@ -58,7 +66,9 @@ class SearchResultController {
                 self.searchResults = thisSearch.results
                 completion(nil)
             } catch {
-                NSLog("Unable to decode data into object of type [SearchResults]: \(error)")
+                let msg = "Unable to decode data into object of type [SearchResults]: \(error)"
+                self.searchResults = [SearchResult(title: msg, creator: "")]
+                NSLog(msg)
                 completion(error)
             }
         }.resume()

@@ -37,6 +37,10 @@ class SearchResultsTableViewController: UITableViewController {
               let index = typeSegmentControl?.selectedSegmentIndex
         else { return }
 
+        // Clear the existing results first.
+        searchResultsController.clearResults()
+        tableView.reloadData()
+        
         let countryIndex = countryPicker.selectedRow(inComponent: 0)
         let twoLetterCountryCode = countries[countryIndex * 2]
 
@@ -58,7 +62,6 @@ class SearchResultsTableViewController: UITableViewController {
                                               twoLetterCountryCode: twoLetterCountryCode) { error in
             if let error = error {
                 NSLog("Search failed \(error)")
-                return
             }
             
             DispatchQueue.main.async {
@@ -103,6 +106,7 @@ let countries = ["US", "United States of America",
                  "PT", "Portugal",
                  "SA", "Saudi Arabia",
                  "ES", "Spain",
+                 "XX", "Bogus - Will Fail",
 ]
 
 extension SearchResultsTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -120,5 +124,10 @@ extension SearchResultsTableViewController: UIPickerViewDataSource, UIPickerView
             return ""
         }
         return countries[row * 2 + 1]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // TODO: What doesn't this have an Action?
+        performSearch()
     }
 }
