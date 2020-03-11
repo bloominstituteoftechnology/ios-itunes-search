@@ -33,8 +33,10 @@ class SearchResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "iTunesCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = searchResultsController.searchResults[indexPath.row].title
-        cell.detailTextLabel?.text = searchResultsController.searchResults[indexPath.row].creator
+        let title = searchResultsController.searchResults[indexPath.row].title ?? "< Missing Title >"
+        let creator = searchResultsController.searchResults[indexPath.row].creator ?? "< Missing Creator >"
+        cell.textLabel?.text = title
+        cell.detailTextLabel?.text = creator
         
         return cell
     }
@@ -52,7 +54,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         case 0:
             resultType = .software
         case 1:
-            resultType = .musicTrack
+            resultType = .music
         case 2:
             resultType = .movie
         default:

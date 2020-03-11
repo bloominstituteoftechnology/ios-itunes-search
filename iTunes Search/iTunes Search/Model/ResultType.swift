@@ -10,6 +10,6 @@ import Foundation
 
 enum ResultType: String {
     case software
-    case musicTrack
+    case music // TODO: Ask was for musicTrack but that's not in the spec
     case movie
 }
