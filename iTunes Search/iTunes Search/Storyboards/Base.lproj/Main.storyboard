@@ -9,14 +9,44 @@
         <!--iTunes Search-->
         <scene sceneID="Vgv-NR-MW6">
             <objects>
-                <tableViewController id="PIE-fN-2NF" sceneMemberID="viewController">
+                <tableViewController id="PIE-fN-2NF" customClass="SearchResultsTableViewController" customModule="iTunes_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H3R-0q-ae3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="RiP-Wb-QG9">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="czo-2p-eWz">
+                                    <rect key="frame" x="8" y="8" width="398" height="84"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9M8-pz-dbu">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="32"/>
+                                            <segments>
+                                                <segment title="Apps"/>
+                                                <segment title="Music"/>
+                                                <segment title="Movies"/>
+                                            </segments>
+                                        </segmentedControl>
+                                        <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lq6-ar-hUl">
+                                            <rect key="frame" x="0.0" y="40" width="398" height="44"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </searchBar>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="czo-2p-eWz" firstAttribute="leading" secondItem="RiP-Wb-QG9" secondAttribute="leadingMargin" id="IEz-dh-YxE"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="czo-2p-eWz" secondAttribute="trailing" id="KDe-5L-fuY"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="czo-2p-eWz" secondAttribute="bottom" id="pme-Rb-huz"/>
+                                <constraint firstItem="czo-2p-eWz" firstAttribute="top" secondItem="RiP-Wb-QG9" secondAttribute="topMargin" id="zjV-Yz-jAZ"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="C8Q-Ik-oII" detailTextLabel="F8f-CE-q7z" style="IBUITableViewCellStyleSubtitle" id="pta-ld-R1k">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pta-ld-R1k" id="wYv-gM-RbA">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
@@ -46,10 +76,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="pbr-rq-tEX"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Lq6-ar-hUl" id="7cM-hG-cPH"/>
+                        <outlet property="typeSegmentControl" destination="9M8-pz-dbu" id="CqH-Xc-y13"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FdE-ul-gmt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="0.0"/>
+            <point key="canvasLocation" x="308.69565217391306" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LfE-Pm-9mI">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		929702FB24185F4C000BFF6A /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929702FA24185F4C000BFF6A /* SearchResultsTableViewController.swift */; };
 		92EFC1AE24183AB100D75B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFC1AD24183AB100D75B27 /* AppDelegate.swift */; };
 		92EFC1B024183AB100D75B27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFC1AF24183AB100D75B27 /* SceneDelegate.swift */; };
 		92EFC1B524183AB100D75B27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92EFC1B324183AB100D75B27 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		929702FA24185F4C000BFF6A /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		92EFC1AA24183AB100D75B27 /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EFC1AD24183AB100D75B27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92EFC1AF24183AB100D75B27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		929702F924185F24000BFF6A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				929702FA24185F4C000BFF6A /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		92EFC1A124183AB000D75B27 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		92EFC1AC24183AB100D75B27 /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
+				929702F924185F24000BFF6A /* View Controllers */,
 				92EFC1C124183B9C00D75B27 /* Model */,
 				92EFC1AD24183AB100D75B27 /* AppDelegate.swift */,
 				92EFC1B624183AB300D75B27 /* Assets.xcassets */,
@@ -162,6 +173,7 @@
 			files = (
 				92EFC1C72418400700D75B27 /* SearchResultController.swift in Sources */,
 				92EFC1C524183F9A00D75B27 /* ResultType.swift in Sources */,
+				929702FB24185F4C000BFF6A /* SearchResultsTableViewController.swift in Sources */,
 				92EFC1AE24183AB100D75B27 /* AppDelegate.swift in Sources */,
 				92EFC1C324183BAC00D75B27 /* SearchResult.swift in Sources */,
 				92EFC1B024183AB100D75B27 /* SceneDelegate.swift in Sources */,
