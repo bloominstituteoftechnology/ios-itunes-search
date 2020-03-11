@@ -19,8 +19,12 @@ class SearchResultController {
         // Create URL to be used to call the end point.
         // TODO: resolvingAgainstBaseURL means full URL and not relative? 
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+        
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let countryQueryItem = URLQueryItem(name: "country", value: "US")
+        let mediaQueryItem = URLQueryItem(name: "media", value: resultType.rawValue)
+        
+        urlComponents?.queryItems = [searchTermQueryItem, countryQueryItem, mediaQueryItem]
         guard let requestUrl = urlComponents?.url else {
             NSLog("request URL is nil")
             completion(nil)
@@ -48,7 +52,7 @@ class SearchResultController {
             let jsonDecoder = JSONDecoder()
             do {
                 let thisSearch = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults.append(contentsOf: thisSearch.results)
+                self.searchResults = thisSearch.results
                 completion(nil)
             } catch {
                 NSLog("Unable to decode data into object of type [SearchResults]: \(error)")
