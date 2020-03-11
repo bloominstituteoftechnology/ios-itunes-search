@@ -14,6 +14,12 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var typeSegmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
 
+    // MARK: - Actions
+
+    @IBAction func segmentControlPressed(_ sender: Any) {
+        performSearch()
+    }
+    
     // MARK: - Proprerties
     private let searchResultsController = SearchResultController()
     
@@ -23,6 +29,35 @@ class SearchResultsTableViewController: UITableViewController {
         searchBar.delegate = self
     }
 
+    func performSearch() {
+        guard let searchTerm = searchBar.text else { return }
+        guard let index = typeSegmentControl?.selectedSegmentIndex else { return }
+        
+        var resultType: ResultType
+        
+        switch index {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .music
+        case 2:
+            resultType = .movie
+        default:
+            resultType = .software
+        }
+        
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
+            if let error = error {
+                NSLog("Search failed \(error)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,31 +80,6 @@ class SearchResultsTableViewController: UITableViewController {
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else { return }
-        guard let segmentIndex = typeSegmentControl?.selectedSegmentIndex else { return }
-        
-        var resultType: ResultType
-        
-        switch segmentIndex {
-        case 0:
-            resultType = .software
-        case 1:
-            resultType = .music
-        case 2:
-            resultType = .movie
-        default:
-            resultType = .software
-        }
-        
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
-            if let error = error {
-                NSLog("Search failed \(error)")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        performSearch()
     }
 }
