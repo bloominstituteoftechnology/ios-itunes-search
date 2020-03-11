@@ -13,7 +13,8 @@ class SearchResultsTableViewController: UITableViewController {
     // MARK: - Outlets
     @IBOutlet weak var typeSegmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
-
+    @IBOutlet weak var countryPicker: UIPickerView!
+    
     // MARK: - Actions
 
     @IBAction func segmentControlPressed(_ sender: Any) {
@@ -27,12 +28,18 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         searchBar.delegate = self
+        countryPicker.delegate = self
+        countryPicker.dataSource = self
     }
 
     func performSearch() {
-        guard let searchTerm = searchBar.text else { return }
-        guard let index = typeSegmentControl?.selectedSegmentIndex else { return }
-        
+        guard let searchTerm = searchBar.text,
+              let index = typeSegmentControl?.selectedSegmentIndex
+        else { return }
+
+        let countryIndex = countryPicker.selectedRow(inComponent: 0)
+        let twoLetterCountryCode = countries[countryIndex * 2]
+
         var resultType: ResultType
         
         switch index {
@@ -46,7 +53,9 @@ class SearchResultsTableViewController: UITableViewController {
             resultType = .software
         }
         
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
+        searchResultsController.performSearch(searchTerm: searchTerm,
+                                              resultType: resultType,
+                                              twoLetterCountryCode: twoLetterCountryCode) { error in
             if let error = error {
                 NSLog("Search failed \(error)")
                 return
@@ -81,5 +90,35 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performSearch()
+    }
+}
+
+let countries = ["US", "United States of America",
+                 "AU", "Australia",
+                 "BR", "Brazil",
+                 "CA", "Canada",
+                 "FR", "France",
+                 "JP", "Japan",
+                 "MX", "Mexico",
+                 "PT", "Portugal",
+                 "SA", "Saudi Arabia",
+                 "ES", "Spain",
+]
+
+extension SearchResultsTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countries.count / 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        print("row: \(row)")
+        if row >= (countries.count / 2) {
+            return ""
+        }
+        return countries[row * 2 + 1]
     }
 }

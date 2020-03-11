@@ -14,14 +14,17 @@ class SearchResultController {
 
     private(set) var searchResults: [SearchResult] = []
 
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func performSearch(searchTerm: String,
+                       resultType: ResultType,
+                       twoLetterCountryCode: String,
+                       completion: @escaping (Error?) -> Void) {
         
         // Create URL to be used to call the end point.
         // TODO: resolvingAgainstBaseURL means full URL and not relative? 
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let countryQueryItem = URLQueryItem(name: "country", value: "US")
+        let countryQueryItem = URLQueryItem(name: "country", value: twoLetterCountryCode)
         let mediaQueryItem = URLQueryItem(name: "media", value: resultType.rawValue)
         
         urlComponents?.queryItems = [searchTermQueryItem, countryQueryItem, mediaQueryItem]
