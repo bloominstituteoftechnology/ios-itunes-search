@@ -12,18 +12,23 @@ import Foundation
 class SearchResultsController {
     
     // MARK: - Properties
-    private let baseURL = URL(string: "https://itunes.apple.com")!
-    private(set) var searchResults: [SearchResult] = []
+    private let baseURL = URL(string: "https://itunes.apple.com/search")!
+    var searchResults: [SearchResult] = []
     
     
     // MARK: - Methods
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping Error? -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+        //let searchTerm = "term=\(searchTerm)"
+//        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+//        let entityResult = URLQueryItem(name: "entity", value: resultType.rawValue)
+//        urlComponents?.queryItems = [searchTermQueryItem, entityResult]
+        let parameters: [String: String] = ["term": searchTerm,
+                          "entity": resultType.rawValue]
+        let queryItems = parameters.compactMap({ URLQueryItem(name: $0.key, value: $0.value) })
+        urlComponents?.queryItems = queryItems
         guard let requestURL = urlComponents?.url else {
             NSLog("request URL is nil")
-            completion(NSError())
             return
         }
         
@@ -33,25 +38,22 @@ class SearchResultsController {
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching data: \(error)")
-                completion(NSError())
                 return
             }
             
             guard let data = data else {
-                NSLog("No data return from data task.")
-                completion(NSError())
+                completion();
                 return
             }
             
             let jsonDecoder = JSONDecoder()
             do {
                 let searchResult = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults.append(contentsOf: searchResult.results)
-                completion(nil)
+                self.searchResults = searchResult.results
             } catch {
-                NSLog("Unable  to decode data into object of type [Person]: \(error)")
-                completion(NSError())
+                NSLog("Unable  to decode data into object of type [SearchResult]: \(error)")
             }
+            completion()
         }.resume()
     }
 }
