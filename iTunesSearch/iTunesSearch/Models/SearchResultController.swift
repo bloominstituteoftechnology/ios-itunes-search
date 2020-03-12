@@ -9,40 +9,44 @@
 import Foundation
 
 class SearchResultController {
-    var searchResults: [SearchResult] = []
+    private(set) var searchResults: [SearchResult] = []
     
     let baseURL = URL(string: "https://itunes.apple.com/search")!
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void ) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void ) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-       urlComponents?.queryItems = [ URLQueryItem(name: "search", value: searchTerm),
-                                     URLQueryItem(name: "result", value: resultType.rawValue)
+       urlComponents?.queryItems = [ URLQueryItem(name: "term", value: searchTerm),
+                                     URLQueryItem(name: "entity", value: resultType.rawValue)
         
         ]
         guard let requestURL = urlComponents?.url else {
         NSLog("request url is nil")
-        completion()
-        return }
+            let error = NSError(domain: "url construction failed", code: 1)
+        completion(error)
+        return
+            
+        }
    var request = URLRequest(url: requestURL)
           request.httpMethod = "GET"
+        
           URLSession.shared.dataTask(with: request) { (data, _, error) in
               if let error = error {
                   NSLog("Error fetching data \(error)" )
-                  completion()
+                  completion(error)
                   return
               }
               guard let data = data else { // we want the data to exist so we need to unwrapp it
                   NSLog("No data return from data task ")
-                  completion()
+                  completion(error)
                   return
               }
-              let jsonDecoder = JSONDecoder()
+              
               do {
-                let itunesSearch = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults.append(contentsOf: itunesSearch.results)
+                let itunesSearch = try JSONDecoder().decode(SearchResults.self, from: data)
+                self.searchResults  = itunesSearch.results
               } catch {
                   NSLog("Unable to decode the data into object of type [SearchResult]: \(error)")
               }
-              completion()
+              completion(nil)
           } .resume()
     }
 }
