@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		C990AC0C241B392B00C8213C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC0B241B392B00C8213C /* AppDelegate.swift */; };
 		C990AC0E241B392B00C8213C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC0D241B392B00C8213C /* SceneDelegate.swift */; };
-		C990AC10241B392B00C8213C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC0F241B392B00C8213C /* ViewController.swift */; };
 		C990AC13241B392B00C8213C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C990AC11241B392B00C8213C /* Main.storyboard */; };
 		C990AC15241B392C00C8213C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C990AC14241B392C00C8213C /* Assets.xcassets */; };
 		C990AC18241B392C00C8213C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C990AC16241B392C00C8213C /* LaunchScreen.storyboard */; };
+		C990AC24241B3F6A00C8213C /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC23241B3F6A00C8213C /* SearchResult.swift */; };
+		C990AC26241B40E800C8213C /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC25241B40E800C8213C /* ResultType.swift */; };
+		C990AC28241B412F00C8213C /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC27241B412F00C8213C /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C990AC08241B392B00C8213C /* itunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C990AC0B241B392B00C8213C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C990AC0D241B392B00C8213C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C990AC0F241B392B00C8213C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C990AC12241B392B00C8213C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C990AC14241B392C00C8213C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C990AC17241B392C00C8213C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C990AC19241B392C00C8213C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C990AC23241B3F6A00C8213C /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		C990AC25241B40E800C8213C /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		C990AC27241B412F00C8213C /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		C990AC0A241B392B00C8213C /* itunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				C990AC19241B392C00C8213C /* Info.plist */,
 				C990AC0B241B392B00C8213C /* AppDelegate.swift */,
 				C990AC0D241B392B00C8213C /* SceneDelegate.swift */,
-				C990AC0F241B392B00C8213C /* ViewController.swift */,
-				C990AC11241B392B00C8213C /* Main.storyboard */,
 				C990AC14241B392C00C8213C /* Assets.xcassets */,
 				C990AC16241B392C00C8213C /* LaunchScreen.storyboard */,
-				C990AC19241B392C00C8213C /* Info.plist */,
+				C990AC1F241B39AF00C8213C /* Model */,
+				C990AC22241B39CC00C8213C /* Storyboard */,
+				C990AC21241B39BF00C8213C /* View */,
+				C990AC20241B39B700C8213C /* View Controller */,
 			);
 			path = itunesSearch;
+			sourceTree = "<group>";
+		};
+		C990AC1F241B39AF00C8213C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C990AC23241B3F6A00C8213C /* SearchResult.swift */,
+				C990AC25241B40E800C8213C /* ResultType.swift */,
+				C990AC27241B412F00C8213C /* SearchResultController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C990AC20241B39B700C8213C /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C990AC21241B39BF00C8213C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C990AC22241B39CC00C8213C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C990AC11241B392B00C8213C /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C990AC10241B392B00C8213C /* ViewController.swift in Sources */,
+				C990AC26241B40E800C8213C /* ResultType.swift in Sources */,
 				C990AC0C241B392B00C8213C /* AppDelegate.swift in Sources */,
+				C990AC24241B3F6A00C8213C /* SearchResult.swift in Sources */,
 				C990AC0E241B392B00C8213C /* SceneDelegate.swift in Sources */,
+				C990AC28241B412F00C8213C /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
