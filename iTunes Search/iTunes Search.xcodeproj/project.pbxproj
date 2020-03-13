@@ -15,6 +15,7 @@
 		AFEB1125241C287800AA5B27 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB1124241C287800AA5B27 /* SearchResult.swift */; };
 		AFEB1127241C2C9F00AA5B27 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB1126241C2C9F00AA5B27 /* ResultType.swift */; };
 		AFEB1129241C2D3E00AA5B27 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB1128241C2D3E00AA5B27 /* SearchResultController.swift */; };
+		AFEB112B241C35AE00AA5B27 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB112A241C35AE00AA5B27 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AFEB1124241C287800AA5B27 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		AFEB1126241C2C9F00AA5B27 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		AFEB1128241C2D3E00AA5B27 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		AFEB112A241C35AE00AA5B27 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		AFEB1121241C27AB00AA5B27 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AFEB112A241C35AE00AA5B27 /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				AFEB1127241C2C9F00AA5B27 /* ResultType.swift in Sources */,
 				AFEB110D241C278300AA5B27 /* AppDelegate.swift in Sources */,
+				AFEB112B241C35AE00AA5B27 /* SearchResultsTableViewController.swift in Sources */,
 				AFEB1125241C287800AA5B27 /* SearchResult.swift in Sources */,
 				AFEB110F241C278300AA5B27 /* SceneDelegate.swift in Sources */,
 				AFEB1129241C2D3E00AA5B27 /* SearchResultController.swift in Sources */,
