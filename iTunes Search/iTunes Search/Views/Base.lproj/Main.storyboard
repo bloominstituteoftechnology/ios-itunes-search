@@ -42,7 +42,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="lFb-i7-0fk" detailTextLabel="okp-YL-3ej" style="IBUITableViewCellStyleSubtitle" id="AqD-fX-ape">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="lFb-i7-0fk" detailTextLabel="okp-YL-3ej" style="IBUITableViewCellStyleSubtitle" id="AqD-fX-ape">
                                 <rect key="frame" x="0.0" y="132" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AqD-fX-ape" id="EhN-ic-1dj">
