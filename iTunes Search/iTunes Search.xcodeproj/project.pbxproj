@@ -56,15 +56,39 @@
 		638A2CC5241C7542007B193C /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
-				638A2CC6241C7542007B193C /* AppDelegate.swift */,
-				638A2CC8241C7542007B193C /* SceneDelegate.swift */,
-				638A2CCA241C7542007B193C /* ViewController.swift */,
-				638A2CCC241C7542007B193C /* Main.storyboard */,
-				638A2CCF241C7543007B193C /* Assets.xcassets */,
-				638A2CD1241C7543007B193C /* LaunchScreen.storyboard */,
+				638A2CDC241C75F2007B193C /* View Controllers */,
+				638A2CDB241C75D6007B193C /* Views */,
+				638A2CDA241C75C5007B193C /* Resources */,
 				638A2CD4241C7543007B193C /* Info.plist */,
 			);
 			path = "iTunes Search";
+			sourceTree = "<group>";
+		};
+		638A2CDA241C75C5007B193C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				638A2CC6241C7542007B193C /* AppDelegate.swift */,
+				638A2CC8241C7542007B193C /* SceneDelegate.swift */,
+				638A2CCF241C7543007B193C /* Assets.xcassets */,
+				638A2CD1241C7543007B193C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		638A2CDB241C75D6007B193C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				638A2CCC241C7542007B193C /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		638A2CDC241C75F2007B193C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				638A2CCA241C7542007B193C /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
