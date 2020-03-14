@@ -15,6 +15,7 @@
 		3A0FA46F241C53E0002342DE /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FA46E241C53E0002342DE /* SearchResultsTableViewController.swift */; };
 		3A0FA471241C5AC3002342DE /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FA470241C5AC3002342DE /* SearchResult.swift */; };
 		3A0FA473241C5BC8002342DE /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FA472241C5BC8002342DE /* ResultType.swift */; };
+		3A0FA475241C5C53002342DE /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FA474241C5C53002342DE /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3A0FA46E241C53E0002342DE /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		3A0FA470241C5AC3002342DE /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		3A0FA472241C5BC8002342DE /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		3A0FA474241C5C53002342DE /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				3A0FA470241C5AC3002342DE /* SearchResult.swift */,
 				3A0FA472241C5BC8002342DE /* ResultType.swift */,
+				3A0FA474241C5C53002342DE /* SearchResultController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0FA475241C5C53002342DE /* SearchResultController.swift in Sources */,
 				3A0FA473241C5BC8002342DE /* ResultType.swift in Sources */,
 				3A0FA456241C511B002342DE /* AppDelegate.swift in Sources */,
 				3A0FA458241C511B002342DE /* SceneDelegate.swift in Sources */,
