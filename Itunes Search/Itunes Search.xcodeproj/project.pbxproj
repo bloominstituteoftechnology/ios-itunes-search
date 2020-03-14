@@ -62,16 +62,16 @@
 		02008BC123D170E200E02881 /* Itunes Search */ = {
 			isa = PBXGroup;
 			children = (
+				02008BDA23D2641E00E02881 /* SearchResultController.swift */,
+				02008BD623D25A5900E02881 /* SearchResult.swift */,
 				02008BC223D170E200E02881 /* AppDelegate.swift */,
 				02008BC423D170E200E02881 /* SceneDelegate.swift */,
-				02008BC823D170E300E02881 /* Main.storyboard */,
-				02008BDC23D2A0D900E02881 /* SearchResultsTableViewController.swift */,
-				02008BD623D25A5900E02881 /* SearchResult.swift */,
 				02008BD823D262EC00E02881 /* ResultType.swift */,
-				02008BDA23D2641E00E02881 /* SearchResultController.swift */,
-				02008BCB23D170E500E02881 /* Assets.xcassets */,
-				02008BCD23D170E500E02881 /* LaunchScreen.storyboard */,
 				02008BD023D170E500E02881 /* Info.plist */,
+				02008BCB23D170E500E02881 /* Assets.xcassets */,
+				02008BC823D170E300E02881 /* Main.storyboard */,
+				02008BCD23D170E500E02881 /* LaunchScreen.storyboard */,
+				02008BDC23D2A0D900E02881 /* SearchResultsTableViewController.swift */,
 			);
 			path = "Itunes Search";
 			sourceTree = "<group>";

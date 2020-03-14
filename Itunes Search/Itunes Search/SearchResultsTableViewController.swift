@@ -10,42 +10,37 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
-   private let searchResultsController = SearchResultController()
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            searchBar.delegate = self
+        }
+    
+  let searchResultsController = SearchResultController()
     
     
     @IBOutlet weak var typeSelection: UISegmentedControl!
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    override func viewDidLoad() {
-         super.viewDidLoad()
-         searchBar.delegate = self
-     }
+   
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchResult = searchBar.text else {
-            return
-        }
+        guard let searchTerm = searchBar.text,
+        searchTerm != "" else { return }
         
         var resultType: ResultType!
         
         switch typeSelection.selectedSegmentIndex {
         case 0:
-            return resultType = .software
+            resultType = .software
         case 1:
-            return resultType = .musicTrack
+            resultType = .musicTrack
         case 2:
-            return resultType = .movie
+            resultType = .movie
         default:
-           break
+            break
         }
         
-        searchResultsController.performSearch(searchTerm: searchResult, resultType: resultType) { (error) in
-            guard error == nil else {
-                print("Error searching: \(error!)")
-                return
-            }
-            
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
