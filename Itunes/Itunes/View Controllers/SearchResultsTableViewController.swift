@@ -10,8 +10,10 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
     
+    // MARK:  - Properties
     let searchResultController = SearchResultController()
     
+    // MARK:  - IBOutlets
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     

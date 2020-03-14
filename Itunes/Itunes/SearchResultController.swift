@@ -14,7 +14,7 @@ class SearchResultController {
     
     private let baseURL = URL(string: "https://itunes.apple.com/search?")!
     
-
+    
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
         // Create a URL components object for bast URL
