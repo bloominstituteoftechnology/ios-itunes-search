@@ -15,6 +15,7 @@
 		C990AC24241B3F6A00C8213C /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC23241B3F6A00C8213C /* SearchResult.swift */; };
 		C990AC26241B40E800C8213C /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC25241B40E800C8213C /* ResultType.swift */; };
 		C990AC28241B412F00C8213C /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC27241B412F00C8213C /* SearchResultController.swift */; };
+		C990AC2A241D40C800C8213C /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990AC29241D40C800C8213C /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C990AC23241B3F6A00C8213C /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		C990AC25241B40E800C8213C /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		C990AC27241B412F00C8213C /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		C990AC29241D40C800C8213C /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		C990AC20241B39B700C8213C /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C990AC29241D40C800C8213C /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				C990AC26241B40E800C8213C /* ResultType.swift in Sources */,
 				C990AC0C241B392B00C8213C /* AppDelegate.swift in Sources */,
+				C990AC2A241D40C800C8213C /* SearchResultsTableViewController.swift in Sources */,
 				C990AC24241B3F6A00C8213C /* SearchResult.swift in Sources */,
 				C990AC0E241B392B00C8213C /* SceneDelegate.swift in Sources */,
 				C990AC28241B412F00C8213C /* SearchResultController.swift in Sources */,
