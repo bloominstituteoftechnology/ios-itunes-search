@@ -12,13 +12,13 @@ class SearchResultsTableViewController: UITableViewController {
     
     // MARK: - Properties
     let searchResultsController = SearchResultController()
-    private var searchResults: [SearchResult] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+//    private var searchResults: [SearchResult] = [] {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
     // MARK: - IBOutlets
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -42,11 +42,10 @@ class SearchResultsTableViewController: UITableViewController {
         
         let searchResult = searchResultsController.searchResults[indexPath.row]
         cell.textLabel?.text = searchResult.title
-        cell.detailTextLabel?.text = searchResult.creator
+        cell.detailTextLabel?.text = searchResult.artist
 
         return cell
     }
-    
 }
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
@@ -55,20 +54,24 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         
         var resultType: ResultType!
         
-        if segmentedControl.selectedSegmentIndex == 0 {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
             resultType = .software
-        } else if segmentedControl.selectedSegmentIndex == 1 {
-            resultType = .musicTrack
-        } else if segmentedControl.selectedSegmentIndex == 2 {
+        case 1:
+            resultType = .music
+        case 2:
             resultType = .movie
+        default:
+            resultType = .software
         }
-            
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
-            if let error = error {
-                print("Unable to search: \(error)")
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+//            if let error = error {
+//                print("Unable to search: \(error)")
+//            } else {
+                print(self.searchResultsController.searchResults)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
             }
         }
     }

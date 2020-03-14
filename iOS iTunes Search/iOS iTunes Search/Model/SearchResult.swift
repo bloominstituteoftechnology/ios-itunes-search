@@ -9,15 +9,16 @@
 import Foundation
 
 struct SearchResult: Codable {
-    let title: String
-    let creator: String
+    
+    let title: String?
+    let artist: String?
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
-        case creator = "artistName"
+        case artist = "artistName"
     }
 }
 
-struct SearchResults: Decodable {
+struct SearchResults: Codable {
     let results: [SearchResult]
 }

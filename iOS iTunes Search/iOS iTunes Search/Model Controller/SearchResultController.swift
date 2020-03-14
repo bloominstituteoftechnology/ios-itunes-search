@@ -21,15 +21,15 @@ class SearchResultController {
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     // MARK: - Functions
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void ) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void ) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let resultTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         urlComponents?.queryItems = [searchTermQueryItem, resultTermQueryItem]
         
         guard let requestURL = urlComponents?.url else {
-            let error = NSError(domain: "RequestURL is nil", code: 1)
-            completion(error)
+            print("Request URL is nil")
+//            completion()
             return
         }
         var request = URLRequest(url: requestURL)
@@ -37,25 +37,28 @@ class SearchResultController {
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             guard error == nil else {
-                completion(error)
+                print("Error fetching data: \(error)")
+//                completion()
                 return
             }
             
             guard let data = data else {
-                let error = NSError(domain: "Unable to decode data", code: 2)
-                completion(error)
+                print("Error: No data returned from data task.")
+                completion()
                 return
             }
             
             let jsonDecoder = JSONDecoder()
             do {
                 let searchResult = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults.append(contentsOf: searchResult.results)
-                completion(nil)
+//                self.searchResults.append(contentsOf: searchResult.results)
+                self.searchResults = searchResult.results
             } catch {
                 print("Unable to decode data: \(error)")
-                completion(error)
+//                completion(error)
             }
-        }.resume()
+            completion()
+        }
+        .resume()
     }
 }
