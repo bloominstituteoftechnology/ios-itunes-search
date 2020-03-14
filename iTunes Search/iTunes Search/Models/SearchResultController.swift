@@ -16,17 +16,18 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    private let baseURL = URL(string: "https://itunes.apple.com/")!
+    private let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
     
-    func performSearch(searchTerm: String, completion: @escaping ([SearchResult]) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let searchMediaQueryItem = URLQueryItem(name: "media", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchTermQueryItem, searchMediaQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("Error: Request URL is nil")
-            completion([SearchResult]())
+            completion(nil)
             return
         }
         
@@ -36,26 +37,26 @@ class SearchResultController {
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             guard error == nil else {
                 print("Error fetching data: \(error!)")
-                completion([])
+                completion(error)
                 return
             }
             
             guard let data = data else {
                 print("Error: No data returned from data task.")
-                completion([])
+                completion(NSError())
                 return
             }
             
             let jsonDecoder = JSONDecoder()
             do {
                 let resultTypeSearch = try jsonDecoder.decode(SearchResults.self, from: data)
-                completion(resultTypeSearch.results)
+                self.searchResults.append(contentsOf: resultTypeSearch.results)
+                print("Data added")
+                completion(nil)
             } catch {
                 print("Unable to decode data: \(error)")
-                completion([])
+                completion(error)
             }
         }.resume()
-        
     }
-    
 }

@@ -69,7 +69,6 @@
 				AFEB1123241C27B700AA5B27 /* Models */,
 				AFEB1120241C27A400AA5B27 /* Storyboards */,
 				AFEB1121241C27AB00AA5B27 /* View Controllers */,
-				AFEB1122241C27B200AA5B27 /* Views */,
 			);
 			path = "iTunes Search";
 			sourceTree = "<group>";
@@ -89,13 +88,6 @@
 				AFEB112A241C35AE00AA5B27 /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		AFEB1122241C27B200AA5B27 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		AFEB1123241C27B700AA5B27 /* Models */ = {
