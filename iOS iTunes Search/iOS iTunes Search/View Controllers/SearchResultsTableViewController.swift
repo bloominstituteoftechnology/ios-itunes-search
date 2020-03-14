@@ -58,7 +58,7 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         case 0:
             resultType = .software
         case 1:
-            resultType = .music
+            resultType = .musicTrack
         case 2:
             resultType = .movie
         default:
