@@ -17,11 +17,17 @@ class SearchResultsTableViewController: UITableViewController {
     //MARK: - Properties
     let searchResultsController = SearchResultController()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
     }
+    
+    //MARK: - IBActions
+    @IBAction func selectorItemSelected(_ sender: Any) {
+        searchResultsController.searchResults = []
+        conductSearch()
+    }
+    
 
     // MARK: - Table view data source
 
@@ -38,11 +44,12 @@ class SearchResultsTableViewController: UITableViewController {
         
         return cell
     }
-}
 
-extension SearchResultsTableViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else { return }
+
+    
+    // MARK: - Functions
+    func conductSearch() {
+        guard let searchTerm = searchBar.text  else { return }
         var resultType: ResultType!
         
         switch searchSegmentedControl.selectedSegmentIndex {
@@ -61,6 +68,14 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+}
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        conductSearch()
+        
     }
     
 }
