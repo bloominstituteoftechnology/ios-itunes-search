@@ -25,7 +25,8 @@ class SearchResultController {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let searchMediaQueryItem = URLQueryItem(name: "media", value: resultType.rawValue)
-        urlComponents?.queryItems = [searchTermQueryItem, searchMediaQueryItem]
+        let searchLimitQueryItem = URLQueryItem(name: "limit", value: "10")
+        urlComponents?.queryItems = [searchTermQueryItem, searchMediaQueryItem,searchLimitQueryItem ]
         
         guard let requestURL = urlComponents?.url else {
             NSLog("Error: Rquest URL is nil")
