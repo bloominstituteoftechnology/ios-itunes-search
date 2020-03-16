@@ -24,7 +24,7 @@ class SearchResultController {
             completion(nil)
             return
         }
-        
+
         URLSession.shared.dataTask(with: requestURL) { data, _, error in
             guard error == nil else {
                 print("Error fetching data: \(error!)")
@@ -36,7 +36,7 @@ class SearchResultController {
                 completion(NSError())
                 return
             }
-            
+
             do {
                 self.searchResults = try JSONDecoder().decode(SearchResults.self, from: data).results
                 completion(nil)
@@ -45,5 +45,9 @@ class SearchResultController {
                 completion(error)
             }
         }.resume()
+    }
+
+    func clearResults() {
+        searchResults.removeAll()
     }
 }
