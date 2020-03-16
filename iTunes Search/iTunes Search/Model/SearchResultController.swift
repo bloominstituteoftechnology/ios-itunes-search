@@ -14,8 +14,11 @@ class SearchResultController {
     
     func performSearch(_ searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        urlComponents?.queryItems = [URLQueryItem(name: "term", value: searchTerm)]
-        
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "term", value: searchTerm),
+            URLQueryItem(name: "entity", value: resultType.rawValue)
+        ]
+
         guard let requestURL = urlComponents?.url else {
             NSLog("Problem constructing search URL for \(searchTerm)")
             completion(nil)
