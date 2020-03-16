@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16092.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h4F-L9-YV4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h4F-L9-YV4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16082.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,20 +25,32 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="newSegmentSelected:" destination="oqR-kp-K8Q" eventType="valueChanged" id="3j9-xQ-d9Q"/>
+                                    </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-O0-rZ2">
                                     <rect key="frame" x="8" y="48" width="398" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="oqR-kp-K8Q" id="Xrt-CN-Irr"/>
+                                    </connections>
                                 </searchBar>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="VI2-gX-DLY">
+                                    <rect key="frame" x="347" y="48" width="20" height="56"/>
+                                </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
+                                <constraint firstItem="VI2-gX-DLY" firstAttribute="bottom" secondItem="fpD-O0-rZ2" secondAttribute="bottom" id="3Rj-sP-iua"/>
                                 <constraint firstAttribute="trailing" secondItem="fpD-O0-rZ2" secondAttribute="trailing" constant="8" id="TKf-V4-Eqj"/>
                                 <constraint firstAttribute="trailing" secondItem="0oY-J7-r27" secondAttribute="trailing" constant="8" id="dzL-eq-zpY"/>
                                 <constraint firstItem="fpD-O0-rZ2" firstAttribute="leading" secondItem="qNx-x8-uhP" secondAttribute="leading" constant="8" id="eqv-0O-Lw7"/>
                                 <constraint firstItem="0oY-J7-r27" firstAttribute="leading" secondItem="qNx-x8-uhP" secondAttribute="leading" constant="8" id="nXQ-xB-mQS"/>
                                 <constraint firstItem="fpD-O0-rZ2" firstAttribute="top" secondItem="0oY-J7-r27" secondAttribute="bottom" constant="9" id="sZU-T2-ItZ"/>
                                 <constraint firstItem="0oY-J7-r27" firstAttribute="top" secondItem="qNx-x8-uhP" secondAttribute="top" constant="8" id="w5r-c8-JEu"/>
+                                <constraint firstAttribute="trailing" secondItem="VI2-gX-DLY" secondAttribute="trailing" constant="47" id="wNj-ux-bv9"/>
+                                <constraint firstItem="VI2-gX-DLY" firstAttribute="top" secondItem="fpD-O0-rZ2" secondAttribute="top" id="yc7-J4-Nes"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -74,6 +86,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="Dgb-kV-8Lz"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="VI2-gX-DLY" id="IwQ-lO-G5X"/>
                         <outlet property="resultTypeSegmentedControl" destination="0oY-J7-r27" id="dQ8-n0-mB3"/>
                         <outlet property="searchBar" destination="fpD-O0-rZ2" id="CUj-qO-lFt"/>
                     </connections>

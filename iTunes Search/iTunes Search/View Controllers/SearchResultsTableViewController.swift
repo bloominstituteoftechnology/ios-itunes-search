@@ -12,11 +12,13 @@ class SearchResultsTableViewController: UITableViewController {
     
     @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     private let searchResultsController = SearchResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.isHidden = true
     }
 
     @IBAction func newSegmentSelected(_ sender: Any) {
@@ -38,7 +40,10 @@ class SearchResultsTableViewController: UITableViewController {
             break
         }
 
+        searchResultsController.clearResults()
         tableView.reloadData()
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
 
         searchResultsController.performSearch(searchText, resultType: resultType) { error in
             guard error == nil else {
@@ -47,6 +52,8 @@ class SearchResultsTableViewController: UITableViewController {
             }
 
             DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             }
         }
