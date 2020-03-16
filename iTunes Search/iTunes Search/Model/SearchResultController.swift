@@ -17,12 +17,12 @@ class SearchResultController {
         urlComponents?.queryItems = [URLQueryItem(name: "term", value: searchTerm)]
         
         guard let requestURL = urlComponents?.url else {
-            print("Error: Request URL is nil")
+            NSLog("Problem constructing search URL for \(searchTerm)")
             completion(nil)
             return
         }
         
-        URLSession.shared.dataTask(with: URLRequest(url: requestURL)) { data, _, error in
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
             guard error == nil else {
                 print("Error fetching data: \(error!)")
                 completion(error!)
