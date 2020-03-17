@@ -15,6 +15,7 @@
 		1FC9FD3A24217DCE001EB95E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9FD3924217DCE001EB95E /* SearchResult.swift */; };
 		1FC9FD3C24217F8B001EB95E /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9FD3B24217F8B001EB95E /* ResultType.swift */; };
 		1FC9FD3E2421806C001EB95E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9FD3D2421806C001EB95E /* SearchResultController.swift */; };
+		1FC9FD4024218591001EB95E /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC9FD3F24218591001EB95E /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1FC9FD3924217DCE001EB95E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		1FC9FD3B24217F8B001EB95E /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		1FC9FD3D2421806C001EB95E /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		1FC9FD3F24218591001EB95E /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				1FC9FD3D2421806C001EB95E /* SearchResultController.swift */,
+				1FC9FD3F24218591001EB95E /* SearchResultsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				1FC9FD3C24217F8B001EB95E /* ResultType.swift in Sources */,
 				1FC9FD2224217C9B001EB95E /* AppDelegate.swift in Sources */,
+				1FC9FD4024218591001EB95E /* SearchResultsTableViewController.swift in Sources */,
 				1FC9FD3A24217DCE001EB95E /* SearchResult.swift in Sources */,
 				1FC9FD2424217C9B001EB95E /* SceneDelegate.swift in Sources */,
 				1FC9FD3E2421806C001EB95E /* SearchResultController.swift in Sources */,
