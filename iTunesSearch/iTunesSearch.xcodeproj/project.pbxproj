@@ -16,6 +16,7 @@
 		DDB329D4243BC13900FF89B4 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D3243BC13900FF89B4 /* SearchResult.swift */; };
 		DDB329D6243BC36900FF89B4 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D5243BC36900FF89B4 /* ResultType.swift */; };
 		DDB329D8243BC3B100FF89B4 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D7243BC3B100FF89B4 /* SearchResultController.swift */; };
+		DDB329DA243BD3E400FF89B4 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D9243BD3E400FF89B4 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DDB329D3243BC13900FF89B4 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		DDB329D5243BC36900FF89B4 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		DDB329D7243BC3B100FF89B4 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		DDB329D9243BD3E400FF89B4 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				DDB329BD243BBE6600FF89B4 /* ViewController.swift */,
+				DDB329D9243BD3E400FF89B4 /* SearchResultsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				DDB329BE243BBE6600FF89B4 /* ViewController.swift in Sources */,
 				DDB329BA243BBE6600FF89B4 /* AppDelegate.swift in Sources */,
 				DDB329D4243BC13900FF89B4 /* SearchResult.swift in Sources */,
+				DDB329DA243BD3E400FF89B4 /* SearchResultsTableViewController.swift in Sources */,
 				DDB329BC243BBE6600FF89B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

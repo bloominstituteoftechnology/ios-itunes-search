@@ -21,7 +21,7 @@ class SearchResultController {
     
     //Variables
     let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")!
-    lazy var searchURL = URL(string: "&", relativeTo: baseURL)!
+    lazy var searchURL = URL(string: "&entity=", relativeTo: baseURL)!
     var task: URLSessionTask?
     var searchResults: [SearchResult] = [] //Data Source
     
