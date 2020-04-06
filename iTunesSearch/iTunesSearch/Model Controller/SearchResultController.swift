@@ -39,6 +39,7 @@ class SearchResultController {
         task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
             if let error = error {
                 print("Error fetching data: \(error.localizedDescription)")
+                completion(error)
                 return
             }
             
@@ -46,6 +47,7 @@ class SearchResultController {
             
             guard let data = data else {
                 print("No data returned from dataTask")
+                completion(NSError())
                 return
             }
             
@@ -54,12 +56,12 @@ class SearchResultController {
             do {
                 let itunesSearch = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = itunesSearch.results
+                completion(nil)
             } catch {
                 print("Unable to decode data into instance of SearchResults: \(error.localizedDescription)")
-                
+                completion(error)
             }
             
-            completion(error)
         }
         
         task?.resume()
