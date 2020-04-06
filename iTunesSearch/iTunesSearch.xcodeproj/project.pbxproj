@@ -14,6 +14,8 @@
 		FE8BA8EE243BD4A9001F090B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8BA8ED243BD4A9001F090B /* Assets.xcassets */; };
 		FE8BA8F1243BD4A9001F090B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8BA8EF243BD4A9001F090B /* LaunchScreen.storyboard */; };
 		FE8BA8F9243BD4CA001F090B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BA8F8243BD4CA001F090B /* SearchResult.swift */; };
+		FE8BA8FD243BECF2001F090B /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BA8FC243BECF2001F090B /* ResultType.swift */; };
+		FE8BA8FF243BED6C001F090B /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BA8FE243BED6C001F090B /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FE8BA8F0243BD4A9001F090B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE8BA8F2243BD4A9001F090B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE8BA8F8243BD4CA001F090B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		FE8BA8FC243BECF2001F090B /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		FE8BA8FE243BED6C001F090B /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				FE8BA8EF243BD4A9001F090B /* LaunchScreen.storyboard */,
 				FE8BA8F2243BD4A9001F090B /* Info.plist */,
 				FE8BA8F8243BD4CA001F090B /* SearchResult.swift */,
+				FE8BA8FC243BECF2001F090B /* ResultType.swift */,
+				FE8BA8FE243BED6C001F090B /* SearchResultController.swift */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE8BA8FF243BED6C001F090B /* SearchResultController.swift in Sources */,
+				FE8BA8FD243BECF2001F090B /* ResultType.swift in Sources */,
 				FE8BA8E9243BD4A8001F090B /* ViewController.swift in Sources */,
 				FE8BA8E5243BD4A8001F090B /* AppDelegate.swift in Sources */,
 				FE8BA8F9243BD4CA001F090B /* SearchResult.swift in Sources */,

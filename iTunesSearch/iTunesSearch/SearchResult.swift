@@ -17,3 +17,7 @@ struct SearchResult: Codable {
     var title: String
     var creator: String
 }
+
+struct SearchResults {
+    let reults: [SearchResult]
+}
