@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  iTunes Search
+//  iTunesSearch
 //
 //  Created by Harmony Radley on 4/6/20.
 //  Copyright © 2020 Harmony Radley. All rights reserved.
