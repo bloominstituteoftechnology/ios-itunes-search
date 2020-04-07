@@ -24,8 +24,8 @@ class SearchResultsController {
     
     //Variables
     var delegate: SearchResultsDelegate?
-    let baseURL = URL(string: "https://itunes.apple.com/search")!
-    lazy var searchURL = URL(string: "&entity=", relativeTo: baseURL)!
+    let baseURL = URL(string: "https://itunes.apple.com")!
+    lazy var searchURL = URL(string: "/search", relativeTo: baseURL)!
     var task: URLSessionTask?
     var searchResults: [SearchResult] = [] //Data Source
     
@@ -50,6 +50,7 @@ class SearchResultsController {
             completion()
             return
         }
+        print(requestURL)
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -70,8 +71,8 @@ class SearchResultsController {
             let jsonDecoder = JSONDecoder()
             
             do {
-                let search = try jsonDecoder.decode(SearchResult.self, from: data)
-                self.searchResults.append(search)
+                let search = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults = search.results
             } catch {
                 print("Error: \(error.localizedDescription)")
             }

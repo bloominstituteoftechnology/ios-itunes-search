@@ -30,8 +30,14 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath)
+        guard let myCell = cell as? ResultsTableViewCell else {
+            return cell
+        }
         
-        return cell
+        myCell.titleLabel.text = searchResultsController.searchResults[indexPath.row].artistName
+        //myCell.subtitleLabel.text = searchResultsController.searchResults[indexPath.row]
+        
+        return myCell
     }
     
     //Search Button Clicked

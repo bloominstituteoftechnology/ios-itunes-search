@@ -17,6 +17,7 @@
 		DDB329D6243BC36900FF89B4 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D5243BC36900FF89B4 /* ResultType.swift */; };
 		DDB329D8243BC3B100FF89B4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D7243BC3B100FF89B4 /* SearchResultsController.swift */; };
 		DDB329DA243BD3E400FF89B4 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D9243BD3E400FF89B4 /* SearchResultsTableViewController.swift */; };
+		DDB329DC243C2C2700FF89B4 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329DB243C2C2700FF89B4 /* ResultsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DDB329D5243BC36900FF89B4 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		DDB329D7243BC3B100FF89B4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		DDB329D9243BD3E400FF89B4 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		DDB329DB243C2C2700FF89B4 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		DDB329CE243BBE7F00FF89B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DDB329DB243C2C2700FF89B4 /* ResultsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				DDB329D8243BC3B100FF89B4 /* SearchResultsController.swift in Sources */,
 				DDB329D6243BC36900FF89B4 /* ResultType.swift in Sources */,
+				DDB329DC243C2C2700FF89B4 /* ResultsTableViewCell.swift in Sources */,
 				DDB329BE243BBE6600FF89B4 /* ViewController.swift in Sources */,
 				DDB329BA243BBE6600FF89B4 /* AppDelegate.swift in Sources */,
 				DDB329D4243BC13900FF89B4 /* SearchResult.swift in Sources */,
