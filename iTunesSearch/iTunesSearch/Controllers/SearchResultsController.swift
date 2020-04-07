@@ -51,7 +51,7 @@ class SearchResultsController {
             return
         }
         print(requestURL)
-        
+    
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         

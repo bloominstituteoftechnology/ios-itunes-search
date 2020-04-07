@@ -11,12 +11,12 @@ import Foundation
 struct SearchResult: Codable {
     
     var artistName: String?
-    //var trackName: String?
+    var trackName: String?
     
-    /*enum CodingKeys: String, CodingKey {
-        case artistName //= "artistName"
-        //case trackName = "musicTrack"
-    }*/
+    enum CodingKeys: String, CodingKey {
+        case artistName = "artistName"
+        case trackName = "primaryGenreName"
+    }
 }
 
 struct SearchResults: Codable {

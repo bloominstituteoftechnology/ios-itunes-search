@@ -35,7 +35,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         }
         
         myCell.titleLabel.text = searchResultsController.searchResults[indexPath.row].artistName
-        //myCell.subtitleLabel.text = searchResultsController.searchResults[indexPath.row]
+        myCell.subtitleLabel.text = searchResultsController.searchResults[indexPath.row].trackName
         
         return myCell
     }
