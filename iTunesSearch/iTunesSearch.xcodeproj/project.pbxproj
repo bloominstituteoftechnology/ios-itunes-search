@@ -16,6 +16,7 @@
 		95565104243BCE6E005C6E04 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95565103243BCE6E005C6E04 /* SearchResult.swift */; };
 		95565106243BD110005C6E04 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95565105243BD110005C6E04 /* ResultType.swift */; };
 		95565108243BD1B4005C6E04 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95565107243BD1B4005C6E04 /* SearchResultController.swift */; };
+		95FF6102243C184E0061984D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FF6101243C184E0061984D /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		95565103243BCE6E005C6E04 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		95565105243BD110005C6E04 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		95565107243BD1B4005C6E04 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		95FF6101243C184E0061984D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				955650EC243BC9A2005C6E04 /* ViewController.swift */,
+				95FF6101243C184E0061984D /* SearchResultsTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				955650ED243BC9A2005C6E04 /* ViewController.swift in Sources */,
 				955650E9243BC9A2005C6E04 /* AppDelegate.swift in Sources */,
 				95565104243BCE6E005C6E04 /* SearchResult.swift in Sources */,
+				95FF6102243C184E0061984D /* SearchResultsTableViewController.swift in Sources */,
 				955650EB243BC9A2005C6E04 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
