@@ -22,12 +22,19 @@ class SearchResultsController {
         case delete = "DELETE"
     }
     
+    enum selected: String {
+        case Apps = "software"
+        case Music = "musicArtist"
+        case Movies = "movie"
+    }
+    
     //Variables
     var delegate: SearchResultsDelegate?
     let baseURL = URL(string: "https://itunes.apple.com")!
     lazy var searchURL = URL(string: "/search", relativeTo: baseURL)!
     var task: URLSessionTask?
     var searchResults: [SearchResult] = [] //Data Source
+    var selectedSegment: selected = .Apps
     
     
     //Functions
@@ -41,7 +48,7 @@ class SearchResultsController {
         
         //Not sure what this does?
         var urlComponents = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)
-        let artistQuery = URLQueryItem(name: "entity", value: "musicArtist")
+        let artistQuery = URLQueryItem(name: "entity", value: selectedSegment.rawValue)
         let searchQuery = URLQueryItem(name: "term", value: tableViewController.searchBar?.text ?? "")
         urlComponents?.queryItems = [artistQuery, searchQuery]
         

@@ -42,6 +42,16 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     //Search Button Clicked
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            searchResultsController.selectedSegment = .Apps
+        case 1:
+            searchResultsController.selectedSegment = .Music
+        case 2:
+            searchResultsController.selectedSegment = .Movies
+        default:
+            searchResultsController.selectedSegment = .Apps
+        }
         guard let text = searchBar.text else { return }
         searchResultsController.performSearch(searchTerm: text, resultType: .musicTrack) {
             DispatchQueue.main.async {
