@@ -9,8 +9,8 @@
 import Foundation
 
 struct SearchResult: Codable {
-    var title: String
-    var creator: String
+    let title: String
+    let creator: String
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
@@ -18,6 +18,6 @@ struct SearchResult: Codable {
     }
 }
 
-struct SearchResults {
+struct SearchResults: Codable {
     let results = [SearchResult]()
 }
