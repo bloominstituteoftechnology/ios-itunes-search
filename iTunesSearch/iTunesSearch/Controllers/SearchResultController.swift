@@ -15,7 +15,9 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        urlComponents?.queryItems = [searchQueryItem]
+        let entityTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        let countryQueryItem = URLQueryItem(name: "country", value: "US")
+        urlComponents?.queryItems = [searchQueryItem, entityTermQueryItem, countryQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("Request URL is nil")
@@ -23,7 +25,8 @@ class SearchResultController {
             return
         }
         
-        let request = URLRequest(url: requestURL)
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
@@ -49,4 +52,11 @@ class SearchResultController {
             
         } .resume()
     }
+}
+
+enum HTTPMethod: String {
+    case get = "GET"
+    case put = "PUT"
+    case post = "POST"
+    case delete = "DELETE"
 }
