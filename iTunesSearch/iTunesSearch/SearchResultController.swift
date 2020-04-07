@@ -22,7 +22,7 @@ class SearchResultController {
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
     private var task: URLSessionTask?
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: (Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         task?.cancel()
         
         // create request
@@ -34,12 +34,12 @@ class SearchResultController {
             completion(nil)
             return
         }
-        
+        print(urlComponents?.url) // insomnia
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
         // Create data task
-        
+                                // background thread
         task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
             if let error = error {
                 print("Error fetching data: \(error.localizedDescription)")

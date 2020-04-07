@@ -9,14 +9,35 @@
         <!--iTunes Search-->
         <scene sceneID="WSI-7g-w03">
             <objects>
-                <tableViewController id="7RV-WP-dSX" sceneMemberID="viewController">
+                <tableViewController id="7RV-WP-dSX" customClass="SearchResultsTableViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fgp-gU-hny">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Q0i-0y-3pj">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WXH-tJ-Ylz">
+                                    <rect key="frame" x="8" y="8" width="398" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="Apps"/>
+                                        <segment title="Music"/>
+                                        <segment title="Movies"/>
+                                    </segments>
+                                </segmentedControl>
+                                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxE-V3-Rn8">
+                                    <rect key="frame" x="14" y="48" width="386" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="fL1-lh-MmV" detailTextLabel="Dka-Qm-cYk" style="IBUITableViewCellStyleSubtitle" id="GKc-Cj-v8S">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GKc-Cj-v8S" id="vUn-qN-dzN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
