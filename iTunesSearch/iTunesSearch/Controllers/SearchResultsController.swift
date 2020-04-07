@@ -8,8 +8,11 @@
 
 import Foundation
 
+protocol SearchResultsDelegate {
+    func updateTableView()
+}
 
-class SearchResultController {
+class SearchResultsController {
     
     //Enumerator
     enum HTTPMethod: String {
@@ -20,7 +23,8 @@ class SearchResultController {
     }
     
     //Variables
-    let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")!
+    var delegate: SearchResultsDelegate?
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     lazy var searchURL = URL(string: "&entity=", relativeTo: baseURL)!
     var task: URLSessionTask?
     var searchResults: [SearchResult] = [] //Data Source
@@ -28,13 +32,18 @@ class SearchResultController {
     
     //Functions
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
-        
         task?.cancel()
+        
+        //Get Search Bar Text
+        guard let tableViewController = delegate as? SearchResultsTableViewController else {
+            return
+        }
         
         //Not sure what this does?
         var urlComponents = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)
-        let searchQueryTerm = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchQueryTerm]
+        let artistQuery = URLQueryItem(name: "entity", value: "musicArtist")
+        let searchQuery = URLQueryItem(name: "term", value: tableViewController.searchBar?.text ?? "")
+        urlComponents?.queryItems = [artistQuery, searchQuery]
         
         guard let requestURL = urlComponents?.url else {
             print("Request URL Nil")
@@ -61,8 +70,8 @@ class SearchResultController {
             let jsonDecoder = JSONDecoder()
             
             do {
-                let search = try jsonDecoder.decode([SearchResult].self, from: data)
-                self.searchResults = search
+                let search = try jsonDecoder.decode(SearchResult.self, from: data)
+                self.searchResults.append(search)
             } catch {
                 print("Error: \(error.localizedDescription)")
             }

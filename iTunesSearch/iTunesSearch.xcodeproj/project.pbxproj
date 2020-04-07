@@ -15,7 +15,7 @@
 		DDB329C6243BBE6800FF89B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB329C4243BBE6800FF89B4 /* LaunchScreen.storyboard */; };
 		DDB329D4243BC13900FF89B4 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D3243BC13900FF89B4 /* SearchResult.swift */; };
 		DDB329D6243BC36900FF89B4 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D5243BC36900FF89B4 /* ResultType.swift */; };
-		DDB329D8243BC3B100FF89B4 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D7243BC3B100FF89B4 /* SearchResultController.swift */; };
+		DDB329D8243BC3B100FF89B4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D7243BC3B100FF89B4 /* SearchResultsController.swift */; };
 		DDB329DA243BD3E400FF89B4 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB329D9243BD3E400FF89B4 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		DDB329C7243BBE6800FF89B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDB329D3243BC13900FF89B4 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		DDB329D5243BC36900FF89B4 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
-		DDB329D7243BC3B100FF89B4 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		DDB329D7243BC3B100FF89B4 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		DDB329D9243BD3E400FF89B4 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,7 @@
 		DDB329CF243BBE8400FF89B4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DDB329D7243BC3B100FF89B4 /* SearchResultController.swift */,
+				DDB329D7243BC3B100FF89B4 /* SearchResultsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDB329D8243BC3B100FF89B4 /* SearchResultController.swift in Sources */,
+				DDB329D8243BC3B100FF89B4 /* SearchResultsController.swift in Sources */,
 				DDB329D6243BC36900FF89B4 /* ResultType.swift in Sources */,
 				DDB329BE243BBE6600FF89B4 /* ViewController.swift in Sources */,
 				DDB329BA243BBE6600FF89B4 /* AppDelegate.swift in Sources */,
