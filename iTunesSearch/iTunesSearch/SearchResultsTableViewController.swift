@@ -8,16 +8,17 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
 
-    
-    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
+
     let searchResultsController = SearchResultController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        searchBar.delegate = self 
     }
 
     // MARK: - Table view data source
