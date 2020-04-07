@@ -10,11 +10,13 @@ import Foundation
 
 class SearchResultController {
     
-    // Is this right? 
-    let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")
+    private let baseURL = URL(string: "https://itunes.apple.com/search")
     
+    private var searchResults: [SearchResult] = []
     
+    private var task: URLSessionTask?
     
-    
-    
+    func performSearch(searchTerm: String, resultType: ResultType, completion: Error?  -> Void) {
+        
+    }
 }
