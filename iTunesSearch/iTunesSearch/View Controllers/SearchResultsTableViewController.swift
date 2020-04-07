@@ -8,86 +8,122 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
+    
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    private let searchResultController = SearchResultController()
+    private lazy var dataSource = makeDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        
+        searchBar.delegate = self
+        tableView.dataSource = dataSource
 
     }
-    */
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+       
+           guard let searchTerm = searchBar.text,
+               searchTerm != "" else { return }
+        
+        searchBar.resignFirstResponder()
+        searchWith(searchTerm: searchTerm)
+       
+           var resultType: ResultType!
+           
+           switch segmentedControl.selectedSegmentIndex {
+           case 0:
+               resultType = .software
+           case 1:
+               resultType = .musicTrack
+           case 2:
+               resultType = .movie
+           default:
+               break
+           }
+           
+        searchResultController.performSearch(for: searchTerm, resultType: resultType) {
+            self.activityIndicator.startAnimating()
+               DispatchQueue.main.async {
+                   self.update()
+               }
+           }
+        
+        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            if searchText.isEmpty {
+                searchResultController.searchResults = []
+                update()
+                return
+            }
+            
+            searchWith(searchTerm: searchText)
+        }
+       }
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+//    // MARK: - Table view data source
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return searchResultsController.searchResults.count
+//
+//    }
+//
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
+//
+//        let searchResult = searchResultsController.searchResults[indexPath.row]
+//
+//        cell.textLabel?.text = searchResult.title
+//        cell.detailTextLabel?.text = searchResult.creator
+//
+//        return cell
+//    }
+
+}
+
+// MARK: -UITableViewDiffableDataSource
+
+extension SearchResultsTableViewController {
+    enum Section {
+        case main
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func makeDataSource() -> UITableViewDiffableDataSource<Section, SearchResult> {
+        UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, searchResult in
+            let cell = tableView
+                .dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier,
+                                for: indexPath) as! SearchResultTableViewCell
+            
+            cell.searchResult = searchResult
+            return cell
+            
+        }
     }
-    */
+    
+    private func update() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, SearchResult>() // <Section, SearchResult> is called Generics (look up)
+        snapshot.appendSections([.main])
+        snapshot.appendItems(searchResultController.searchResults)
+        dataSource.apply(snapshot, animatingDifferences: true)
+        activityIndicator.stopAnimating()
+    }
+    
+}
 
+
+
+
+extension SearchResultsTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        searchBar.resignFirstResponder()
+        let searchResult = searchResultController.searchResults[indexPath.row]
+        dump(searchResult)
+    }
 }

@@ -22,7 +22,7 @@ class SearchResultController {
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
     private var task: URLSessionTask?
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func performSearch(for searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         task?.cancel()
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchQueryItem1 = URLQueryItem(name: "term", value: searchTerm)
@@ -39,7 +39,7 @@ class SearchResultController {
         task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
             if let error = error {
                 print("Error fetching data: \(error.localizedDescription)")
-                completion(error)
+                completion()
                 return
             }
             
@@ -47,7 +47,7 @@ class SearchResultController {
             
             guard let data = data else {
                 print("No data returned from dataTask")
-                completion(NSError())
+                completion()
                 return
             }
             
@@ -56,10 +56,10 @@ class SearchResultController {
             do {
                 let itunesSearch = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = itunesSearch.results
-                completion(nil)
+                completion()
             } catch {
                 print("Unable to decode data into instance of SearchResults: \(error.localizedDescription)")
-                completion(error)
+                completion()
             }
             
         }

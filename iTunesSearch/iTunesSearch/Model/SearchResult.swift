@@ -18,6 +18,10 @@ struct SearchResult: Codable {
     }
 }
 
+extension SearchResult: Hashable {
+    
+}
+
 struct SearchResults: Decodable {
     let results: [SearchResult]
 }
