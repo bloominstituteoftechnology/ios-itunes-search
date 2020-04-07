@@ -8,47 +8,78 @@
 
 import Foundation
 
+protocol SearchResultsDelegate {
+    func updateTableView()
+}
+
 class SearchResultController {
-    private let baseURL = URL(string: "https://itunes.apple.com/search")!
-    private var task: URLSessionTask?
     
+    enum HTTPMethod: String {
+        case get = "GET"
+        case put = "PUT"
+        case post = "POST"
+        case delete = "DELETE"
+    }
+    
+    enum selected: String {
+        case Apps = "software"
+        case Music = "musicArtist"
+        case Movies = "movies"
+    }
+    
+    
+    var delegate: SearchResultsDelegate?
+    private let baseURL = URL(string: "https://itunes.apple.com/")!
+    private lazy var searchResultsURL = URL(string: "/search", relativeTo: baseURL)!
+    private var task: URLSessionTask?
     var searchResults: [SearchResult] = []
+    var selectedSegment: selected = .Apps
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
+        
+            guard let tableViewController = delegate as? SearchResultsTableViewController else {
+                return
+            }
+        
             task?.cancel()
-            var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-            let searchQueryItems = URLQueryItem(name: "search", value: searchTerm)
-            urlComponents?.queryItems = [searchQueryItems]
+            var urlComponents = URLComponents(url: searchResultsURL, resolvingAgainstBaseURL: true)
+            let artistQuery = URLQueryItem(name: "entity", value: selectedSegment.rawValue)
+            let searchQuery = URLQueryItem(name: "term", value: tableViewController.searchBarResults?.text)
+            urlComponents?.queryItems = [artistQuery, searchQuery]
 
 
             guard let requestURL = urlComponents?.url else {
-                NSLog("Request URL is nil")
+                print("Request URL is nil")
                 return
             }
+            
+            print(requestURL)
 
             var request = URLRequest(url: requestURL)
-            request.httpMethod = "GET"
+            request.httpMethod = HTTPMethod.get.rawValue
 
-            URLSession.shared.dataTask(with: request) { (data, _, error) in
-                if let error = error {
-                    NSLog("Error getting data: \(error)")
+                task = URLSession.shared.dataTask(with: request) { [weak self] (data, _, error) in
+                
+                    if let error = error {
+                    print("Error getting data: \(error)")
                     return
                 }
-
-                guard let data = data else {
-                    completion()
-                    return
+                    guard let self = self else { return }
+                    guard let data = data else {
+                        print("No data returned return from dataTask")
+                        return
                 }
 
                 let jsonDecoder = JSONDecoder()
-                do {
-                    let searchResult = try jsonDecoder.decode(SearchResults.self, from: data)
-                    self.searchResults = searchResult.results
-                } catch {
-                NSLog("Error unable to decode data: \(error)")
+
+                    do {
+                        let search = try jsonDecoder.decode(SearchResults.self, from: data)
+                        self.searchResults = search.results
+                    } catch {
+                        print("Error: \(error.localizedDescription)")
+                    }
+                    completion()
                 }
-                completion()
-            }
-            task?.resume()
+                task?.resume()
         }
 }

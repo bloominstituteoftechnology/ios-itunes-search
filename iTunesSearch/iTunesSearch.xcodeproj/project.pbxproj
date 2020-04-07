@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B201863243CD37C00AD0BE7 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B201862243CD37C00AD0BE7 /* ResultsTableViewCell.swift */; };
 		4B6D30E9243BAF210062281A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6D30E8243BAF210062281A /* AppDelegate.swift */; };
 		4B6D30EB243BAF210062281A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6D30EA243BAF210062281A /* SceneDelegate.swift */; };
 		4B6D30F0243BAF210062281A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6D30EE243BAF210062281A /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B201862243CD37C00AD0BE7 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		4B6D30E5243BAF210062281A /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6D30E8243BAF210062281A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B6D30EA243BAF210062281A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				4BBD8D9D243BEBE900FDB6D8 /* SearchResultsTableViewController.swift */,
+				4B201862243CD37C00AD0BE7 /* ResultsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				4B6D30E9243BAF210062281A /* AppDelegate.swift in Sources */,
 				4B6D3105243BBFD50062281A /* ResultType.swift in Sources */,
+				4B201863243CD37C00AD0BE7 /* ResultsTableViewCell.swift in Sources */,
 				4BBD8D9E243BEBE900FDB6D8 /* SearchResultsTableViewController.swift in Sources */,
 				4B6D3108243BC0FD0062281A /* SearchResult.swift in Sources */,
 				4B6D30EB243BAF210062281A /* SceneDelegate.swift in Sources */,

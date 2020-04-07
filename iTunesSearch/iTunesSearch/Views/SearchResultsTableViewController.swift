@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
     let searchResultController = SearchResultController()
 
@@ -17,7 +17,9 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        searchResultController.delegate = self
+        searchBarResults.delegate = self
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,33 +28,36 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
-        
-        let result = searchResultController.searchResults[indexPath.row]
-        cell.textLabel?.text = result.title
-        cell.detailTextLabel?.text = result.creator
-        return cell
-    }
+        guard let myCell = cell as? ResultsTableViewCell else {
+            return cell
+        }
+        myCell.titleLabel.text = searchResultController.searchResults[indexPath.row].artistName
+        myCell.subtitleLabel.text = searchResultController.searchResults[indexPath.row].trackName
+        return myCell
 }
-
-extension SearchResultsTableViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else { return }
-        let resultTypeIndex = segmentedControlSwitch.selectedSegmentIndex
-        var resultType: ResultType!
-        switch resultTypeIndex {
+        switch segmentedControlSwitch.selectedSegmentIndex {
         case 0:
-            resultType = .software
+            searchResultController.selectedSegment = .Apps
         case 1:
-            resultType = .musicTrack
+            searchResultController.selectedSegment = .Music
         case 2:
-            resultType = .movie
+            searchResultController.selectedSegment = .Movies
         default:
             break
         }
-        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+        guard let text = searchBar.text else { return }
+        searchResultController.performSearch(searchTerm: text, resultType: .musicTrack) {
             DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.updateTableView()
         }
+}
+}
+}
+extension SearchResultsTableViewController: SearchResultsDelegate {
+    func updateTableView() {
+        tableView.reloadData()
     }
+
 }

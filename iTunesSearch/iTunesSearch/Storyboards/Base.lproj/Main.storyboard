@@ -43,10 +43,10 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="t3w-Vb-5JJ" detailTextLabel="VLT-Q2-tyg" style="IBUITableViewCellStyleSubtitle" id="eDV-5G-SxG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="t3w-Vb-5JJ" detailTextLabel="VLT-Q2-tyg" style="IBUITableViewCellStyleSubtitle" id="eDV-5G-SxG" customClass="ResultsTableViewCell" customModule="iTunesSearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eDV-5G-SxG" id="0fI-8s-Q2O">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eDV-5G-SxG" id="0fI-8s-Q2O" customClass="ResultsTableViewCell">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -66,6 +66,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="subtitleLabel" destination="VLT-Q2-tyg" id="KHQ-X0-TWO"/>
+                                    <outlet property="titleLabel" destination="t3w-Vb-5JJ" id="eJH-CF-qZT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
