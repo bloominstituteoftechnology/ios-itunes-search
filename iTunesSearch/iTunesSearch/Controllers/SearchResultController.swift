@@ -18,23 +18,29 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    var searchResults: [SearchResult] = []
+    
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
     private var task: URLSessionTask?
+    var searchResults: [SearchResult] = []
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         task?.cancel()
         
         // create request
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchQueryItem]
+        let entityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        
+        urlComponents?.queryItems = [entityQueryItem, searchQueryItem]
+        
         guard let requestURL = urlComponents?.url else {
             print("Request URL is nil")
             completion(nil)
             return
         }
+        
         print(urlComponents?.url) // insomnia
+        
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
@@ -59,15 +65,12 @@ class SearchResultController {
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = searchResults.results
+                completion(nil)
             } catch {
                 print("Unable to decode data into instance of SearchResults: \(error.localizedDescription)")
-                
+                completion(error)
             }
-            
-            completion(nil)
         }
-        
         task?.resume()
-        
     }
 }

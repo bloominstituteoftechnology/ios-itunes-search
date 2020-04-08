@@ -15,7 +15,6 @@ class SearchResultsTableViewController: UITableViewController {
 
     let searchResultsController = SearchResultController()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self 
@@ -27,16 +26,15 @@ class SearchResultsTableViewController: UITableViewController {
         return searchResultsController.searchResults.count
     }
 
-   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
         let searchResult = searchResultsController.searchResults[indexPath.row]
         cell.detailTextLabel?.text = searchResult.creator
+        cell.textLabel?.text = searchResult.title
         return cell
     }
-    
-    
 }
+
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
 
