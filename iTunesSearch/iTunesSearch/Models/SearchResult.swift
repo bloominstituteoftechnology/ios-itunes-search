@@ -13,7 +13,6 @@ struct SearchResult: Codable {
         case title = "trackName"
         case creator = "artistName"
     }
-    
     var title: String
     var creator: String
 }

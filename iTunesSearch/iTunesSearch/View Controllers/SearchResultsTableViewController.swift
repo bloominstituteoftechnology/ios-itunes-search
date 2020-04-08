@@ -42,8 +42,27 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
 
 func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     guard let searchTerm = searchBar.text else { return }
+    
     var resultType: ResultType!
     
+    switch segmentedControl.selectedSegmentIndex {
+    case 0:
+        resultType = .software
+    case 1:
+        resultType = .musicTrack
+    case 2:
+        resultType = .movie
+    default:
+        resultType = .software
     }
+    
+    searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {_ in
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
+    
+    
     
 }
