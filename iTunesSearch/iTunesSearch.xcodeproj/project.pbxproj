@@ -62,18 +62,66 @@
 		FE8BA8E3243BD4A8001F090B /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				FE8BA8E4243BD4A8001F090B /* AppDelegate.swift */,
-				FE8BA8E6243BD4A8001F090B /* SceneDelegate.swift */,
-				FE8BA8EA243BD4A8001F090B /* Main.storyboard */,
-				FE8BA8ED243BD4A9001F090B /* Assets.xcassets */,
-				FE8BA8EF243BD4A9001F090B /* LaunchScreen.storyboard */,
-				FE8BA8F2243BD4A9001F090B /* Info.plist */,
-				FE8BA8F8243BD4CA001F090B /* SearchResult.swift */,
-				FE8BA8FC243BECF2001F090B /* ResultType.swift */,
-				FE8BA8FE243BED6C001F090B /* SearchResultController.swift */,
-				FE8BA900243CD1BE001F090B /* SearchResultsTableViewController.swift */,
+				FE90D45A243E1C7A00B36D79 /* App */,
+				FE90D45B243E1C8E00B36D79 /* Models */,
+				FE90D45C243E1CA700B36D79 /* Controllers */,
+				FE90D45D243E1CC500B36D79 /* View Controllers */,
+				FE90D45E243E1CDE00B36D79 /* Storyboards */,
+				FE90D45F243E1CEA00B36D79 /* Supporting Files */,
 			);
 			path = iTunesSearch;
+			sourceTree = "<group>";
+		};
+		FE90D45A243E1C7A00B36D79 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BA8E4243BD4A8001F090B /* AppDelegate.swift */,
+				FE8BA8E6243BD4A8001F090B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FE90D45B243E1C8E00B36D79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BA8F8243BD4CA001F090B /* SearchResult.swift */,
+				FE8BA8FC243BECF2001F090B /* ResultType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE90D45C243E1CA700B36D79 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BA8FE243BED6C001F090B /* SearchResultController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE90D45D243E1CC500B36D79 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BA900243CD1BE001F090B /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FE90D45E243E1CDE00B36D79 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BA8EA243BD4A8001F090B /* Main.storyboard */,
+				FE8BA8EF243BD4A9001F090B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FE90D45F243E1CEA00B36D79 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE8BA8ED243BD4A9001F090B /* Assets.xcassets */,
+				FE8BA8F2243BD4A9001F090B /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
