@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
+class SearchResultsTableViewController: UITableViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -34,4 +34,16 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         cell.detailTextLabel?.text = searchResult.creator
         return cell
     }
+    
+    
+}
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    
+
+func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    guard let searchTerm = searchBar.text else { return }
+    var resultType: ResultType!
+    
+    }
+    
 }
