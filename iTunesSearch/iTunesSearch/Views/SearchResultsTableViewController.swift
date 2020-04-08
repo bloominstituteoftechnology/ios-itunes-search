@@ -45,12 +45,13 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         case 2:
             searchResultController.selectedSegment = .Movies
         default:
-            break
+            searchResultController.selectedSegment = .Apps
         }
         guard let text = searchBar.text else { return }
-        searchResultController.performSearch(searchTerm: text, resultType: .musicTrack) {
+        
+        searchResultController.performSearch(searchTerm: text, resultType: .movie) {
             DispatchQueue.main.async {
-            self.updateTableView()
+                self.tableView.reloadData()
         }
 }
 }

@@ -23,8 +23,8 @@ class SearchResultController {
     
     enum selected: String {
         case Apps = "software"
-        case Music = "musicArtist"
-        case Movies = "movies"
+        case Music = "musicTrack"
+        case Movies = "movie"
     }
     
     
@@ -37,8 +37,8 @@ class SearchResultController {
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
-            guard let tableViewController = delegate as? SearchResultsTableViewController else {
-                return
+           guard let tableViewController = delegate as? SearchResultsTableViewController else {
+               return
             }
         
             task?.cancel()
