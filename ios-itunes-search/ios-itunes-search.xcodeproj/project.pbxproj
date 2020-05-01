@@ -14,6 +14,7 @@
 		6A25521D245C8AF300A7CBBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A25521C245C8AF300A7CBBB /* Assets.xcassets */; };
 		6A255220245C8AF300A7CBBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A25521E245C8AF300A7CBBB /* LaunchScreen.storyboard */; };
 		6A255228245C8D7300A7CBBB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A255227245C8D7300A7CBBB /* SearchResult.swift */; };
+		6A25522A245C8F1400A7CBBB /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A255229245C8F1400A7CBBB /* ResultType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6A25521F245C8AF300A7CBBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A255221245C8AF300A7CBBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A255227245C8D7300A7CBBB /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		6A255229245C8F1400A7CBBB /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				6A255227245C8D7300A7CBBB /* SearchResult.swift */,
+				6A255229245C8F1400A7CBBB /* ResultType.swift */,
 				6A255213245C8AF200A7CBBB /* AppDelegate.swift */,
 				6A255215245C8AF200A7CBBB /* SceneDelegate.swift */,
 				6A255217245C8AF200A7CBBB /* ViewController.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A25522A245C8F1400A7CBBB /* ResultType.swift in Sources */,
 				6A255218245C8AF200A7CBBB /* ViewController.swift in Sources */,
 				6A255214245C8AF200A7CBBB /* AppDelegate.swift in Sources */,
 				6A255228245C8D7300A7CBBB /* SearchResult.swift in Sources */,
