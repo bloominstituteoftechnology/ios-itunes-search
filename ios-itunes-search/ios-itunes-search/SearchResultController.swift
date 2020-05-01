@@ -60,7 +60,7 @@ class SearchResultController {
         }
         
         dataTask.resume()
-    }
+    } 
 }
 
 enum HTTPMethod: String {
