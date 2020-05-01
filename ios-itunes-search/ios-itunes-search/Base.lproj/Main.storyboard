@@ -43,7 +43,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="2mr-dc-xoz" detailTextLabel="oOl-2y-fBu" style="IBUITableViewCellStyleSubtitle" id="IGU-fO-nnl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itunesCell" textLabel="2mr-dc-xoz" detailTextLabel="oOl-2y-fBu" style="IBUITableViewCellStyleSubtitle" id="IGU-fO-nnl">
                                 <rect key="frame" x="0.0" y="131" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IGU-fO-nnl" id="caY-sK-twk">
@@ -75,8 +75,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="AJL-No-jdi"/>
                     <connections>
+                        <outlet property="artistLabel" destination="oOl-2y-fBu" id="P77-fA-OYT"/>
                         <outlet property="itunesSearchBar" destination="N6z-dd-rGN" id="7aR-in-4El"/>
                         <outlet property="resultTypeSegmentedControl" destination="Qt0-wn-zGo" id="EJ5-DA-9Go"/>
+                        <outlet property="titleLabel" destination="oOl-2y-fBu" id="J4T-tJ-jvy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbp-xk-Hx3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
