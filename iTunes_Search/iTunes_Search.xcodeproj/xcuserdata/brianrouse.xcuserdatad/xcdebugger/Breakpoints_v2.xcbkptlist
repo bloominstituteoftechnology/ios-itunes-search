@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "523AFABE-2421-4315-9723-A4A1A6F8CF43"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "343C7CBA-FEF4-49B9-A79F-DC5AA9D393F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iTunes_Search/SearchResultsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "SearchResultsTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "343C7CBA-FEF4-49B9-A79F-DC5AA9D393F6 - 4074ad1d262cbfdb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTunes_Search.SearchResultsTableViewController.searchGroupSegmentedControl.getter : Swift.Optional&lt;__C.UISegmentedControl&gt;"
+                  moduleName = "iTunes_Search"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brianrouse/Desktop/Lambda/iTunes_Search/iTunes_Search/SearchResultsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "343C7CBA-FEF4-49B9-A79F-DC5AA9D393F6 - e1a8602d3f6b33c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTunes_Search.SearchResultsTableViewController.searchGroupSegmentedControl.setter : Swift.Optional&lt;__C.UISegmentedControl&gt;"
+                  moduleName = "iTunes_Search"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brianrouse/Desktop/Lambda/iTunes_Search/iTunes_Search/SearchResultsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "343C7CBA-FEF4-49B9-A79F-DC5AA9D393F6 - 2b85807b266ab5cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTunes_Search.SearchResultsTableViewController.searchGroupSegmentedControl.modify : Swift.Optional&lt;__C.UISegmentedControl&gt;"
+                  moduleName = "iTunes_Search"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brianrouse/Desktop/Lambda/iTunes_Search/iTunes_Search/SearchResultsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "343C7CBA-FEF4-49B9-A79F-DC5AA9D393F6 - 74923a3774c1b007"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTunes_Search.SearchResultsTableViewController.searchGroupSegmentedControl.modify : Swift.Optional&lt;__C.UISegmentedControl&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "iTunes_Search"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brianrouse/Desktop/Lambda/iTunes_Search/iTunes_Search/SearchResultsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "343C7CBA-FEF4-49B9-A79F-DC5AA9D393F6 - 7a8f66b9150f027c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTunes_Search.SearchResultsTableViewController.init(style: __C.UITableViewStyle) -&gt; iTunes_Search.SearchResultsTableViewController"
+                  moduleName = "iTunes_Search"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brianrouse/Desktop/Lambda/iTunes_Search/iTunes_Search/SearchResultsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "343C7CBA-FEF4-49B9-A79F-DC5AA9D393F6 - 1b18303ef4c3a5f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTunes_Search.SearchResultsTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; iTunes_Search.SearchResultsTableViewController"
+                  moduleName = "iTunes_Search"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brianrouse/Desktop/Lambda/iTunes_Search/iTunes_Search/SearchResultsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "218">
+               </Location>
+               <Location
+                  uuid = "343C7CBA-FEF4-49B9-A79F-DC5AA9D393F6 - b6ef8a8d88adb926"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTunes_Search.SearchResultsTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;iTunes_Search.SearchResultsTableViewController&gt;"
+                  moduleName = "iTunes_Search"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brianrouse/Desktop/Lambda/iTunes_Search/iTunes_Search/SearchResultsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "141">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
