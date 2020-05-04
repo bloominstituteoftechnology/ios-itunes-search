@@ -9,15 +9,20 @@
 import Foundation
 
 class SearchResultController {
-    private let baseURL = URL(string: "https://itunes.apple.com/search")!
+    
     var searchResults: [SearchResult] = []
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: (Error?) -> Void) {
+    let baseURL = URL(string: "https://itunes.apple.com/search?")!
+    
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
         //MARK: - CREATE REQUEST FOR URL
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+        //let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        
+        let parameters: [String : String] = ["term" : searchTerm, ]
+        
+        //urlComponents?.queryItems = [searchTermQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("Request URL is nil")
@@ -27,26 +32,30 @@ class SearchResultController {
         request.httpMethod = "GET"
         
         //MARK: - DATA TASK
-        let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
-                print("Error fetching data \(error)")
+                NSLog("Error fetching data \(error)")
                 return
             }
             guard let data = data else {
-                print("No data returned from data task.")
+                completion()
                 return
+                
             }
+            
             //MARK: - DECODING
             let jsonDecoder = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults = searchResults.results
+                self.searchResults.append(contentsOf: searchResults.results)
             } catch {
-                print("Unable to decode data \(error)")
+                NSLog("Unable to decode data \(error)")
+                
             }
-            
+            completion()
         }
-        task.resume()
+        .resume()
     }
 }
