@@ -20,12 +20,13 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         iTunesSearchBar.delegate = self
+        searchBarSearchButtonClicked(iTunesSearchBar)
+       
         
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else {return}
         let index = segmentedControl.selectedSegmentIndex
-        
         helperSearchFunc(searchTerm: searchTerm, index: index)
     }
     
@@ -33,6 +34,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         guard let searchTerm = iTunesSearchBar.text else {return}
         let index = segmentedControl.selectedSegmentIndex
         helperSearchFunc(searchTerm: searchTerm, index: index)
+        
+        
+        
     }
     
     
