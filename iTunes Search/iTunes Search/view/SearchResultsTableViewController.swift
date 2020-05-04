@@ -88,6 +88,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
                 }
             }
         }
-        
+    }
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        searchBarSearchButtonClicked(searchBar)
     }
 }
