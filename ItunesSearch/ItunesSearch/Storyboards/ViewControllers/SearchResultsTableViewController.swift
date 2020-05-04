@@ -9,17 +9,17 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
+    //MARK: - OUTLETS
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    let searchResultsController = SearchResultController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -31,18 +31,17 @@ class SearchResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
+        let searchResult = searchResultsController.searchResults[indexPath.row]
+        cell.detailTextLabel?.text = searchResult.creator
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,4 +88,10 @@ class SearchResultsTableViewController: UITableViewController {
     }
     */
 
+}
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+       
+    }
 }
