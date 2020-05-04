@@ -48,35 +48,47 @@
                             </constraints>
                         </stackView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" rowHeight="60" id="QGC-L6-wt4" customClass="SearchResultsTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="128" width="375" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" rowHeight="72" id="QGC-L6-wt4" customClass="SearchResultsTableViewCell" customModule="iTunes_Search" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QGC-L6-wt4" id="zlo-3A-ZPK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listing Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0n-jy-4L2">
-                                            <rect key="frame" x="16" y="11.333333333333334" width="93" height="20.333333333333329"/>
+                                            <rect key="frame" x="16" y="17.333333333333336" width="93" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0K-TD-uiJ">
-                                            <rect key="frame" x="16.000000000000004" y="31" width="37.333333333333343" height="18"/>
+                                            <rect key="frame" x="16.000000000000004" y="37" width="37.333333333333343" height="18"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-L2-ZCE">
+                                            <rect key="frame" x="299" y="6" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="fzN-ve-H74"/>
+                                                <constraint firstAttribute="height" constant="60" id="kYM-Lu-w1Y"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Yho-L2-ZCE" firstAttribute="trailing" secondItem="zlo-3A-ZPK" secondAttribute="trailingMargin" id="2wm-ud-cHx"/>
+                                        <constraint firstAttribute="bottom" secondItem="Yho-L2-ZCE" secondAttribute="bottom" constant="6" id="Bxw-Dj-y5O"/>
+                                        <constraint firstItem="Yho-L2-ZCE" firstAttribute="centerY" secondItem="zlo-3A-ZPK" secondAttribute="centerY" id="HGe-Ni-xFM"/>
                                         <constraint firstItem="b0K-TD-uiJ" firstAttribute="centerY" secondItem="zlo-3A-ZPK" secondAttribute="centerY" constant="10" id="Nvy-md-JGj"/>
                                         <constraint firstItem="Q0n-jy-4L2" firstAttribute="centerY" secondItem="zlo-3A-ZPK" secondAttribute="centerY" constant="-8.5" id="Szd-cC-uE4"/>
                                         <constraint firstItem="b0K-TD-uiJ" firstAttribute="leading" secondItem="zlo-3A-ZPK" secondAttribute="leadingMargin" id="aSl-70-EFD"/>
+                                        <constraint firstItem="Yho-L2-ZCE" firstAttribute="top" secondItem="zlo-3A-ZPK" secondAttribute="top" constant="6" id="jXu-ag-2u7"/>
                                         <constraint firstItem="Q0n-jy-4L2" firstAttribute="leading" secondItem="zlo-3A-ZPK" secondAttribute="leadingMargin" id="y11-K1-Z6U"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="creatorLabel" destination="b0K-TD-uiJ" id="0k1-1D-Xnb"/>
+                                    <outlet property="resultImage" destination="Yho-L2-ZCE" id="1d7-7X-1lh"/>
                                     <outlet property="titleLabel" destination="Q0n-jy-4L2" id="JCw-jR-Wfu"/>
                                 </connections>
                             </tableViewCell>

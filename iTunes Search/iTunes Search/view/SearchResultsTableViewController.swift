@@ -88,6 +88,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
                 }
             }
         }
+        
+        searchBar.resignFirstResponder()
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
