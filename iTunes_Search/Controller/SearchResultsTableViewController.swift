@@ -38,7 +38,7 @@ class SearchResultsTableViewController: UITableViewController {
 
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
             let searchResult = searchResultsController.searchResults[indexPath.row]
             
             cell.textLabel?.text = searchResult.title
