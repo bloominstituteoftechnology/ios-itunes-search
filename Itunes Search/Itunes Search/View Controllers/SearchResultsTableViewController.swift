@@ -38,7 +38,6 @@ class SearchResultsTableViewController: UITableViewController {
         cell.textLabel?.text = resultOfSearch.title
         cell.detailTextLabel?.text = resultOfSearch.creator
         
-        
         return cell
     }
 }

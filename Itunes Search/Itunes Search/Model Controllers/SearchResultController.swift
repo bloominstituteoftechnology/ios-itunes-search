@@ -8,6 +8,8 @@
 
 import Foundation
 
+//MARK: Enums
+
 enum HTTPMethod: String {
     case get = "GET"
     case put = "PUT"
@@ -17,9 +19,13 @@ enum HTTPMethod: String {
 
 class SearchResultController {
     
+    //MARK: Properties
+    
     let baseURL = URL(string: "https://itunes.apple.com/search?")!
     
     var searchResults: [SearchResult] = []
+    
+    //MARK: Functions
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
