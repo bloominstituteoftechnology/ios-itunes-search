@@ -13,9 +13,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var itunesSearchBar: UISearchBar!
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var artistLabel: UILabel!
-    
     let searchResultsController = SearchResultController()
     
     override func viewDidLoad() {
@@ -43,6 +40,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
+        performSearch()
+    }
+    
+    @IBAction func changedSegent(_ sender: UISegmentedControl) {
+        
+        performSearch()
+    }
+    
+    func performSearch() {
         let resultType: ResultType
         
         if resultTypeSegmentedControl.selectedSegmentIndex == 0 {
@@ -53,13 +59,15 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             resultType = .movie
         }
         
-        guard let searchTerm = searchBar.text else { return }
+        guard let searchTerm = itunesSearchBar.text else { return }
         
         searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
             if let error = error {
                 NSLog("Error searching: \(error)")
             }
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
-    } 
+    }
 }

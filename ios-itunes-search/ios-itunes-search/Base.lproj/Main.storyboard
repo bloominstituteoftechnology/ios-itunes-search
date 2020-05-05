@@ -25,6 +25,9 @@
                                         <segment title="Music"/>
                                         <segment title="Movies"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="changedSegent:" destination="BEm-xJ-RJx" eventType="valueChanged" id="QU9-cb-W1h"/>
+                                    </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="N6z-dd-rGN">
                                     <rect key="frame" x="0.0" y="47" width="414" height="56"/>
@@ -75,10 +78,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="AJL-No-jdi"/>
                     <connections>
-                        <outlet property="artistLabel" destination="oOl-2y-fBu" id="P77-fA-OYT"/>
                         <outlet property="itunesSearchBar" destination="N6z-dd-rGN" id="7aR-in-4El"/>
                         <outlet property="resultTypeSegmentedControl" destination="Qt0-wn-zGo" id="EJ5-DA-9Go"/>
-                        <outlet property="titleLabel" destination="oOl-2y-fBu" id="J4T-tJ-jvy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbp-xk-Hx3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

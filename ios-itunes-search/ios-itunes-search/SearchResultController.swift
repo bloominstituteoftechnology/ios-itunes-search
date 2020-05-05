@@ -10,18 +10,19 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/")!
+    
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     var searchResults: [SearchResult] = []
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
-        let url = baseURL.appendingPathComponent(resultType.rawValue)
         
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        let searchQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let entitiyItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         
-        components?.queryItems = [searchQueryItem]
+        components?.queryItems = [searchQueryItem, entitiyItem]
         
         guard let requestURL = components?.url else {
             completion(nil)
@@ -34,7 +35,7 @@ class SearchResultController {
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             if let error = error {
-                NSLog("Error fetching people: \(error)")
+                NSLog("Error fetching data: \(error)")
                 completion(error)
                 return
             }
@@ -54,6 +55,8 @@ class SearchResultController {
                 completion(nil)
                 
             } catch {
+                print("Request: \(request)")
+//                print(String(data: data, encoding: .utf8))
                 NSLog("Unable to decode data into SearchResults: \(error)")
                 completion(error)
             }
