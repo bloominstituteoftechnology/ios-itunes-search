@@ -21,45 +21,46 @@ class SearchResultController {
     
     private let baseURL = URL(string: "https://itunes.apple.com/search?")!
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
-        searchResults = []
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping() -> Void) {
+        // URL Components
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        // Search Parameters
+        let parameters : [String : String] = ["term" : searchTerm, "entity" : resultType.rawValue]
+        // Query Items
+        let queryItems = parameters.compactMap({URLQueryItem(name: $0.key, value: $0.value)})
         
-        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        urlComponents?.queryItems = queryItems
         
-        let searchTerm = URLQueryItem(name: "term", value: searchTerm)
-        let resultType = URLQueryItem(name: "entity", value: resultType.rawValue)
-        components?.queryItems = [searchTerm, resultType]
+        guard let requestURL = urlComponents?.url else { return }
         
-        guard let requestURL = components?.url else {
-            print("Error getting URL request")
-            completion(nil)
-            return
-        }
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        //Creating data task
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
             if let error = error {
-                print("Error collecting data: \(error)")
-                return
+                
+                NSLog("Error with data task: \(error)")
             }
             
             guard let data = data else {
-                print("Error collecting data: \(error)")
-                completion(nil)
+                completion()
                 return
             }
             
             let jsonDecoder = JSONDecoder()
             
             do {
+                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults.append(contentsOf: searchResults.results)
                 
-                let results = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults = results.results
-                completion(nil)
-                
-            } catch {
-                print("Error decoding data: \(error)")
-                return
+            }  catch {
+                NSLog("Error with data task: \(error)")
             }
-        }
-    .resume()
+            completion()
+            
+        }.resume()
     }
 }

@@ -8,59 +8,23 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
-    
+class SearchResultsTableViewController: UITableViewController {
+    // Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var category: UISegmentedControl!
     
+    // Controller instance
     let searchResultsController = SearchResultController()
-    var resultType: ResultType {
-        
-        switch category.selectedSegmentIndex {
-        case 0:
-            return .software
-        case 1:
-            return .musicTrack
-        default:
-            return .movie
-        }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
     }
-    
-    @IBAction func changeResultType(_ sender: Any) {
-        startSearch()
-    }
-    
-    
-    func searchBarButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        startSearch()
-    }
-    
-    func startSearch() {
-        guard let searchTerm = searchBar.text,
-            !searchTerm.isEmpty else { return }
-        
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
-            if let error = error {
-                print("Error performing search: \(error)")
-                return
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
+    // # Of Rows in Sections
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return searchResultsController.searchResults.count
     }
+    // TVCell setup
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
@@ -71,8 +35,29 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         return cell
     }
 }
-
-
-
-
-
+// SearchBar Delegate
+extension SearchResultsTableViewController : UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+        
+        var resultType: ResultType!
+        
+        switch category.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+}
