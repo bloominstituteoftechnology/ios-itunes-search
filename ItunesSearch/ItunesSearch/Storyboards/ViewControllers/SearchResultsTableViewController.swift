@@ -19,29 +19,23 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        
     }
     
     // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultsController.searchResults.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let searchResult = searchResultsController.searchResults[indexPath.row]
     
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+        
         return cell
     }
-    
-    
-    
 }
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -57,9 +51,9 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         case 2:
             resultType = .movie
         default:
-            resultType = .musicTrack
+            break
         }
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { _ in
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { 
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()

@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum HTTPMethod: String {
+    case get = "GET"
+    case put = "PUT"
+    case post = "POST"
+    case delete = "DELETE"
+}
+
 class SearchResultController {
     
     var searchResults: [SearchResult] = []
@@ -18,18 +25,18 @@ class SearchResultController {
         
         //MARK: - CREATE REQUEST FOR URL
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        //let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
         
-        let parameters: [String : String] = ["term" : searchTerm, ]
+        let parameters: [String : String] = ["term" : searchTerm, "entity" : resultType.rawValue]
         
-        //urlComponents?.queryItems = [searchTermQueryItem]
+        let queryItems = parameters.compactMap({URLQueryItem(name: $0.key, value: $0.value)})
         
-        guard let requestURL = urlComponents?.url else {
-            print("Request URL is nil")
-            return
-        }
+        urlComponents?.queryItems = queryItems
+        
+        print(urlComponents?.description)
+        
+        guard let requestURL = urlComponents?.url else { return }
         var request = URLRequest(url: requestURL)
-        request.httpMethod = "GET"
+        request.httpMethod = HTTPMethod.get.rawValue
         
         //MARK: - DATA TASK
         URLSession.shared.dataTask(with: request) { (data, _, error) in
@@ -42,10 +49,9 @@ class SearchResultController {
                 return
                 
             }
-            
+            print (String(data: data, encoding: .utf8))
             //MARK: - DECODING
             let jsonDecoder = JSONDecoder()
-            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
