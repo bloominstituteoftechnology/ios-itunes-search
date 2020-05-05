@@ -1,37 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hMw-Ii-psN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ekw-sf-eiE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Itunes Search-->
-        <scene sceneID="NkU-bW-YTw">
+        <!--iTunes Search-->
+        <scene sceneID="CEB-Qb-JOd">
             <objects>
-                <tableViewController id="Pdv-7H-jZe" customClass="SearchResultsTableViewController" customModule="ItunesSearch" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HMa-Ud-NKQ">
+                <tableViewController id="uWM-dE-LlR" customClass="SearchResultsTableViewController" customModule="ItunesSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HlQ-RO-k4v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="93C-2V-2ZF">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wFt-Vc-nuP">
+                                    <rect key="frame" x="1" y="1" width="412" height="97"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pik-oL-yEI">
+                                            <rect key="frame" x="112" y="0.0" width="188" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="33" id="HdV-pw-cOs"/>
+                                            </constraints>
+                                            <segments>
+                                                <segment title="Apps"/>
+                                                <segment title="Music"/>
+                                                <segment title="Movies"/>
+                                            </segments>
+                                        </segmentedControl>
+                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Aks-vq-2qF">
+                                            <rect key="frame" x="0.0" y="41" width="412" height="56"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="dim-K5-wnw"/>
+                                            </constraints>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </searchBar>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Aks-vq-2qF" firstAttribute="top" secondItem="pik-oL-yEI" secondAttribute="bottom" constant="8" id="56A-qa-vrY"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="wFt-Vc-nuP" secondAttribute="bottom" constant="1" id="GEL-D8-5Ep"/>
+                                <constraint firstItem="wFt-Vc-nuP" firstAttribute="top" secondItem="93C-2V-2ZF" secondAttribute="top" constant="1" id="c1u-PC-SZ9"/>
+                                <constraint firstAttribute="trailing" secondItem="wFt-Vc-nuP" secondAttribute="trailing" constant="1" id="eBk-S0-jRo"/>
+                                <constraint firstItem="wFt-Vc-nuP" firstAttribute="leading" secondItem="93C-2V-2ZF" secondAttribute="leading" constant="1" id="qyP-Ra-mRG"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="dWx-fy-IVd" detailTextLabel="iI9-tm-2y8" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="zlV-Th-bOJ">
-                                <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="qU7-8C-zIR" detailTextLabel="4cB-rz-wdY" rowHeight="55.5" style="IBUITableViewCellStyleSubtitle" id="1d5-1P-6XS">
+                                <rect key="frame" x="0.0" y="127" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zlV-Th-bOJ" id="a81-TE-23n">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1d5-1P-6XS" id="IP9-BV-VSg">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dWx-fy-IVd">
-                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qU7-8C-zIR">
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iI9-tm-2y8">
-                                            <rect key="frame" x="20" y="35.5" width="44" height="14.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4cB-rz-wdY">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -42,58 +80,37 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Pdv-7H-jZe" id="ABM-fp-vdq"/>
-                            <outlet property="delegate" destination="Pdv-7H-jZe" id="e5z-cD-1fh"/>
+                            <outlet property="dataSource" destination="uWM-dE-LlR" id="AaX-fA-LfM"/>
+                            <outlet property="delegate" destination="uWM-dE-LlR" id="nG7-Pt-EHy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Itunes Search" id="O3U-bY-s3o"/>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="Kjb-qX-RfF"/>
+                    <connections>
+                        <outlet property="category" destination="pik-oL-yEI" id="nMd-oG-DQB"/>
+                        <outlet property="searchBar" destination="Aks-vq-2qF" id="eCw-I2-mY7"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qnF-f9-wdd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="1yj-BP-Dto">
-                    <rect key="frame" x="0.0" y="0.0" width="420" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AfN-Hj-hF1">
-                            <rect key="frame" x="0.0" y="44" width="420" height="87"/>
-                            <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XJV-ex-zpM">
-                                    <rect key="frame" x="116" y="0.0" width="188" height="32"/>
-                                    <segments>
-                                        <segment title="Apps"/>
-                                        <segment title="Music"/>
-                                        <segment title="Movies"/>
-                                    </segments>
-                                </segmentedControl>
-                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-L8-6Nr">
-                                    <rect key="frame" x="0.0" y="31" width="420" height="56"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <viewLayoutGuide key="safeArea" id="ymW-cW-4Yi"/>
-                </view>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELP-wW-gLk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857.97101449275374" y="109.82142857142857"/>
+            <point key="canvasLocation" x="656.52173913043487" y="-65.625"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="car-7H-WY9">
+        <scene sceneID="Uku-sg-Y1W">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hMw-Ii-psN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ekw-sf-eiE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X2g-A6-zzI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nRw-hS-a6B">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Pdv-7H-jZe" kind="relationship" relationship="rootViewController" id="HGU-GG-GXI"/>
+                        <segue destination="uWM-dE-LlR" kind="relationship" relationship="rootViewController" id="akR-he-1M0"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N3f-Fn-AIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Yt-FI-1Oe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52.173913043478265" y="109.82142857142857"/>
+            <point key="canvasLocation" x="-252.17391304347828" y="-65.625"/>
         </scene>
     </scenes>
 </document>

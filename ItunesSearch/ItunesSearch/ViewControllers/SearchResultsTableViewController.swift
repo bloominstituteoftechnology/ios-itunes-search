@@ -11,7 +11,7 @@ import UIKit
 class SearchResultsTableViewController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var category: UISegmentedControl!
     
     let searchResultsController = SearchResultController()
     
@@ -43,24 +43,24 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         guard let searchTerm = searchBar.text,
             searchTerm != "" else { return }
         
         var resultType: ResultType!
         
-        switch resultTypeSegmentedControl.selectedSegmentIndex {
-        case 0: resultType = .software
-        case 1: resultType = .musicTrack
-        case 2: resultType = .movie
-        default: break
-        }
-        
-        searchResultsController.performSearch(searchTerm: searchTerm,  resultType: resultType)
-        {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        switch category.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
         }
     }
-    
 }
+      
+    
+
