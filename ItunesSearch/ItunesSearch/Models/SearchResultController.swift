@@ -17,56 +17,49 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    
     var searchResults: [SearchResult] = []
-    lazy var searchURL = URL(string: "&entity=", relativeTo: baseURL)!
-    var task: URLSessionTask?
+    
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping() -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+        searchResults = []
         
-        task?.cancel()
+        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
+        let searchTerm = URLQueryItem(name: "term", value: searchTerm)
+        let resultType = URLQueryItem(name: "entity", value: resultType.rawValue)
+        components?.queryItems = [searchTerm, resultType]
         
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchQueryItem]
-        
-        guard let requestURL = urlComponents?.url else {
-            print("Request URL is nil")
-            completion()
+        guard let requestURL = components?.url else {
+            print("Error getting URL request")
+            completion(nil)
             return
         }
-        
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = HTTPMethod.get.rawValue
-        
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
-            
-            guard error == nil else {
-                print("Error fetching data: \(error!)")
-                completion()
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            if let error = error {
+                print("Error collecting data: \(error)")
                 return
             }
             
             guard let data = data else {
-                print("Erorr fetching data: \(error!)")
-                completion()
+                print("Error collecting data: \(error)")
+                completion(nil)
                 return
             }
             
             let jsonDecoder = JSONDecoder()
             
             do {
-                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults = searchResults.results
-                completion()
+                
+                let results = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults = results.results
+                completion(nil)
+                
             } catch {
-                print("Can not decode data into object of type [SearchResult]: \(error)")
+                print("Error decoding data: \(error)")
+                return
             }
-            completion()
         }
-        dataTask.resume()
+    .resume()
     }
-    
 }
