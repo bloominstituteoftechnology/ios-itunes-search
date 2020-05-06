@@ -13,6 +13,9 @@
 		61A7641C2463386500677620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A7641A2463386500677620 /* Main.storyboard */; };
 		61A7641E2463386700677620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A7641D2463386700677620 /* Assets.xcassets */; };
 		61A764212463386700677620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A7641F2463386700677620 /* LaunchScreen.storyboard */; };
+		61E781052463714A007D9E2D /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E781042463714A007D9E2D /* SearchResult.swift */; };
+		61E7810724637245007D9E2D /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E7810624637245007D9E2D /* ResultType.swift */; };
+		61E7810B24637295007D9E2D /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E7810A24637295007D9E2D /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		61A7641D2463386700677620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61A764202463386700677620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61A764222463386700677620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61E781042463714A007D9E2D /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		61E7810624637245007D9E2D /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		61E7810A24637295007D9E2D /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				61A7641D2463386700677620 /* Assets.xcassets */,
 				61A7641F2463386700677620 /* LaunchScreen.storyboard */,
 				61A764222463386700677620 /* Info.plist */,
+				61E781042463714A007D9E2D /* SearchResult.swift */,
+				61E7810624637245007D9E2D /* ResultType.swift */,
+				61E7810A24637295007D9E2D /* SearchResultController.swift */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -138,8 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E7810B24637295007D9E2D /* SearchResultController.swift in Sources */,
+				61E7810724637245007D9E2D /* ResultType.swift in Sources */,
 				61A764192463386500677620 /* ViewController.swift in Sources */,
 				61A764152463386500677620 /* AppDelegate.swift in Sources */,
+				61E781052463714A007D9E2D /* SearchResult.swift in Sources */,
 				61A764172463386500677620 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
