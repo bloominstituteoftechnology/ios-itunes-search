@@ -25,8 +25,8 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void){
         // Step 1: Build endpoint URL with query items
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "term=", value: searchTerm)
-        let resultTermQueryItem = URLQueryItem(name: "entity=", value: resultType.rawValue)
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
         urlComponents?.queryItems = [searchTermQueryItem, resultTermQueryItem]
         
         guard let requestURL = urlComponents?.url else {
@@ -62,7 +62,7 @@ class SearchResultController {
             let jsonDecoder = JSONDecoder()
             do{
                 let search = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResult.append(contentsOf: search.results)
+                self.searchResult = search.results
             }catch{
                 print("Unable to decode data into object of type SearchResult: \(error)")
             }
