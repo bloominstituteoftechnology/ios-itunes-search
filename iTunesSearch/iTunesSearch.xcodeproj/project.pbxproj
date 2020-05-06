@@ -62,15 +62,12 @@
 		0BFEA0872463168F00A98A23 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				0BFEA0962463169400A98A23 /* Info.plist */,
+				0BFEA0A82463367200A98A23 /* Resources */,
+				0BFEA0A72463366600A98A23 /* Views */,
 				0BFEA0A424632A5D00A98A23 /* ViewControllers */,
 				0BFEA0A124631A2300A98A23 /* ModelController */,
 				0BFEA09C2463183100A98A23 /* Model */,
-				0BFEA0882463168F00A98A23 /* AppDelegate.swift */,
-				0BFEA08A2463168F00A98A23 /* SceneDelegate.swift */,
-				0BFEA08E2463168F00A98A23 /* Main.storyboard */,
-				0BFEA0912463169400A98A23 /* Assets.xcassets */,
-				0BFEA0932463169400A98A23 /* LaunchScreen.storyboard */,
-				0BFEA0962463169400A98A23 /* Info.plist */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -98,6 +95,25 @@
 				0BFEA0A524632A7900A98A23 /* SearchResultsTableViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0BFEA0A72463366600A98A23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0BFEA0932463169400A98A23 /* LaunchScreen.storyboard */,
+				0BFEA08E2463168F00A98A23 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0BFEA0A82463367200A98A23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0BFEA0882463168F00A98A23 /* AppDelegate.swift */,
+				0BFEA08A2463168F00A98A23 /* SceneDelegate.swift */,
+				0BFEA0912463169400A98A23 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
