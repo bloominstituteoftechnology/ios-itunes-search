@@ -11,7 +11,7 @@ import Foundation
 class SearchResultController {
     
     // MARK: - Properties
-    let baseURL = URL(string: "https://itunes.apple.com/search")!
+    let baseURL = URL(string: "https://itunes.apple.com/search?")!
     var searchResult: [SearchResult] = []
     
     enum HTTPMethod: String {
@@ -25,8 +25,8 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void){
         // Step 1: Build endpoint URL with query items
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let resultTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        let searchTermQueryItem = URLQueryItem(name: "term=", value: searchTerm)
+        let resultTermQueryItem = URLQueryItem(name: "entity=", value: resultType.rawValue)
         urlComponents?.queryItems = [searchTermQueryItem, resultTermQueryItem]
         
         guard let requestURL = urlComponents?.url else {
@@ -49,7 +49,7 @@ class SearchResultController {
                 return
             }
             
-//            guard let self = self else { completion(); return }
+//          guard let self = self else { completion(); return }
             
             // Handle data optionality
             guard let data = data else {

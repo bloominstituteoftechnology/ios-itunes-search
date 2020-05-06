@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		0BFEA0892463168F00A98A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA0882463168F00A98A23 /* AppDelegate.swift */; };
 		0BFEA08B2463168F00A98A23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA08A2463168F00A98A23 /* SceneDelegate.swift */; };
-		0BFEA08D2463168F00A98A23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA08C2463168F00A98A23 /* ViewController.swift */; };
 		0BFEA0902463168F00A98A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BFEA08E2463168F00A98A23 /* Main.storyboard */; };
 		0BFEA0922463169400A98A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BFEA0912463169400A98A23 /* Assets.xcassets */; };
 		0BFEA0952463169400A98A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BFEA0932463169400A98A23 /* LaunchScreen.storyboard */; };
 		0BFEA09E2463184900A98A23 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA09D2463184900A98A23 /* SearchResult.swift */; };
 		0BFEA0A0246319CF00A98A23 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA09F246319CF00A98A23 /* ResultType.swift */; };
 		0BFEA0A324631A3B00A98A23 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA0A224631A3B00A98A23 /* SearchResultController.swift */; };
+		0BFEA0A624632A7900A98A23 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA0A524632A7900A98A23 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BFEA0852463168F00A98A23 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BFEA0882463168F00A98A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BFEA08A2463168F00A98A23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0BFEA08C2463168F00A98A23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0BFEA08F2463168F00A98A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BFEA0912463169400A98A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BFEA0942463169400A98A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		0BFEA09D2463184900A98A23 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		0BFEA09F246319CF00A98A23 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		0BFEA0A224631A3B00A98A23 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		0BFEA0A524632A7900A98A23 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +62,11 @@
 		0BFEA0872463168F00A98A23 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				0BFEA0A424632A5D00A98A23 /* ViewControllers */,
 				0BFEA0A124631A2300A98A23 /* ModelController */,
 				0BFEA09C2463183100A98A23 /* Model */,
 				0BFEA0882463168F00A98A23 /* AppDelegate.swift */,
 				0BFEA08A2463168F00A98A23 /* SceneDelegate.swift */,
-				0BFEA08C2463168F00A98A23 /* ViewController.swift */,
 				0BFEA08E2463168F00A98A23 /* Main.storyboard */,
 				0BFEA0912463169400A98A23 /* Assets.xcassets */,
 				0BFEA0932463169400A98A23 /* LaunchScreen.storyboard */,
@@ -90,6 +90,14 @@
 				0BFEA0A224631A3B00A98A23 /* SearchResultController.swift */,
 			);
 			path = ModelController;
+			sourceTree = "<group>";
+		};
+		0BFEA0A424632A5D00A98A23 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BFEA0A524632A7900A98A23 /* SearchResultsTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +173,7 @@
 			files = (
 				0BFEA0A324631A3B00A98A23 /* SearchResultController.swift in Sources */,
 				0BFEA0A0246319CF00A98A23 /* ResultType.swift in Sources */,
-				0BFEA08D2463168F00A98A23 /* ViewController.swift in Sources */,
+				0BFEA0A624632A7900A98A23 /* SearchResultsTableViewController.swift in Sources */,
 				0BFEA0892463168F00A98A23 /* AppDelegate.swift in Sources */,
 				0BFEA09E2463184900A98A23 /* SearchResult.swift in Sources */,
 				0BFEA08B2463168F00A98A23 /* SceneDelegate.swift in Sources */,
