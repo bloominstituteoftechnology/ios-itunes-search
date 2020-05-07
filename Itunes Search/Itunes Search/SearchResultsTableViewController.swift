@@ -47,6 +47,31 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         }
     }
     
+    @IBAction func segmentClicked(_ sender: UISegmentedControl) {
+        guard let searchTerm = searchBar.text,
+        searchTerm != "" else { return }
+        
+        var resultType: ResultType!
+        
+        switch typeSelection.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            break
+        }
+        
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
 
     // MARK: - Table view data source
     
