@@ -25,8 +25,17 @@ class SearchResultController {
     private lazy var movieURL = URL(string: "entity=\(ResultType.movie)&", relativeTo: baseURL)!
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+        var urlComponents: URLComponents?
         
-        var urlComponents = URLComponents(url: softwareURL, resolvingAgainstBaseURL: true)
+        switch resultType {
+        case .movie:
+            urlComponents = URLComponents(url: movieURL, resolvingAgainstBaseURL: true)
+        case .musicTrack:
+            urlComponents = URLComponents(url: musicURL, resolvingAgainstBaseURL: true)
+        case .software:
+            urlComponents = URLComponents(url: softwareURL, resolvingAgainstBaseURL: true)
+        }
+        
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         urlComponents?.queryItems = [searchTermQueryItem]
         
