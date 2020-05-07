@@ -19,25 +19,14 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    private let baseURL = URL(string: "https://itunes.apple.com/search?")!
-    private lazy var softwareURL = URL(string: "entity=\(ResultType.software)&", relativeTo: baseURL)!
-    private lazy var musicURL = URL(string: "entity=\(ResultType.musicTrack)&", relativeTo: baseURL)!
-    private lazy var movieURL = URL(string: "entity=\(ResultType.movie)&", relativeTo: baseURL)!
+    private let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
-        var urlComponents: URLComponents?
-        
-        switch resultType {
-        case .movie:
-            urlComponents = URLComponents(url: movieURL, resolvingAgainstBaseURL: true)
-        case .musicTrack:
-            urlComponents = URLComponents(url: musicURL, resolvingAgainstBaseURL: true)
-        case .software:
-            urlComponents = URLComponents(url: softwareURL, resolvingAgainstBaseURL: true)
-        }
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+        let mediaQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchTermQueryItem, mediaQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("request URL is nil")
