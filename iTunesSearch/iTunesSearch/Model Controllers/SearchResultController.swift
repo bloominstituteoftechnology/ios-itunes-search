@@ -12,7 +12,7 @@ class SearchResultController {
     
     // Mark: Properties
     
-    let baseURL = URL(string: "https://itunes.apple.com/search?")!
+    let baseURL = URL(string: "https://itunes.apple.com/search?parameterkeyvalue")!
     var searchResults: [SearchResult] = []
 
     // Mark enum
@@ -46,7 +46,7 @@ class SearchResultController {
         
         // Creating URL Task
         
-       let task = URLSession.shared.dataTask(with: request) {(data, _, error) in
+        URLSession.shared.dataTask(with: request) {(data, _, error) in
             
             // handle error
             if let error = error {
@@ -63,9 +63,10 @@ class SearchResultController {
                 self.searchResults = searchResults.results
             } catch {
                 NSLog("Error fetching data: \(error)")
+                completion()
             }
             completion()
-        }
-        task.resume()
+        }.resume()
+        
     }
 }

@@ -16,7 +16,6 @@
 		E40F44EF24626F3700C68A6E /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F44EE24626F3700C68A6E /* ResultType.swift */; };
 		E40F44F12462716000C68A6E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F44F02462716000C68A6E /* SearchResultController.swift */; };
 		E40F44F324639A6200C68A6E /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F44F224639A6200C68A6E /* SearchResultsTableViewController.swift */; };
-		E40F44F52463A16A00C68A6E /* iTunesSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40F44F42463A16A00C68A6E /* iTunesSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		E40F44EE24626F3700C68A6E /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		E40F44F02462716000C68A6E /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		E40F44F224639A6200C68A6E /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
-		E40F44F42463A16A00C68A6E /* iTunesSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +112,6 @@
 		E40F44ED24626EE900C68A6E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E40F44F42463A16A00C68A6E /* iTunesSearchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,7 +187,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E40F44F52463A16A00C68A6E /* iTunesSearchTableViewCell.swift in Sources */,
 				E40F44F12462716000C68A6E /* SearchResultController.swift in Sources */,
 				E40F44EF24626F3700C68A6E /* ResultType.swift in Sources */,
 				E40F44F324639A6200C68A6E /* SearchResultsTableViewController.swift in Sources */,
