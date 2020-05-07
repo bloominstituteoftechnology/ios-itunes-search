@@ -19,7 +19,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
         guard let searchTerm = searchBar.text else { return }
         var resultType: ResultType!
         
@@ -33,6 +32,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         default:
             break
         }
+        
+        searchBar.resignFirstResponder()
         
         searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { _ in
             DispatchQueue.main.async {
@@ -48,7 +49,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
         
         let searchResultCell = searchResultController.searchResults[indexPath.row]
         cell.textLabel?.text = searchResultCell.title
