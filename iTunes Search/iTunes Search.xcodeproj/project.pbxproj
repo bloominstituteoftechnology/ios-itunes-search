@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E377FC7E24639F83002BB24E /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377FC7D24639F83002BB24E /* SearchResultsTableViewController.swift */; };
 		E38154352463766C00409FA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38154342463766C00409FA6 /* AppDelegate.swift */; };
 		E38154372463766C00409FA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38154362463766C00409FA6 /* SceneDelegate.swift */; };
 		E381543C2463766C00409FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E381543A2463766C00409FA6 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E377FC7D24639F83002BB24E /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		E38154312463766C00409FA6 /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38154342463766C00409FA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E38154362463766C00409FA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E377FC7C24639F3C002BB24E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E381543A2463766C00409FA6 /* Main.storyboard */,
+				E381543F2463767000409FA6 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E377FC7F24639F8E002BB24E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E377FC7D24639F83002BB24E /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		E38154282463766C00409FA6 = {
 			isa = PBXGroup;
 			children = (
@@ -60,33 +79,33 @@
 		E38154332463766C00409FA6 /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
-				E381544F2463833900409FA6 /* Model Controller */,
-				E381544E2463833000409FA6 /* Model */,
+				E377FC7F24639F8E002BB24E /* View Controllers */,
+				E377FC7C24639F3C002BB24E /* Views */,
+				E381544F2463833900409FA6 /* Model Controllers */,
+				E381544E2463833000409FA6 /* Models */,
 				E38154342463766C00409FA6 /* AppDelegate.swift */,
 				E38154362463766C00409FA6 /* SceneDelegate.swift */,
-				E381543A2463766C00409FA6 /* Main.storyboard */,
 				E381543D2463767000409FA6 /* Assets.xcassets */,
-				E381543F2463767000409FA6 /* LaunchScreen.storyboard */,
 				E38154422463767000409FA6 /* Info.plist */,
 			);
 			path = "iTunes Search";
 			sourceTree = "<group>";
 		};
-		E381544E2463833000409FA6 /* Model */ = {
+		E381544E2463833000409FA6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E38154482463802000409FA6 /* SearchResult.swift */,
 				E381544A2463824800409FA6 /* ResultType.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		E381544F2463833900409FA6 /* Model Controller */ = {
+		E381544F2463833900409FA6 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E381544C2463832B00409FA6 /* SearchResultController.swift */,
 			);
-			path = "Model Controller";
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +181,7 @@
 			files = (
 				E381544B2463824800409FA6 /* ResultType.swift in Sources */,
 				E38154352463766C00409FA6 /* AppDelegate.swift in Sources */,
+				E377FC7E24639F83002BB24E /* SearchResultsTableViewController.swift in Sources */,
 				E38154492463802100409FA6 /* SearchResult.swift in Sources */,
 				E38154372463766C00409FA6 /* SceneDelegate.swift in Sources */,
 				E381544D2463832B00409FA6 /* SearchResultController.swift in Sources */,
