@@ -19,61 +19,52 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
-    private let baseURL = URL(string: "https://itunes.apple.com")!
-    private lazy var softwareURL = URL(string: "/api/people", relativeTo: baseURL)!
-    private lazy var musicURL = URL(string: "/api/people", relativeTo: baseURL)!
-    private lazy var movieURL = URL(string: "/api/people", relativeTo: baseURL)!
+    private let baseURL = URL(string: "https://itunes.apple.com/search?")!
+    private lazy var softwareURL = URL(string: "entity=\(ResultType.software)&", relativeTo: baseURL)!
+    private lazy var musicURL = URL(string: "entity=\(ResultType.musicTrack)&", relativeTo: baseURL)!
+    private lazy var movieURL = URL(string: "entity=\(ResultType.movie)&", relativeTo: baseURL)!
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
-        // Step 1: Build endpoint URL with query items
-        var urlComponents = URLComponents(url: peopleURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
+        
+        var urlComponents = URLComponents(url: softwareURL, resolvingAgainstBaseURL: true)
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         urlComponents?.queryItems = [searchTermQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("request URL is nil")
-            completion()
+            completion(NSError())
             return
         }
         
-        // Step 2: Create URL Request
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        // Step 3: Create URL Task
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
-            // Handle error first
             if let error = error {
                 print("Error fetching data: \(error)")
-                completion()
+                completion(error)
                 return
             }
             
-            guard let self = self else { completion(); return }
+            guard let self = self else { completion(NSError()); return }
             
-            // Handle Data Optionality
             guard let data = data else {
                 print("no data returned from data task.")
-                completion()
+                completion(NSError())
                 return
             }
             
-            // Create Decoder
             let jsonDecoder = JSONDecoder()
-            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             
-            // Decode and add objects to array
             do {
-                let personSearch = try jsonDecoder.decode(PersonSearch.self, from: data)
-                self.crew.append(contentsOf: personSearch.results)
+                let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults.append(contentsOf: searchResults.results)
+                completion(nil)
             } catch {
-                print("Unable to decode data into object of type PersonSearch: \(error)")
+                print("Unable to decode data into object of type SearchResults: \(error)")
+                completion(error)
             }
-            
-            completion()
         }
-        
-        // Step 4: Run URL Task
         task.resume()
     }
 }
