@@ -12,6 +12,8 @@ import Foundation
 class SearchResultController {
     
     let baseURL = URL(string: "https://itunes.apple.com/search?")!
+  
+    
     
     
     var searchResults: [SearchResult] = []
@@ -27,13 +29,13 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
      // Step 1: Build endpoint URL with query items
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        let resultsTermQueryItem = URLQueryItem(name: "results", value: resultType.rawValue)
+        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+        let resultsTermQueryItem = URLQueryItem(name: "media", value: resultType.rawValue)
         
         urlComponents?.queryItems = [searchTermQueryItem, resultsTermQueryItem]
       
         guard let requestURL = urlComponents?.url else {
-            print("Request URL is nil")
+            print("Request URL is nil.")
             completion()
             return
         }
@@ -47,8 +49,8 @@ class SearchResultController {
            
             
             // Handle Error first
-            if let error = error {
-                print("Error fetching data: \(error)")
+           guard error == nil  else {
+                print("Error fetching data.")
                 completion()
                 return
             }
@@ -57,7 +59,7 @@ class SearchResultController {
             
             // Handle Data Optionality
             guard let data = data else {
-                print("no data returned from data task.")
+                print("No data returned from data task.")
                 completion()
                 return
             }
@@ -70,11 +72,13 @@ class SearchResultController {
                     do {
                         let basicSearch = try jsonDecoder.decode(SearchResults.self, from: data)
                         self.searchResults = basicSearch.results
+                        completion()
                     } catch {
-                        print("Unable to decode data into object of type PersonSearch: \(error)")
+                        print("Unable to decode data into object.")
+                        completion()
                     }
                     
-                    completion()
+             
                 }
                 
                 // Step 4: Run URL Task

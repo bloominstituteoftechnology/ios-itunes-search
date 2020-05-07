@@ -39,7 +39,7 @@ class SearchResultsTableViewController: UITableViewController {
        }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "Result Cell", for: indexPath)
+         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
 
          // Configure the cell...
         let searchResult = searchResultController.searchResults[indexPath.row]
@@ -56,15 +56,15 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
       func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
           guard let searchTerm = searchBar.text else { return }
           searchBar.resignFirstResponder()
-          
+       
          
         var resultType: ResultType!
         switch segmentControl.selectedSegmentIndex {
             case 0: resultType = .software
-            case 1: resultType = .musicTrack
+            case 1: resultType = .music
             case 2: resultType = .movie
             default:
-                print("Invalid result type")
+                    resultType = .music
         
         }
         
