@@ -16,6 +16,7 @@
 		E38154492463802100409FA6 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38154482463802000409FA6 /* SearchResult.swift */; };
 		E381544B2463824800409FA6 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381544A2463824800409FA6 /* ResultType.swift */; };
 		E381544D2463832B00409FA6 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381544C2463832B00409FA6 /* SearchResultController.swift */; };
+		E3B1CE1C2464DE26000CE8EC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B1CE1B2464DE26000CE8EC /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E38154482463802000409FA6 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		E381544A2463824800409FA6 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		E381544C2463832B00409FA6 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		E3B1CE1B2464DE26000CE8EC /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				E38154482463802000409FA6 /* SearchResult.swift */,
 				E381544A2463824800409FA6 /* ResultType.swift */,
+				E3B1CE1B2464DE26000CE8EC /* HTTPMethod.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				E381544B2463824800409FA6 /* ResultType.swift in Sources */,
 				E38154352463766C00409FA6 /* AppDelegate.swift in Sources */,
+				E3B1CE1C2464DE26000CE8EC /* HTTPMethod.swift in Sources */,
 				E377FC7E24639F83002BB24E /* SearchResultsTableViewController.swift in Sources */,
 				E38154492463802100409FA6 /* SearchResult.swift in Sources */,
 				E38154372463766C00409FA6 /* SceneDelegate.swift in Sources */,

@@ -10,7 +10,8 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
-    let searchResultController = SearchResultController()
+    private let searchResultController = SearchResultController()
+    var resultType: ResultType!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else { return }
-        var resultType: ResultType!
         
         switch categorySegmented.selectedSegmentIndex {
         case 0:
@@ -33,9 +33,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
             break
         }
         
-        searchBar.resignFirstResponder()
-        
-        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { _ in
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

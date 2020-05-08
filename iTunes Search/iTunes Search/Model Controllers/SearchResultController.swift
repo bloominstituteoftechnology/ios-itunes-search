@@ -10,44 +10,52 @@ import Foundation
 
 class SearchResultController {
     
-    let baseURL = URL(string: "https://itunes.apple.com/search?")!
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     // Data source for table view
     var searchResults: [SearchResult] = []
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
+        let searchTermQuery = URLQueryItem(name: "term", value: searchTerm)
+        let resultTypeQuery = URLQueryItem(name: "entity", value: resultType.rawValue)
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let termQuery = URLQueryItem(name: "term", value: searchTerm)
-        let typeQuery = URLQueryItem(name: "type", value: resultType.rawValue)
-        urlComponents?.queryItems = [termQuery, typeQuery]
+        urlComponents?.queryItems = [searchTermQuery, resultTypeQuery]
         
         guard let requestURL = urlComponents?.url else {
             print("request URL is nil")
-            completion(NSError())
+            completion()
             return
         }
         
-        let dataTask = URLSession.shared.dataTask(with: requestURL) { data, _, error in
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: requestURL) {
+            (data, _, error) in
             if let error = error {
-                NSLog("Error fetching data: \(error)")
-                completion(error)
+                NSLog("Error with data task: \(error)")
+                completion()
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data was returned")
+                completion()
                 return
             }
             
             let jsonDecoder = JSONDecoder()
-            jsonDecoder.keyDecodingStrategy = .useDefaultKeys // Direct mapping of JSON names to swift properties
             
             do {
-                let search = try jsonDecoder.decode(SearchResults.self, from: data!)
+                let search = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults = search.results
-                completion(NSError())
+                completion()
             } catch {
-                NSLog("Unable to decode data: \(error)")
+                NSLog("Unable to decode data")
+                completion()
                 return
             }
-        }
-        
-        dataTask.resume()
+        }   .resume()
     }
     
 }

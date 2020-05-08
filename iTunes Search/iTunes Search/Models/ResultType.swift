@@ -10,7 +10,7 @@ import Foundation
 
 // Represents the kind of searchable items in our app
 enum ResultType: String {
-    case software = "software"
-    case musicTrack = "musicTrack"
-    case movie = "movie"
+    case software
+    case musicTrack
+    case movie
 }
