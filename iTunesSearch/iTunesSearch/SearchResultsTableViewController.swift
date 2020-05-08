@@ -35,8 +35,8 @@ class SearchResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.reuseIdentifier, for: indexPath) as! SearchResultTableViewCell
         
         let result = searchResultsController.searchResults[indexPath.row]
-        cell.searchResult?.title = result.title
-        cell.searchResult?.creator = result.creator
+        cell.titleLabel.text = result.title
+        cell.creatorLabel.text = result.creator
         
         return cell
     }
@@ -60,9 +60,13 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
             break
         }
         
-        self.searchResultsController.performSearch(searchTerm:searchTerm, resultType: resultType)
+        self.searchResultsController.performSearch(searchTerm: searchTerm, resultType: resultType) { (error) in
+            if let error = error {
+                print("Error code: \(error)")
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+        }
         }
     }
 }
