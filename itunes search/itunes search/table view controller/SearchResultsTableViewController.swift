@@ -10,15 +10,17 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
     
-    @IBOutlet weak var segmentedControlSwitch: UISegmentedControl!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
     let searchResultController = SearchResultController()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        searchBar.delegate = self
+    var searchResults = [SearchResult]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
@@ -32,17 +34,20 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
-        guard let resultCell = cell as? ResultsTableViewCell else { return cell }
         
-        resultCell.titleLabel.text = searchResultController.searchResults[indexPath.row].title
-        resultCell.subtitleLabel.text = searchResultController.searchResults[indexPath.row].creator
-        return resultCell
+        let searchResult = searchResults[indexPath.row]
+        
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+        
+        return cell
     }
 
     func search(searchTerm: String) {
+        guard let searchTerm = searchBar.text else { return }
         var resultType: ResultType!
         
-        switch self.segmentedControlSwitch.selectedSegmentIndex {
+        switch self.segmentedControl.selectedSegmentIndex {
         case 0:
             resultType = .software
         case 1:
@@ -52,26 +57,21 @@ class SearchResultsTableViewController: UITableViewController {
         default:
             print("Error")
         }
-        
-        
-        self.searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType, completion: { error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    print(error)
-                }
-                 
-                self.tableView.reloadData()
+        searchResultController.performSearch(for: searchTerm, resultType: resultType) { (searchResults, error) -> Void in
+            if let error = error {
+                NSLog("error performing search: \(error)")
+                return
             }
-        })
+            self.searchResults = searchResults ?? []
+            return
+        }
     }
 }
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else { return }
-        searchBar.resignFirstResponder()
-        
-        search(searchTerm: searchTerm)
+        search(searchTerm: searchBar.text!)
     }
     
     func searchBar(_ searchBar: UISearchBar, searchText: String) {

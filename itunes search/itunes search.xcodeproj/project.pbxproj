@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0D205F7E2460CC2500CC11B5 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D205F7D2460CC2500CC11B5 /* SearchResultController.swift */; };
 		0D205F802460E14B00CC11B5 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D205F7F2460E14B00CC11B5 /* SearchResultsTableViewController.swift */; };
-		0D205F832460E7A200CC11B5 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D205F822460E7A200CC11B5 /* ResultsTableViewCell.swift */; };
 		0D96C4852460BCD000C7EB54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96C4842460BCD000C7EB54 /* AppDelegate.swift */; };
 		0D96C4872460BCD000C7EB54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96C4862460BCD000C7EB54 /* SceneDelegate.swift */; };
 		0D96C48C2460BCD000C7EB54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D96C48A2460BCD000C7EB54 /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		0D205F7D2460CC2500CC11B5 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		0D205F7F2460E14B00CC11B5 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
-		0D205F822460E7A200CC11B5 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		0D96C4812460BCD000C7EB54 /* itunes search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "itunes search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D96C4842460BCD000C7EB54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D96C4862460BCD000C7EB54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				0D205F7F2460E14B00CC11B5 /* SearchResultsTableViewController.swift */,
-				0D205F822460E7A200CC11B5 /* ResultsTableViewCell.swift */,
 			);
 			path = "table view controller";
 			sourceTree = "<group>";
@@ -73,12 +70,12 @@
 		0D96C4832460BCD000C7EB54 /* itunes search */ = {
 			isa = PBXGroup;
 			children = (
-				0D96C49F2460CBA300C7EB54 /* controller */,
 				0D96C49A2460C90900C7EB54 /* model */,
-				0D96C4842460BCD000C7EB54 /* AppDelegate.swift */,
-				0D96C4862460BCD000C7EB54 /* SceneDelegate.swift */,
-				0D96C48A2460BCD000C7EB54 /* Main.storyboard */,
+				0D96C49F2460CBA300C7EB54 /* model controller */,
 				0D205F812460E31800CC11B5 /* table view controller */,
+				0D96C4862460BCD000C7EB54 /* SceneDelegate.swift */,
+				0D96C4842460BCD000C7EB54 /* AppDelegate.swift */,
+				0D96C48A2460BCD000C7EB54 /* Main.storyboard */,
 				0D96C48D2460BCD200C7EB54 /* Assets.xcassets */,
 				0D96C48F2460BCD200C7EB54 /* LaunchScreen.storyboard */,
 				0D96C4922460BCD200C7EB54 /* Info.plist */,
@@ -95,12 +92,12 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		0D96C49F2460CBA300C7EB54 /* controller */ = {
+		0D96C49F2460CBA300C7EB54 /* model controller */ = {
 			isa = PBXGroup;
 			children = (
 				0D205F7D2460CC2500CC11B5 /* SearchResultController.swift */,
 			);
-			path = controller;
+			path = "model controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +173,6 @@
 			files = (
 				0D96C49C2460C99F00C7EB54 /* ResultType.swift in Sources */,
 				0D205F802460E14B00CC11B5 /* SearchResultsTableViewController.swift in Sources */,
-				0D205F832460E7A200CC11B5 /* ResultsTableViewCell.swift in Sources */,
 				0D96C4852460BCD000C7EB54 /* AppDelegate.swift in Sources */,
 				0D96C4992460BD1D00C7EB54 /* SearchResult.swift in Sources */,
 				0D96C4872460BCD000C7EB54 /* SceneDelegate.swift in Sources */,
