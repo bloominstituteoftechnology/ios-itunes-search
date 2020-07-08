@@ -12,3 +12,8 @@ struct SearchResult: Codable {
     var tile: String
     var creator: String
 }
+
+enum CodingKeys: String, CodingKey {
+    case title = "trackName"
+    case creator = "artistName"
+}
