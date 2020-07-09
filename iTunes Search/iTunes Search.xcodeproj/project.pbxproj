@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E15AE03724B74B0400B0FB17 /* SearchReesultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15AE03624B74B0400B0FB17 /* SearchReesultsTableViewController.swift */; };
 		E1D1BB0224B57E37005A603A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1BB0124B57E37005A603A /* AppDelegate.swift */; };
 		E1D1BB0424B57E37005A603A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1BB0324B57E37005A603A /* SceneDelegate.swift */; };
 		E1D1BB0624B57E37005A603A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1BB0524B57E37005A603A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E15AE03624B74B0400B0FB17 /* SearchReesultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReesultsTableViewController.swift; sourceTree = "<group>"; };
 		E1D1BAFE24B57E37005A603A /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D1BB0124B57E37005A603A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1D1BB0324B57E37005A603A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E15AE03424B74A6000B0FB17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E15AE03624B74B0400B0FB17 /* SearchReesultsTableViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E15AE03524B74A6E00B0FB17 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		E1D1BAF524B57E37005A603A = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +81,8 @@
 			children = (
 				E1D4D48D24B68B560035729B /* Model */,
 				E1D4D49224B69B910035729B /* Model Controller */,
+				E15AE03424B74A6000B0FB17 /* Views */,
+				E15AE03524B74A6E00B0FB17 /* View Controllers */,
 				E1D4D49124B69B6C0035729B /* StoryBoard */,
 				E1D4D48E24B68B6A0035729B /* Application */,
 				E1D1BB0524B57E37005A603A /* ViewController.swift */,
@@ -180,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1D4D49424B69C1C0035729B /* SearchResultController.swift in Sources */,
+				E15AE03724B74B0400B0FB17 /* SearchReesultsTableViewController.swift in Sources */,
 				E1D4D49024B694700035729B /* ResultType.swift in Sources */,
 				E1D1BB0624B57E37005A603A /* ViewController.swift in Sources */,
 				E1D1BB0224B57E37005A603A /* AppDelegate.swift in Sources */,
