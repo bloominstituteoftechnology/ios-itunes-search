@@ -10,11 +10,18 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
     
+    //  MARK: - IBOutlets
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let searchResultController = SearchResultController()
+    @IBAction func segmentChanged(_ sender: Any) {
+        searchBarSearchButtonClicked()
+    }
     
+    //  MARK: -
+    
+    let searchResultController = SearchResultController()
     var searchResults = [SearchResult]() {
         didSet {
             DispatchQueue.main.async {
@@ -23,8 +30,14 @@ class SearchResultsTableViewController: UITableViewController {
         }
     }
     
+    //  MARK: - view lifecycle
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        searchBar.delegate = self
+    }
+    
     // MARK: - Table view data source
 
 
@@ -34,20 +47,19 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
+        let results = searchResults[indexPath.row]
         
-        let searchResult = searchResults[indexPath.row]
-        
-        cell.textLabel?.text = searchResult.title
-        cell.detailTextLabel?.text = searchResult.creator
+        cell.textLabel?.text = results.title
+        cell.detailTextLabel?.text = results.creator
         
         return cell
     }
 
-    func search(searchTerm: String) {
-        guard let searchTerm = searchBar.text else { return }
+    func searchBarSearchButtonClicked() {
         var resultType: ResultType!
+        guard let parameter = searchBar.text  else { return }
         
-        switch self.segmentedControl.selectedSegmentIndex {
+        switch segmentedControl.selectedSegmentIndex {
         case 0:
             resultType = .software
         case 1:
@@ -55,11 +67,12 @@ class SearchResultsTableViewController: UITableViewController {
         case 2:
             resultType = .movie
         default:
-            print("Error")
+            resultType = .software
         }
-        searchResultController.performSearch(for: searchTerm, resultType: resultType) { (searchResults, error) -> Void in
+        searchResultController.performSearch(searchTerm: parameter, resultType: resultType) { (searchResults, error) -> Void in
+            
             if let error = error {
-                NSLog("error performing search: \(error)")
+                NSLog("error performing search function you wrote: \(error)")
                 return
             }
             self.searchResults = searchResults ?? []
@@ -70,15 +83,7 @@ class SearchResultsTableViewController: UITableViewController {
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        search(searchTerm: searchBar.text!)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, searchText: String) {
-        if searchText.isEmpty {
-            searchResultController.searchResults = []
-            return
-        }
+    func updateTableView() {
+        tableView.reloadData()
     }
 }
-

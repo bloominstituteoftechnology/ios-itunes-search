@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gaW-Zz-wFy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gaW-Zz-wFy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -32,7 +32,7 @@
                                                 <segment title="movies"/>
                                             </segments>
                                             <connections>
-                                                <action selector="chnageSegment:" destination="vJF-mF-kZy" eventType="valueChanged" id="b8C-iv-kDO"/>
+                                                <action selector="segmentChanged:" destination="vJF-mF-kZy" eventType="valueChanged" id="D2v-OM-NCa"/>
                                             </connections>
                                         </segmentedControl>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-Zm-reA">
@@ -78,8 +78,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="subtitleLabel" destination="xAO-SW-bHh" id="hyh-k3-l3F"/>
-                                    <outlet property="titleLabel" destination="IPp-Do-AMf" id="2h9-II-tEQ"/>
+                                    <outlet property="subtitleLabel" destination="xAO-SW-bHh" id="faM-LW-KxC"/>
+                                    <outlet property="titleLabel" destination="IPp-Do-AMf" id="l1Q-g8-Qqg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -90,8 +90,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunes Search" id="nhq-f2-mt0"/>
                     <connections>
-                        <outlet property="searchBar" destination="eKK-Zm-reA" id="jKG-cp-e5T"/>
-                        <outlet property="segmentedControlSwitch" destination="lgE-op-Dgn" id="3Hv-sJ-IQY"/>
+                        <outlet property="searchBar" destination="eKK-Zm-reA" id="tOj-8C-EdD"/>
+                        <outlet property="segmentedControl" destination="lgE-op-Dgn" id="2ES-cw-6O4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8b-hT-IaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

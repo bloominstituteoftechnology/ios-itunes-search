@@ -8,10 +8,7 @@
 
 import Foundation
 
-
-
 class SearchResultController {
-    
     enum HTTPMethod: String {
         case get = "GET"
         case put = "PUT"
@@ -19,22 +16,33 @@ class SearchResultController {
         case delete = "DELETE"
     }
     
+    enum selected: String {
+        case apps = "software"
+        case music = "musicTrack"
+        case movies = "movie"
+    }
+    
     //  MARK: - properties
     var searchResults: [SearchResult] = []
+    
     
     //  MARK: - URL
     private let baseURL = URL(string: "https://itunes.apple.com/search")!
     
+    private var task: URLSessionTask?
+    var selectedSegment: selected = .apps
+    
     //  MARK: - search function
-    func performSearch(for searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping ([SearchResult]?, Error?) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
-        let searchEntityQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents.queryItems = [searchTermQueryItem, searchEntityQueryItem]
+        let searchQuery = URLQueryItem(name: "term", value: searchTerm)
+        let artistQuery = URLQueryItem(name: "entity", value: resultType.rawValue)
+        
+        urlComponents.queryItems = [searchQuery, artistQuery]
         
         guard let requestURL = urlComponents.url else {
-            print("Request URL is nil")
+            NSLog("error in search URL / API")
             completion(nil, NSError())
             return
         }
@@ -42,7 +50,7 @@ class SearchResultController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        URLSession.shared.dataTask(with: baseURL) { data, _, error in
+        URLSession.shared.dataTask(with: request) { data, _, error in
     
             if let error = error {
                 NSLog("error performing data task: \(error)")
@@ -56,11 +64,12 @@ class SearchResultController {
                 return
             }
             
+            let jsonDecoder = JSONDecoder()
+            
             do {
-                let searchResults = try JSONDecoder().decode(SearchResults.self, from: data)
-                let decoded = searchResults.results
-                completion(decoded, nil)
-                
+                let search = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults = search.results
+                completion(self.searchResults, nil)
             } catch {
                 NSLog("error decoding data: \(error)")
                 completion(nil, error)
