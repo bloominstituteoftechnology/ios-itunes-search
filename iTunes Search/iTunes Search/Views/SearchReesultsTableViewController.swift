@@ -10,6 +10,10 @@ import UIKit
 
 class SearchReesultsTableViewController: UITableViewController {
 
+    
+    @IBOutlet weak var termSelector: UISegmentedControl!
+    @IBOutlet weak var termSearch: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
