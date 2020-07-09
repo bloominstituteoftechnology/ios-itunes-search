@@ -14,6 +14,8 @@ class SearchResultsTableViewController: UITableViewController {
     
     @IBOutlet weak var searchTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchTermSearchBar: UISearchBar!
+    @IBOutlet weak var resultsLimitSlider: UISlider!
+    @IBOutlet weak var resultsLimitLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,26 +23,31 @@ class SearchResultsTableViewController: UITableViewController {
     }
 
     @IBAction func searchTypeChanged(_ sender: UISegmentedControl) {
-            guard let searchTerm = searchTermSearchBar.text else { return }
-            searchTermSearchBar.resignFirstResponder()
-            let resultType: ResultType!
-            switch searchTypeSegmentedControl.selectedSegmentIndex {
-            case 0:
-                resultType = ResultType.software
-            case 1:
-                resultType = ResultType.musicTrack
-            default:
-                resultType = ResultType.movie
-            }
-            searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
-                if let error = error {
-                    print("Search error: \(error)")
-                } else {
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+        guard let searchTerm = searchTermSearchBar.text else { return }
+        searchTermSearchBar.resignFirstResponder()
+        let resultType: ResultType!
+        switch searchTypeSegmentedControl.selectedSegmentIndex {
+        case 0:
+            resultType = ResultType.software
+        case 1:
+            resultType = ResultType.musicTrack
+        default:
+            resultType = ResultType.movie
+        }
+        let limit = Int(resultsLimitSlider.value)
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType, limit: limit) { error in
+            if let error = error {
+                print("Search error: \(error)")
+            } else {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
+        }
+    }
+    
+    @IBAction func resultsLimitSlider(_ sender: UISlider) {
+        resultsLimitLabel.text = "# of Results: \(Int(sender.value))"
     }
     
     // MARK: - Table view data source
@@ -72,7 +79,8 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         default:
             resultType = ResultType.movie
         }
-        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
+        let limit = Int(resultsLimitSlider.value)
+        searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType, limit: limit) { error in
             if let error = error {
                 print("Search error: \(error)")
             } else {

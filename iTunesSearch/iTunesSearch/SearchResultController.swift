@@ -21,12 +21,13 @@ class SearchResultController {
     
     var searchResult: [SearchResult] = []
     
-    func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
+    func performSearch(searchTerm: String, resultType: ResultType, limit: Int, completion: @escaping (Error?) -> Void) {
 
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)
         let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
         let resultTypeQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
-        urlComponents?.queryItems = [searchTermQueryItem, resultTypeQueryItem]
+        let limitQueryItem = URLQueryItem(name: "limit", value: String(limit))
+        urlComponents?.queryItems = [searchTermQueryItem, resultTypeQueryItem, limitQueryItem]
         
         guard let requestURL = urlComponents?.url else {
             print("Request URL is nil.")
