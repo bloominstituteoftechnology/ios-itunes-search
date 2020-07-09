@@ -13,8 +13,13 @@ struct SearchResult: Codable {
     var creator: String
 }
 
+struct SearchResults: Codable {
+    let results: [SearchResult]
+}
+
 enum CodingKeys: String, CodingKey {
     case title = "trackName"
     case creator = "artistName"
 }
 
+    
