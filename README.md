@@ -96,7 +96,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
 
 In the `SearchResultsTableViewController`
 
-1. Create a constant called `searchResultsController` whose value is a new instance of `SearchResultController`.
+1. Create a constant called `searchResultsController` whose value is a new instance of `SeaMchResultController`.
 2. Using the instance of `SearchResultController`, fill out the `numberOfRowsInSection` and `cellForRowAt` methods. Each cell should display the `title` and `artist` of a `SearchResultObject`.
 
 When using a `UISearchBar`, you use a method in the `UISearchBarDelegate` to trigger searches when the user taps the search button on their keyboard. This method is called `searchBarSearchButtonClicked`. 
