@@ -46,8 +46,25 @@ class SearchResultController {
                 return
             }
 
-            
+            guard let data = data else {
+                print("No data returned from data task")
+                completion(error)
+                return
+            }
 
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
+            do {
+                let termSearch = try jsonDecoder.decode(SearchResults.self, from: data)
+                self.searchResults.append(contentsOf: termSearch.results)
+                completion(nil)
+            } catch {
+                print("Unable to decode data into object of type SearchReslut \(error)")
+                completion(error)
+                return
+            }
+            completion(error)
         }
 
         .resume()
