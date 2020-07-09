@@ -15,13 +15,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="6Wy-3y-ot1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="byP-Pw-64f">
+                                    <rect key="frame" x="8" y="8" width="398" height="32"/>
+                                    <segments>
+                                        <segment title="Apps"/>
+                                        <segment title="Music"/>
+                                        <segment title="Movies"/>
+                                    </segments>
+                                </segmentedControl>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9f6-xV-oEq">
+                                    <rect key="frame" x="0.0" y="51" width="414" height="56"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="byP-Pw-64f" firstAttribute="leading" secondItem="6Wy-3y-ot1" secondAttribute="leading" constant="8" id="02e-me-c5o"/>
+                                <constraint firstAttribute="trailing" secondItem="byP-Pw-64f" secondAttribute="trailing" constant="8" id="MOx-AM-hkt"/>
+                                <constraint firstAttribute="bottom" secondItem="9f6-xV-oEq" secondAttribute="bottom" id="Nuh-43-9QE"/>
+                                <constraint firstItem="9f6-xV-oEq" firstAttribute="leading" secondItem="6Wy-3y-ot1" secondAttribute="leading" id="SbM-rE-j9a"/>
+                                <constraint firstItem="9f6-xV-oEq" firstAttribute="top" secondItem="byP-Pw-64f" secondAttribute="bottom" constant="12" id="grJ-Vb-hqH"/>
+                                <constraint firstItem="byP-Pw-64f" firstAttribute="top" secondItem="6Wy-3y-ot1" secondAttribute="top" constant="8" id="lLz-Ip-k4P"/>
+                                <constraint firstAttribute="trailing" secondItem="9f6-xV-oEq" secondAttribute="trailing" id="uPo-4i-WED"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="bKV-qJ-6td" detailTextLabel="x6L-rt-Mwq" style="IBUITableViewCellStyleSubtitle" id="6ka-kj-ZYm">
-                                <rect key="frame" x="0.0" y="72" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ka-kj-ZYm" id="S9N-Co-BLz">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
