@@ -20,6 +20,29 @@ class SearchResultsTableViewController: UITableViewController {
         searchTermSearchBar.delegate = self
     }
 
+    @IBAction func searchTypeChanged(_ sender: UISegmentedControl) {
+            guard let searchTerm = searchTermSearchBar.text else { return }
+            searchTermSearchBar.resignFirstResponder()
+            let resultType: ResultType!
+            switch searchTypeSegmentedControl.selectedSegmentIndex {
+            case 0:
+                resultType = ResultType.software
+            case 1:
+                resultType = ResultType.musicTrack
+            default:
+                resultType = ResultType.movie
+            }
+            searchResultController.performSearch(searchTerm: searchTerm, resultType: resultType) { error in
+                if let error = error {
+                    print("Search error: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
