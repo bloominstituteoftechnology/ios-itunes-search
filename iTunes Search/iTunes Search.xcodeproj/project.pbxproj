@@ -10,7 +10,6 @@
 		E15AE03724B74B0400B0FB17 /* SearchReesultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15AE03624B74B0400B0FB17 /* SearchReesultsTableViewController.swift */; };
 		E1D1BB0224B57E37005A603A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1BB0124B57E37005A603A /* AppDelegate.swift */; };
 		E1D1BB0424B57E37005A603A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1BB0324B57E37005A603A /* SceneDelegate.swift */; };
-		E1D1BB0624B57E37005A603A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1BB0524B57E37005A603A /* ViewController.swift */; };
 		E1D1BB0924B57E37005A603A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D1BB0724B57E37005A603A /* Main.storyboard */; };
 		E1D1BB0B24B57E38005A603A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D1BB0A24B57E38005A603A /* Assets.xcassets */; };
 		E1D1BB0E24B57E38005A603A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D1BB0C24B57E38005A603A /* LaunchScreen.storyboard */; };
@@ -24,7 +23,6 @@
 		E1D1BAFE24B57E37005A603A /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D1BB0124B57E37005A603A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1D1BB0324B57E37005A603A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1D1BB0524B57E37005A603A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1D1BB0824B57E37005A603A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1D1BB0A24B57E38005A603A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1D1BB0D24B57E38005A603A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 				E15AE03524B74A6E00B0FB17 /* View Controllers */,
 				E1D4D49124B69B6C0035729B /* StoryBoard */,
 				E1D4D48E24B68B6A0035729B /* Application */,
-				E1D1BB0524B57E37005A603A /* ViewController.swift */,
 				E1D1BB0F24B57E38005A603A /* Info.plist */,
 			);
 			path = "iTunes Search";
@@ -201,7 +198,6 @@
 				E1D4D49424B69C1C0035729B /* SearchResultController.swift in Sources */,
 				E15AE03724B74B0400B0FB17 /* SearchReesultsTableViewController.swift in Sources */,
 				E1D4D49024B694700035729B /* ResultType.swift in Sources */,
-				E1D1BB0624B57E37005A603A /* ViewController.swift in Sources */,
 				E1D1BB0224B57E37005A603A /* AppDelegate.swift in Sources */,
 				E1D1BB1624B58088005A603A /* SearchResult.swift in Sources */,
 				E1D1BB0424B57E37005A603A /* SceneDelegate.swift in Sources */,

@@ -8,14 +8,15 @@
 
 import Foundation
 
-enum CodingKeys: String, CodingKey {
-    case title = "trackName"
-    case creator = "artistName"
-}
-
 struct SearchResult: Codable {
-    var tile: String
+    var title: String
     var creator: String
+
+    enum CodingKeys: String, CodingKey {
+        case title = "trackName"
+        case creator = "artistName"
+    }
+    
 }
 
 struct SearchResults: Codable {

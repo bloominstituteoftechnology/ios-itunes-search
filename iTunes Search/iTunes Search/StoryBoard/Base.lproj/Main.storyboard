@@ -43,7 +43,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="bKV-qJ-6td" detailTextLabel="x6L-rt-Mwq" style="IBUITableViewCellStyleSubtitle" id="6ka-kj-ZYm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTermCell" textLabel="bKV-qJ-6td" detailTextLabel="x6L-rt-Mwq" style="IBUITableViewCellStyleSubtitle" id="6ka-kj-ZYm">
                                 <rect key="frame" x="0.0" y="135" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ka-kj-ZYm" id="S9N-Co-BLz">

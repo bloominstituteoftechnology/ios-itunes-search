@@ -21,7 +21,8 @@ class SearchResultController {
 
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchTermQueryItems = URLQueryItem(name: "term", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItems]
+        let resultTypeQueryItems = URLQueryItem(name: "entity", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchTermQueryItems, resultTypeQueryItems]
 //        let error = NSError()
         guard let requestURL = urlComponents?.url else {
             print("Request URL is nil")
@@ -57,7 +58,8 @@ class SearchResultController {
 
             do {
                 let termSearch = try jsonDecoder.decode(SearchResults.self, from: data)
-                self.searchResults.append(contentsOf: termSearch.results)
+//                self.searchResults.append(contentsOf: termSearch.results)
+                self.searchResults = termSearch.results
                 completion(nil)
             } catch {
                 print("Unable to decode data into object of type SearchReslut \(error)")
