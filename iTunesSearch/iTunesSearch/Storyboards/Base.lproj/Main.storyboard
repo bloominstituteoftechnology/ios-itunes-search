@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -87,6 +88,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="HOJ-Uj-QQY" kind="show" identifier="detailShowSegue" id="a0f-5J-xE5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -105,6 +109,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgu-aX-BYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1182.608695652174" y="158.70535714285714"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="qDR-bZ-Zci">
+            <objects>
+                <viewController id="HOJ-Uj-QQY" customClass="DetailViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wUg-Iq-uoG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSd-VX-miV">
+                                <rect key="frame" x="32" y="113" width="350" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="dMJ-Vn-o07"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-B8-tKW">
+                                <rect key="frame" x="178" y="156.5" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tSd-VX-miV" firstAttribute="centerX" secondItem="wUg-Iq-uoG" secondAttribute="centerX" id="0AR-pZ-h7L"/>
+                            <constraint firstItem="dDd-B8-tKW" firstAttribute="centerX" secondItem="wUg-Iq-uoG" secondAttribute="centerX" id="QhJ-h3-cP0"/>
+                            <constraint firstItem="tSd-VX-miV" firstAttribute="top" secondItem="sQ7-7v-af9" secondAttribute="top" constant="25" id="lmO-eh-N4G"/>
+                            <constraint firstItem="dDd-B8-tKW" firstAttribute="top" secondItem="tSd-VX-miV" secondAttribute="bottom" constant="10" id="w15-et-z4q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sQ7-7v-af9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MTS-Zy-4ym"/>
+                    <connections>
+                        <outlet property="creatorLabel" destination="dDd-B8-tKW" id="xfh-Ki-jnK"/>
+                        <outlet property="titleLabel" destination="tSd-VX-miV" id="c43-2V-NIR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yf-wt-yqJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014" y="159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OKP-TT-vgn">

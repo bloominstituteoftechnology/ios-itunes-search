@@ -64,6 +64,18 @@ class SearchResultsTableViewController: UITableViewController {
         return cell
     }
 
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailShowSegue" {
+            if let detailVC = segue.destination as? DetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                detailVC.searchResultController = searchResultController
+                detailVC.searchResult = searchResultController.searchResult[indexPath.row]
+            }
+        }
+    }
+    
 }
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
