@@ -16,13 +16,20 @@ class SearchResultController {
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        let searchTermQueryItem = URLQueryItem(name: "title", value: searchTerm)
+        let resultTermQueryItem = URLQueryItem(name: "creator", value: resultType.rawValue)
+        urlComponents?.queryItems = [searchTermQueryItem, resultTermQueryItem]
         
-        let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-        urlComponents?.queryItems = [searchTermQueryItem]
+       
+        guard let requestURL = urlComponents?.url else {
+        completion(NSError())
+            return
+        }
+        var request = URLRequest(url: requestURL)
+               request.httpMethod = "GET"
         
-        var request = URLRequest(url: URL(string: "url.com")!)
-        request.httpMethod = "GET"
         URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
             if let error = error {
                 print("error fetching data: \(error)")
                 completion(error)
@@ -40,11 +47,11 @@ class SearchResultController {
                 self.searchResults.append(contentsOf: searchResults.results)
             } catch {
                 print("Unable to decode data into object of type searchResult: \(error)")
-                completion(nil)
+                completion(error)
                 return
             }
-            completion(error)
+            completion(nil)
         }
-       .resume()
+        .resume()
     }
 }

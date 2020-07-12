@@ -20,6 +20,7 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     // MARK: - Table view data source
@@ -28,7 +29,6 @@ class SearchResultsTableViewController: UITableViewController {
         
         return searchResultController.searchResults.count
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -55,17 +55,18 @@ extension SearchResultsTableViewController: UISearchBarDelegate{
             resultType = .movie
         default:
             print("Could not find result type")
-            
-            
-            searchResultController.performSearch(searchTerm: searchText, resultType: resultType) { (error) in
-                if let error = error {
-                    print("error fetching data: \(error)")
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        
-                    }
-                }
+        }
+        
+        searchResultController.performSearch(searchTerm: searchText, resultType: resultType) { (error) in
+            if let error = error {
+                print("error fetching data: \(error)")
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                
             }
         }
     }
 }
+
+
