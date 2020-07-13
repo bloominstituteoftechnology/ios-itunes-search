@@ -9,17 +9,17 @@
 import UIKit
 
 struct SearchResult: Codable {
-    var title: String
-    var creator: String
+    var trackName: String
+    var artistName: String
 }
 
 struct SearchResults: Codable {
     let results: [SearchResult]
 }
 
-enum CodingKeys: String, CodingKey {
-    case title = "trackName"
-    case creator = "artistName"
-}
+//enum CodingKeys: String, CodingKey {
+//    case title = "trackName"
+//    case creator = "artistName"
+//}
 
     
