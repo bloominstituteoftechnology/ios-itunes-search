@@ -35,8 +35,8 @@ class SearchResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath)
         
         let searchResult = searchResultController.searchResults[indexPath.row]
-        cell.textLabel?.text = searchResult.trackName
-        cell.detailTextLabel?.text = searchResult.artistName
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
         return cell
     }
 }
@@ -57,15 +57,15 @@ extension SearchResultsTableViewController: UISearchBarDelegate{
             print("Could not find result type")
         }
         
-        DispatchQueue.main.async {
-            self.searchResultController.performSearch(searchTerm: searchText, resultType: resultType) { (error) in
-                if let error = error {
-                    print("error fetching data: \(error)")
-                    
+        
+        self.searchResultController.performSearch(searchTerm: searchText, resultType: resultType) { (error) in
+            if let error = error {
+                print("error fetching data: \(error)")
+            } else {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
-            self.tableView.reloadData()
-            
         }
     }
 }

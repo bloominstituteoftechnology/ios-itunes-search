@@ -49,8 +49,6 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="FuX-vZ-wcW" id="NWt-oH-HA5"/>
-                            <outlet property="delegate" destination="FuX-vZ-wcW" id="oEF-YT-aPL"/>
                             <outlet property="prefetchDataSource" destination="FuX-vZ-wcW" id="hpQ-4n-VEu"/>
                         </connections>
                     </tableView>

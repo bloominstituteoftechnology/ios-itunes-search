@@ -51,6 +51,7 @@ class SearchResultController {
             do {
                 let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
                 self.searchResults.append(contentsOf: searchResults.results)
+                completion(nil)
             } catch {
                 print("Unable to decode data into object of type searchResult: \(error)")
                 completion(error)
