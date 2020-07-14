@@ -67,7 +67,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
 3. Add a `searchResults: [SearchResult] = []` variable. This will be the data source for the table view.
 4. Create a `performSearch` function with a `searchTerm: String`, a `resultType: ResultType` parameter, and a `completion` closure. The completion closure should take an `Error?` argument and should return `Void`. As a first measure of help for closure syntax, look at the "As a parameter to another function" section of [this page](http://goshdarnclosuresyntax.com). You're obviously free to ask a PM for help as well.
 5. Create your full request url by taking the `baseURL`, and adding the necessary query parameters (in the form of `URLQueryItem`s.) to it using `URLComponents`.
-6. This function should use `URLSession`'s `dataTask(with: URL, completion: ...)` method to create a data task. Remember to call `.resume()`.
+6. This function should use `URLSession`'s w` method to create a data task. Remember to call `.resume()`.
 7. In the completion closure of the data task:
     - Give names to the return types.
     - Check for errors. If there is an error, call completion with the error.
@@ -96,7 +96,7 @@ Take a minute to look at the example json at the URL at the start of part 1. The
 
 In the `SearchResultsTableViewController`
 
-1. Create a constant called `searchResultsController` whose value is a new instance of `SearchResultController`.
+1. Create a constant called `searchResultsController` whose value is a new instance of `SeaMchResultController`.
 2. Using the instance of `SearchResultController`, fill out the `numberOfRowsInSection` and `cellForRowAt` methods. Each cell should display the `title` and `artist` of a `SearchResultObject`.
 
 When using a `UISearchBar`, you use a method in the `UISearchBarDelegate` to trigger searches when the user taps the search button on their keyboard. This method is called `searchBarSearchButtonClicked`. 
