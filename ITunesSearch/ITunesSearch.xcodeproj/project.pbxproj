@@ -63,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				B6BCC60923F34B3C00CA636F /* Storyboard */,
-				B6BCC60223F34B2C00CA636F /* Info.plist */,
 				B6BCC60823F34B3500CA636F /* Resources */,
 				B6BCC61223F35B6B00CA636F /* Models */,
 				B6BCC61423F35BDC00CA636F /* Model Controller */,
@@ -75,6 +74,7 @@
 		B6BCC60823F34B3500CA636F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6BCC60223F34B2C00CA636F /* Info.plist */,
 				B6BCC5F423F34B2A00CA636F /* AppDelegate.swift */,
 				B6BCC5F623F34B2A00CA636F /* SceneDelegate.swift */,
 				B6BCC5FD23F34B2C00CA636F /* Assets.xcassets */,
@@ -338,7 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4939K9623X;
-				INFOPLIST_FILE = ITunesSearch/Info.plist;
+				INFOPLIST_FILE = ITunesSearch/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,7 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4939K9623X;
-				INFOPLIST_FILE = ITunesSearch/Info.plist;
+				INFOPLIST_FILE = ITunesSearch/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
