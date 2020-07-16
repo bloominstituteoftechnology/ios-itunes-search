@@ -6,6 +6,7 @@
 //  Copyright © 2020 Lambda. All rights reserved.
 //
 
+
 import Foundation
 
 struct SearchResult: Codable {
@@ -18,6 +19,6 @@ struct SearchResult: Codable {
     }
 }
 
-struct searchResults {
+struct SearchResults: Codable {
     let results: [SearchResult]
 }

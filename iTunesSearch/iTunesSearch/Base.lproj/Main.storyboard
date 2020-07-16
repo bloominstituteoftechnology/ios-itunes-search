@@ -34,6 +34,10 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="2WS-2j-6Ug" secondAttribute="trailing" id="pI4-xR-I4j"/>
+                                        <constraint firstItem="2WS-2j-6Ug" firstAttribute="leading" secondItem="61n-VM-BQQ" secondAttribute="leading" id="wDI-I0-Hej"/>
+                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
