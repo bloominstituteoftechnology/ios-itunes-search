@@ -14,6 +14,7 @@
 		445E864A24BE985A00B927DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445E864924BE985A00B927DA /* Assets.xcassets */; };
 		445E864D24BE985A00B927DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445E864B24BE985A00B927DA /* LaunchScreen.storyboard */; };
 		445E865524BE98D000B927DA /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445E865424BE98D000B927DA /* SearchResult.swift */; };
+		44F22B2D24C406F000F7AB9C /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F22B2C24C406F000F7AB9C /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		445E864C24BE985A00B927DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		445E864E24BE985A00B927DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		445E865424BE98D000B927DA /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		44F22B2C24C406F000F7AB9C /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				445E864424BE985700B927DA /* ViewController.swift */,
 				445E865424BE98D000B927DA /* SearchResult.swift */,
 				445E864624BE985700B927DA /* Main.storyboard */,
+				44F22B2C24C406F000F7AB9C /* SearchTableViewController.swift */,
 				445E864924BE985A00B927DA /* Assets.xcassets */,
 				445E864B24BE985A00B927DA /* LaunchScreen.storyboard */,
 				445E864E24BE985A00B927DA /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				445E864524BE985700B927DA /* ViewController.swift in Sources */,
 				445E864124BE985700B927DA /* AppDelegate.swift in Sources */,
+				44F22B2D24C406F000F7AB9C /* SearchTableViewController.swift in Sources */,
 				445E865524BE98D000B927DA /* SearchResult.swift in Sources */,
 				445E864324BE985700B927DA /* SceneDelegate.swift in Sources */,
 			);
