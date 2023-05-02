@@ -14,6 +14,8 @@
 		452606C82A00A5DE00E6D942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452606C72A00A5DE00E6D942 /* Assets.xcassets */; };
 		452606CB2A00A5DE00E6D942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452606C92A00A5DE00E6D942 /* LaunchScreen.storyboard */; };
 		452606D32A01A77C00E6D942 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452606D22A01A77C00E6D942 /* SearchResult.swift */; };
+		452606D52A01AF8900E6D942 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452606D42A01AF8900E6D942 /* ResultType.swift */; };
+		452606D72A01B03500E6D942 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452606D62A01B03500E6D942 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		452606CA2A00A5DE00E6D942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		452606CC2A00A5DE00E6D942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		452606D22A01A77C00E6D942 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		452606D42A01AF8900E6D942 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		452606D62A01B03500E6D942 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				452606C02A00A5DC00E6D942 /* SceneDelegate.swift */,
 				452606C22A00A5DC00E6D942 /* ViewController.swift */,
 				452606D22A01A77C00E6D942 /* SearchResult.swift */,
+				452606D42A01AF8900E6D942 /* ResultType.swift */,
+				452606D62A01B03500E6D942 /* SearchResultController.swift */,
 				452606C42A00A5DC00E6D942 /* Main.storyboard */,
 				452606C72A00A5DE00E6D942 /* Assets.xcassets */,
 				452606C92A00A5DE00E6D942 /* LaunchScreen.storyboard */,
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452606D72A01B03500E6D942 /* SearchResultController.swift in Sources */,
+				452606D52A01AF8900E6D942 /* ResultType.swift in Sources */,
 				452606C32A00A5DC00E6D942 /* ViewController.swift in Sources */,
 				452606BF2A00A5DC00E6D942 /* AppDelegate.swift in Sources */,
 				452606D32A01A77C00E6D942 /* SearchResult.swift in Sources */,
