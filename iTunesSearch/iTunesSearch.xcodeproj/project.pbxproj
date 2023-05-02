@@ -16,6 +16,7 @@
 		452606D52A01AF8900E6D942 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452606D42A01AF8900E6D942 /* ResultType.swift */; };
 		452606D72A01B03500E6D942 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452606D62A01B03500E6D942 /* SearchResultController.swift */; };
 		452606D92A01BFFA00E6D942 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452606D82A01BFFA00E6D942 /* SearchResultsTableViewController.swift */; };
+		452606DB2A01D48F00E6D942 /* Junk.json in Resources */ = {isa = PBXBuildFile; fileRef = 452606DA2A01D48F00E6D942 /* Junk.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		452606D42A01AF8900E6D942 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		452606D62A01B03500E6D942 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		452606D82A01BFFA00E6D942 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		452606DA2A01D48F00E6D942 /* Junk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Junk.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				452606D62A01B03500E6D942 /* SearchResultController.swift */,
 				452606C42A00A5DC00E6D942 /* Main.storyboard */,
 				452606D82A01BFFA00E6D942 /* SearchResultsTableViewController.swift */,
+				452606DA2A01D48F00E6D942 /* Junk.json */,
 				452606C72A00A5DE00E6D942 /* Assets.xcassets */,
 				452606C92A00A5DE00E6D942 /* LaunchScreen.storyboard */,
 				452606CC2A00A5DE00E6D942 /* Info.plist */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				452606CB2A00A5DE00E6D942 /* LaunchScreen.storyboard in Resources */,
+				452606DB2A01D48F00E6D942 /* Junk.json in Resources */,
 				452606C82A00A5DE00E6D942 /* Assets.xcassets in Resources */,
 				452606C62A00A5DC00E6D942 /* Main.storyboard in Resources */,
 			);

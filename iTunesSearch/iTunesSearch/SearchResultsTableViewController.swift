@@ -17,6 +17,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -79,13 +82,23 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        if cell.detailTextLabel == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "reuseIdentifier")
+        }
         
         let searchResult = searchResultsController.searchResults[indexPath.row]
         
-        cell.textLabel?.text = searchResult.title
+        if let title = searchResult.title {
+            cell.textLabel?.text = title
+        } else if let collectionName = searchResult.collectionName {
+            cell.textLabel?.text = collectionName
+        } else {
+            print("no title or collection name")
+        }
+        
         cell.detailTextLabel?.text = searchResult.creator
         cell.detailTextLabel?.textColor = UIColor.gray
         
