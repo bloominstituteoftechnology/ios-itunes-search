@@ -7,43 +7,100 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
-    @IBOutlet weak var searchBar: UISearchBar!
+class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultTypeSegmentedController: UISegmentedControl!
     
+    let searchResultsController = SearchResultController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        searchBar.delegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return }
+        var resultType: ResultType!
+        
+        switch resultTypeSegmentedController.selectedSegmentIndex {
+        case 0:
+            resultType = .software
+        case 1:
+            resultType = .musicTrack
+        case 2:
+            resultType = .movie
+        default:
+            resultType = .software
+        }
+        
+        searchResultsController.performSearch(searchTerm: searchText, resultType: resultType) { error in
+            if let error = error {
+                print("Error performing search: \(error)")
+            } else {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    /*
+         // Perform the search
+         searchResultsController.performSearch(for: searchText, resultType: resultType) { error in
+             if let error = error {
+                 print("Error performing search: \(error)")
+             } else {
+                 DispatchQueue.main.async {
+                     self.tableView.reloadData()
+                 }
+             }
+         }
+     }
+ }
+*/
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResultsController.searchResults.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-
+        
+        let searchResult = searchResultsController.searchResults[indexPath.row]
+        
+        cell.textLabel?.text = searchResult.title
+        cell.detailTextLabel?.text = searchResult.creator
+        cell.detailTextLabel?.textColor = UIColor.gray
+        
         return cell
     }
-    */
+    
+    /*let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.reuseIdentifier, for: indexPath) as! PersonTableViewCell
+     
+     // Configure the cell...
+     let person = personController.people[indexPath.row]
+     cell.nameLabel.text = person.name
+     cell.heightLabel.text = "\(person.height) cm"
+     cell.birthYearLabel.text = "Born \(person.birthYear)"
+     return cell*/
+    
 
     /*
     // Override to support conditional editing of the table view.

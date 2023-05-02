@@ -11,12 +11,12 @@ class SearchResultController {
     
     var searchResults: [SearchResult] = []
     
-    private let baseURL = URL(string: "https://itunes.apple.com")!
+    private let baseURL = URL(string: "https://itunes.apple.com/search")!
     
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let searchQueryTerm = URLQueryItem(name: "/search?", value: searchTerm)
+        let searchQueryTerm = URLQueryItem(name: "term", value: searchTerm)
         
         urlComponents?.queryItems = [searchQueryTerm]
         
